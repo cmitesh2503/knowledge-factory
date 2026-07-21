@@ -1,15 +1,15 @@
-variable "bucket_name" {
-  description = " Storage bucket name"
-  type        = string
-}
 
 variable "location" {
   description = "Bucket location"
   type        = string
 }
 
-variable "storage_class" {
-  description = "Bucket storage class"
-  type        = string
-  default     = "STANDARD"
+variable "buckets"{
+    description = "Map of each buckets to create"
+    
+
+    type = map(object({
+      name           = string
+      storage_class  = string
+    }))
 }
