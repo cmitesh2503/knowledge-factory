@@ -25,3 +25,47 @@ module "storage" {
     }
   }
 }
+
+module "service_accounts" {
+  source = "../../modules/service_accounts"
+  service_accounts = {
+    cloudrun = {
+
+      account_id = "knowledge-factory-cloudrun"
+
+      display_name = "Knowledge Factory Cloud Run"
+
+      description = "Runs the backend application"
+
+    }
+
+    workflow = {
+      account_id = "knowledge-factory-workflow"
+
+      display_name = "Knowledge Factory Workflow"
+
+      description = "Execution ingestion workflows"
+
+    }
+
+    publisher = {
+      account_id = "knowledge-factory-publisher"
+
+      display_name = "Knowledge Factory Publisher"
+
+      description = "Publishes Curriculum"
+
+    }
+
+    scheduler = {
+      account_id = "knowledge-factory-scheduler"
+
+      display_name = "Knowledge Factory Scheduler"
+
+      description = " Runs scheduled jobs"
+    }
+
+  }
+
+}
+
