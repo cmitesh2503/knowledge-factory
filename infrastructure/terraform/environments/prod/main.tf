@@ -69,12 +69,18 @@ module "service_accounts" {
 
 }
 
-module "iam" {
-  source = "../../modules/iam"
+module "project_iam" {
+  source = "../../modules/project_iam"
 
   project_id = var.project_id
 
-  bindings = local.iam_bindings
+  bindings = local.project_iam_bindings
+}
+
+module "storage_iam" {
+  source = "../../modules/storage_iam"
+
+  bindings = local.storage_iam_bindings
 }
 
 

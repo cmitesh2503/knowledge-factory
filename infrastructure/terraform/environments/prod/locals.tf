@@ -1,48 +1,58 @@
 locals {
 
-  iam_bindings = {
+  storage_iam_bindings = {
 
-    cloudrun_storage_viewer = {
+    cloudrun_raw_viewer = {
 
-      member = module.service_accounts.service_account_emails["cloudrun"]
-      role   = "roles/storage.objectViewer"
-    }
+      bucket = module.storage.bucket_names["raw"]
 
-    cloudrun_storage_creator = {
+      role = "roles/storage.objectViewer"
 
       member = module.service_accounts.service_account_emails["cloudrun"]
-      role   = "roles/storage.objectCreator"
     }
 
-    cloudrun_firestore = {
+    cloudrun_processed_creator = {
+
+      bucket = module.storage.bucket_names["processed"]
+
+      role = "roles/storage.objectCreator"
 
       member = module.service_accounts.service_account_emails["cloudrun"]
-      role   = "roles/datastore.user"
     }
+  }
 
-    cloudrun_secretmanager = {
+  project_iam_bindings = {
 
-      member = module.service_accounts.service_account_emails["cloudrun"]
-      role   = "roles/secretmanager.secretAccessor"
-    }
+  cloudrun_firestore = {
 
-    cloudrun_documentai = {
+    member = module.service_accounts.service_account_emails["cloudrun"]
+    role   = "roles/datastore.user"
+  }
 
-      member = module.service_accounts.service_account_emails["cloudrun"]
-      role   = "roles/documentai.apiUser"
-    }
+  cloudrun_secretmanager = {
 
-    workflow_storage = {
-      member = module.service_accounts.service_account_emails["workflow"]
-      role   = "roles/storage.objectViewer"
+    member = module.service_accounts.service_account_emails["cloudrun"]
+    role   = "roles/secretmanager.secretAccessor"
+  }
 
-    }
+  cloudrun_documentai = {
 
-    publisher_firestore = {
-      member = module.service_accounts.service_account_emails["publisher"]
-      role   = "roles/datastore.user"
-    }
+    member = module.service_accounts.service_account_emails["cloudrun"]
+    role   = "roles/documentai.apiUser"
+  }
+
+  workflow_storage = {
+    member = module.service_accounts.service_account_emails["workflow"]
+    role   = "roles/storage.objectViewer"
 
   }
 
+  publisher_firestore = {
+    member = module.service_accounts.service_account_emails["publisher"]
+    role   = "roles/datastore.user"
+  }
+
 }
+
+}
+
