@@ -69,3 +69,12 @@ module "service_accounts" {
 
 }
 
+module "iam" {
+  source = "../../modules/iam"
+
+  project_id = var.project_id
+
+  bindings = local.iam_bindings
+}
+
+
