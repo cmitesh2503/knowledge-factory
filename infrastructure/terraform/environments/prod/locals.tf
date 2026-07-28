@@ -23,36 +23,66 @@ locals {
 
   project_iam_bindings = {
 
-  cloudrun_firestore = {
+    cloudrun_firestore = {
 
-    member = module.service_accounts.service_account_emails["cloudrun"]
-    role   = "roles/datastore.user"
+      member = module.service_accounts.service_account_emails["cloudrun"]
+      role   = "roles/datastore.user"
+    }
+
+    cloudrun_secretmanager = {
+
+      member = module.service_accounts.service_account_emails["cloudrun"]
+      role   = "roles/secretmanager.secretAccessor"
+    }
+
+    cloudrun_documentai = {
+
+      member = module.service_accounts.service_account_emails["cloudrun"]
+      role   = "roles/documentai.apiUser"
+    }
+
+    workflow_storage = {
+      member = module.service_accounts.service_account_emails["workflow"]
+      role   = "roles/storage.objectViewer"
+
+    }
+
+    workflow_logging = {
+      member = module.service_accounts.service_account_emails["workflow"]
+      role   = "roles/logging.logWriter"
+    }
+
+    publisher_firestore = {
+      member = module.service_accounts.service_account_emails["publisher"]
+      role   = "roles/datastore.user"
+    }
+
+
+
   }
 
-  cloudrun_secretmanager = {
+  firestore = {
+    database_name = "(default)"
 
-    member = module.service_accounts.service_account_emails["cloudrun"]
-    role   = "roles/secretmanager.secretAccessor"
+    location_id = "asia-south1"
+
+    database_type = "FIRESTORE_NATIVE"
   }
 
-  cloudrun_documentai = {
+  workflow = {
 
-    member = module.service_accounts.service_account_emails["cloudrun"]
-    role   = "roles/documentai.apiUser"
+    name = "Knowledge-factory-pipeline"
+
+    region = "asia-south1"
+
+    labels = {
+
+      application = "knowledge-factory"
+
+      environment = "prod"
+
+      managed-by = "terraform"
+    }
   }
-
-  workflow_storage = {
-    member = module.service_accounts.service_account_emails["workflow"]
-    role   = "roles/storage.objectViewer"
-
-  }
-
-  publisher_firestore = {
-    member = module.service_accounts.service_account_emails["publisher"]
-    role   = "roles/datastore.user"
-  }
-
-}
-
 }
 

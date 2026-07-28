@@ -1,0 +1,25 @@
+main:
+  params: [input]
+
+  steps:
+    - initialize:
+        assign:
+          - bucket: $${input.bucket}
+          - object: $${input.object}
+          - generation: $${input.generation}
+
+    - logBucket:
+        call: sys.log
+        args:
+          text: $${bucket}
+
+    - logObject:
+        call: sys.log
+        args:
+          text: $${object}
+
+    - completed:
+        return:
+          status: "SUCCESS"
+          bucket: $${bucket}
+          object: $${object}

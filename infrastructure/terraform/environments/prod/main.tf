@@ -83,4 +83,29 @@ module "storage_iam" {
   bindings = local.storage_iam_bindings
 }
 
+module "firestore" {
 
+  source = "../../modules/firestore"
+
+  project_id = var.project_id
+
+  location_id = local.firestore.location_id
+
+  database_name = local.firestore.database_name
+
+  database_type = local.firestore.database_type
+}
+
+module "workflows" {
+  source = "../../modules/workflows"
+
+  project_id = var.project_id
+
+  region = local.workflow.region
+
+  workflow_name = local.workflow.name
+
+  service_account_email = module.service_accounts.service_account_emails["workflow"]
+
+  labels = local.workflow.labels
+}
