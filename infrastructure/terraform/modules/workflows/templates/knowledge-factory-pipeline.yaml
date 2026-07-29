@@ -7,6 +7,7 @@ main:
           - bucket: $${input.bucket}
           - object: $${input.object}
           - generation: $${input.generation}
+          - gcs_uri: $${"gs://" + bucket + "/" + object}
 
     - logBucket:
         call: sys.log
