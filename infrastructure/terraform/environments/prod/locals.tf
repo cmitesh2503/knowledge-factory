@@ -84,5 +84,13 @@ locals {
       managed-by = "terraform"
     }
   }
+
+  document_ai = {
+    display_name = "knowledge-factory-layout-parser"
+
+    location = "us"
+
+    processor_type = "LAYOUT_PARSER_PROCESSOR"
+  }
 }
 

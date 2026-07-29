@@ -109,3 +109,17 @@ module "workflows" {
 
   labels = local.workflow.labels
 }
+
+module "document_ai" {
+
+  source = "../../modules/document_ai"
+
+  project_id = var.project_id
+
+  location = local.document_ai.location
+
+  display_name = local.document_ai.display_name
+
+  processor_type = local.document_ai.processor_type
+
+}

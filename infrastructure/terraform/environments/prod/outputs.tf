@@ -30,3 +30,19 @@ output "workflow_id" {
   description = "Knowledge Factory workflow ID"
   value       = module.workflows.workflow_id
 }
+
+output "document_ai_processor_id" {
+
+  value = module.document_ai.processor_id
+
+}
+output "document_ai_processor_name" {
+
+  value = module.document_ai.processor_name
+
+}
+output "document_ai_processor_location" {
+
+  value = module.document_ai.processor_location
+
+}
