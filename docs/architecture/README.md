@@ -1,69 +1,162 @@
-# Knowledge Factory Architecture
+# Architecture Documentation
 
-**Version:** 1.0  
+**Project:** Knowledge Factory  
+**Document Version:** 1.0  
 **Status:** Active  
-**Last Updated:** 2026-07-29
+**Type:** Architecture Documentation Index
 
 ---
 
-## Overview
+# Purpose
 
-This directory contains the official architecture documentation for the **Knowledge Factory** platform.
+This directory contains the detailed architecture documentation for the Knowledge Factory platform.
 
-Knowledge Factory is a cloud-native data engineering platform that transforms educational documents into a technology-independent canonical knowledge model.
-
-These documents define the architecture, design decisions, storage strategy, and data pipelines. They serve as the single source of truth for all infrastructure and application development.
+While the root `ARCHITECTURE.md` provides a high-level overview of the system, the documents in this directory describe individual architectural domains in greater detail.
 
 ---
 
-## Documentation Index
+# Documentation Structure
 
 | Document | Purpose |
 |----------|---------|
-| ARCHITECTURE.md | Overall system architecture and design principles |
-| PIPELINE.md | End-to-end processing pipelines |
-| ADR-001 | Canonical schema decision |
-| ADR-002 | Ingestion pipeline design |
-| ADR-003 | Storage strategy |
-| ADR-004 | Firestore metadata catalog |
+| ARCHITECTURE.md | Detailed system architecture and component interactions |
+| PIPELINE.md | End-to-end document processing pipeline |
+| Canonical Schema.md | Technology-independent canonical document model |
+| Storage Strategy.md | Cloud Storage architecture and object lifecycle |
+| Firestore Metadata.md | Firestore collections, metadata model, and indexing strategy |
+| Infrastructure.md | Infrastructure architecture, Terraform modules, deployment order, and GCP resources |
 
 ---
 
-## Guiding Principles
+# Recommended Reading Order
 
-- Documentation First Development (DFD)
-- Infrastructure as Code (Terraform)
-- Event-Driven Architecture
-- Technology Independence
-- Canonical Data Model
-- Cloud-Native Design
-- Modular Pipelines
-- Reusable Components
+New contributors should review the architecture documents in the following order:
 
----
-
-## Architecture Version
-
-Current Version: **Knowledge Factory v1.0**
+1. `README.md` *(Repository Overview)*
+2. `ARCHITECTURE.md` *(Root)*
+3. `REPOSITORY_INDEX.md`
+4. `docs/architecture/README.md`
+5. `docs/architecture/ARCHITECTURE.md`
+6. `docs/architecture/PIPELINE.md`
+7. `docs/architecture/Canonical Schema.md`
+8. `docs/architecture/Storage Strategy.md`
+9. `docs/architecture/Firestore Metadata.md`
+10. `docs/architecture/Infrastructure.md`
 
 ---
 
-## Repository Structure
+# Architecture Principles
 
-```
-docs/
-└── architecture/
-    README.md
-    ARCHITECTURE.md
-    PIPELINE.md
-    ADR-001-canonical-schema.md
-    ADR-002-ingestion-pipeline.md
-    ADR-003-storage-strategy.md
-    ADR-004-firestore-catalog.md
-```
+The architecture documentation follows these principles:
+
+- Technology-independent design
+- Canonical-first processing
+- Modular components
+- Infrastructure as Code
+- Separation of concerns
+- Clear ownership of responsibilities
+- Extensible architecture for future providers
 
 ---
 
-## Document Ownership
+# Document Responsibilities
 
-These documents are maintained together with the source code. Any architectural change must update the relevant documentation before implementation.
+## ARCHITECTURE.md
+
+Describes the detailed system architecture, major components, processing flow, and interactions between components.
+
+---
+
+## PIPELINE.md
+
+Documents the complete document processing pipeline from ingestion through publishing.
+
+Defines:
+
+- Pipeline stages
+- Inputs and outputs
+- Processing responsibilities
+- Error handling
+- Retry flow
+
+---
+
+## Canonical Schema.md
+
+Defines the canonical document representation used throughout the platform.
+
+Includes:
+
+- Document schema
+- Metadata
+- Sections
+- Elements
+- Validation rules
+- Versioning
+
+---
+
+## Storage Strategy.md
+
+Documents the storage architecture.
+
+Includes:
+
+- Cloud Storage buckets
+- Folder hierarchy
+- Object naming conventions
+- Lifecycle policies
+- Archival strategy
+
+---
+
+## Firestore Metadata.md
+
+Defines the Firestore data model.
+
+Includes:
+
+- Collections
+- Documents
+- Metadata schema
+- Relationships
+- Indexing strategy
+
+---
+
+## Infrastructure.md
+
+Documents the deployment architecture.
+
+Includes:
+
+- Google Cloud services
+- Terraform modules
+- Module dependencies
+- Deployment sequence
+- Environment structure
+- Current implementation status
+
+---
+
+# Related Documents
+
+| Document | Purpose |
+|----------|---------|
+| README.md | Repository overview |
+| ARCHITECTURE.md | High-level architecture |
+| REPOSITORY_INDEX.md | Repository navigation |
+| docs/implementation/IMPLEMENTATION_ROADMAP.md | Implementation progress |
+
+---
+
+# Maintenance
+
+Update this index whenever:
+
+- A new architecture document is added.
+- An architecture document is renamed or removed.
+- Responsibilities change between documents.
+- The overall architecture evolves.
+
+The goal is to keep every architecture topic documented in exactly one place, avoiding duplication and maintaining a clear separation of responsibilities.

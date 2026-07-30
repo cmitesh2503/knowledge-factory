@@ -1,228 +1,235 @@
 # Repository Index
 
-**Repository:** knowledge-factory
-
-**Version:** 1.0
-
-**Status:** Under Audit
-
-**Last Updated:** YYYY-MM-DD
+**Project:** Knowledge Factory  
+**Document Version:** 1.0  
+**Status:** Active  
+**Type:** Repository Navigation Guide
 
 ---
 
 # Purpose
 
-The Repository Index is the master navigation document for the Knowledge Factory repository.
+This document is the authoritative index of the Knowledge Factory repository.
 
-It provides a complete overview of the repository structure, explains the responsibility of every major directory, and identifies where each part of the platform is implemented.
+It provides a structured overview of the repository layout, explains the responsibility of each directory, and serves as the primary navigation guide for contributors.
 
-This document reflects the **actual implementation** of the repository. It is not an architecture proposal or future design document.
-
----
-
-# Repository Overview
-
-Knowledge Factory is a cloud-native document processing platform that transforms unstructured documents into a technology-independent canonical knowledge representation.
-
-The repository contains:
-
-- Documentation
-- Infrastructure
-- Processing services
-- Workflow orchestration
-- Sample data
-- Automated tests
+This document reflects the **current repository implementation** and must be updated whenever the repository structure changes.
 
 ---
 
-# Top Level Repository Structure
+# Repository Structure
 
-| Path | Description | Status |
-|------|-------------|--------|
-| docs/ | Project documentation, architecture, ADRs and diagrams | Pending Audit |
-| docker/ | Docker build resources | Pending Audit |
-| infrastructure/ | Infrastructure as Code, Terraform modules and deployment scripts | Pending Audit |
-| samples/ | Sample input and output documents | Pending Audit |
-| services/ | Processing services implementing Knowledge Factory pipeline stages | Pending Audit |
-| tests/ | Unit and integration tests | Pending Audit |
-| workflows/ | Workflow definitions and orchestration | Pending Audit |
-| README.md | Repository overview | Pending Audit |
-| ARCHITECTURE.md | System architecture | Pending Audit |
-
----
-
-# Documentation
-
+```text
+knowledge-factory/
+│
+├── README.md
+├── ARCHITECTURE.md
+├── REPOSITORY_INDEX.md
+│
+├── docs/
+│   ├── architecture/
+│   ├── adr/
+│   ├── audit/
+│   ├── diagrams/
+│   └── implementation/
+│
+├── infrastructure/
+│   ├── scripts/
+│   └── terraform/
+│
+└── .gitignore
 ```
+
+---
+
+# Root Files
+
+| File | Purpose |
+|------|---------|
+| README.md | Repository entry point and getting started guide |
+| ARCHITECTURE.md | High-level system architecture |
+| REPOSITORY_INDEX.md | Repository navigation guide |
+| .gitignore | Git ignore rules |
+
+---
+
+# Directory Overview
+
+## docs/
+
+Contains all project documentation.
+
+```text
 docs/
-├── adr/
 ├── architecture/
-└── diagrams/
+├── adr/
+├── audit/
+├── diagrams/
+└── implementation/
 ```
-
-### Purpose
-
-Contains all project documentation including:
-
-- Architecture
-- ADRs
-- Design documents
-- Diagrams
 
 ---
 
-# Infrastructure
+### architecture/
 
-```
+Contains all technical architecture documentation.
+
+Contents include:
+
+- Overall architecture
+- Processing pipeline
+- Canonical schema
+- Storage design
+- Firestore metadata
+- Infrastructure architecture
+
+---
+
+### adr/
+
+Architecture Decision Records (ADRs).
+
+Each ADR documents a significant architectural decision together with its rationale and consequences.
+
+---
+
+### audit/
+
+Repository audit documentation.
+
+These documents record repository reviews, cleanup activities, findings, and implementation decisions.
+
+Audit documentation may be archived after repository stabilization.
+
+---
+
+### diagrams/
+
+Architecture diagrams and supporting visuals.
+
+Examples:
+
+- Mermaid diagrams
+- PlantUML diagrams
+- Images
+- Architecture illustrations
+
+---
+
+### implementation/
+
+Implementation planning documents.
+
+Contains:
+
+- Implementation roadmap
+- Deployment progress
+- Current development status
+- Future implementation phases
+
+---
+
+# infrastructure/
+
+Infrastructure as Code (IaC) for Knowledge Factory.
+
+```text
 infrastructure/
 ├── scripts/
 └── terraform/
 ```
 
-Terraform contains:
+---
 
-```
-terraform/
-├── environments/
-│   ├── dev/
-│   ├── test/
-│   └── prod/
-└── modules/
-    ├── cloudrun/
-    ├── document_ai/
-    ├── firestore/
-    ├── project_iam/
-    ├── service_accounts/
-    ├── storage/
-    ├── storage_iam/
-    └── workflows/
-```
+## scripts/
 
-### Responsibility
+Utility scripts supporting infrastructure deployment and maintenance.
 
-Infrastructure provisioning for:
+---
 
-- Google Cloud
-- Storage
+## terraform/
+
+Terraform configuration for provisioning Google Cloud resources.
+
+Current infrastructure includes:
+
+- Google Cloud Storage
+- IAM
+- Service Accounts
 - Firestore
 - Document AI
-- IAM
 - Cloud Run
 - Workflows
 
 ---
 
-# Services
+# Documentation Reading Order
 
-```
-services/
-├── adapter/
-├── normalizer/
-├── outline/
-├── publisher/
-└── shared/
-```
+For new contributors, the recommended reading order is:
 
-### Responsibility
-
-Implements the document processing pipeline.
-
-Current service responsibilities:
-
-| Service | Responsibility |
-|----------|----------------|
-| adapter | Converts external provider output into internal processing format |
-| normalizer | Produces canonical document representation |
-| outline | Generates document outline and structure |
-| publisher | Publishes processed documents |
-| shared | Common utilities and shared components |
+1. README.md
+2. ARCHITECTURE.md
+3. REPOSITORY_INDEX.md
+4. docs/architecture/README.md
+5. docs/architecture/ARCHITECTURE.md
+6. docs/architecture/PIPELINE.md
+7. docs/architecture/Canonical Schema.md
+8. docs/architecture/Storage Strategy.md
+9. docs/architecture/Firestore Metadata.md
+10. docs/architecture/Infrastructure.md
+11. docs/implementation/IMPLEMENTATION_ROADMAP.md
 
 ---
 
-# Workflows
+# Repository Conventions
 
-```
-workflows/
-```
+## Documentation
 
-### Responsibility
-
-Workflow definitions and orchestration logic for the Knowledge Factory processing pipeline.
+- Documentation reflects the current implementation.
+- Architecture describes the approved system design.
+- Significant design decisions are recorded as ADRs.
 
 ---
 
-# Samples
+## Infrastructure
 
-```
-samples/
-```
-
-### Responsibility
-
-Reference documents used for development, testing and validation.
+- Infrastructure is managed using Terraform.
+- Infrastructure changes must be version controlled.
+- Environment-specific configuration remains isolated from reusable modules.
 
 ---
 
-# Tests
+## Repository Organization
 
-```
-tests/
-```
-
-### Responsibility
-
-Repository test suite including unit, integration and validation tests.
+- Root contains only repository-level documents.
+- Technical documentation belongs under `docs/`.
+- Infrastructure belongs under `infrastructure/`.
+- Generated artifacts should not be committed unless explicitly required.
 
 ---
 
-# Repository Audit Order
+# Repository Maintenance
 
-The repository will be audited in the following order:
+Update this document whenever:
 
-1. Repository Foundation
-2. Documentation
-3. Infrastructure
-4. Services
-5. Workflows
-6. Samples
-7. Tests
-8. Final Review
-
----
-
-# Repository Standards
-
-The repository follows the following principles:
-
-- Documentation reflects implementation.
-- Architecture documents approved design.
-- Every change is traceable.
-- Infrastructure is managed as code.
-- Processing stages remain modular.
-- Canonical data model remains technology independent.
+- A directory is added, renamed, or removed.
+- A major document is introduced.
+- Infrastructure layout changes.
+- Repository organization changes.
 
 ---
 
 # Related Documents
 
-- README.md
-- ARCHITECTURE.md
-- docs/architecture/
-- docs/audit/AUDIT_PROCESS.md
-- docs/audit/AUDIT_FINDINGS.md
-- docs/audit/AUDIT_DECISIONS.md
-- docs/audit/AUDIT_STATUS.md
+| Document | Purpose |
+|----------|---------|
+| README.md | Repository overview |
+| ARCHITECTURE.md | High-level architecture |
+| docs/architecture/README.md | Architecture documentation index |
+| docs/implementation/IMPLEMENTATION_ROADMAP.md | Implementation progress |
 
 ---
 
-# Maintenance
+# Ownership
 
-This document must be updated whenever:
-
-- A top-level directory is added, removed or renamed.
-- A major processing service is introduced.
-- Infrastructure layout changes.
-- Documentation structure changes.
-- Repository organization changes.
-
-This document is the authoritative navigation reference for the Knowledge Factory repository.
+The Repository Index is the primary navigation document for the Knowledge Factory repository and should remain synchronized with the repository structure throughout the lifecycle of the project.

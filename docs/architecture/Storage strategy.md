@@ -1,265 +1,276 @@
-# ADR-003: Storage Strategy
+# Storage Strategy
 
-**Status:** Accepted
-
-**Date:** 2026-07-29
-
-**Decision Makers:** Knowledge Factory Architecture Team
-
----
-
-# Context
-
-Knowledge Factory processes educational documents through multiple independent pipelines.
-
-Each pipeline produces artifacts that are consumed by subsequent pipelines and consumer applications.
-
-The platform requires a storage strategy that:
-
-- Separates large artifacts from searchable metadata.
-- Supports immutable processing outputs.
-- Scales with growing document volumes.
-- Enables independent pipeline execution.
-- Maintains technology independence.
+**Project:** Knowledge Factory  
+**Document Version:** 1.0  
+**Status:** Active  
+**Type:** Storage Architecture
 
 ---
 
-# Decision
+# Purpose
 
-Knowledge Factory SHALL separate storage into two categories:
+This document defines the storage architecture for the Knowledge Factory platform.
 
-1. **Artifact Storage**
-2. **Metadata Storage**
+It describes how documents move through the storage lifecycle, how storage resources are organized, and the storage standards used throughout the platform.
 
-Artifacts are stored in Cloud Storage.
+This document focuses on Cloud Storage only. Firestore is documented separately in **Firestore Metadata.md**.
 
-Metadata is stored in Firestore.
+---
 
-This separation ensures that large documents remain in object storage while Firestore acts as a lightweight catalog for discovery, tracking, and pipeline coordination.
+# Objectives
+
+The storage architecture is designed to:
+
+- Store documents securely
+- Separate processing stages
+- Support versioning
+- Enable recovery and auditing
+- Minimize storage costs
+- Support lifecycle management
+- Remain independent of processing providers
 
 ---
 
 # Storage Architecture
 
-```
-                   Knowledge Factory
-
-                  +-------------------+
-                  |     Firestore     |
-                  | Metadata Catalog  |
-                  +-------------------+
-                           ▲
+```text
+                    Source Documents
                            │
-                           │ References
+                           ▼
+                 Raw Storage Bucket
                            │
-+------------------------------------------------------+
-|                  Cloud Storage                        |
-|------------------------------------------------------|
-| Raw Bucket        | Original uploaded PDFs           |
-| Processed Bucket  | Canonical JSON and future assets |
-+------------------------------------------------------+
+                           ▼
+                 Document Processing
+                           │
+                           ▼
+             Canonical JSON Generation
+                           │
+                           ▼
+             Processed Storage Bucket
+                           │
+                           ▼
+               Downstream Consumers
+                           │
+                           ▼
+                 Archive Storage Bucket
 ```
 
 ---
 
-# Artifact Storage
+# Storage Principles
 
-Artifact storage contains immutable files produced during processing.
+- Store each artifact only once.
+- Never overwrite original documents.
+- Canonical JSON is the primary processed artifact.
+- Separate raw, processed, and archived data.
+- Infrastructure provisions storage; applications consume it.
+- Storage must remain independent of processing providers.
 
-Examples include:
+---
 
-- Original PDF
+# Storage Buckets
+
+## Raw Bucket
+
+### Purpose
+
+Stores original uploaded documents before processing.
+
+### Contents
+
+- PDF files
+- Images
+- Other supported document formats
+
+Example:
+
+```text
+raw/
+    mathematics.pdf
+    chapter1.pdf
+```
+
+---
+
+## Processed Bucket
+
+### Purpose
+
+Stores processed canonical artifacts.
+
+### Contents
+
 - Canonical JSON
-- Lesson JSON (future)
-- Chunk JSON (future)
-- Embedding files (future)
-- Published knowledge packages (future)
+- Processing output
+- Validation reports (future)
 
-Artifacts are never stored inside Firestore.
+Example
 
----
-
-# Metadata Storage
-
-Firestore stores metadata required to:
-
-- Discover processed documents.
-- Track processing status.
-- Locate artifacts.
-- Support pipeline orchestration.
-- Enable monitoring and auditing.
-
-Metadata documents reference artifact locations but never duplicate artifact content.
-
----
-
-# Storage Responsibilities
-
-## Cloud Storage
-
-Responsible for:
-
-- Large files
-- Immutable artifacts
-- Versioned outputs
-- Long-term retention
-
-Cloud Storage is the system of record for all generated artifacts.
-
----
-
-## Firestore
-
-Responsible for:
-
-- Document catalog
-- Processing status
-- Pipeline state
-- Artifact references
-- Operational metadata
-
-Firestore is the system of record for metadata only.
-
----
-
-# Rationale
-
-Separating artifacts from metadata provides:
-
-- Better scalability
-- Lower database costs
-- Faster metadata queries
-- Simpler pipeline coordination
-- Independent artifact lifecycle management
-- Reduced duplication
-
----
-
-# Alternatives Considered
-
-## Option A – Store Everything in Firestore
-
-```
-Firestore
-
-├── Metadata
-├── Canonical JSON
-├── Lessons
-└── Chunks
+```text
+processed/
+    mathematics.json
+    chemistry.json
 ```
 
-### Advantages
+---
 
-- Single storage system.
+## Archive Bucket
 
-### Disadvantages
+### Purpose
 
-- Poor scalability.
-- Firestore document size limitations.
-- Expensive for large documents.
-- Inefficient for large JSON artifacts.
+Stores long-term archived artifacts.
 
-**Decision:** Rejected.
+### Contents
+
+- Historical canonical documents
+- Previous versions
+- Archived processing outputs
 
 ---
 
-## Option B – Store Everything in Cloud Storage
+# Folder Structure
 
+Recommended structure:
+
+```text
+raw/
+    incoming/
+
+processed/
+    canonical/
+
+archive/
+    historical/
 ```
-Cloud Storage
 
-├── PDF
-├── Metadata
-├── Canonical
-└── Lessons
-```
-
-### Advantages
-
-- Simple storage model.
-
-### Disadvantages
-
-- Difficult metadata querying.
-- No efficient document tracking.
-- Poor operational visibility.
-
-**Decision:** Rejected.
+The structure should remain simple and provider independent.
 
 ---
 
-## Option C – Hybrid Storage (Selected)
+# Naming Convention
 
+Object names should:
+
+- Be lowercase
+- Use hyphens
+- Avoid spaces
+- Avoid provider-specific names
+- Be deterministic where possible
+
+Example
+
+```text
+cbse-class10-maths.pdf
+
+cbse-class10-maths.json
 ```
-Cloud Storage
-    │
-    ├── Artifacts
-    │
-    ▼
-Firestore
-    │
-    └── Metadata
-```
-
-### Advantages
-
-- Scalable architecture.
-- Clear separation of concerns.
-- Efficient metadata queries.
-- Optimized storage costs.
-- Independent pipeline execution.
-
-**Decision:** Accepted.
 
 ---
 
-# Consequences
+# Storage Classes
 
-## Positive
+Recommended Google Cloud Storage classes:
 
-- Large artifacts remain outside the database.
-- Firestore remains lightweight and responsive.
-- Pipelines exchange artifacts through object storage.
-- Storage scales independently of metadata.
+| Bucket | Storage Class |
+|---------|---------------|
+| Raw | Standard |
+| Processed | Standard |
+| Archive | Coldline |
 
-## Negative
-
-- Applications must resolve artifact references from Firestore.
-- Artifact lifecycle and metadata lifecycle must remain synchronized.
+Storage class selection may change based on usage patterns.
 
 ---
 
-# Design Rules
+# Versioning
 
-1. Cloud Storage stores all processing artifacts.
-2. Firestore stores metadata only.
-3. Firestore never stores document content.
-4. Artifacts are immutable after publication.
-5. Every artifact must have corresponding metadata.
-6. Metadata must reference artifacts using storage URIs.
+Bucket versioning is recommended for:
+
+- Processed artifacts
+- Canonical JSON
+- Archived documents
+
+Original documents should never be modified after upload.
+
+---
+
+# Lifecycle Policies
+
+Recommended lifecycle strategy:
+
+Raw Bucket
+
+- Retain until processing completes.
+- Delete after successful publication if business requirements permit.
+
+Processed Bucket
+
+- Retain active canonical artifacts.
+
+Archive Bucket
+
+- Long-term retention.
+- Lower-cost storage class.
+- Restore only when required.
+
+---
+
+# Security
+
+Storage should follow least-privilege principles.
+
+Recommendations:
+
+- Private buckets
+- IAM-based access
+- Encryption at rest
+- Encryption in transit
+- Uniform bucket-level access
+- No public access
+
+---
+
+# Backup Strategy
+
+Recommendations:
+
+- Enable bucket versioning.
+- Replicate critical artifacts if required.
+- Protect canonical documents.
+- Archive previous versions before deletion.
+
+---
+
+# Current Storage Layout
+
+Current infrastructure provisions storage for:
+
+- Raw documents
+- Processed canonical documents
+- Archived artifacts
+
+Additional storage locations may be introduced as the platform evolves.
+
+---
+
+# Future Enhancements
+
+Potential future improvements include:
+
+- Multi-region storage
+- Automatic archival
+- Object lifecycle optimization
+- Event-driven processing
+- Metadata-based partitioning
+- Object integrity verification
 
 ---
 
 # Related Documents
 
-- ARCHITECTURE.md
-- PIPELINE.md
-- ADR-001: Canonical Schema as the Primary Data Contract
-- ADR-002: Event-Driven Document Ingestion Pipeline
-- ADR-004: Firestore Metadata Catalog
-One improvement I'd make
-
-Instead of saying:
-
-Cloud Storage stores artifacts
-
-I'd be even more explicit and define artifact classes, so future developers know exactly what belongs there.
-
-Artifact Class	Examples
-Source	PDF
-Canonical	canonical.json
-Learning	lesson.json, exercise.json
-AI	chunks.json, embeddings
-Published	Knowledge packages for consumer applications
-
-This gives the storage strategy room to grow without changing the underlying architecture. It's the kind of detail that makes an ADR useful years later, not just during the initial implementation.
+| Document | Purpose |
+|----------|---------|
+| ARCHITECTURE.md | High-level architecture |
+| PIPELINE.md | Processing pipeline |
+| Canonical Schema.md | Canonical document model |
+| Firestore Metadata.md | Firestore metadata design |
+| Infrastructure.md | Infrastructure and Terraform |

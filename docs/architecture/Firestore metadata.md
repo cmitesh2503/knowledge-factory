@@ -1,117 +1,202 @@
-# ADR-004: Firestore Metadata Catalog
+# Firestore Metadata Architecture
 
-**Status:** Accepted
-
-**Date:** 2026-07-29
-
-**Decision Makers:** Knowledge Factory Architecture Team
-
----
-
-# Context
-
-Knowledge Factory processes documents through multiple independent pipelines.
-
-The platform requires a centralized catalog to:
-
-- Track document processing.
-- Discover processed artifacts.
-- Monitor pipeline execution.
-- Enable downstream pipelines to locate artifacts.
-
-The platform does **not** require Firestore to store document content.
+**Project:** Knowledge Factory  
+**Document Version:** 1.0  
+**Status:** Active  
+**Type:** Metadata Storage Architecture
 
 ---
 
-# Decision
+# Purpose
 
-Firestore SHALL act as the **Metadata Catalog** for Knowledge Factory.
+This document defines how metadata is stored in Google Firestore within the Knowledge Factory platform.
 
-Firestore stores only metadata required to identify, locate, and monitor documents and their processing lifecycle.
+Firestore stores metadata required for document discovery, processing status, auditing, and downstream integrations.
 
-All document artifacts remain in Cloud Storage.
-
-Firestore is **not** an artifact repository.
+The canonical document itself remains stored in Cloud Storage. Firestore stores metadata and references to those artifacts.
 
 ---
 
-# Responsibilities
+# Design Principles
+
+- Firestore stores metadata only.
+- Canonical JSON remains the source of truth.
+- Documents are immutable after successful publication.
+- Collections should be optimized for lookup rather than document storage.
+- Metadata should remain independent of document processing providers.
+
+---
+
+# Firestore Responsibilities
 
 Firestore is responsible for:
 
-- Document registration
+- Document discovery
 - Processing status
-- Pipeline tracking
-- Artifact references
-- Version information
-- Audit timestamps
-- Processing errors (if any)
+- Processing history
+- Document metadata
+- Storage references
+- Audit information
 
-Firestore does not store:
+Firestore is **not** responsible for:
 
-- PDF files
-- Canonical JSON
-- Lesson JSON
-- Chunk JSON
-- Embeddings
-- Any large document content
+- Storing source documents
+- Storing canonical JSON
+- Storing extracted images
+- Storing large binary content
 
 ---
 
-# Metadata Model
+# High-Level Architecture
 
-Each processed document is represented by a single metadata record.
-
+```text
+                 Source Document
+                        │
+                        ▼
+               Document Processing
+                        │
+                        ▼
+               Canonical JSON Created
+                        │
+          ┌─────────────┴─────────────┐
+          ▼                           ▼
+Cloud Storage                  Firestore Metadata
+(Canonical JSON)              (Metadata + References)
 ```
+
+---
+
+# Collection Structure
+
+Recommended Firestore collections:
+
+```text
+knowledge-factory/
+
+├── documents/
+├── processing_jobs/
+├── processing_history/
+└── system_metadata/
+```
+
+---
+
+# documents Collection
+
+Stores one document per processed source document.
+
+Example fields:
+
+```text
+Document ID
+Document Name
+Document Type
+Language
+Page Count
+Schema Version
+Processing Status
+Created Timestamp
+Updated Timestamp
+Canonical JSON Location
+Source Document Location
+```
+
+---
+
+# processing_jobs Collection
+
+Tracks active and completed processing jobs.
+
+Example fields:
+
+```text
+Job ID
+Document ID
+Provider
+Processing Start Time
+Processing End Time
+Status
+Duration
+Error Message
+Retry Count
+```
+
+---
+
+# processing_history Collection
+
+Stores historical processing events.
+
+Example fields:
+
+```text
+History ID
+Document ID
+Event Type
+Timestamp
+Status
+Description
+```
+
+---
+
+# system_metadata Collection
+
+Stores platform configuration metadata.
+
+Examples:
+
+- Current schema version
+- Supported providers
+- Platform version
+- Processing configuration
+
+---
+
+# Metadata Relationships
+
+```text
 Document
     │
-    ├── Identity
-    ├── Source
-    ├── Processing
-    ├── Artifacts
-    ├── Version
-    └── Audit
+    ├── Processing Job
+    │
+    ├── Processing History
+    │
+    └── Canonical JSON (Cloud Storage)
 ```
 
 ---
 
-# Example Metadata
+# Processing Status
 
-```json
-{
-  "documentId": "cbse-g10-matrices",
-  "title": "Matrices",
-  "board": "CBSE",
-  "grade": "10",
-  "subject": "Mathematics",
+Recommended document states:
 
-  "status": "COMPLETED",
+```text
+UPLOADED
 
-  "source": {
-    "pdfUri": "gs://knowledge-factory-raw/cbse/grade10/mathematics/matrices.pdf"
-  },
+PROCESSING
 
-  "artifacts": {
-    "canonicalUri": "gs://knowledge-factory-processed/canonical/cbse/grade10/mathematics/matrices.json"
-  },
+NORMALIZED
 
-  "pipeline": {
-    "version": "1.0.0"
-  },
+VALIDATED
 
-  "audit": {
-    "createdAt": "2026-07-29T10:30:00Z",
-    "updatedAt": "2026-07-29T10:31:45Z"
-  }
-}
+PUBLISHED
+
+FAILED
+
+ARCHIVED
 ```
 
 ---
 
-# Processing Lifecycle
+# Metadata Lifecycle
 
-```
-Uploaded
+```text
+Upload
+
+↓
+
+Create Metadata
 
 ↓
 
@@ -119,114 +204,95 @@ Processing
 
 ↓
 
-Completed
+Update Status
 
 ↓
 
-Published (Future)
+Publish Canonical JSON
 
 ↓
 
-Archived (Future)
-```
+Store Reference
 
-Each status transition updates the metadata record.
+↓
+
+Archive
+```
 
 ---
 
-# Rationale
+# Indexing Strategy
 
-Using Firestore as a metadata catalog provides:
+Indexes should support:
 
-- Fast document lookup
-- Pipeline visibility
-- Operational monitoring
-- Efficient querying
-- Lightweight metadata storage
-- Clear separation from artifact storage
+- Document lookup
+- Processing status
+- Processing date
+- Source document
+- Provider
+- Processing failures
 
----
-
-# Alternatives Considered
-
-## Option A – Store Everything in Firestore
-
-### Advantages
-
-- Single database
-
-### Disadvantages
-
-- Poor scalability
-- Document size limits
-- Expensive storage
-- Mixing metadata with content
-
-**Decision:** Rejected.
+Avoid unnecessary composite indexes.
 
 ---
 
-## Option B – No Metadata Catalog
+# Security
 
-```
-Cloud Storage only
-```
+Recommendations:
 
-### Advantages
-
-- Minimal infrastructure
-
-### Disadvantages
-
-- Difficult discovery
-- No pipeline tracking
-- No processing status
-- No operational visibility
-
-**Decision:** Rejected.
+- IAM-based access
+- Least privilege
+- No public access
+- Encryption at rest
+- Audit logging enabled
 
 ---
 
-## Option C – Firestore as Metadata Catalog (Selected)
+# Data Retention
 
-```
-Cloud Storage
-      │
-      │ Artifacts
-      ▼
+Recommended strategy:
 
-Firestore
-      │
-Metadata Catalog
-```
-
-### Advantages
-
-- Lightweight
-- Scalable
-- Queryable
-- Supports future pipeline orchestration
-- Clear separation of concerns
-
-**Decision:** Accepted.
+| Collection | Retention |
+|------------|-----------|
+| documents | Permanent |
+| processing_jobs | Configurable |
+| processing_history | Long-term |
+| system_metadata | Permanent |
 
 ---
 
-# Design Rules
+# Current Implementation
 
-1. One Firestore document represents one source document.
-2. Firestore stores metadata only.
-3. Artifact content is never duplicated in Firestore.
-4. Every artifact must be referenced by URI.
-5. Metadata reflects the latest processing state.
-6. Metadata must remain synchronized with Cloud Storage artifacts.
+The current implementation stores:
+
+- Document metadata
+- Processing metadata
+- References to canonical JSON stored in Cloud Storage
+
+The canonical document remains outside Firestore.
+
+---
+
+# Future Enhancements
+
+Potential future additions include:
+
+- Document tags
+- Search metadata
+- Processing metrics
+- AI enrichment metadata
+- Version history
+- Quality scores
+- User annotations
 
 ---
 
 # Related Documents
 
-- ARCHITECTURE.md
-- PIPELINE.md
-- ADR-001: Canonical Schema as the Primary Data Contract
-- ADR-002: Event-Driven Document Ingestion Pipeline
-- ADR-003: Storage Strategy
+| Document | Purpose |
+|----------|---------|
+| ARCHITECTURE.md | High-level architecture |
+| PIPELINE.md | Processing pipeline |
+| Canonical Schema.md | Canonical document model |
+| Storage Strategy.md | Cloud Storage architecture |
+| Infrastructure.md | Terraform and deployment architecture |

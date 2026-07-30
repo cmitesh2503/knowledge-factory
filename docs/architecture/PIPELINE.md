@@ -1,409 +1,263 @@
-# Knowledge Factory Processing Pipelines
+# Document Processing Pipeline
 
-**Version:** 1.0.0  
-**Status:** Draft  
-**Last Updated:** 2026-07-29
-
----
-
-# 1. Purpose
-
-This document defines the end-to-end processing pipelines of the Knowledge Factory platform.
-
-A pipeline is an autonomous, event-driven workflow responsible for transforming one artifact into another.
-
-Each pipeline:
-
-- Has a single responsibility
-- Is independently deployable
-- Produces well-defined outputs
-- Uses the canonical schema as the contract between pipelines
+**Project:** Knowledge Factory  
+**Document Version:** 1.0  
+**Status:** Active  
+**Type:** Processing Pipeline Architecture
 
 ---
 
-# 2. Pipeline Architecture
+# Purpose
 
-```
-                    Upload PDF
-                         │
-                         ▼
-                 Raw Storage Bucket
-                         │
-                  Object Finalized
-                         │
-                         ▼
-                 Pipeline 1
-              Document Ingestion
-                         │
-                         ▼
-                 Canonical JSON
-                         │
-                         ▼
-               Processed Bucket
-                         │
-                         ▼
-                 Firestore Catalog
-                         │
-      ┌──────────────────┼──────────────────┐
-      ▼                  ▼                  ▼
- Pipeline 2         Pipeline 3         Pipeline 4
- Lesson Builder     Chunk Builder      Publishing
-```
+This document describes the end-to-end document processing pipeline implemented by the Knowledge Factory platform.
+
+The pipeline transforms unstructured documents into a technology-independent canonical representation that can be consumed by downstream applications.
+
+This document focuses on the processing stages only. Infrastructure, deployment, and storage details are documented separately.
 
 ---
 
-# 3. Pipeline Design Principles
+# Design Principles
 
-- Event-driven
-- Stateless execution
-- Single responsibility
-- Technology independent
-- Immutable outputs
-- Idempotent processing
-- Canonical schema between pipelines
+The processing pipeline follows these principles:
 
----
-
-# 4. Pipeline 1 – Document Ingestion
-
-## Purpose
-
-Transform an uploaded PDF into the Knowledge Factory Canonical Schema.
+- Single responsibility per stage.
+- Technology-independent canonical model.
+- Pluggable provider architecture.
+- Stateless processing where possible.
+- Validation before publication.
+- Extensible for future document providers.
 
 ---
 
-## Trigger
+# High-Level Pipeline
 
-Cloud Storage Object Finalized Event
-
----
-
-## Input
-
-```
-PDF
+```text
+                Source Document
+                       │
+                       ▼
+                Document Ingestion
+                       │
+                       ▼
+             Document Processing Provider
+          (Google Document AI, Future Providers)
+                       │
+                       ▼
+               Provider Adapter Layer
+                       │
+                       ▼
+             Canonical Document Model
+                       │
+                       ▼
+                 Normalization
+                       │
+                       ▼
+                  Outline Builder
+                       │
+                       ▼
+                   Validation
+                       │
+                       ▼
+                   Publishing
+                       │
+                       ▼
+          Firestore / Cloud Storage / Consumers
 ```
 
 ---
 
-## Processing Steps
+# Pipeline Stages
 
-```
-Receive Storage Event
+## 1. Document Ingestion
 
-↓
+### Purpose
 
-Download PDF
+Receive the source document for processing.
 
-↓
+### Input
 
-Document AI OCR
+- PDF
+- Image
+- Other supported document formats
 
-↓
+### Output
 
-Canonical Transformation
-
-↓
-
-Generate Canonical JSON
-
-↓
-
-Upload Canonical JSON
-
-↓
-
-Write Firestore Metadata
-```
+Document submitted to the configured processing provider.
 
 ---
 
-## Output
+## 2. Document Processing Provider
 
-### Processed Bucket
+### Purpose
 
-```
-processed/
-    canonical/
-        cbse/
-            grade10/
-                mathematics/
-                    matrices.json
-```
+Extract structured information from the source document.
 
-### Firestore
+Examples include:
 
-Metadata record
+- Google Document AI
+- Azure Document Intelligence (future)
+- OCR engines (future)
 
----
+### Output
 
-## Status
-
-✅ Active (Version 1)
+Provider-specific extraction result.
 
 ---
 
-# 5. Pipeline 2 – Lesson Builder
+## 3. Provider Adapter
 
-## Purpose
+### Purpose
 
-Generate lesson-oriented learning content from canonical documents.
+Convert provider-specific output into the Knowledge Factory canonical model.
 
----
+Responsibilities:
 
-## Trigger
+- Remove provider-specific concepts.
+- Standardize extracted information.
+- Produce canonical document structure.
 
-Canonical JSON Created
+### Output
 
----
-
-## Input
-
-```
-Canonical JSON
-```
+Canonical document.
 
 ---
 
-## Output
+## 4. Canonical Model
 
-```
-lesson.json
-```
+### Purpose
 
----
+Represent the document using a technology-independent schema.
 
-## Status
+Responsibilities:
 
-Planned
-
----
-
-# 6. Pipeline 3 – Chunk Builder
-
-## Purpose
-
-Split canonical content into semantic chunks for AI retrieval.
+- Preserve document structure.
+- Preserve semantic meaning.
+- Provide a consistent representation for downstream processing.
 
 ---
 
-## Trigger
+## 5. Normalization
 
-Canonical JSON Created
+### Purpose
 
----
+Standardize canonical data.
 
-## Input
+Typical activities include:
 
-```
-Canonical JSON
-```
-
----
-
-## Output
-
-```
-chunks.json
-```
+- Text normalization
+- Metadata normalization
+- Structural cleanup
+- Consistency checks
 
 ---
 
-## Status
+## 6. Outline Builder
 
-Planned
+### Purpose
 
----
+Generate the logical document outline.
 
-# 7. Pipeline 4 – Embedding Builder
+Examples:
 
-## Purpose
-
-Generate vector embeddings from semantic chunks.
-
----
-
-## Trigger
-
-Chunk JSON Created
+- Chapters
+- Headings
+- Sections
+- Subsections
 
 ---
 
-## Input
+## 7. Validation
 
-```
-chunks.json
-```
+### Purpose
 
----
+Validate the canonical document before publication.
 
-## Output
+Validation includes:
 
-```
-Vector Index
-```
+- Required metadata
+- Structural consistency
+- Schema validation
+- Processing completeness
 
----
-
-## Status
-
-Planned
+Invalid documents must not proceed to publication.
 
 ---
 
-# 8. Pipeline 5 – Publishing
+## 8. Publishing
 
-## Purpose
+### Purpose
 
-Publish validated knowledge assets for consumer applications.
+Publish validated canonical documents.
 
----
+Supported targets include:
 
-## Trigger
-
-Pipeline Approval
-
----
-
-## Input
-
-- Canonical JSON
-- Lesson JSON
-- Chunk JSON
+- Firestore
+- Cloud Storage
+- Future knowledge repositories
 
 ---
 
-## Output
+# Pipeline Characteristics
 
-Published Knowledge Package
-
----
-
-## Status
-
-Planned
-
----
-
-# 9. Canonical Data Flow
-
-```
-PDF
-
-↓
-
-Document AI
-
-↓
-
-Canonical JSON
-
-↓
-
-Lesson JSON
-
-↓
-
-Chunk JSON
-
-↓
-
-Embeddings
-
-↓
-
-Published Knowledge
-```
-
-The canonical schema is the contract between every pipeline.
+| Characteristic | Description |
+|---------------|-------------|
+| Processing Model | Sequential |
+| Canonical Representation | Required |
+| Provider Independence | Supported |
+| Extensible | Yes |
+| Infrastructure Independent | Yes |
 
 ---
 
-# 10. Pipeline Ownership
+# Error Handling
 
-| Pipeline | Responsibility |
-|----------|----------------|
-| Pipeline 1 | Document ingestion |
-| Pipeline 2 | Lesson generation |
-| Pipeline 3 | Chunk generation |
-| Pipeline 4 | Embedding generation |
-| Pipeline 5 | Knowledge publishing |
+Errors should be handled at the stage where they occur.
 
----
+Possible actions include:
 
-# 11. Error Handling
+- Retry
+- Skip
+- Fail processing
+- Log diagnostics
 
-Each pipeline must:
-
-- Log processing status
-- Retry transient failures
-- Record failure metadata
-- Never overwrite successful artifacts
-- Support idempotent reprocessing
+Validation failures must prevent publication.
 
 ---
 
-# 12. Versioning
+# Extensibility
 
-Pipeline outputs must include:
+The pipeline is designed so that new providers or processing stages can be introduced without redesigning the overall architecture.
 
-- Pipeline Version
-- Processing Timestamp
-- Source Document ID
-- Canonical Schema Version
+Examples:
 
----
-
-# 13. Pipeline Roadmap
-
-| Pipeline | Status |
-|----------|--------|
-| Document Ingestion | ✅ Active |
-| Lesson Builder | Planned |
-| Chunk Builder | Planned |
-| Embedding Builder | Planned |
-| Publishing Pipeline | Planned |
+- Additional OCR providers
+- New validation stages
+- AI-based enrichment
+- Alternative publishing targets
 
 ---
 
-# 14. Processing Lifecycle
+# Related Documents
 
-```
-Upload PDF
-      │
-      ▼
-Pipeline 1
-(Document Ingestion)
-      │
-      ▼
-Canonical JSON
-      │
-      ├────────► Firestore Metadata
-      │
-      ▼
-Pipeline 2
-(Lesson Builder)
-      │
-      ▼
-Pipeline 3
-(Chunk Builder)
-      │
-      ▼
-Pipeline 4
-(Embedding Builder)
-      │
-      ▼
-Pipeline 5
-(Publishing)
-      │
-      ▼
-Knowledge Ready for Consumers
-```
+| Document | Purpose |
+|----------|---------|
+| ARCHITECTURE.md | High-level architecture |
+| Canonical Schema.md | Canonical document model |
+| Storage Strategy.md | Storage architecture |
+| Firestore Metadata.md | Firestore metadata model |
+| Infrastructure.md | Infrastructure architecture |
 
 ---
 
-# Version History
+# Future Enhancements
 
-| Version | Date | Description |
-|----------|------------|----------------------------|
-| 1.0.0 | 2026-07-29 | Initial processing pipeline definition |
+Potential future pipeline enhancements include:
+
+- Parallel processing
+- Asynchronous orchestration
+- Event-driven workflows
+- AI-assisted enrichment
+- Multi-provider document processing
+- Quality scoring
+- Processing analytics
+- Monitoring and observability
