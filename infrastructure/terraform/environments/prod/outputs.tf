@@ -48,19 +48,19 @@ output "document_ai_processor_location" {
 }
 
 output "function_name" {
-  description = "Cloud Run Function name"
-
-  value = google_cloudfunctions2_function.pdf_ingestion.name
+  value = module.cloudrun.function_name
 }
 
 output "service_uri" {
-  description = "Cloud Run Function URI"
-
-  value = google_cloudfunctions2_function.pdf_ingestion.service_config[0].uri
+  value = module.cloudrun.function_uri
 }
 
 output "service_account" {
-  description = "Cloud Run Function service account"
+  value = module.cloudrun.service_account_email
+}
 
-  value = google_cloudfunctions2_function.pdf_ingestion.service_config[0].service_account_email
+output "artifacts_bucket_name" {
+  description = "Deployment artifacts bucket"
+
+  value = module.storage.artifacts_bucket_name
 }

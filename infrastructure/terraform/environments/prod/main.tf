@@ -1,6 +1,22 @@
+resource "google_project_service" "required_services" {
+  for_each = toset([
+    "cloudfunctions.googleapis.com",
+    "cloudbuild.googleapis.com",
+    "artifactregistry.googleapis.com",
+    "eventarc.googleapis.com",
+    "run.googleapis.com"
+  ])
+
+  project = var.project_id
+  service = each.value
+
+  disable_on_destroy = false
+}
+
+
 module "storage" {
   source = "../../modules/storage"
-
+   project_id = var.project_id
   location = var.region
 
   buckets = {
@@ -23,6 +39,12 @@ module "storage" {
       name          = "${var.project_id}-archive"
       storage_class = "COLDLINE"
     }
+    artifacts = {
+      name          = "${var.project_id}-artifacts"
+      storage_class = "STANDARD"
+    }
+
+    
   }
 }
 
@@ -131,10 +153,16 @@ module "cloudrun" {
   region     = var.region
 
   function_name         = "knowledge-factory-ingestion"
-  service_account_email  = module.service_accounts.service_account_emails["cloudrun"]
-  raw_bucket             = module.storage.bucket_names["raw"]
-  processed_bucket       = module.storage.bucket_names["processed"]
-  firestore_database     = module.firestore.database_name
-  document_ai_processor   = module.document_ai.processor_name
-  max_chunk_pages        = 25
-}
+  service_account_email = module.service_accounts.service_account_emails["cloudrun"]
+  raw_bucket            = module.storage.bucket_names["raw"]
+  processed_bucket      = module.storage.bucket_names["processed"]
+  source_bucket         = module.storage.artifacts_bucket_name
+  source_object         = "functions/pdf_ingestion.zip"
+  firestore_database    = module.firestore.database_name
+  document_ai_processor = module.document_ai.processor_name
+  max_chunk_pages       = 25
+
+  depends_on = [
+    google_project_service.required_services
+  ]
+    }

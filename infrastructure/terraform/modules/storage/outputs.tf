@@ -6,3 +6,9 @@ output "bucket_names" {
     key => bucket.name
   }
 }
+
+output "artifacts_bucket_name" {
+  description = "Deployment artifacts bucket"
+
+  value = google_storage_bucket.bucket["artifacts"].name
+}

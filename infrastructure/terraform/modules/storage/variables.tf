@@ -4,12 +4,34 @@ variable "location" {
   type        = string
 }
 
-variable "buckets" {
-  description = "Map of each buckets to create"
+variable "project_id" {
+  description = "Google Cloud project ID"
+  type        = string
+}
 
+
+variable "buckets" {
+  description = "Storage buckets to create"
 
   type = map(object({
-    name          = string
     storage_class = string
   }))
+
+  default = {
+    raw = {
+      storage_class = "STANDARD"
+    }
+
+    processed = {
+      storage_class = "STANDARD"
+    }
+
+    archive = {
+      storage_class = "COLDLINE"
+    }
+
+    artifacts = {
+      storage_class = "STANDARD"
+    }
+  }
 }
