@@ -103,6 +103,8 @@ module "storage_iam" {
   source = "../../modules/storage_iam"
 
   bindings = local.storage_iam_bindings
+
+  raw_bucket_name = module.storage.bucket_names["raw"]
 }
 
 module "firestore" {
@@ -163,6 +165,9 @@ module "cloudrun" {
   max_chunk_pages       = 25
 
   depends_on = [
-    google_project_service.required_services
+    google_project_service.required_services,
+    module.storage_iam,
+    module.project_iam
+   
   ]
     }

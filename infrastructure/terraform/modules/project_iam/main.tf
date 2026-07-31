@@ -9,3 +9,10 @@ resource "google_project_iam_member" "member" {
   role = each.value.role
 
 }
+
+resource "google_project_iam_member" "gcs_pubsub_publisher" {
+  project = var.project_id
+  role    = "roles/pubsub.publisher"
+
+  member = "serviceAccount:service-63974849828@gs-project-accounts.iam.gserviceaccount.com"
+}

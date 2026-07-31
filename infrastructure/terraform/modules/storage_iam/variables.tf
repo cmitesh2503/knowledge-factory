@@ -10,3 +10,7 @@ variable "bindings" {
     member = string
   }))
 }
+
+variable "raw_bucket_name" {
+  type = string
+}
