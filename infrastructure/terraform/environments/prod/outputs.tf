@@ -46,3 +46,21 @@ output "document_ai_processor_location" {
   value = module.document_ai.processor_location
 
 }
+
+output "function_name" {
+  description = "Cloud Run Function name"
+
+  value = google_cloudfunctions2_function.pdf_ingestion.name
+}
+
+output "service_uri" {
+  description = "Cloud Run Function URI"
+
+  value = google_cloudfunctions2_function.pdf_ingestion.service_config[0].uri
+}
+
+output "service_account" {
+  description = "Cloud Run Function service account"
+
+  value = google_cloudfunctions2_function.pdf_ingestion.service_config[0].service_account_email
+}

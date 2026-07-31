@@ -123,3 +123,18 @@ module "document_ai" {
   processor_type = local.document_ai.processor_type
 
 }
+
+module "cloudrun" {
+  source = "../../modules/cloudrun"
+
+  project_id = var.project_id
+  region     = var.region
+
+  function_name         = "knowledge-factory-ingestion"
+  service_account_email  = module.service_accounts.service_account_emails["cloudrun"]
+  raw_bucket             = module.storage.bucket_names["raw"]
+  processed_bucket       = module.storage.bucket_names["processed"]
+  firestore_database     = module.firestore.database_name
+  document_ai_processor   = module.document_ai.processor_name
+  max_chunk_pages        = 25
+}

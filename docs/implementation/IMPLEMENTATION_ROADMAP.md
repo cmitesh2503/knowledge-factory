@@ -341,13 +341,15 @@ Immediate priorities:
 
 # Next Milestones
 
-1. Complete Cloud Run deployment.
-2. Deploy Google Cloud Workflows.
-3. Implement processing services.
-4. Generate canonical JSON.
-5. Publish metadata to Firestore.
-6. Execute end-to-end testing.
-7. Prepare production deployment.
+1. Complete Cloud Run Functions (Gen2) deployment.
+2. Configure Eventarc Storage trigger.
+3. Implement PDF inspection and 25-page chunking.
+4. Integrate Google Document AI.
+5. Generate Canonical JSON.
+6. Persist Canonical JSON to the Processed bucket.
+7. Publish metadata to Firestore.
+8. Execute end-to-end ingestion testing.
+9. Begin Workflow orchestration implementation.
 
 ---
 
