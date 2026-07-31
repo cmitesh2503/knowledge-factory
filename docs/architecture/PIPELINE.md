@@ -63,8 +63,62 @@ The processing pipeline follows these principles:
                        ▼
           Firestore / Cloud Storage / Consumers
 ```
+## Ingestion Pipeline
 
+Cloud Storage (Raw)
+
+↓
+
+Cloud Run Function (Gen2)
+
+↓
+
+Download PDF
+
+↓
+
+Count Pages
+
+↓
+
+If pages > 25
+
+↓
+
+Split PDF
+
+↓
+
+Document AI (per chunk)
+
+↓
+
+Merge Chunk Results
+
+↓
+
+Canonical Mapper
+
+↓
+
+Canonical JSON
+
+↓
+
+Processed Bucket
+
+↓
+
+Firestore Metadata
 ---
+
+## Processing Principles
+
+- One uploaded PDF represents one ingestion job.
+- Chunk size is fixed at 25 pages.
+- Each chunk is processed independently.
+- Chunk outputs are merged before canonical mapping.
+- External consumers always receive one canonical document.
 
 # Pipeline Stages
 

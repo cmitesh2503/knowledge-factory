@@ -111,6 +111,50 @@ The platform must support additional providers, storage targets, and publishing 
                        ▼
          Firestore / Storage / Consumers
 ```
+                +----------------------+
+                |   Cloud Storage      |
+                |    Raw Bucket        |
+                +----------+-----------+
+                           |
+                    Storage Event
+                           |
+                           ▼
+                +----------------------+
+                | Cloud Run Function   |
+                |    (Gen2)            |
+                +----------+-----------+
+                           |
+                           ▼
+                +----------------------+
+                | PDF Inspector        |
+                | Count Pages          |
+                +----------+-----------+
+                           |
+          +----------------+----------------+
+          |                                 |
+    Pages <= 25                      Pages > 25
+          |                                 |
+          ▼                                 ▼
+ Document AI                    Split into 25-page chunks
+                                         |
+                                         ▼
+                               Document AI per chunk
+                                         |
+                                         ▼
+                               Merge Chunk Results
+                                         |
+                                         ▼
+                               Canonical Mapper
+                                         |
+                                         ▼
+                +-------------------------------+
+                | Canonical JSON                |
+                +---------------+---------------+
+                                |
+                +---------------+---------------+
+                |                               |
+                ▼                               ▼
+        Processed Bucket             Firestore Metadata
 
 ---
 
@@ -241,6 +285,22 @@ MathVerse is responsible for consuming that knowledge.
 - Documentation reflects implementation.
 - Architecture describes the approved design.
 - Repository evolves incrementally while preserving architectural consistency.
+
+## Document Processing Strategy
+
+Knowledge Factory treats every uploaded PDF as one logical ingestion job.
+
+Google Document AI Layout Parser has a maximum page processing limit.
+To support larger documents, the ingestion pipeline automatically
+splits PDFs into fixed-size chunks before invoking Document AI.
+
+### Processing Rules
+
+- One uploaded PDF = One ingestion job
+- Maximum Document AI chunk size = 25 pages
+- One chunk = One Document AI request
+- Chunking is an internal implementation detail
+- One uploaded PDF always produces one Canonical JSON document
 
 ---
 

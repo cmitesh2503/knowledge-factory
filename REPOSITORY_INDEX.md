@@ -85,6 +85,48 @@ Contents include:
 
 ---
 
+PDF Upload
+
+↓
+
+Cloud Storage
+
+↓
+
+Cloud Run Function (Gen2)
+
+↓
+
+PDF Inspector
+
+↓
+
+25-page Chunking
+
+↓
+
+Document AI
+
+↓
+
+Merge
+
+↓
+
+Canonical Mapper
+
+↓
+
+Canonical JSON
+
+↓
+
+Processed Bucket
+
+↓
+
+Firestore Metadata
+
 ### adr/
 
 Architecture Decision Records (ADRs).

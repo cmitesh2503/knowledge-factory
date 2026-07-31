@@ -29,7 +29,8 @@ This document should always reflect the current state of the repository.
 | Service Accounts | ✅ Complete |
 | Firestore | ✅ Complete |
 | Document AI | ✅ Complete |
-| Cloud Run Infrastructure | 🚧 In Progress |
+| Cloud Run Functions Infrastructure | 🚧 In Progress |
+| Event-Driven Processing Pipeline | 🚧 In Progress |
 | Workflow Orchestration | ⏳ Planned |
 | Processing Services | ⏳ Planned |
 | Canonical Processing Pipeline | ⏳ Planned |
@@ -173,19 +174,26 @@ Provision Document AI resources.
 
 ---
 
-# Phase 8 — Cloud Run
+# Phase 8 — Cloud Run Functions (Gen2)
 
 ## Objective
+
+Deploy the event-driven PDF ingestion function using Cloud Run Functions (Gen2).
+
+The function is triggered automatically by Cloud Storage events and orchestrates the complete ingestion pipeline.
 
 Deploy the processing service.
 
 ### Deliverables
 
-- Cloud Run service
+- Cloud Run Function (Gen2)
+- Eventarc trigger
+- Cloud Storage event integration
 - Service Account integration
-- Firestore connectivity
-- Cloud Storage connectivity
 - Document AI connectivity
+- Firestore connectivity
+- Processed bucket connectivity
+- Deployment validation
 
 ### Status
 
@@ -193,9 +201,21 @@ Deploy the processing service.
 
 ### Current Blocker
 
-Cloud Run deployment has not yet been completed successfully.
+### Current Implementation
 
-Future work should continue from this point.
+Current implementation focuses on building the first production-ready ingestion pipeline.
+
+The pipeline will:
+
+1. Trigger from Cloud Storage.
+2. Download the uploaded PDF.
+3. Count PDF pages.
+4. Split documents into 25-page chunks when required.
+5. Process each chunk using Google Document AI.
+6. Merge all chunk results.
+7. Generate one Canonical JSON document.
+8. Store Canonical JSON in the Processed bucket.
+9. Store document metadata in Firestore.
 
 ---
 
@@ -300,14 +320,22 @@ Prepare the platform for production deployment.
 
 ---
 
+
 # Current Focus
 
-Current implementation work is focused on:
+Current implementation work is focused on delivering the first end-to-end ingestion pipeline.
 
-- Completing Cloud Run deployment
-- Validating Terraform infrastructure
-- Resolving deployment issues
-- Preparing for workflow orchestration
+Immediate priorities:
+
+- Complete Cloud Run Functions (Gen2) deployment
+- Configure Eventarc Storage trigger
+- Implement PDF page inspection
+- Implement automatic 25-page PDF chunking
+- Integrate Google Document AI
+- Merge Document AI results
+- Generate Canonical JSON
+- Store processed output in Cloud Storage
+- Store metadata in Firestore
 
 ---
 
