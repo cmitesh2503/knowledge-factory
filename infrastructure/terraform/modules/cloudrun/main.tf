@@ -54,6 +54,8 @@ resource "google_cloudfunctions2_function" "pdf_ingestion" {
 
       REGION = var.region
 
+      DOCUMENT_AI_LOCATION = "us"
+
       RAW_BUCKET = var.raw_bucket
 
       PROCESSED_BUCKET = var.processed_bucket

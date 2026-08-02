@@ -1,0 +1,2185 @@
+LEVEL: I
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 09:06:17.552
+LOG: Default STARTUP TCP probe succeeded after 1 attempt for container "worker" on port 8080.
+
+LEVEL: I
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 09:06:16.360
+LOG: Starting new instance. Reason: AUTOSCALING - Instance started due to configured scaling factors (e.g. CPU utilization, request throughput, etc.) or no existing capacity for current traffic.
+
+LEVEL: I
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 09:02:10.871
+LOG: Default STARTUP TCP probe succeeded after 1 attempt for container "worker" on port 8080.
+
+LEVEL: I
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 09:02:08.947
+LOG: Starting new instance. Reason: DEPLOYMENT_ROLLOUT - Instance started due to traffic shifting between revisions due to deployment, traffic split adjustment, or deployment health check.
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: JPvjRe1MhJ6C
+TIME_UTC: 2026-08-01 09:00:51.596
+LOG: Exception on / [POST]
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/cloud/storage/blob.py", line 4718, in _prep_and_do_download
+    self._do_download(
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/cloud/storage/blob.py", line 1094, in _do_download
+    response = download.consume(transport, timeout=timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/cloud/storage/_media/requests/download.py", line 280, in consume
+    return _request_helpers.wait_and_retry(retriable_request, self._retry_strategy)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/cloud/storage/_media/requests/_request_helpers.py", line 107, in wait_and_retry
+    return func()
+           ^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 295, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 157, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 215, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 148, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/cloud/storage/_media/requests/download.py", line 262, in retriable_request
+    self._process_response(result)
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/cloud/storage/_media/_download.py", line 230, in _process_response
+    _helpers.require_status_code(
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/cloud/storage/_media/_helpers.py", line 100, in require_status_code
+    raise InvalidResponse(
+google.cloud.storage.exceptions.InvalidResponse: ('Request failed with status code', 404, 'Expected one of', <HTTPStatus.OK: 200>, <HTTPStatus.PARTIAL_CONTENT: 206>)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/execution_id.py", line 157, in wrapper
+    result = view_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 188, in view_func
+    function(event)
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 81, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/main.py", line 82, in ingest_pdf
+    blob.download_to_filename(local_file)
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/cloud/storage/blob.py", line 1425, in download_to_filename
+    self._handle_filename_and_download(
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/cloud/storage/blob.py", line 1298, in _handle_filename_and_download
+    self._prep_and_do_download(
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/cloud/storage/blob.py", line 4732, in _prep_and_do_download
+    _raise_from_invalid_response(exc)
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/cloud/storage/blob.py", line 5240, in _raise_from_invalid_response
+    raise exceptions.from_http_status(response.status_code, message, response=response)
+google.api_core.exceptions.NotFound: 404 GET https://storage.googleapis.com/download/storage/v1/b/knowledge-factory-prod-raw/o/test_matrices.pdf?alt=media: No such object: knowledge-factory-prod-raw/test_matrices.pdf: ('Request failed with status code', 404, 'Expected one of', <HTTPStatus.OK: 200>, <HTTPStatus.PARTIAL_CONTENT: 206>)
+
+LEVEL: E
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 09:00:51.518
+LOG: 
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: IhgsydnU97jl
+TIME_UTC: 2026-08-01 08:59:47.679
+LOG: Exception on / [POST]
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/execution_id.py", line 157, in wrapper
+    result = view_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 188, in view_func
+    function(event)
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 81, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/main.py", line 147, in ingest_pdf
+    logger.info(
+    ^^^^^^
+NameError: name 'logger' is not defined
+
+LEVEL: E
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 08:59:27.261
+LOG: 
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: KiFwQhS2NdE1
+TIME_UTC: 2026-08-01 08:58:37.448
+LOG: Exception on / [POST]
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/execution_id.py", line 157, in wrapper
+    result = view_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 188, in view_func
+    function(event)
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 81, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/main.py", line 147, in ingest_pdf
+    logger.info(
+    ^^^^^^
+NameError: name 'logger' is not defined
+
+LEVEL: E
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 08:58:15.837
+LOG: 
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: qzslz228kN35
+TIME_UTC: 2026-08-01 08:57:38.093
+LOG: Exception on / [POST]
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/execution_id.py", line 157, in wrapper
+    result = view_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 188, in view_func
+    function(event)
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 81, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/main.py", line 147, in ingest_pdf
+    logger.info(
+    ^^^^^^
+NameError: name 'logger' is not defined
+
+LEVEL: E
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 08:57:16.732
+LOG: 
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: IQbKlqAg4mLb
+TIME_UTC: 2026-08-01 08:56:43.925
+LOG: Exception on / [POST]
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/execution_id.py", line 157, in wrapper
+    result = view_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 188, in view_func
+    function(event)
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 81, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/main.py", line 147, in ingest_pdf
+    logger.info(
+    ^^^^^^
+NameError: name 'logger' is not defined
+
+LEVEL: E
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 08:56:21.805
+LOG: 
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: Ks5hOtJOV6ct
+TIME_UTC: 2026-08-01 08:55:50.642
+LOG: Exception on / [POST]
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/execution_id.py", line 157, in wrapper
+    result = view_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 188, in view_func
+    function(event)
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 81, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/main.py", line 147, in ingest_pdf
+    logger.info(
+    ^^^^^^
+NameError: name 'logger' is not defined
+
+LEVEL: E
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 08:55:29.133
+LOG: 
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: DPJ0t4KnwDAb
+TIME_UTC: 2026-08-01 08:55:06.398
+LOG: Exception on / [POST]
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/execution_id.py", line 157, in wrapper
+    result = view_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 188, in view_func
+    function(event)
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 81, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/main.py", line 147, in ingest_pdf
+    logger.info(
+    ^^^^^^
+NameError: name 'logger' is not defined
+
+LEVEL: E
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 08:54:44.262
+LOG: 
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: GLq03GumAuY8
+TIME_UTC: 2026-08-01 08:54:26.424
+LOG: Exception on / [POST]
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/execution_id.py", line 157, in wrapper
+    result = view_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 188, in view_func
+    function(event)
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 81, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/main.py", line 147, in ingest_pdf
+    logger.info(
+    ^^^^^^
+NameError: name 'logger' is not defined
+
+LEVEL: E
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 08:54:05.321
+LOG: 
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: wXUrlvIrsin6
+TIME_UTC: 2026-08-01 08:53:47.285
+LOG: Exception on / [POST]
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/execution_id.py", line 157, in wrapper
+    result = view_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 188, in view_func
+    function(event)
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 81, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/main.py", line 147, in ingest_pdf
+    logger.info(
+    ^^^^^^
+NameError: name 'logger' is not defined
+
+LEVEL: E
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 08:53:23.822
+LOG: 
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 8weNlN1iRvwU
+TIME_UTC: 2026-08-01 08:53:10.030
+LOG: Exception on / [POST]
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/execution_id.py", line 157, in wrapper
+    result = view_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 188, in view_func
+    function(event)
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 81, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/main.py", line 147, in ingest_pdf
+    logger.info(
+    ^^^^^^
+NameError: name 'logger' is not defined
+
+LEVEL: I
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 08:51:59.296
+LOG: Default STARTUP TCP probe succeeded after 1 attempt for container "worker" on port 8080.
+
+LEVEL: I
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 08:51:57.990
+LOG: Starting new instance. Reason: AUTOSCALING - Instance started due to configured scaling factors (e.g. CPU utilization, request throughput, etc.) or no existing capacity for current traffic.
+
+LEVEL: E
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 08:51:39.669
+LOG: 
+
+LEVEL: I
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 08:49:12.596
+LOG: Default STARTUP TCP probe succeeded after 1 attempt for container "worker" on port 8080.
+
+LEVEL: I
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 08:49:10.527
+LOG: Starting new instance. Reason: DEPLOYMENT_ROLLOUT - Instance started due to traffic shifting between revisions due to deployment, traffic split adjustment, or deployment health check.
+
+LEVEL: I
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 08:25:53.072
+LOG: Default STARTUP TCP probe succeeded after 1 attempt for container "worker" on port 8080.
+
+LEVEL: I
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 08:25:50.873
+LOG: Starting new instance. Reason: AUTOSCALING - Instance started due to configured scaling factors (e.g. CPU utilization, request throughput, etc.) or no existing capacity for current traffic.
+
+LEVEL: I
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 08:25:50.825
+LOG: 
+
+LEVEL: I
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 07:49:25.898
+LOG: Default STARTUP TCP probe succeeded after 1 attempt for container "worker" on port 8080.
+
+LEVEL: I
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 07:49:24.855
+LOG: Starting new instance. Reason: AUTOSCALING - Instance started due to configured scaling factors (e.g. CPU utilization, request throughput, etc.) or no existing capacity for current traffic.
+
+LEVEL: I
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 07:49:05.562
+LOG: 
+
+LEVEL: I
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 07:44:45.976
+LOG: Default STARTUP TCP probe succeeded after 1 attempt for container "worker" on port 8080.
+
+LEVEL: I
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 07:44:44.101
+LOG: Starting new instance. Reason: DEPLOYMENT_ROLLOUT - Instance started due to traffic shifting between revisions due to deployment, traffic split adjustment, or deployment health check.
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: brQZPcxukJcm
+TIME_UTC: 2026-08-01 07:39:49.533
+LOG: Exception on / [POST]
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 55, in error_remapped_callable
+    return callable_(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 276, in __call__
+    response, ignored_call = self._with_call(
+                             ^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 331, in _with_call
+    return call.result(), call
+           ^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 447, in result
+    raise self
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 314, in continuation
+    response, call = self._thunk(new_method).with_call(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 1182, in with_call
+    return _end_unary_response_blocking(state, call, True, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 999, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.INVALID_ARGUMENT
+	details = "Request contains an invalid argument."
+	debug_error_string = "INVALID_ARGUMENT:Request contains an invalid argument."
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/execution_id.py", line 157, in wrapper
+    result = view_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 188, in view_func
+    function(event)
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 81, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/main.py", line 122, in ingest_pdf
+    result = documentai_client.process_document(request=request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/cloud/documentai_v1/services/document_processor_service/client.py", line 969, in process_document
+    response = rpc(
+               ^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 128, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 295, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 157, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 215, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 148, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 57, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.InvalidArgument: 400 Request contains an invalid argument. [field_violations {
+  field: "name"
+  description: "Invalid location: \'asia-south1\' must match the server deployment \'us\'"
+}
+]
+
+LEVEL: E
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 07:39:46.745
+LOG: 
+
+LEVEL: I
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 07:39:39.724
+LOG: Default STARTUP TCP probe succeeded after 1 attempt for container "worker" on port 8080.
+
+LEVEL: I
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 07:39:37.783
+LOG: Starting new instance. Reason: DEPLOYMENT_ROLLOUT - Instance started due to traffic shifting between revisions due to deployment, traffic split adjustment, or deployment health check.
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: qPMTI87UscpH
+TIME_UTC: 2026-08-01 07:36:14.876
+LOG: Exception on / [POST]
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 55, in error_remapped_callable
+    return callable_(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 276, in __call__
+    response, ignored_call = self._with_call(
+                             ^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 331, in _with_call
+    return call.result(), call
+           ^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 447, in result
+    raise self
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 314, in continuation
+    response, call = self._thunk(new_method).with_call(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 1182, in with_call
+    return _end_unary_response_blocking(state, call, True, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 999, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.INVALID_ARGUMENT
+	details = "Request contains an invalid argument."
+	debug_error_string = "INVALID_ARGUMENT:Request contains an invalid argument."
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/execution_id.py", line 157, in wrapper
+    result = view_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 188, in view_func
+    function(event)
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 81, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/main.py", line 122, in ingest_pdf
+    result = documentai_client.process_document(request=request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/cloud/documentai_v1/services/document_processor_service/client.py", line 969, in process_document
+    response = rpc(
+               ^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 128, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 295, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 157, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 215, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 148, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 57, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.InvalidArgument: 400 Request contains an invalid argument. [field_violations {
+  field: "name"
+  description: "Invalid location: \'asia-south1\' must match the server deployment \'us\'"
+}
+]
+
+LEVEL: E
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 07:36:13.959
+LOG: 
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 9z27iAzNFSco
+TIME_UTC: 2026-08-01 07:33:03.163
+LOG: Exception on / [POST]
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 55, in error_remapped_callable
+    return callable_(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 276, in __call__
+    response, ignored_call = self._with_call(
+                             ^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 331, in _with_call
+    return call.result(), call
+           ^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 447, in result
+    raise self
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 314, in continuation
+    response, call = self._thunk(new_method).with_call(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 1182, in with_call
+    return _end_unary_response_blocking(state, call, True, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 999, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.INVALID_ARGUMENT
+	details = "Request contains an invalid argument."
+	debug_error_string = "INVALID_ARGUMENT:Request contains an invalid argument."
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/execution_id.py", line 157, in wrapper
+    result = view_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 188, in view_func
+    function(event)
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 81, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/main.py", line 122, in ingest_pdf
+    result = documentai_client.process_document(request=request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/cloud/documentai_v1/services/document_processor_service/client.py", line 969, in process_document
+    response = rpc(
+               ^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 128, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 295, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 157, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 215, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 148, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 57, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.InvalidArgument: 400 Request contains an invalid argument. [field_violations {
+  field: "name"
+  description: "Invalid location: \'asia-south1\' must match the server deployment \'us\'"
+}
+]
+
+LEVEL: E
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 07:33:02.033
+LOG: 
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 3QEmyuIIWURF
+TIME_UTC: 2026-08-01 07:30:47.058
+LOG: Exception on / [POST]
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 55, in error_remapped_callable
+    return callable_(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 276, in __call__
+    response, ignored_call = self._with_call(
+                             ^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 331, in _with_call
+    return call.result(), call
+           ^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 447, in result
+    raise self
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 314, in continuation
+    response, call = self._thunk(new_method).with_call(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 1182, in with_call
+    return _end_unary_response_blocking(state, call, True, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 999, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.INVALID_ARGUMENT
+	details = "Request contains an invalid argument."
+	debug_error_string = "INVALID_ARGUMENT:Request contains an invalid argument."
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/execution_id.py", line 157, in wrapper
+    result = view_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 188, in view_func
+    function(event)
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 81, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/main.py", line 122, in ingest_pdf
+    result = documentai_client.process_document(request=request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/cloud/documentai_v1/services/document_processor_service/client.py", line 969, in process_document
+    response = rpc(
+               ^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 128, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 295, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 157, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 215, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 148, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 57, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.InvalidArgument: 400 Request contains an invalid argument. [field_violations {
+  field: "name"
+  description: "Invalid location: \'asia-south1\' must match the server deployment \'us\'"
+}
+]
+
+LEVEL: E
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 07:30:45.911
+LOG: 
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: cKe9qULhxNC9
+TIME_UTC: 2026-08-01 07:28:54.065
+LOG: Exception on / [POST]
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 55, in error_remapped_callable
+    return callable_(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 276, in __call__
+    response, ignored_call = self._with_call(
+                             ^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 331, in _with_call
+    return call.result(), call
+           ^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 447, in result
+    raise self
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 314, in continuation
+    response, call = self._thunk(new_method).with_call(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 1182, in with_call
+    return _end_unary_response_blocking(state, call, True, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 999, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.INVALID_ARGUMENT
+	details = "Request contains an invalid argument."
+	debug_error_string = "INVALID_ARGUMENT:Request contains an invalid argument."
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/execution_id.py", line 157, in wrapper
+    result = view_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 188, in view_func
+    function(event)
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 81, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/main.py", line 122, in ingest_pdf
+    result = documentai_client.process_document(request=request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/cloud/documentai_v1/services/document_processor_service/client.py", line 969, in process_document
+    response = rpc(
+               ^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 128, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 295, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 157, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 215, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 148, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 57, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.InvalidArgument: 400 Request contains an invalid argument. [field_violations {
+  field: "name"
+  description: "Invalid location: \'asia-south1\' must match the server deployment \'us\'"
+}
+]
+
+LEVEL: E
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 07:28:53.134
+LOG: 
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: dIEUUDbkdDQx
+TIME_UTC: 2026-08-01 07:27:10.274
+LOG: Exception on / [POST]
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 55, in error_remapped_callable
+    return callable_(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 276, in __call__
+    response, ignored_call = self._with_call(
+                             ^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 331, in _with_call
+    return call.result(), call
+           ^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 447, in result
+    raise self
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 314, in continuation
+    response, call = self._thunk(new_method).with_call(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 1182, in with_call
+    return _end_unary_response_blocking(state, call, True, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 999, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.INVALID_ARGUMENT
+	details = "Request contains an invalid argument."
+	debug_error_string = "INVALID_ARGUMENT:Request contains an invalid argument."
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/execution_id.py", line 157, in wrapper
+    result = view_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 188, in view_func
+    function(event)
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 81, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/main.py", line 122, in ingest_pdf
+    result = documentai_client.process_document(request=request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/cloud/documentai_v1/services/document_processor_service/client.py", line 969, in process_document
+    response = rpc(
+               ^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 128, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 295, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 157, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 215, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 148, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 57, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.InvalidArgument: 400 Request contains an invalid argument. [field_violations {
+  field: "name"
+  description: "Invalid location: \'asia-south1\' must match the server deployment \'us\'"
+}
+]
+
+LEVEL: E
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 07:27:09.355
+LOG: 
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: e3bHb0z0BW6v
+TIME_UTC: 2026-08-01 07:26:00.141
+LOG: Exception on / [POST]
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 55, in error_remapped_callable
+    return callable_(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 276, in __call__
+    response, ignored_call = self._with_call(
+                             ^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 331, in _with_call
+    return call.result(), call
+           ^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 447, in result
+    raise self
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 314, in continuation
+    response, call = self._thunk(new_method).with_call(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 1182, in with_call
+    return _end_unary_response_blocking(state, call, True, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 999, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.INVALID_ARGUMENT
+	details = "Request contains an invalid argument."
+	debug_error_string = "INVALID_ARGUMENT:Request contains an invalid argument."
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/execution_id.py", line 157, in wrapper
+    result = view_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 188, in view_func
+    function(event)
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 81, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/main.py", line 122, in ingest_pdf
+    result = documentai_client.process_document(request=request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/cloud/documentai_v1/services/document_processor_service/client.py", line 969, in process_document
+    response = rpc(
+               ^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 128, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 295, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 157, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 215, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 148, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 57, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.InvalidArgument: 400 Request contains an invalid argument. [field_violations {
+  field: "name"
+  description: "Invalid location: \'asia-south1\' must match the server deployment \'us\'"
+}
+]
+
+LEVEL: E
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 07:25:59.182
+LOG: 
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: IJSpVcAa6rgM
+TIME_UTC: 2026-08-01 07:24:52.359
+LOG: Exception on / [POST]
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 55, in error_remapped_callable
+    return callable_(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 276, in __call__
+    response, ignored_call = self._with_call(
+                             ^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 331, in _with_call
+    return call.result(), call
+           ^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 447, in result
+    raise self
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 314, in continuation
+    response, call = self._thunk(new_method).with_call(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 1182, in with_call
+    return _end_unary_response_blocking(state, call, True, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 999, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.INVALID_ARGUMENT
+	details = "Request contains an invalid argument."
+	debug_error_string = "INVALID_ARGUMENT:Request contains an invalid argument."
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/execution_id.py", line 157, in wrapper
+    result = view_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 188, in view_func
+    function(event)
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 81, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/main.py", line 122, in ingest_pdf
+    result = documentai_client.process_document(request=request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/cloud/documentai_v1/services/document_processor_service/client.py", line 969, in process_document
+    response = rpc(
+               ^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 128, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 295, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 157, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 215, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 148, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 57, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.InvalidArgument: 400 Request contains an invalid argument. [field_violations {
+  field: "name"
+  description: "Invalid location: \'asia-south1\' must match the server deployment \'us\'"
+}
+]
+
+LEVEL: E
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 07:24:51.238
+LOG: 
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: T1AzSs3yu7VY
+TIME_UTC: 2026-08-01 07:23:59.455
+LOG: Exception on / [POST]
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 55, in error_remapped_callable
+    return callable_(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 276, in __call__
+    response, ignored_call = self._with_call(
+                             ^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 331, in _with_call
+    return call.result(), call
+           ^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 447, in result
+    raise self
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 314, in continuation
+    response, call = self._thunk(new_method).with_call(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 1182, in with_call
+    return _end_unary_response_blocking(state, call, True, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 999, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.INVALID_ARGUMENT
+	details = "Request contains an invalid argument."
+	debug_error_string = "INVALID_ARGUMENT:Request contains an invalid argument."
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/execution_id.py", line 157, in wrapper
+    result = view_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 188, in view_func
+    function(event)
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 81, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/main.py", line 122, in ingest_pdf
+    result = documentai_client.process_document(request=request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/cloud/documentai_v1/services/document_processor_service/client.py", line 969, in process_document
+    response = rpc(
+               ^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 128, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 295, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 157, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 215, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 148, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 57, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.InvalidArgument: 400 Request contains an invalid argument. [field_violations {
+  field: "name"
+  description: "Invalid location: \'asia-south1\' must match the server deployment \'us\'"
+}
+]
+
+LEVEL: E
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 07:23:58.364
+LOG: 
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: SiTdB0qSQu7V
+TIME_UTC: 2026-08-01 07:23:17.547
+LOG: Exception on / [POST]
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 55, in error_remapped_callable
+    return callable_(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 276, in __call__
+    response, ignored_call = self._with_call(
+                             ^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 331, in _with_call
+    return call.result(), call
+           ^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 447, in result
+    raise self
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 314, in continuation
+    response, call = self._thunk(new_method).with_call(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 1182, in with_call
+    return _end_unary_response_blocking(state, call, True, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 999, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.INVALID_ARGUMENT
+	details = "Request contains an invalid argument."
+	debug_error_string = "INVALID_ARGUMENT:Request contains an invalid argument."
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/execution_id.py", line 157, in wrapper
+    result = view_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 188, in view_func
+    function(event)
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 81, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/main.py", line 122, in ingest_pdf
+    result = documentai_client.process_document(request=request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/cloud/documentai_v1/services/document_processor_service/client.py", line 969, in process_document
+    response = rpc(
+               ^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 128, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 295, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 157, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 215, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 148, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 57, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.InvalidArgument: 400 Request contains an invalid argument. [field_violations {
+  field: "name"
+  description: "Invalid location: \'asia-south1\' must match the server deployment \'us\'"
+}
+]
+
+LEVEL: E
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 07:23:16.589
+LOG: 
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: YwweJlM8obEC
+TIME_UTC: 2026-08-01 07:22:50.848
+LOG: Exception on / [POST]
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 55, in error_remapped_callable
+    return callable_(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 276, in __call__
+    response, ignored_call = self._with_call(
+                             ^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 331, in _with_call
+    return call.result(), call
+           ^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 447, in result
+    raise self
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 314, in continuation
+    response, call = self._thunk(new_method).with_call(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 1182, in with_call
+    return _end_unary_response_blocking(state, call, True, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 999, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.INVALID_ARGUMENT
+	details = "Request contains an invalid argument."
+	debug_error_string = "INVALID_ARGUMENT:Request contains an invalid argument."
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/execution_id.py", line 157, in wrapper
+    result = view_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 188, in view_func
+    function(event)
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 81, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/main.py", line 122, in ingest_pdf
+    result = documentai_client.process_document(request=request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/cloud/documentai_v1/services/document_processor_service/client.py", line 969, in process_document
+    response = rpc(
+               ^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 128, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 295, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 157, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 215, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 148, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 57, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.InvalidArgument: 400 Request contains an invalid argument. [field_violations {
+  field: "name"
+  description: "Invalid location: \'asia-south1\' must match the server deployment \'us\'"
+}
+]
+
+LEVEL: E
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 07:22:49.838
+LOG: 
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: HxzAdWsfZ3aT
+TIME_UTC: 2026-08-01 07:22:23.094
+LOG: Exception on / [POST]
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 55, in error_remapped_callable
+    return callable_(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 276, in __call__
+    response, ignored_call = self._with_call(
+                             ^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 331, in _with_call
+    return call.result(), call
+           ^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 447, in result
+    raise self
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 314, in continuation
+    response, call = self._thunk(new_method).with_call(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 1182, in with_call
+    return _end_unary_response_blocking(state, call, True, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 999, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.INVALID_ARGUMENT
+	details = "Request contains an invalid argument."
+	debug_error_string = "INVALID_ARGUMENT:Request contains an invalid argument."
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/execution_id.py", line 157, in wrapper
+    result = view_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 188, in view_func
+    function(event)
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 81, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/main.py", line 122, in ingest_pdf
+    result = documentai_client.process_document(request=request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/cloud/documentai_v1/services/document_processor_service/client.py", line 969, in process_document
+    response = rpc(
+               ^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 128, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 295, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 157, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 215, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 148, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 57, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.InvalidArgument: 400 Request contains an invalid argument. [field_violations {
+  field: "name"
+  description: "Invalid location: \'asia-south1\' must match the server deployment \'us\'"
+}
+]
+
+LEVEL: E
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 07:22:22.154
+LOG: 
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: Nv2jUPC5HKbm
+TIME_UTC: 2026-08-01 07:22:00.433
+LOG: Exception on / [POST]
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 55, in error_remapped_callable
+    return callable_(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 276, in __call__
+    response, ignored_call = self._with_call(
+                             ^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 331, in _with_call
+    return call.result(), call
+           ^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 447, in result
+    raise self
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 314, in continuation
+    response, call = self._thunk(new_method).with_call(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 1182, in with_call
+    return _end_unary_response_blocking(state, call, True, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 999, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.INVALID_ARGUMENT
+	details = "Request contains an invalid argument."
+	debug_error_string = "INVALID_ARGUMENT:Request contains an invalid argument."
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/execution_id.py", line 157, in wrapper
+    result = view_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 188, in view_func
+    function(event)
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 81, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/main.py", line 122, in ingest_pdf
+    result = documentai_client.process_document(request=request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/cloud/documentai_v1/services/document_processor_service/client.py", line 969, in process_document
+    response = rpc(
+               ^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 128, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 295, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 157, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 215, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 148, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 57, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.InvalidArgument: 400 Request contains an invalid argument. [field_violations {
+  field: "name"
+  description: "Invalid location: \'asia-south1\' must match the server deployment \'us\'"
+}
+]
+
+LEVEL: E
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 07:21:58.740
+LOG: 
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: vIz61b70ReQu
+TIME_UTC: 2026-08-01 07:21:41.924
+LOG: Exception on / [POST]
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 55, in error_remapped_callable
+    return callable_(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 276, in __call__
+    response, ignored_call = self._with_call(
+                             ^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 331, in _with_call
+    return call.result(), call
+           ^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 447, in result
+    raise self
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 314, in continuation
+    response, call = self._thunk(new_method).with_call(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 1182, in with_call
+    return _end_unary_response_blocking(state, call, True, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 999, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.INVALID_ARGUMENT
+	details = "Request contains an invalid argument."
+	debug_error_string = "INVALID_ARGUMENT:Request contains an invalid argument."
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/execution_id.py", line 157, in wrapper
+    result = view_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 188, in view_func
+    function(event)
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 81, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/main.py", line 122, in ingest_pdf
+    result = documentai_client.process_document(request=request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/cloud/documentai_v1/services/document_processor_service/client.py", line 969, in process_document
+    response = rpc(
+               ^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 128, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 295, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 157, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 215, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 148, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 57, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.InvalidArgument: 400 Request contains an invalid argument. [field_violations {
+  field: "name"
+  description: "Invalid location: \'asia-south1\' must match the server deployment \'us\'"
+}
+]
+
+LEVEL: E
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 07:21:40.225
+LOG: 
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: kMGYqL6Deq09
+TIME_UTC: 2026-08-01 07:21:25.325
+LOG: Exception on / [POST]
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 55, in error_remapped_callable
+    return callable_(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 276, in __call__
+    response, ignored_call = self._with_call(
+                             ^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 331, in _with_call
+    return call.result(), call
+           ^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 447, in result
+    raise self
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_interceptor.py", line 314, in continuation
+    response, call = self._thunk(new_method).with_call(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 1182, in with_call
+    return _end_unary_response_blocking(state, call, True, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/grpc/_channel.py", line 999, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.INVALID_ARGUMENT
+	details = "Request contains an invalid argument."
+	debug_error_string = "INVALID_ARGUMENT:Request contains an invalid argument."
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/execution_id.py", line 157, in wrapper
+    result = view_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 188, in view_func
+    function(event)
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 81, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/main.py", line 122, in ingest_pdf
+    result = documentai_client.process_document(request=request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/cloud/documentai_v1/services/document_processor_service/client.py", line 969, in process_document
+    response = rpc(
+               ^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 128, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 295, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 157, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 215, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 148, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 57, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.InvalidArgument: 400 Request contains an invalid argument. [field_violations {
+  field: "name"
+  description: "Invalid location: \'asia-south1\' must match the server deployment \'us\'"
+}
+]
+
+LEVEL: I
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 07:21:22.446
+LOG: Default STARTUP TCP probe succeeded after 1 attempt for container "worker" on port 8080.
+
+LEVEL: I
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 07:21:20.943
+LOG: Starting new instance. Reason: AUTOSCALING - Instance started due to configured scaling factors (e.g. CPU utilization, request throughput, etc.) or no existing capacity for current traffic.
+
+LEVEL: E
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 07:21:20.921
+LOG: 
+
+LEVEL: I
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 06:44:59.750
+LOG: Default STARTUP TCP probe succeeded after 1 attempt for container "worker" on port 8080.
+
+LEVEL: I
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 06:44:57.156
+LOG: Starting new instance. Reason: DEPLOYMENT_ROLLOUT - Instance started due to traffic shifting between revisions due to deployment, traffic split adjustment, or deployment health check.
+
+LEVEL: I
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 06:34:28.450
+LOG: Default STARTUP TCP probe succeeded after 1 attempt for container "worker" on port 8080.
+
+LEVEL: I
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 06:34:27.627
+LOG: Starting new instance. Reason: AUTOSCALING - Instance started due to configured scaling factors (e.g. CPU utilization, request throughput, etc.) or no existing capacity for current traffic.
+
+LEVEL: I
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 06:34:27.603
+LOG: 
+
+LEVEL: I
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 05:58:41.856
+LOG: 
+
+LEVEL: I
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 05:56:49.125
+LOG: Default STARTUP TCP probe succeeded after 1 attempt for container "worker" on port 8080.
+
+LEVEL: I
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 05:56:47.425
+LOG: Starting new instance. Reason: DEPLOYMENT_ROLLOUT - Instance started due to traffic shifting between revisions due to deployment, traffic split adjustment, or deployment health check.
+
+LEVEL: I
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 04:10:57.746
+LOG: Default STARTUP TCP probe succeeded after 1 attempt for container "worker" on port 8080.
+
+LEVEL: I
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 04:10:57.207
+LOG: Starting new instance. Reason: AUTOSCALING - Instance started due to configured scaling factors (e.g. CPU utilization, request throughput, etc.) or no existing capacity for current traffic.
+
+LEVEL: I
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 04:10:57.173
+LOG: 
+
+LEVEL: I
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 03:37:08.054
+LOG: 
+
+LEVEL: I
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 03:33:28.536
+LOG: Default STARTUP TCP probe succeeded after 1 attempt for container "worker" on port 8080.
+
+LEVEL: I
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 03:33:27.666
+LOG: Starting new instance. Reason: DEPLOYMENT_ROLLOUT - Instance started due to traffic shifting between revisions due to deployment, traffic split adjustment, or deployment health check.
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: jseQqX4IZ9iM
+TIME_UTC: 2026-08-01 03:30:21.692
+LOG: Exception on / [POST]
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/execution_id.py", line 157, in wrapper
+    result = view_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 188, in view_func
+    function(event)
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 81, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/main.py", line 19, in ingest_pdf
+    raise Exception("Intentional test exception")
+Exception: Intentional test exception
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: jseQqX4IZ9iM
+TIME_UTC: 2026-08-01 03:30:21.691
+LOG: ######## FUNCTION STARTED ########
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: jseQqX4IZ9iM
+TIME_UTC: 2026-08-01 03:30:21.691
+LOG: ######## FUNCTION STARTED ########
+
+LEVEL: E
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 03:30:21.676
+LOG: 
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: KraQPLf8YAv5
+TIME_UTC: 2026-08-01 03:27:02.461
+LOG: Exception on / [POST]
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/execution_id.py", line 157, in wrapper
+    result = view_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 188, in view_func
+    function(event)
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 81, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/main.py", line 19, in ingest_pdf
+    raise Exception("Intentional test exception")
+Exception: Intentional test exception
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: KraQPLf8YAv5
+TIME_UTC: 2026-08-01 03:27:02.460
+LOG: ######## FUNCTION STARTED ########
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: KraQPLf8YAv5
+TIME_UTC: 2026-08-01 03:27:02.460
+LOG: ######## FUNCTION STARTED ########
+
+LEVEL: E
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 03:27:02.441
+LOG: 
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: XFKvo61pwOML
+TIME_UTC: 2026-08-01 03:24:31.638
+LOG: Exception on / [POST]
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/execution_id.py", line 157, in wrapper
+    result = view_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 188, in view_func
+    function(event)
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 81, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/main.py", line 19, in ingest_pdf
+    raise Exception("Intentional test exception")
+Exception: Intentional test exception
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: XFKvo61pwOML
+TIME_UTC: 2026-08-01 03:24:31.637
+LOG: ######## FUNCTION STARTED ########
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: XFKvo61pwOML
+TIME_UTC: 2026-08-01 03:24:31.637
+LOG: ######## FUNCTION STARTED ########
+
+LEVEL: E
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 03:24:31.622
+LOG: 
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: khgjkw2C2Msf
+TIME_UTC: 2026-08-01 03:22:32.283
+LOG: Exception on / [POST]
+Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/execution_id.py", line 157, in wrapper
+    result = view_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 188, in view_func
+    function(event)
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 81, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/main.py", line 19, in ingest_pdf
+    raise Exception("Intentional test exception")
+Exception: Intentional test exception
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: khgjkw2C2Msf
+TIME_UTC: 2026-08-01 03:22:32.282
+LOG: ######## FUNCTION STARTED ########
+
+LEVEL: 
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: khgjkw2C2Msf
+TIME_UTC: 2026-08-01 03:22:32.282
+LOG: ######## FUNCTION STARTED ########
+
+LEVEL: E
+NAME: knowledge-factory-ingestion
+EXECUTION_ID: 
+TIME_UTC: 2026-08-01 03:22:32.268
+LOG: 

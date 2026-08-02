@@ -1,0 +1,2209 @@
+[
+  {
+    "insertId": "6a6dc3530009369b99b3d44a",
+    "labels": {
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f72928762a49b12de2a6318ac861096d98d299b0469c36f7be36a3065ce5f5f9aca9b647f63a5e8818e5b14a28e31bf4d96f076e2419ed56cf75bca3d52d6d6e8f96d74db2c0696e8462933a",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fvarlog%2Fsystem",
+    "receiveTimestamp": "2026-08-01T09:58:43.649155600Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-fud",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "INFO",
+    "textPayload": "Default STARTUP TCP probe succeeded after 1 attempt for container \"worker\" on port 8080.",
+    "timestamp": "2026-08-01T09:58:43.603803Z"
+  },
+  {
+    "insertId": "6a6dc3520004be645dc0591f",
+    "labels": {
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f72928762a49b12de2a6318ac861096d98d299b0469c36f7be36a3065ce5f5f9aca9b647f63a5e8818e5b14a28e31bf4d96f076e2419ed56cf75bca3d52d6d6e8f96d74db2c0696e8462933a",
+      "scaling_reason": "AUTOSCALING"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fvarlog%2Fsystem",
+    "receiveTimestamp": "2026-08-01T09:58:42.317428983Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-fud",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "INFO",
+    "textPayload": "Starting new instance. Reason: AUTOSCALING - Instance started due to configured scaling factors (e.g. CPU utilization, request throughput, etc.) or no existing capacity for current traffic.",
+    "timestamp": "2026-08-01T09:58:42.310884Z"
+  },
+  {
+    "insertId": "6a6dc33b00048e0e00fc0141",
+    "labels": {
+      "execution_id": "093aU67VLh5I",
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f7290f7db710d1c1cbde3b5e91737f4541e6d94712c31086ee6a0e2fea30e891e367c993d855ab25bdb24d97b3fe8a442f9fb370f9caf62ce0c90d3995748951337b30f3358bbf59eb54ec46",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2026-08-01T09:58:19.636364997Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-fud",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "9784785253008317654",
+    "textPayload": "keys = ['kind', 'id', 'selfLink', 'name', 'bucket', 'generation', 'metageneration', 'contentType', 'timeCreated', 'updated', 'storageClass', 'timeStorageClassUpdated', 'size', 'md5Hash', 'mediaLink', 'crc32c', 'etag']",
+    "timestamp": "2026-08-01T09:58:19.298510Z"
+  },
+  {
+    "insertId": "6a6dc33b00048d807ff8dce9",
+    "labels": {
+      "execution_id": "093aU67VLh5I",
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f7290f7db710d1c1cbde3b5e91737f4541e6d94712c31086ee6a0e2fea30e891e367c993d855ab25bdb24d97b3fe8a442f9fb370f9caf62ce0c90d3995748951337b30f3358bbf59eb54ec46",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2026-08-01T09:58:19.636364997Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-fud",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "9784785253008317654",
+    "textPayload": "type(data) = <class 'dict'>",
+    "timestamp": "2026-08-01T09:58:19.298368Z"
+  },
+  {
+    "insertId": "6a6dc33b00048cf4ce90e9fb",
+    "jsonPayload": {
+      "bucket": "knowledge-factory-prod-raw",
+      "contentType": "application/pdf",
+      "crc32c": "5oPyMQ==",
+      "etag": "CL3KzcGV/5UDEAE=",
+      "generation": "1785578298500413",
+      "id": "knowledge-factory-prod-raw/test_matrices_v2.pdf/1785578298500413",
+      "kind": "storage#object",
+      "md5Hash": "OLy0DbgdYJmkHCc/XVVcxA==",
+      "mediaLink": "https://storage.googleapis.com/download/storage/v1/b/knowledge-factory-prod-raw/o/test_matrices_v2.pdf?generation=1785578298500413&alt=media",
+      "metageneration": "1",
+      "name": "test_matrices_v2.pdf",
+      "selfLink": "https://www.googleapis.com/storage/v1/b/knowledge-factory-prod-raw/o/test_matrices_v2.pdf",
+      "size": "2160266",
+      "storageClass": "STANDARD",
+      "timeCreated": "2026-08-01T09:58:18.508Z",
+      "timeStorageClassUpdated": "2026-08-01T09:58:18.508Z",
+      "updated": "2026-08-01T09:58:18.508Z"
+    },
+    "labels": {
+      "execution_id": "093aU67VLh5I",
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f7290f7db710d1c1cbde3b5e91737f4541e6d94712c31086ee6a0e2fea30e891e367c993d855ab25bdb24d97b3fe8a442f9fb370f9caf62ce0c90d3995748951337b30f3358bbf59eb54ec46",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2026-08-01T09:58:19.636364997Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-fud",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "9784785253008317654",
+    "timestamp": "2026-08-01T09:58:19.298228Z"
+  },
+  {
+    "insertId": "6a6dc33b00048c0359824120",
+    "labels": {
+      "execution_id": "093aU67VLh5I",
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f7290f7db710d1c1cbde3b5e91737f4541e6d94712c31086ee6a0e2fea30e891e367c993d855ab25bdb24d97b3fe8a442f9fb370f9caf62ce0c90d3995748951337b30f3358bbf59eb54ec46",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2026-08-01T09:58:19.636364997Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-fud",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "9784785253008317654",
+    "textPayload": "========== RAW DATA ==========",
+    "timestamp": "2026-08-01T09:58:19.297987Z"
+  },
+  {
+    "insertId": "6a6dc33b00048b63a663b069",
+    "labels": {
+      "execution_id": "093aU67VLh5I",
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f7290f7db710d1c1cbde3b5e91737f4541e6d94712c31086ee6a0e2fea30e891e367c993d855ab25bdb24d97b3fe8a442f9fb370f9caf62ce0c90d3995748951337b30f3358bbf59eb54ec46",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2026-08-01T09:58:19.636364997Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-fud",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "9784785253008317654",
+    "textPayload": "{'attributes': {'specversion': '1.0', 'id': '20167920707105730', 'source': '//storage.googleapis.com/projects/_/buckets/knowledge-factory-prod-raw', 'type': 'google.cloud.storage.object.v1.finalized', 'datacontenttype': 'application/json', 'subject': 'objects/test_matrices_v2.pdf', 'time': '2026-08-01T09:58:18.508879Z', 'bucket': 'knowledge-factory-prod-raw'}, 'data': {'kind': 'storage#object', 'id': 'knowledge-factory-prod-raw/test_matrices_v2.pdf/1785578298500413', 'selfLink': 'https://www.googleapis.com/storage/v1/b/knowledge-factory-prod-raw/o/test_matrices_v2.pdf', 'name': 'test_matrices_v2.pdf', 'bucket': 'knowledge-factory-prod-raw', 'generation': '1785578298500413', 'metageneration': '1', 'contentType': 'application/pdf', 'timeCreated': '2026-08-01T09:58:18.508Z', 'updated': '2026-08-01T09:58:18.508Z', 'storageClass': 'STANDARD', 'timeStorageClassUpdated': '2026-08-01T09:58:18.508Z', 'size': '2160266', 'md5Hash': 'OLy0DbgdYJmkHCc/XVVcxA==', 'mediaLink': 'https://storage.googleapis.com/download/storage/v1/b/knowledge-factory-prod-raw/o/test_matrices_v2.pdf?generation=1785578298500413&alt=media', 'crc32c': '5oPyMQ==', 'etag': 'CL3KzcGV/5UDEAE='}}",
+    "timestamp": "2026-08-01T09:58:19.297827Z"
+  },
+  {
+    "insertId": "6a6dc33b00048a067c7a207d",
+    "labels": {
+      "execution_id": "093aU67VLh5I",
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f7290f7db710d1c1cbde3b5e91737f4541e6d94712c31086ee6a0e2fea30e891e367c993d855ab25bdb24d97b3fe8a442f9fb370f9caf62ce0c90d3995748951337b30f3358bbf59eb54ec46",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2026-08-01T09:58:19.301178982Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-fud",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "9784785253008317654",
+    "textPayload": "========== RAW CLOUD EVENT ==========",
+    "timestamp": "2026-08-01T09:58:19.297478Z"
+  },
+  {
+    "httpRequest": {
+      "latency": "22.916492317s",
+      "protocol": "HTTP/1.1",
+      "remoteIp": "34.98.139.66",
+      "requestMethod": "POST",
+      "requestSize": "3148",
+      "requestUrl": "https://knowledge-factory-ingestion-75fs5clc5a-el.a.run.app/?__GCP_CloudEventsMode=GCS_NOTIFICATION",
+      "responseSize": "130",
+      "serverIp": "34.143.77.2",
+      "status": 200,
+      "userAgent": "APIs-Google; (+https://developers.google.com/webmasters/APIs-Google.html)"
+    },
+    "insertId": "6a6dc35200031b2506c8d409",
+    "labels": {
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f7290f7db710d1c1cbde3b5e91737f4541e6d94712c31086ee6a0e2fea30e891e367c993d855ab25bdb24d97b3fe8a442f9fb370f9caf62ce0c90d3995748951337b30f3358bbf59eb54ec46",
+      "run.googleapis.com/cloud_event_id": "20167920707105730",
+      "run.googleapis.com/cloud_event_source": "//storage.googleapis.com/projects/_/buckets/knowledge-factory-prod-raw"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Frequests",
+    "receiveTimestamp": "2026-08-01T09:58:42.207363973Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-fud",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "INFO",
+    "spanId": "87ca8a58790a9cd6",
+    "timestamp": "2026-08-01T09:58:19.274912Z",
+    "trace": "projects/knowledge-factory-prod/traces/700e41da849a6ed602d1e3df5682d808",
+    "traceSampled": true
+  },
+  {
+    "insertId": "-piauiydx81o",
+    "logName": "projects/knowledge-factory-prod/logs/cloudaudit.googleapis.com%2Fsystem_event",
+    "protoPayload": {
+      "@type": "type.googleapis.com/google.cloud.audit.AuditLog",
+      "methodName": "/InternalServices.CreateInternalService",
+      "resourceName": "namespaces/knowledge-factory-prod/services/knowledge-factory-ingestion",
+      "response": {
+        "@type": "type.googleapis.com/google.cloud.run.v1.Service",
+        "apiVersion": "serving.knative.dev/v1",
+        "kind": "Service",
+        "metadata": {
+          "annotations": {
+            "cloudfunctions.googleapis.com/function-id": "knowledge-factory-ingestion",
+            "run.googleapis.com/build-base-image": "asia-south1-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312",
+            "run.googleapis.com/build-enable-automatic-updates": "true",
+            "run.googleapis.com/build-function-target": "ingest_pdf",
+            "run.googleapis.com/build-image-uri": "asia-south1-docker.pkg.dev/knowledge-factory-prod/gcf-artifacts/knowledge--factory--prod__asia--south1__knowledge--factory--ingestion:version_1",
+            "run.googleapis.com/build-name": "projects/63974849828/locations/asia-south1/builds/42a321f3-ea0b-49fc-8327-4335dba3e843",
+            "run.googleapis.com/build-service-account": "projects/knowledge-factory-prod/serviceAccounts/63974849828-compute@developer.gserviceaccount.com",
+            "run.googleapis.com/build-source-location": "gs://gcf-v2-sources-63974849828-asia-south1/knowledge-factory-ingestion/function-source.zip#1785578125082198",
+            "run.googleapis.com/client-name": "cloudfunctions",
+            "run.googleapis.com/custom-audiences": "[\"https://asia-south1-knowledge-factory-prod.cloudfunctions.net/knowledge-factory-ingestion\"]",
+            "run.googleapis.com/ingress": "internal",
+            "run.googleapis.com/ingress-status": "internal",
+            "run.googleapis.com/maxScale": "34",
+            "run.googleapis.com/operation-id": "caba25a5-9283-4d99-91f4-760a031982c4",
+            "run.googleapis.com/urls": "[\"https://knowledge-factory-ingestion-63974849828.asia-south1.run.app\",\"https://asia-south1-knowledge-factory-prod.cloudfunctions.net/knowledge-factory-ingestion\",\"https://knowledge-factory-ingestion-75fs5clc5a-el.a.run.app\"]",
+            "serving.knative.dev/creator": "service-63974849828@gcf-admin-robot.iam.gserviceaccount.com",
+            "serving.knative.dev/lastModifier": "service-63974849828@gcf-admin-robot.iam.gserviceaccount.com"
+          },
+          "creationTimestamp": "2026-08-01T09:56:06.504384Z",
+          "generation": 1,
+          "labels": {
+            "cloud.googleapis.com/location": "asia-south1",
+            "goog-cloudfunctions-runtime": "python312",
+            "goog-drz-cloudfunctions-id": "knowledge-factory-ingestion",
+            "goog-drz-cloudfunctions-location": "asia-south1",
+            "goog-managed-by": "cloudfunctions",
+            "goog-terraform-provisioned": "true",
+            "run.googleapis.com/satisfiesPzs": "true"
+          },
+          "name": "knowledge-factory-ingestion",
+          "namespace": "63974849828",
+          "resourceVersion": "AAZX+VDIyaY",
+          "selfLink": "/apis/serving.knative.dev/v1/namespaces/63974849828/services/knowledge-factory-ingestion",
+          "uid": "ea2d8c1e-f07f-473b-8dde-570b91abd314"
+        },
+        "spec": {
+          "template": {
+            "metadata": {
+              "annotations": {
+                "autoscaling.knative.dev/maxScale": "5",
+                "cloudfunctions.googleapis.com/trigger-type": "google.cloud.storage.object.v1.finalized",
+                "run.googleapis.com/base-images": "{\"worker\":\"asia-south1-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312\"}",
+                "run.googleapis.com/client-name": "cloudfunctions",
+                "run.googleapis.com/startup-cpu-boost": "true"
+              },
+              "labels": {
+                "goog-terraform-provisioned": "true",
+                "run.googleapis.com/startupProbeType": "Default"
+              },
+              "name": "knowledge-factory-ingestion-00001-fud"
+            },
+            "spec": {
+              "containerConcurrency": 1,
+              "containers": [
+                {
+                  "env": [
+                    {
+                      "name": "DOCUMENT_AI_LOCATION",
+                      "value": "us"
+                    },
+                    {
+                      "name": "DOCUMENT_AI_PROCESSOR",
+                      "value": "eab1fbb0ebbc726e"
+                    },
+                    {
+                      "name": "FIRESTORE_DATABASE",
+                      "value": "(default)"
+                    },
+                    {
+                      "name": "MAX_CHUNK_PAGES",
+                      "value": "25"
+                    },
+                    {
+                      "name": "PROCESSED_BUCKET",
+                      "value": "knowledge-factory-prod-processed"
+                    },
+                    {
+                      "name": "PROJECT_ID",
+                      "value": "knowledge-factory-prod"
+                    },
+                    {
+                      "name": "RAW_BUCKET",
+                      "value": "knowledge-factory-prod-raw"
+                    },
+                    {
+                      "name": "REGION",
+                      "value": "asia-south1"
+                    },
+                    {
+                      "name": "LOG_EXECUTION_ID",
+                      "value": "true"
+                    }
+                  ],
+                  "image": "asia-south1-docker.pkg.dev/knowledge-factory-prod/gcf-artifacts/knowledge--factory--prod__asia--south1__knowledge--factory--ingestion:version_1",
+                  "name": "worker",
+                  "ports": [
+                    {
+                      "containerPort": 8080,
+                      "name": "http1"
+                    }
+                  ],
+                  "resources": {
+                    "limits": {
+                      "cpu": "0.5833",
+                      "memory": "1Gi"
+                    }
+                  },
+                  "startupProbe": {
+                    "failureThreshold": 1,
+                    "periodSeconds": 240,
+                    "tcpSocket": {
+                      "port": 8080
+                    },
+                    "timeoutSeconds": 240
+                  }
+                }
+              ],
+              "runtimeClassName": "run.googleapis.com/linux-base-image-update",
+              "serviceAccountName": "knowledge-factory-cloudrun@knowledge-factory-prod.iam.gserviceaccount.com",
+              "timeoutSeconds": 540
+            }
+          },
+          "traffic": [
+            {
+              "latestRevision": true,
+              "percent": 100
+            }
+          ]
+        },
+        "status": {
+          "address": {
+            "url": "https://knowledge-factory-ingestion-75fs5clc5a-el.a.run.app"
+          },
+          "conditions": [
+            {
+              "lastTransitionTime": "2026-08-01T09:56:14.073254Z",
+              "status": "True",
+              "type": "Ready"
+            },
+            {
+              "lastTransitionTime": "2026-08-01T09:56:08.996076Z",
+              "status": "True",
+              "type": "ConfigurationsReady"
+            },
+            {
+              "lastTransitionTime": "2026-08-01T09:56:14.024792Z",
+              "status": "True",
+              "type": "RoutesReady"
+            }
+          ],
+          "latestCreatedRevisionName": "knowledge-factory-ingestion-00001-fud",
+          "latestReadyRevisionName": "knowledge-factory-ingestion-00001-fud",
+          "observedGeneration": 1,
+          "traffic": [
+            {
+              "latestRevision": true,
+              "percent": 100,
+              "revisionName": "knowledge-factory-ingestion-00001-fud"
+            }
+          ],
+          "url": "https://knowledge-factory-ingestion-75fs5clc5a-el.a.run.app"
+        }
+      },
+      "serviceName": "run.googleapis.com",
+      "status": {
+        "message": "Ready condition status changed to True for Service knowledge-factory-ingestion."
+      }
+    },
+    "receiveTimestamp": "2026-08-01T09:56:15.097013855Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "INFO",
+    "timestamp": "2026-08-01T09:56:14.087786Z"
+  },
+  {
+    "insertId": "4g4kljdgmn4",
+    "logName": "projects/knowledge-factory-prod/logs/cloudaudit.googleapis.com%2Fsystem_event",
+    "protoPayload": {
+      "@type": "type.googleapis.com/google.cloud.audit.AuditLog",
+      "methodName": "/InternalServices.CreateInternalService",
+      "resourceName": "namespaces/knowledge-factory-prod/revisions/knowledge-factory-ingestion-00001-fud",
+      "response": {
+        "@type": "type.googleapis.com/google.cloud.run.v1.Revision",
+        "apiVersion": "serving.knative.dev/v1",
+        "kind": "Revision",
+        "metadata": {
+          "annotations": {
+            "autoscaling.knative.dev/maxScale": "5",
+            "cloudfunctions.googleapis.com/trigger-type": "google.cloud.storage.object.v1.finalized",
+            "run.googleapis.com/base-images": "{\"worker\":\"asia-south1-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312\"}",
+            "run.googleapis.com/build-function-target": "{\"worker\":\"ingest_pdf\"}",
+            "run.googleapis.com/build-id": "{\"worker\":\"42a321f3-ea0b-49fc-8327-4335dba3e843\"}",
+            "run.googleapis.com/build-source-location": "{\"worker\":\"gs://gcf-v2-sources-63974849828-asia-south1/knowledge-factory-ingestion/function-source.zip#1785578125082198\"}",
+            "run.googleapis.com/client-name": "cloudfunctions",
+            "run.googleapis.com/operation-id": "caba25a5-9283-4d99-91f4-760a031982c4",
+            "run.googleapis.com/startup-cpu-boost": "true",
+            "serving.knative.dev/creator": "service-63974849828@gcf-admin-robot.iam.gserviceaccount.com"
+          },
+          "creationTimestamp": "2026-08-01T09:56:06.839293Z",
+          "generation": 1,
+          "labels": {
+            "cloud.googleapis.com/location": "asia-south1",
+            "goog-cloudfunctions-runtime": "python312",
+            "goog-managed-by": "cloudfunctions",
+            "goog-terraform-provisioned": "true",
+            "run.googleapis.com/satisfiesPzs": "true",
+            "run.googleapis.com/startupProbeType": "Default",
+            "serving.knative.dev/configuration": "knowledge-factory-ingestion",
+            "serving.knative.dev/configurationGeneration": "1",
+            "serving.knative.dev/route": "knowledge-factory-ingestion",
+            "serving.knative.dev/service": "knowledge-factory-ingestion",
+            "serving.knative.dev/serviceUid": "ea2d8c1e-f07f-473b-8dde-570b91abd314"
+          },
+          "name": "knowledge-factory-ingestion-00001-fud",
+          "namespace": "63974849828",
+          "ownerReferences": [
+            {
+              "apiVersion": "serving.knative.dev/v1",
+              "blockOwnerDeletion": true,
+              "controller": true,
+              "kind": "Configuration",
+              "name": "knowledge-factory-ingestion",
+              "uid": "374ffff2-c0da-4dfb-a88f-c782598654f4"
+            }
+          ],
+          "resourceVersion": "AAZX+VCzoWQ",
+          "selfLink": "/apis/serving.knative.dev/v1/namespaces/63974849828/revisions/knowledge-factory-ingestion-00001-fud",
+          "uid": "b11fa4a7-d380-468c-a4f7-88928c292c0c"
+        },
+        "spec": {
+          "containerConcurrency": 1,
+          "containers": [
+            {
+              "env": [
+                {
+                  "name": "DOCUMENT_AI_LOCATION",
+                  "value": "us"
+                },
+                {
+                  "name": "DOCUMENT_AI_PROCESSOR",
+                  "value": "eab1fbb0ebbc726e"
+                },
+                {
+                  "name": "FIRESTORE_DATABASE",
+                  "value": "(default)"
+                },
+                {
+                  "name": "MAX_CHUNK_PAGES",
+                  "value": "25"
+                },
+                {
+                  "name": "PROCESSED_BUCKET",
+                  "value": "knowledge-factory-prod-processed"
+                },
+                {
+                  "name": "PROJECT_ID",
+                  "value": "knowledge-factory-prod"
+                },
+                {
+                  "name": "RAW_BUCKET",
+                  "value": "knowledge-factory-prod-raw"
+                },
+                {
+                  "name": "REGION",
+                  "value": "asia-south1"
+                },
+                {
+                  "name": "LOG_EXECUTION_ID",
+                  "value": "true"
+                }
+              ],
+              "image": "asia-south1-docker.pkg.dev/knowledge-factory-prod/gcf-artifacts/knowledge--factory--prod__asia--south1__knowledge--factory--ingestion@sha256:33906663f65d63c4bd0486973a29406448b2c3348c9fc857f577e599e620234a",
+              "name": "worker",
+              "ports": [
+                {
+                  "containerPort": 8080,
+                  "name": "http1"
+                }
+              ],
+              "resources": {
+                "limits": {
+                  "cpu": "0.5833",
+                  "memory": "1Gi"
+                }
+              },
+              "startupProbe": {
+                "failureThreshold": 1,
+                "periodSeconds": 240,
+                "tcpSocket": {
+                  "port": 8080
+                },
+                "timeoutSeconds": 240
+              }
+            }
+          ],
+          "runtimeClassName": "run.googleapis.com/linux-base-image-update",
+          "serviceAccountName": "knowledge-factory-cloudrun@knowledge-factory-prod.iam.gserviceaccount.com",
+          "timeoutSeconds": 540
+        },
+        "status": {
+          "conditions": [
+            {
+              "lastTransitionTime": "2026-08-01T09:56:12.686692Z",
+              "message": "Deploying revision succeeded in 5.85s.",
+              "status": "True",
+              "type": "Ready"
+            },
+            {
+              "lastTransitionTime": "2026-08-01T09:56:12.628260Z",
+              "message": "Containers became healthy in 1.99s.",
+              "status": "True",
+              "type": "ContainerHealthy"
+            },
+            {
+              "lastTransitionTime": "2026-08-01T09:56:08.878107Z",
+              "message": "Container image import completed in 1.25s.",
+              "status": "True",
+              "type": "ContainerReady"
+            },
+            {
+              "lastTransitionTime": "2026-08-01T09:56:10.348840Z",
+              "message": "Provisioning imported containers completed in 1.47s. Checking container health. This will wait for up to 4m for the configured startup probe, including an initial delay of 0s.",
+              "status": "True",
+              "type": "ResourcesAvailable"
+            }
+          ],
+          "containerStatuses": [
+            {
+              "imageDigest": "asia-south1-docker.pkg.dev/knowledge-factory-prod/gcf-artifacts/knowledge--factory--prod__asia--south1__knowledge--factory--ingestion@sha256:33906663f65d63c4bd0486973a29406448b2c3348c9fc857f577e599e620234a",
+              "name": "worker"
+            }
+          ],
+          "imageDigest": "asia-south1-docker.pkg.dev/knowledge-factory-prod/gcf-artifacts/knowledge--factory--prod__asia--south1__knowledge--factory--ingestion@sha256:33906663f65d63c4bd0486973a29406448b2c3348c9fc857f577e599e620234a",
+          "logUrl": "https://console.cloud.google.com/logs/viewer?project=knowledge-factory-prod&resource=cloud_run_revision/service_name/knowledge-factory-ingestion/revision_name/knowledge-factory-ingestion-00001-fud&advancedFilter=resource.type%3D%22cloud_run_revision%22%0Aresource.labels.service_name%3D%22knowledge-factory-ingestion%22%0Aresource.labels.revision_name%3D%22knowledge-factory-ingestion-00001-fud%22",
+          "observedGeneration": 1
+        }
+      },
+      "serviceName": "run.googleapis.com",
+      "status": {
+        "message": "Ready condition status changed to True for Revision knowledge-factory-ingestion-00001-fud with message: Deploying revision succeeded in 5.85s."
+      }
+    },
+    "receiveTimestamp": "2026-08-01T09:56:12.988463746Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-fud",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "INFO",
+    "timestamp": "2026-08-01T09:56:12.699786Z"
+  },
+  {
+    "insertId": "6a6dc2bc000976726ab49384",
+    "labels": {
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f7290f7db710d1c1cbde3b5e91737f4541e6d94712c31086ee6a0e2fea30e891e367c993d855ab25bdb24d97b3fe8a442f9fb370f9caf62ce0c90d3995748951337b30f3358bbf59eb54ec46",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fvarlog%2Fsystem",
+    "receiveTimestamp": "2026-08-01T09:56:12.851092806Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-fud",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "INFO",
+    "textPayload": "Default STARTUP TCP probe succeeded after 1 attempt for container \"worker\" on port 8080.",
+    "timestamp": "2026-08-01T09:56:12.620146Z"
+  },
+  {
+    "insertId": "6a6dc2ba0007d97abfce8513",
+    "labels": {
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f7290f7db710d1c1cbde3b5e91737f4541e6d94712c31086ee6a0e2fea30e891e367c993d855ab25bdb24d97b3fe8a442f9fb370f9caf62ce0c90d3995748951337b30f3358bbf59eb54ec46",
+      "scaling_reason": "DEPLOYMENT_ROLLOUT"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fvarlog%2Fsystem",
+    "receiveTimestamp": "2026-08-01T09:56:10.519356856Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-fud",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "INFO",
+    "textPayload": "Starting new instance. Reason: DEPLOYMENT_ROLLOUT - Instance started due to traffic shifting between revisions due to deployment, traffic split adjustment, or deployment health check.",
+    "timestamp": "2026-08-01T09:56:10.514426Z"
+  },
+  {
+    "insertId": "erqjr4dmkv6",
+    "logName": "projects/knowledge-factory-prod/logs/cloudaudit.googleapis.com%2Factivity",
+    "protoPayload": {
+      "@type": "type.googleapis.com/google.cloud.audit.AuditLog",
+      "authenticationInfo": {
+        "principalEmail": "service-63974849828@gcf-admin-robot.iam.gserviceaccount.com"
+      },
+      "authorizationInfo": [
+        {
+          "granted": true,
+          "permission": "run.services.create",
+          "permissionType": "ADMIN_WRITE",
+          "resource": "namespaces/knowledge-factory-prod/services/knowledge-factory-ingestion",
+          "resourceAttributes": {}
+        },
+        {
+          "granted": true,
+          "permission": "run.services.create",
+          "permissionType": "ADMIN_WRITE",
+          "resource": "namespaces/knowledge-factory-prod/services/knowledge-factory-ingestion",
+          "resourceAttributes": {
+            "name": "namespaces/knowledge-factory-prod/services/knowledge-factory-ingestion",
+            "service": "run.googleapis.com/",
+            "type": "run.googleapis.com/Service"
+          }
+        }
+      ],
+      "methodName": "google.cloud.serverless.internal.InternalServices.CreateInternalService",
+      "requestMetadata": {
+        "destinationAttributes": {},
+        "requestAttributes": {
+          "auth": {},
+          "time": "2026-08-01T09:56:06.792415Z"
+        }
+      },
+      "resourceLocation": {
+        "currentLocations": [
+          "asia-south1"
+        ]
+      },
+      "resourceName": "namespaces/knowledge-factory-prod/services/knowledge-factory-ingestion",
+      "serviceName": "run.googleapis.com",
+      "status": {}
+    },
+    "receiveTimestamp": "2026-08-01T09:56:07.202342054Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "NOTICE",
+    "timestamp": "2026-08-01T09:56:06.083895Z"
+  },
+  {
+    "insertId": "-57kpabdup4u",
+    "logName": "projects/knowledge-factory-prod/logs/cloudaudit.googleapis.com%2Factivity",
+    "protoPayload": {
+      "@type": "type.googleapis.com/google.cloud.audit.AuditLog",
+      "authenticationInfo": {
+        "principalEmail": "service-63974849828@gcf-admin-robot.iam.gserviceaccount.com"
+      },
+      "authorizationInfo": [
+        {
+          "granted": true,
+          "permission": "run.services.create",
+          "permissionType": "ADMIN_WRITE",
+          "resource": "namespaces/knowledge-factory-prod/services/knowledge-factory-ingestion",
+          "resourceAttributes": {}
+        },
+        {
+          "granted": true,
+          "permission": "run.services.create",
+          "permissionType": "ADMIN_WRITE",
+          "resource": "namespaces/knowledge-factory-prod/services/knowledge-factory-ingestion",
+          "resourceAttributes": {
+            "name": "namespaces/knowledge-factory-prod/services/knowledge-factory-ingestion",
+            "service": "run.googleapis.com/",
+            "type": "run.googleapis.com/Service"
+          }
+        }
+      ],
+      "methodName": "google.cloud.serverless.internal.InternalServices.CreateInternalService",
+      "requestMetadata": {
+        "destinationAttributes": {},
+        "requestAttributes": {
+          "auth": {},
+          "time": "2026-08-01T09:55:25.853507Z"
+        }
+      },
+      "resourceLocation": {
+        "currentLocations": [
+          "asia-south1"
+        ]
+      },
+      "resourceName": "namespaces/knowledge-factory-prod/services/knowledge-factory-ingestion",
+      "serviceName": "run.googleapis.com",
+      "status": {}
+    },
+    "receiveTimestamp": "2026-08-01T09:55:26.541614416Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "NOTICE",
+    "timestamp": "2026-08-01T09:55:25.138961Z"
+  },
+  {
+    "insertId": "pjas8md1j0k",
+    "logName": "projects/knowledge-factory-prod/logs/cloudaudit.googleapis.com%2Fsystem_event",
+    "protoPayload": {
+      "@type": "type.googleapis.com/google.cloud.audit.AuditLog",
+      "methodName": "/InternalServices.DeleteInternalService",
+      "resourceName": "namespaces/knowledge-factory-prod/services/knowledge-factory-ingestion",
+      "response": {
+        "@type": "type.googleapis.com/google.cloud.run.v1.Service",
+        "apiVersion": "serving.knative.dev/v1",
+        "kind": "Service",
+        "metadata": {
+          "annotations": {
+            "cloudfunctions.googleapis.com/function-id": "knowledge-factory-ingestion",
+            "run.googleapis.com/build-base-image": "asia-south1-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312",
+            "run.googleapis.com/build-enable-automatic-updates": "true",
+            "run.googleapis.com/build-function-target": "ingest_pdf",
+            "run.googleapis.com/build-image-uri": "asia-south1-docker.pkg.dev/knowledge-factory-prod/gcf-artifacts/knowledge--factory--prod__asia--south1__knowledge--factory--ingestion:version_1",
+            "run.googleapis.com/build-name": "projects/63974849828/locations/asia-south1/builds/fae5698c-2b01-42da-9c25-561a404f5752",
+            "run.googleapis.com/build-service-account": "projects/knowledge-factory-prod/serviceAccounts/63974849828-compute@developer.gserviceaccount.com",
+            "run.googleapis.com/build-source-location": "gs://gcf-v2-sources-63974849828-asia-south1/knowledge-factory-ingestion/function-source.zip#1785577465954177",
+            "run.googleapis.com/client-name": "cloudfunctions",
+            "run.googleapis.com/custom-audiences": "[\"https://asia-south1-knowledge-factory-prod.cloudfunctions.net/knowledge-factory-ingestion\"]",
+            "run.googleapis.com/ingress": "internal",
+            "run.googleapis.com/ingress-status": "internal",
+            "run.googleapis.com/maxScale": "34",
+            "run.googleapis.com/operation-id": "9b1ac64c-0541-4212-bfe9-9e071c0625de",
+            "run.googleapis.com/urls": "[\"https://knowledge-factory-ingestion-63974849828.asia-south1.run.app\",\"https://asia-south1-knowledge-factory-prod.cloudfunctions.net/knowledge-factory-ingestion\",\"https://knowledge-factory-ingestion-75fs5clc5a-el.a.run.app\"]",
+            "serving.knative.dev/creator": "service-63974849828@gcf-admin-robot.iam.gserviceaccount.com",
+            "serving.knative.dev/lastModifier": "service-63974849828@gcf-admin-robot.iam.gserviceaccount.com"
+          },
+          "creationTimestamp": "2026-08-01T09:45:08.117567Z",
+          "deletionTimestamp": "2026-08-01T09:55:19.670055Z",
+          "generation": 2,
+          "labels": {
+            "cloud.googleapis.com/location": "asia-south1",
+            "goog-cloudfunctions-runtime": "python312",
+            "goog-drz-cloudfunctions-id": "knowledge-factory-ingestion",
+            "goog-drz-cloudfunctions-location": "asia-south1",
+            "goog-managed-by": "cloudfunctions",
+            "goog-terraform-provisioned": "true",
+            "run.googleapis.com/satisfiesPzs": "true"
+          },
+          "name": "knowledge-factory-ingestion",
+          "namespace": "63974849828",
+          "resourceVersion": "AAZX+U2WWlo",
+          "selfLink": "/apis/serving.knative.dev/v1/namespaces/63974849828/services/knowledge-factory-ingestion",
+          "uid": "833ba1cf-dae8-4b83-b563-1bf1d8dfda87"
+        },
+        "spec": {
+          "template": {
+            "metadata": {
+              "annotations": {
+                "autoscaling.knative.dev/maxScale": "5",
+                "cloudfunctions.googleapis.com/trigger-type": "google.cloud.storage.object.v1.finalized",
+                "run.googleapis.com/base-images": "{\"worker\":\"asia-south1-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312\"}",
+                "run.googleapis.com/client-name": "cloudfunctions",
+                "run.googleapis.com/startup-cpu-boost": "true"
+              },
+              "labels": {
+                "goog-terraform-provisioned": "true",
+                "run.googleapis.com/startupProbeType": "Default"
+              },
+              "name": "knowledge-factory-ingestion-00001-bif"
+            },
+            "spec": {
+              "containerConcurrency": 1,
+              "containers": [
+                {
+                  "env": [
+                    {
+                      "name": "DOCUMENT_AI_LOCATION",
+                      "value": "us"
+                    },
+                    {
+                      "name": "DOCUMENT_AI_PROCESSOR",
+                      "value": "eab1fbb0ebbc726e"
+                    },
+                    {
+                      "name": "FIRESTORE_DATABASE",
+                      "value": "(default)"
+                    },
+                    {
+                      "name": "MAX_CHUNK_PAGES",
+                      "value": "25"
+                    },
+                    {
+                      "name": "PROCESSED_BUCKET",
+                      "value": "knowledge-factory-prod-processed"
+                    },
+                    {
+                      "name": "PROJECT_ID",
+                      "value": "knowledge-factory-prod"
+                    },
+                    {
+                      "name": "RAW_BUCKET",
+                      "value": "knowledge-factory-prod-raw"
+                    },
+                    {
+                      "name": "REGION",
+                      "value": "asia-south1"
+                    },
+                    {
+                      "name": "LOG_EXECUTION_ID",
+                      "value": "true"
+                    }
+                  ],
+                  "image": "asia-south1-docker.pkg.dev/knowledge-factory-prod/gcf-artifacts/knowledge--factory--prod__asia--south1__knowledge--factory--ingestion:version_1",
+                  "name": "worker",
+                  "ports": [
+                    {
+                      "containerPort": 8080,
+                      "name": "http1"
+                    }
+                  ],
+                  "resources": {
+                    "limits": {
+                      "cpu": "0.5833",
+                      "memory": "1Gi"
+                    }
+                  },
+                  "startupProbe": {
+                    "failureThreshold": 1,
+                    "periodSeconds": 240,
+                    "tcpSocket": {
+                      "port": 8080
+                    },
+                    "timeoutSeconds": 240
+                  }
+                }
+              ],
+              "runtimeClassName": "run.googleapis.com/linux-base-image-update",
+              "serviceAccountName": "knowledge-factory-cloudrun@knowledge-factory-prod.iam.gserviceaccount.com",
+              "timeoutSeconds": 540
+            }
+          },
+          "traffic": [
+            {
+              "latestRevision": true,
+              "percent": 100
+            }
+          ]
+        },
+        "status": {
+          "address": {
+            "url": "https://knowledge-factory-ingestion-75fs5clc5a-el.a.run.app"
+          },
+          "conditions": [
+            {
+              "lastTransitionTime": "2026-08-01T09:55:20.436314Z",
+              "status": "True",
+              "type": "Ready"
+            },
+            {
+              "lastTransitionTime": "2026-08-01T09:45:15.674156Z",
+              "status": "True",
+              "type": "ConfigurationsReady"
+            },
+            {
+              "lastTransitionTime": "2026-08-01T09:45:17.137480Z",
+              "status": "True",
+              "type": "RoutesReady"
+            }
+          ],
+          "latestCreatedRevisionName": "knowledge-factory-ingestion-00001-bif",
+          "latestReadyRevisionName": "knowledge-factory-ingestion-00001-bif",
+          "observedGeneration": 2,
+          "traffic": [
+            {
+              "latestRevision": true,
+              "percent": 100,
+              "revisionName": "knowledge-factory-ingestion-00001-bif"
+            }
+          ],
+          "url": "https://knowledge-factory-ingestion-75fs5clc5a-el.a.run.app"
+        }
+      },
+      "serviceName": "run.googleapis.com",
+      "status": {
+        "message": "Ready condition status changed to True for Service knowledge-factory-ingestion."
+      }
+    },
+    "receiveTimestamp": "2026-08-01T09:55:21.118254722Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "INFO",
+    "timestamp": "2026-08-01T09:55:20.454933Z"
+  },
+  {
+    "insertId": "erqjr4dmkqk",
+    "logName": "projects/knowledge-factory-prod/logs/cloudaudit.googleapis.com%2Fsystem_event",
+    "protoPayload": {
+      "@type": "type.googleapis.com/google.cloud.audit.AuditLog",
+      "methodName": "/InternalServices.DeleteInternalService",
+      "resourceName": "namespaces/knowledge-factory-prod/revisions/knowledge-factory-ingestion-00001-bif",
+      "response": {
+        "@type": "type.googleapis.com/google.cloud.run.v1.Revision",
+        "apiVersion": "serving.knative.dev/v1",
+        "kind": "Revision",
+        "metadata": {
+          "annotations": {
+            "autoscaling.knative.dev/maxScale": "5",
+            "cloudfunctions.googleapis.com/trigger-type": "google.cloud.storage.object.v1.finalized",
+            "run.googleapis.com/base-images": "{\"worker\":\"asia-south1-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312\"}",
+            "run.googleapis.com/build-function-target": "{\"worker\":\"ingest_pdf\"}",
+            "run.googleapis.com/build-id": "{\"worker\":\"fae5698c-2b01-42da-9c25-561a404f5752\"}",
+            "run.googleapis.com/build-source-location": "{\"worker\":\"gs://gcf-v2-sources-63974849828-asia-south1/knowledge-factory-ingestion/function-source.zip#1785577465954177\"}",
+            "run.googleapis.com/client-name": "cloudfunctions",
+            "run.googleapis.com/operation-id": "9b1ac64c-0541-4212-bfe9-9e071c0625de",
+            "run.googleapis.com/startup-cpu-boost": "true",
+            "serving.knative.dev/creator": "service-63974849828@gcf-admin-robot.iam.gserviceaccount.com"
+          },
+          "creationTimestamp": "2026-08-01T09:45:08.366569Z",
+          "deletionTimestamp": "2026-08-01T09:55:19.976947Z",
+          "generation": 2,
+          "labels": {
+            "cloud.googleapis.com/location": "asia-south1",
+            "goog-cloudfunctions-runtime": "python312",
+            "goog-managed-by": "cloudfunctions",
+            "goog-terraform-provisioned": "true",
+            "run.googleapis.com/cascadeDelete": "true",
+            "run.googleapis.com/satisfiesPzs": "true",
+            "run.googleapis.com/startupProbeType": "Default",
+            "serving.knative.dev/configuration": "knowledge-factory-ingestion",
+            "serving.knative.dev/configurationGeneration": "1",
+            "serving.knative.dev/route": "knowledge-factory-ingestion",
+            "serving.knative.dev/service": "knowledge-factory-ingestion",
+            "serving.knative.dev/serviceUid": "833ba1cf-dae8-4b83-b563-1bf1d8dfda87"
+          },
+          "name": "knowledge-factory-ingestion-00001-bif",
+          "namespace": "63974849828",
+          "ownerReferences": [
+            {
+              "apiVersion": "serving.knative.dev/v1",
+              "blockOwnerDeletion": true,
+              "controller": true,
+              "kind": "Configuration",
+              "name": "knowledge-factory-ingestion",
+              "uid": "ecf5aeac-d350-4dff-b3f0-7ede47e0429c"
+            }
+          ],
+          "resourceVersion": "AAZX+U2P8T4",
+          "selfLink": "/apis/serving.knative.dev/v1/namespaces/63974849828/revisions/knowledge-factory-ingestion-00001-bif",
+          "uid": "d2ac6b1e-fd45-4ac8-8f42-58f73985b8b6"
+        },
+        "spec": {
+          "containerConcurrency": 1,
+          "containers": [
+            {
+              "env": [
+                {
+                  "name": "DOCUMENT_AI_LOCATION",
+                  "value": "us"
+                },
+                {
+                  "name": "DOCUMENT_AI_PROCESSOR",
+                  "value": "eab1fbb0ebbc726e"
+                },
+                {
+                  "name": "FIRESTORE_DATABASE",
+                  "value": "(default)"
+                },
+                {
+                  "name": "MAX_CHUNK_PAGES",
+                  "value": "25"
+                },
+                {
+                  "name": "PROCESSED_BUCKET",
+                  "value": "knowledge-factory-prod-processed"
+                },
+                {
+                  "name": "PROJECT_ID",
+                  "value": "knowledge-factory-prod"
+                },
+                {
+                  "name": "RAW_BUCKET",
+                  "value": "knowledge-factory-prod-raw"
+                },
+                {
+                  "name": "REGION",
+                  "value": "asia-south1"
+                },
+                {
+                  "name": "LOG_EXECUTION_ID",
+                  "value": "true"
+                }
+              ],
+              "image": "asia-south1-docker.pkg.dev/knowledge-factory-prod/gcf-artifacts/knowledge--factory--prod__asia--south1__knowledge--factory--ingestion@sha256:33f35f685fb004306e94f9266935bd4edb14d614d60254b629d434fdfbae63c2",
+              "name": "worker",
+              "ports": [
+                {
+                  "containerPort": 8080,
+                  "name": "http1"
+                }
+              ],
+              "resources": {
+                "limits": {
+                  "cpu": "0.5833",
+                  "memory": "1Gi"
+                }
+              },
+              "startupProbe": {
+                "failureThreshold": 1,
+                "periodSeconds": 240,
+                "tcpSocket": {
+                  "port": 8080
+                },
+                "timeoutSeconds": 240
+              }
+            }
+          ],
+          "runtimeClassName": "run.googleapis.com/linux-base-image-update",
+          "serviceAccountName": "knowledge-factory-cloudrun@knowledge-factory-prod.iam.gserviceaccount.com",
+          "timeoutSeconds": 540
+        },
+        "status": {
+          "conditions": [
+            {
+              "lastTransitionTime": "2026-08-01T09:55:20.016190Z",
+              "message": "Deploying revision succeeded in 7.26s.",
+              "reason": "Retired",
+              "status": "True",
+              "type": "Ready"
+            },
+            {
+              "lastTransitionTime": "2026-08-01T09:55:20.016190Z",
+              "message": "Revision retired.",
+              "reason": "Retired",
+              "severity": "Info",
+              "status": "False",
+              "type": "Active"
+            },
+            {
+              "lastTransitionTime": "2026-08-01T09:45:15.547859Z",
+              "message": "Containers became healthy in 1.79s.",
+              "status": "True",
+              "type": "ContainerHealthy"
+            },
+            {
+              "lastTransitionTime": "2026-08-01T09:45:10.260281Z",
+              "message": "Container image import completed in 1.23s.",
+              "status": "True",
+              "type": "ContainerReady"
+            },
+            {
+              "lastTransitionTime": "2026-08-01T09:55:20.016190Z",
+              "message": "Revision retired.",
+              "reason": "Retired",
+              "status": "Unknown",
+              "type": "ResourcesAvailable"
+            }
+          ],
+          "containerStatuses": [
+            {
+              "imageDigest": "asia-south1-docker.pkg.dev/knowledge-factory-prod/gcf-artifacts/knowledge--factory--prod__asia--south1__knowledge--factory--ingestion@sha256:33f35f685fb004306e94f9266935bd4edb14d614d60254b629d434fdfbae63c2",
+              "name": "worker"
+            }
+          ],
+          "imageDigest": "asia-south1-docker.pkg.dev/knowledge-factory-prod/gcf-artifacts/knowledge--factory--prod__asia--south1__knowledge--factory--ingestion@sha256:33f35f685fb004306e94f9266935bd4edb14d614d60254b629d434fdfbae63c2",
+          "logUrl": "https://console.cloud.google.com/logs/viewer?project=knowledge-factory-prod&resource=cloud_run_revision/service_name/knowledge-factory-ingestion/revision_name/knowledge-factory-ingestion-00001-bif&advancedFilter=resource.type%3D%22cloud_run_revision%22%0Aresource.labels.service_name%3D%22knowledge-factory-ingestion%22%0Aresource.labels.revision_name%3D%22knowledge-factory-ingestion-00001-bif%22",
+          "observedGeneration": 2
+        }
+      },
+      "serviceName": "run.googleapis.com",
+      "status": {
+        "message": "Ready condition status changed to True for Revision knowledge-factory-ingestion-00001-bif with message: Deploying revision succeeded in 7.26s."
+      }
+    },
+    "receiveTimestamp": "2026-08-01T09:55:20.796725840Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-bif",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "INFO",
+    "timestamp": "2026-08-01T09:55:20.034183Z"
+  },
+  {
+    "insertId": "521yqkdhe1i",
+    "logName": "projects/knowledge-factory-prod/logs/cloudaudit.googleapis.com%2Factivity",
+    "protoPayload": {
+      "@type": "type.googleapis.com/google.cloud.audit.AuditLog",
+      "authenticationInfo": {
+        "principalEmail": "service-63974849828@gcf-admin-robot.iam.gserviceaccount.com"
+      },
+      "authorizationInfo": [
+        {
+          "granted": true,
+          "permission": "run.services.delete",
+          "permissionType": "ADMIN_WRITE",
+          "resource": "namespaces/knowledge-factory-prod/services/knowledge-factory-ingestion",
+          "resourceAttributes": {}
+        }
+      ],
+      "methodName": "google.cloud.serverless.internal.InternalServices.DeleteInternalService",
+      "requestMetadata": {
+        "destinationAttributes": {},
+        "requestAttributes": {
+          "auth": {},
+          "time": "2026-08-01T09:55:19.747445Z"
+        }
+      },
+      "resourceLocation": {
+        "currentLocations": [
+          "asia-south1"
+        ]
+      },
+      "resourceName": "namespaces/knowledge-factory-prod/services/knowledge-factory-ingestion",
+      "serviceName": "run.googleapis.com",
+      "status": {}
+    },
+    "receiveTimestamp": "2026-08-01T09:55:20.141826052Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "NOTICE",
+    "timestamp": "2026-08-01T09:55:19.639044Z"
+  },
+  {
+    "errorGroups": [
+      {
+        "id": "CKmvmN20v5HyXA"
+      }
+    ],
+    "insertId": "6a6dc217000e3f2e26996d8b",
+    "labels": {
+      "execution_id": "KtuH0Y5Ja0yI",
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f729c74ff30681eb2e45e725a89f9869bf3944a0a780539ec953a1dd209020d6647f6c604d0cd1aecdead4820741a1a58cc10da98dce35933187124a18c99b7723b8deebf09705c421dc009e",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2026-08-01T09:53:28.272381800Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-bif",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "8669425766932915013",
+    "textPayload": "Exception on / [POST]\nTraceback (most recent call last):\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py\", line 1511, in wsgi_app\n    response = self.full_dispatch_request()\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py\", line 919, in full_dispatch_request\n    rv = self.handle_user_exception(e)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py\", line 917, in full_dispatch_request\n    rv = self.dispatch_request()\n         ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py\", line 902, in dispatch_request\n    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/execution_id.py\", line 157, in wrapper\n    result = view_function(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py\", line 188, in view_func\n    function(event)\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py\", line 81, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/main.py\", line 31, in ingest_pdf\n    logging.warning(f\"type(data) = {type(data)}\")\n                                         ^^^^\nUnboundLocalError: cannot access local variable 'data' where it is not associated with a value",
+    "timestamp": "2026-08-01T09:53:27.933678Z"
+  },
+  {
+    "insertId": "6a6dc217000e3b6e7f486831",
+    "labels": {
+      "execution_id": "KtuH0Y5Ja0yI",
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f729c74ff30681eb2e45e725a89f9869bf3944a0a780539ec953a1dd209020d6647f6c604d0cd1aecdead4820741a1a58cc10da98dce35933187124a18c99b7723b8deebf09705c421dc009e",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2026-08-01T09:53:28.272381800Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-bif",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "8669425766932915013",
+    "textPayload": "==============================",
+    "timestamp": "2026-08-01T09:53:27.932718Z"
+  },
+  {
+    "insertId": "6a6dc217000e3ac98ad0e325",
+    "jsonPayload": {
+      "bucket": "knowledge-factory-prod-raw",
+      "contentType": "application/pdf",
+      "crc32c": "5oPyMQ==",
+      "etag": "CMjupPKS/5UDEAE=",
+      "generation": "1785577595287368",
+      "id": "knowledge-factory-prod-raw/test_matrices_v1.pdf/1785577595287368",
+      "kind": "storage#object",
+      "md5Hash": "OLy0DbgdYJmkHCc/XVVcxA==",
+      "mediaLink": "https://storage.googleapis.com/download/storage/v1/b/knowledge-factory-prod-raw/o/test_matrices_v1.pdf?generation=1785577595287368&alt=media",
+      "metageneration": "1",
+      "name": "test_matrices_v1.pdf",
+      "selfLink": "https://www.googleapis.com/storage/v1/b/knowledge-factory-prod-raw/o/test_matrices_v1.pdf",
+      "size": "2160266",
+      "storageClass": "STANDARD",
+      "timeCreated": "2026-08-01T09:46:35.293Z",
+      "timeStorageClassUpdated": "2026-08-01T09:46:35.293Z",
+      "updated": "2026-08-01T09:46:35.293Z"
+    },
+    "labels": {
+      "execution_id": "KtuH0Y5Ja0yI",
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f729c74ff30681eb2e45e725a89f9869bf3944a0a780539ec953a1dd209020d6647f6c604d0cd1aecdead4820741a1a58cc10da98dce35933187124a18c99b7723b8deebf09705c421dc009e",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2026-08-01T09:53:28.272381800Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-bif",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "8669425766932915013",
+    "timestamp": "2026-08-01T09:53:27.932553Z"
+  },
+  {
+    "insertId": "6a6dc217000e39be6cc2e977",
+    "labels": {
+      "execution_id": "KtuH0Y5Ja0yI",
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f729c74ff30681eb2e45e725a89f9869bf3944a0a780539ec953a1dd209020d6647f6c604d0cd1aecdead4820741a1a58cc10da98dce35933187124a18c99b7723b8deebf09705c421dc009e",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2026-08-01T09:53:28.272381800Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-bif",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "8669425766932915013",
+    "textPayload": "========== RAW DATA ==========",
+    "timestamp": "2026-08-01T09:53:27.932286Z"
+  },
+  {
+    "insertId": "6a6dc217000e39138f4f3ed4",
+    "labels": {
+      "execution_id": "KtuH0Y5Ja0yI",
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f729c74ff30681eb2e45e725a89f9869bf3944a0a780539ec953a1dd209020d6647f6c604d0cd1aecdead4820741a1a58cc10da98dce35933187124a18c99b7723b8deebf09705c421dc009e",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2026-08-01T09:53:28.272381800Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-bif",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "8669425766932915013",
+    "textPayload": "{'attributes': {'specversion': '1.0', 'id': '20851276456275481', 'source': '//storage.googleapis.com/projects/_/buckets/knowledge-factory-prod-raw', 'type': 'google.cloud.storage.object.v1.finalized', 'datacontenttype': 'application/json', 'subject': 'objects/test_matrices_v1.pdf', 'time': '2026-08-01T09:46:35.293839Z', 'bucket': 'knowledge-factory-prod-raw'}, 'data': {'kind': 'storage#object', 'id': 'knowledge-factory-prod-raw/test_matrices_v1.pdf/1785577595287368', 'selfLink': 'https://www.googleapis.com/storage/v1/b/knowledge-factory-prod-raw/o/test_matrices_v1.pdf', 'name': 'test_matrices_v1.pdf', 'bucket': 'knowledge-factory-prod-raw', 'generation': '1785577595287368', 'metageneration': '1', 'contentType': 'application/pdf', 'timeCreated': '2026-08-01T09:46:35.293Z', 'updated': '2026-08-01T09:46:35.293Z', 'storageClass': 'STANDARD', 'timeStorageClassUpdated': '2026-08-01T09:46:35.293Z', 'size': '2160266', 'md5Hash': 'OLy0DbgdYJmkHCc/XVVcxA==', 'mediaLink': 'https://storage.googleapis.com/download/storage/v1/b/knowledge-factory-prod-raw/o/test_matrices_v1.pdf?generation=1785577595287368&alt=media', 'crc32c': '5oPyMQ==', 'etag': 'CMjupPKS/5UDEAE='}}",
+    "timestamp": "2026-08-01T09:53:27.932115Z"
+  },
+  {
+    "insertId": "6a6dc217000e3832eeb3b4b3",
+    "labels": {
+      "execution_id": "KtuH0Y5Ja0yI",
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f729c74ff30681eb2e45e725a89f9869bf3944a0a780539ec953a1dd209020d6647f6c604d0cd1aecdead4820741a1a58cc10da98dce35933187124a18c99b7723b8deebf09705c421dc009e",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2026-08-01T09:53:27.938448045Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-bif",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "8669425766932915013",
+    "textPayload": "========== RAW CLOUD EVENT ==========",
+    "timestamp": "2026-08-01T09:53:27.931890Z"
+  },
+  {
+    "httpRequest": {
+      "latency": "0.005508970s",
+      "protocol": "HTTP/1.1",
+      "remoteIp": "34.116.19.65",
+      "requestMethod": "POST",
+      "requestSize": "3148",
+      "requestUrl": "https://knowledge-factory-ingestion-75fs5clc5a-el.a.run.app/?__GCP_CloudEventsMode=GCS_NOTIFICATION",
+      "responseSize": "331",
+      "serverIp": "34.143.79.2",
+      "status": 500,
+      "userAgent": "APIs-Google; (+https://developers.google.com/webmasters/APIs-Google.html)"
+    },
+    "insertId": "6a6dc217000e427c3db42a08",
+    "labels": {
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f729c74ff30681eb2e45e725a89f9869bf3944a0a780539ec953a1dd209020d6647f6c604d0cd1aecdead4820741a1a58cc10da98dce35933187124a18c99b7723b8deebf09705c421dc009e",
+      "run.googleapis.com/cloud_event_id": "20851276456275481",
+      "run.googleapis.com/cloud_event_source": "//storage.googleapis.com/projects/_/buckets/knowledge-factory-prod-raw"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Frequests",
+    "receiveTimestamp": "2026-08-01T09:53:27.941090984Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-bif",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "ERROR",
+    "spanId": "784ffccd6ca7a345",
+    "timestamp": "2026-08-01T09:53:27.914595Z",
+    "trace": "projects/knowledge-factory-prod/traces/8bb5fedb2d82d4c993530768d20a0541",
+    "traceSampled": true
+  },
+  {
+    "errorGroups": [
+      {
+        "id": "CKmvmN20v5HyXA"
+      }
+    ],
+    "insertId": "6a6dc1b8000f1c265d682314",
+    "labels": {
+      "execution_id": "xX1XGZ5gKgnc",
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f729c74ff30681eb2e45e725a89f9869bf3944a0a780539ec953a1dd209020d6647f6c604d0cd1aecdead4820741a1a58cc10da98dce35933187124a18c99b7723b8deebf09705c421dc009e",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2026-08-01T09:51:53.328782054Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-bif",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "9542425950656332647",
+    "textPayload": "Exception on / [POST]\nTraceback (most recent call last):\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py\", line 1511, in wsgi_app\n    response = self.full_dispatch_request()\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py\", line 919, in full_dispatch_request\n    rv = self.handle_user_exception(e)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py\", line 917, in full_dispatch_request\n    rv = self.dispatch_request()\n         ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py\", line 902, in dispatch_request\n    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/execution_id.py\", line 157, in wrapper\n    result = view_function(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py\", line 188, in view_func\n    function(event)\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py\", line 81, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/main.py\", line 31, in ingest_pdf\n    logging.warning(f\"type(data) = {type(data)}\")\n                                         ^^^^\nUnboundLocalError: cannot access local variable 'data' where it is not associated with a value",
+    "timestamp": "2026-08-01T09:51:52.990246Z"
+  },
+  {
+    "insertId": "6a6dc1b8000f1886363e01e7",
+    "labels": {
+      "execution_id": "xX1XGZ5gKgnc",
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f729c74ff30681eb2e45e725a89f9869bf3944a0a780539ec953a1dd209020d6647f6c604d0cd1aecdead4820741a1a58cc10da98dce35933187124a18c99b7723b8deebf09705c421dc009e",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2026-08-01T09:51:53.328782054Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-bif",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "9542425950656332647",
+    "textPayload": "==============================",
+    "timestamp": "2026-08-01T09:51:52.989318Z"
+  },
+  {
+    "insertId": "6a6dc1b8000f17eaa142ec20",
+    "jsonPayload": {
+      "bucket": "knowledge-factory-prod-raw",
+      "contentType": "application/pdf",
+      "crc32c": "5oPyMQ==",
+      "etag": "CMjupPKS/5UDEAE=",
+      "generation": "1785577595287368",
+      "id": "knowledge-factory-prod-raw/test_matrices_v1.pdf/1785577595287368",
+      "kind": "storage#object",
+      "md5Hash": "OLy0DbgdYJmkHCc/XVVcxA==",
+      "mediaLink": "https://storage.googleapis.com/download/storage/v1/b/knowledge-factory-prod-raw/o/test_matrices_v1.pdf?generation=1785577595287368&alt=media",
+      "metageneration": "1",
+      "name": "test_matrices_v1.pdf",
+      "selfLink": "https://www.googleapis.com/storage/v1/b/knowledge-factory-prod-raw/o/test_matrices_v1.pdf",
+      "size": "2160266",
+      "storageClass": "STANDARD",
+      "timeCreated": "2026-08-01T09:46:35.293Z",
+      "timeStorageClassUpdated": "2026-08-01T09:46:35.293Z",
+      "updated": "2026-08-01T09:46:35.293Z"
+    },
+    "labels": {
+      "execution_id": "xX1XGZ5gKgnc",
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f729c74ff30681eb2e45e725a89f9869bf3944a0a780539ec953a1dd209020d6647f6c604d0cd1aecdead4820741a1a58cc10da98dce35933187124a18c99b7723b8deebf09705c421dc009e",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2026-08-01T09:51:53.328782054Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-bif",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "9542425950656332647",
+    "timestamp": "2026-08-01T09:51:52.989162Z"
+  },
+  {
+    "insertId": "6a6dc1b8000f17098ebbd818",
+    "labels": {
+      "execution_id": "xX1XGZ5gKgnc",
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f729c74ff30681eb2e45e725a89f9869bf3944a0a780539ec953a1dd209020d6647f6c604d0cd1aecdead4820741a1a58cc10da98dce35933187124a18c99b7723b8deebf09705c421dc009e",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2026-08-01T09:51:53.328782054Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-bif",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "9542425950656332647",
+    "textPayload": "========== RAW DATA ==========",
+    "timestamp": "2026-08-01T09:51:52.988937Z"
+  },
+  {
+    "insertId": "6a6dc1b8000f1677c7c81991",
+    "labels": {
+      "execution_id": "xX1XGZ5gKgnc",
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f729c74ff30681eb2e45e725a89f9869bf3944a0a780539ec953a1dd209020d6647f6c604d0cd1aecdead4820741a1a58cc10da98dce35933187124a18c99b7723b8deebf09705c421dc009e",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2026-08-01T09:51:53.328782054Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-bif",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "9542425950656332647",
+    "textPayload": "{'attributes': {'specversion': '1.0', 'id': '20851276456275481', 'source': '//storage.googleapis.com/projects/_/buckets/knowledge-factory-prod-raw', 'type': 'google.cloud.storage.object.v1.finalized', 'datacontenttype': 'application/json', 'subject': 'objects/test_matrices_v1.pdf', 'time': '2026-08-01T09:46:35.293839Z', 'bucket': 'knowledge-factory-prod-raw'}, 'data': {'kind': 'storage#object', 'id': 'knowledge-factory-prod-raw/test_matrices_v1.pdf/1785577595287368', 'selfLink': 'https://www.googleapis.com/storage/v1/b/knowledge-factory-prod-raw/o/test_matrices_v1.pdf', 'name': 'test_matrices_v1.pdf', 'bucket': 'knowledge-factory-prod-raw', 'generation': '1785577595287368', 'metageneration': '1', 'contentType': 'application/pdf', 'timeCreated': '2026-08-01T09:46:35.293Z', 'updated': '2026-08-01T09:46:35.293Z', 'storageClass': 'STANDARD', 'timeStorageClassUpdated': '2026-08-01T09:46:35.293Z', 'size': '2160266', 'md5Hash': 'OLy0DbgdYJmkHCc/XVVcxA==', 'mediaLink': 'https://storage.googleapis.com/download/storage/v1/b/knowledge-factory-prod-raw/o/test_matrices_v1.pdf?generation=1785577595287368&alt=media', 'crc32c': '5oPyMQ==', 'etag': 'CMjupPKS/5UDEAE='}}",
+    "timestamp": "2026-08-01T09:51:52.988791Z"
+  },
+  {
+    "insertId": "6a6dc1b8000f15a0b17fa4e2",
+    "labels": {
+      "execution_id": "xX1XGZ5gKgnc",
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f729c74ff30681eb2e45e725a89f9869bf3944a0a780539ec953a1dd209020d6647f6c604d0cd1aecdead4820741a1a58cc10da98dce35933187124a18c99b7723b8deebf09705c421dc009e",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2026-08-01T09:51:52.993880558Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-bif",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "9542425950656332647",
+    "textPayload": "========== RAW CLOUD EVENT ==========",
+    "timestamp": "2026-08-01T09:51:52.988576Z"
+  },
+  {
+    "httpRequest": {
+      "latency": "0.005333669s",
+      "protocol": "HTTP/1.1",
+      "remoteIp": "34.98.139.2",
+      "requestMethod": "POST",
+      "requestSize": "3147",
+      "requestUrl": "https://knowledge-factory-ingestion-75fs5clc5a-el.a.run.app/?__GCP_CloudEventsMode=GCS_NOTIFICATION",
+      "responseSize": "331",
+      "serverIp": "34.143.78.2",
+      "status": 500,
+      "userAgent": "APIs-Google; (+https://developers.google.com/webmasters/APIs-Google.html)"
+    },
+    "insertId": "6a6dc1b8000f1f2e80587509",
+    "labels": {
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f729c74ff30681eb2e45e725a89f9869bf3944a0a780539ec953a1dd209020d6647f6c604d0cd1aecdead4820741a1a58cc10da98dce35933187124a18c99b7723b8deebf09705c421dc009e",
+      "run.googleapis.com/cloud_event_id": "20851276456275481",
+      "run.googleapis.com/cloud_event_source": "//storage.googleapis.com/projects/_/buckets/knowledge-factory-prod-raw"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Frequests",
+    "receiveTimestamp": "2026-08-01T09:51:52.997683361Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-bif",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "ERROR",
+    "spanId": "846d81d81c570367",
+    "timestamp": "2026-08-01T09:51:52.973002Z",
+    "trace": "projects/knowledge-factory-prod/traces/61fe413b7ea4e8c8bbf52990bca468ec",
+    "traceSampled": true
+  },
+  {
+    "errorGroups": [
+      {
+        "id": "CKmvmN20v5HyXA"
+      }
+    ],
+    "insertId": "6a6dc16d000dd9f18dba5f51",
+    "labels": {
+      "execution_id": "C3Chw5EU5Hdy",
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f729c74ff30681eb2e45e725a89f9869bf3944a0a780539ec953a1dd209020d6647f6c604d0cd1aecdead4820741a1a58cc10da98dce35933187124a18c99b7723b8deebf09705c421dc009e",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2026-08-01T09:50:38.246227600Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-bif",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "9936083973921207186",
+    "textPayload": "Exception on / [POST]\nTraceback (most recent call last):\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py\", line 1511, in wsgi_app\n    response = self.full_dispatch_request()\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py\", line 919, in full_dispatch_request\n    rv = self.handle_user_exception(e)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py\", line 917, in full_dispatch_request\n    rv = self.dispatch_request()\n         ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py\", line 902, in dispatch_request\n    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/execution_id.py\", line 157, in wrapper\n    result = view_function(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py\", line 188, in view_func\n    function(event)\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py\", line 81, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/main.py\", line 31, in ingest_pdf\n    logging.warning(f\"type(data) = {type(data)}\")\n                                         ^^^^\nUnboundLocalError: cannot access local variable 'data' where it is not associated with a value",
+    "timestamp": "2026-08-01T09:50:37.907761Z"
+  },
+  {
+    "insertId": "6a6dc16d000dd62d760b4301",
+    "labels": {
+      "execution_id": "C3Chw5EU5Hdy",
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f729c74ff30681eb2e45e725a89f9869bf3944a0a780539ec953a1dd209020d6647f6c604d0cd1aecdead4820741a1a58cc10da98dce35933187124a18c99b7723b8deebf09705c421dc009e",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2026-08-01T09:50:38.246227600Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-bif",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "9936083973921207186",
+    "textPayload": "==============================",
+    "timestamp": "2026-08-01T09:50:37.906797Z"
+  },
+  {
+    "insertId": "6a6dc16d000dd5a29858600b",
+    "jsonPayload": {
+      "bucket": "knowledge-factory-prod-raw",
+      "contentType": "application/pdf",
+      "crc32c": "5oPyMQ==",
+      "etag": "CMjupPKS/5UDEAE=",
+      "generation": "1785577595287368",
+      "id": "knowledge-factory-prod-raw/test_matrices_v1.pdf/1785577595287368",
+      "kind": "storage#object",
+      "md5Hash": "OLy0DbgdYJmkHCc/XVVcxA==",
+      "mediaLink": "https://storage.googleapis.com/download/storage/v1/b/knowledge-factory-prod-raw/o/test_matrices_v1.pdf?generation=1785577595287368&alt=media",
+      "metageneration": "1",
+      "name": "test_matrices_v1.pdf",
+      "selfLink": "https://www.googleapis.com/storage/v1/b/knowledge-factory-prod-raw/o/test_matrices_v1.pdf",
+      "size": "2160266",
+      "storageClass": "STANDARD",
+      "timeCreated": "2026-08-01T09:46:35.293Z",
+      "timeStorageClassUpdated": "2026-08-01T09:46:35.293Z",
+      "updated": "2026-08-01T09:46:35.293Z"
+    },
+    "labels": {
+      "execution_id": "C3Chw5EU5Hdy",
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f729c74ff30681eb2e45e725a89f9869bf3944a0a780539ec953a1dd209020d6647f6c604d0cd1aecdead4820741a1a58cc10da98dce35933187124a18c99b7723b8deebf09705c421dc009e",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2026-08-01T09:50:38.246227600Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-bif",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "9936083973921207186",
+    "timestamp": "2026-08-01T09:50:37.906658Z"
+  },
+  {
+    "insertId": "6a6dc16d000dd4af5f2b872a",
+    "labels": {
+      "execution_id": "C3Chw5EU5Hdy",
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f729c74ff30681eb2e45e725a89f9869bf3944a0a780539ec953a1dd209020d6647f6c604d0cd1aecdead4820741a1a58cc10da98dce35933187124a18c99b7723b8deebf09705c421dc009e",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2026-08-01T09:50:38.246227600Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-bif",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "9936083973921207186",
+    "textPayload": "========== RAW DATA ==========",
+    "timestamp": "2026-08-01T09:50:37.906415Z"
+  },
+  {
+    "insertId": "6a6dc16d000dd42ee1e325b4",
+    "labels": {
+      "execution_id": "C3Chw5EU5Hdy",
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f729c74ff30681eb2e45e725a89f9869bf3944a0a780539ec953a1dd209020d6647f6c604d0cd1aecdead4820741a1a58cc10da98dce35933187124a18c99b7723b8deebf09705c421dc009e",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2026-08-01T09:50:38.246227600Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-bif",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "9936083973921207186",
+    "textPayload": "{'attributes': {'specversion': '1.0', 'id': '20851276456275481', 'source': '//storage.googleapis.com/projects/_/buckets/knowledge-factory-prod-raw', 'type': 'google.cloud.storage.object.v1.finalized', 'datacontenttype': 'application/json', 'subject': 'objects/test_matrices_v1.pdf', 'time': '2026-08-01T09:46:35.293839Z', 'bucket': 'knowledge-factory-prod-raw'}, 'data': {'kind': 'storage#object', 'id': 'knowledge-factory-prod-raw/test_matrices_v1.pdf/1785577595287368', 'selfLink': 'https://www.googleapis.com/storage/v1/b/knowledge-factory-prod-raw/o/test_matrices_v1.pdf', 'name': 'test_matrices_v1.pdf', 'bucket': 'knowledge-factory-prod-raw', 'generation': '1785577595287368', 'metageneration': '1', 'contentType': 'application/pdf', 'timeCreated': '2026-08-01T09:46:35.293Z', 'updated': '2026-08-01T09:46:35.293Z', 'storageClass': 'STANDARD', 'timeStorageClassUpdated': '2026-08-01T09:46:35.293Z', 'size': '2160266', 'md5Hash': 'OLy0DbgdYJmkHCc/XVVcxA==', 'mediaLink': 'https://storage.googleapis.com/download/storage/v1/b/knowledge-factory-prod-raw/o/test_matrices_v1.pdf?generation=1785577595287368&alt=media', 'crc32c': '5oPyMQ==', 'etag': 'CMjupPKS/5UDEAE='}}",
+    "timestamp": "2026-08-01T09:50:37.906286Z"
+  },
+  {
+    "insertId": "6a6dc16d000dd338be3412f3",
+    "labels": {
+      "execution_id": "C3Chw5EU5Hdy",
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f729c74ff30681eb2e45e725a89f9869bf3944a0a780539ec953a1dd209020d6647f6c604d0cd1aecdead4820741a1a58cc10da98dce35933187124a18c99b7723b8deebf09705c421dc009e",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2026-08-01T09:50:37.908799683Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-bif",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "9936083973921207186",
+    "textPayload": "========== RAW CLOUD EVENT ==========",
+    "timestamp": "2026-08-01T09:50:37.906040Z"
+  },
+  {
+    "httpRequest": {
+      "latency": "0.018727361s",
+      "protocol": "HTTP/1.1",
+      "remoteIp": "34.116.19.65",
+      "requestMethod": "POST",
+      "requestSize": "3147",
+      "requestUrl": "https://knowledge-factory-ingestion-75fs5clc5a-el.a.run.app/?__GCP_CloudEventsMode=GCS_NOTIFICATION",
+      "responseSize": "331",
+      "serverIp": "34.143.75.2",
+      "status": 500,
+      "userAgent": "APIs-Google; (+https://developers.google.com/webmasters/APIs-Google.html)"
+    },
+    "insertId": "6a6dc16d000ddddaabb6f8c0",
+    "labels": {
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f729c74ff30681eb2e45e725a89f9869bf3944a0a780539ec953a1dd209020d6647f6c604d0cd1aecdead4820741a1a58cc10da98dce35933187124a18c99b7723b8deebf09705c421dc009e",
+      "run.googleapis.com/cloud_event_id": "20851276456275481",
+      "run.googleapis.com/cloud_event_source": "//storage.googleapis.com/projects/_/buckets/knowledge-factory-prod-raw"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Frequests",
+    "receiveTimestamp": "2026-08-01T09:50:37.917308734Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-bif",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "ERROR",
+    "spanId": "89e40fbb0c067392",
+    "timestamp": "2026-08-01T09:50:37.877399Z",
+    "trace": "projects/knowledge-factory-prod/traces/805524fe84d25194ffd84e016bf5a881",
+    "traceSampled": true
+  },
+  {
+    "errorGroups": [
+      {
+        "id": "CKmvmN20v5HyXA"
+      }
+    ],
+    "insertId": "6a6dc13a000e47083ac8ec75",
+    "labels": {
+      "execution_id": "PUzkYKmBERS4",
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f729c74ff30681eb2e45e725a89f9869bf3944a0a780539ec953a1dd209020d6647f6c604d0cd1aecdead4820741a1a58cc10da98dce35933187124a18c99b7723b8deebf09705c421dc009e",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2026-08-01T09:49:47.271282084Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-bif",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "198251490867078835",
+    "textPayload": "Exception on / [POST]\nTraceback (most recent call last):\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py\", line 1511, in wsgi_app\n    response = self.full_dispatch_request()\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py\", line 919, in full_dispatch_request\n    rv = self.handle_user_exception(e)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py\", line 917, in full_dispatch_request\n    rv = self.dispatch_request()\n         ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py\", line 902, in dispatch_request\n    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/execution_id.py\", line 157, in wrapper\n    result = view_function(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py\", line 188, in view_func\n    function(event)\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py\", line 81, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/main.py\", line 31, in ingest_pdf\n    logging.warning(f\"type(data) = {type(data)}\")\n                                         ^^^^\nUnboundLocalError: cannot access local variable 'data' where it is not associated with a value",
+    "timestamp": "2026-08-01T09:49:46.935688Z"
+  },
+  {
+    "insertId": "6a6dc13a000e427a1f9de9c3",
+    "labels": {
+      "execution_id": "PUzkYKmBERS4",
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f729c74ff30681eb2e45e725a89f9869bf3944a0a780539ec953a1dd209020d6647f6c604d0cd1aecdead4820741a1a58cc10da98dce35933187124a18c99b7723b8deebf09705c421dc009e",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2026-08-01T09:49:47.271282084Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-bif",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "198251490867078835",
+    "textPayload": "==============================",
+    "timestamp": "2026-08-01T09:49:46.934522Z"
+  },
+  {
+    "insertId": "6a6dc13a000e41d4d11cd7d6",
+    "jsonPayload": {
+      "bucket": "knowledge-factory-prod-raw",
+      "contentType": "application/pdf",
+      "crc32c": "5oPyMQ==",
+      "etag": "CMjupPKS/5UDEAE=",
+      "generation": "1785577595287368",
+      "id": "knowledge-factory-prod-raw/test_matrices_v1.pdf/1785577595287368",
+      "kind": "storage#object",
+      "md5Hash": "OLy0DbgdYJmkHCc/XVVcxA==",
+      "mediaLink": "https://storage.googleapis.com/download/storage/v1/b/knowledge-factory-prod-raw/o/test_matrices_v1.pdf?generation=1785577595287368&alt=media",
+      "metageneration": "1",
+      "name": "test_matrices_v1.pdf",
+      "selfLink": "https://www.googleapis.com/storage/v1/b/knowledge-factory-prod-raw/o/test_matrices_v1.pdf",
+      "size": "2160266",
+      "storageClass": "STANDARD",
+      "timeCreated": "2026-08-01T09:46:35.293Z",
+      "timeStorageClassUpdated": "2026-08-01T09:46:35.293Z",
+      "updated": "2026-08-01T09:46:35.293Z"
+    },
+    "labels": {
+      "execution_id": "PUzkYKmBERS4",
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f729c74ff30681eb2e45e725a89f9869bf3944a0a780539ec953a1dd209020d6647f6c604d0cd1aecdead4820741a1a58cc10da98dce35933187124a18c99b7723b8deebf09705c421dc009e",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2026-08-01T09:49:47.271282084Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-bif",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "198251490867078835",
+    "timestamp": "2026-08-01T09:49:46.934356Z"
+  },
+  {
+    "insertId": "6a6dc13a000e40f99ab4a75f",
+    "labels": {
+      "execution_id": "PUzkYKmBERS4",
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f729c74ff30681eb2e45e725a89f9869bf3944a0a780539ec953a1dd209020d6647f6c604d0cd1aecdead4820741a1a58cc10da98dce35933187124a18c99b7723b8deebf09705c421dc009e",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2026-08-01T09:49:47.271282084Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-bif",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "198251490867078835",
+    "textPayload": "========== RAW DATA ==========",
+    "timestamp": "2026-08-01T09:49:46.934137Z"
+  },
+  {
+    "insertId": "6a6dc13a000e4039c039e04a",
+    "labels": {
+      "execution_id": "PUzkYKmBERS4",
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f729c74ff30681eb2e45e725a89f9869bf3944a0a780539ec953a1dd209020d6647f6c604d0cd1aecdead4820741a1a58cc10da98dce35933187124a18c99b7723b8deebf09705c421dc009e",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2026-08-01T09:49:47.271282084Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-bif",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "198251490867078835",
+    "textPayload": "{'attributes': {'specversion': '1.0', 'id': '20851276456275481', 'source': '//storage.googleapis.com/projects/_/buckets/knowledge-factory-prod-raw', 'type': 'google.cloud.storage.object.v1.finalized', 'datacontenttype': 'application/json', 'subject': 'objects/test_matrices_v1.pdf', 'time': '2026-08-01T09:46:35.293839Z', 'bucket': 'knowledge-factory-prod-raw'}, 'data': {'kind': 'storage#object', 'id': 'knowledge-factory-prod-raw/test_matrices_v1.pdf/1785577595287368', 'selfLink': 'https://www.googleapis.com/storage/v1/b/knowledge-factory-prod-raw/o/test_matrices_v1.pdf', 'name': 'test_matrices_v1.pdf', 'bucket': 'knowledge-factory-prod-raw', 'generation': '1785577595287368', 'metageneration': '1', 'contentType': 'application/pdf', 'timeCreated': '2026-08-01T09:46:35.293Z', 'updated': '2026-08-01T09:46:35.293Z', 'storageClass': 'STANDARD', 'timeStorageClassUpdated': '2026-08-01T09:46:35.293Z', 'size': '2160266', 'md5Hash': 'OLy0DbgdYJmkHCc/XVVcxA==', 'mediaLink': 'https://storage.googleapis.com/download/storage/v1/b/knowledge-factory-prod-raw/o/test_matrices_v1.pdf?generation=1785577595287368&alt=media', 'crc32c': '5oPyMQ==', 'etag': 'CMjupPKS/5UDEAE='}}",
+    "timestamp": "2026-08-01T09:49:46.933945Z"
+  },
+  {
+    "insertId": "6a6dc13a000e3f929a350e71",
+    "labels": {
+      "execution_id": "PUzkYKmBERS4",
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f729c74ff30681eb2e45e725a89f9869bf3944a0a780539ec953a1dd209020d6647f6c604d0cd1aecdead4820741a1a58cc10da98dce35933187124a18c99b7723b8deebf09705c421dc009e",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2026-08-01T09:49:46.939622768Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-bif",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "198251490867078835",
+    "textPayload": "========== RAW CLOUD EVENT ==========",
+    "timestamp": "2026-08-01T09:49:46.933778Z"
+  },
+  {
+    "httpRequest": {
+      "latency": "0.006189221s",
+      "protocol": "HTTP/1.1",
+      "remoteIp": "35.187.129.192",
+      "requestMethod": "POST",
+      "requestSize": "3148",
+      "requestUrl": "https://knowledge-factory-ingestion-75fs5clc5a-el.a.run.app/?__GCP_CloudEventsMode=GCS_NOTIFICATION",
+      "responseSize": "331",
+      "serverIp": "34.143.74.2",
+      "status": 500,
+      "userAgent": "APIs-Google; (+https://developers.google.com/webmasters/APIs-Google.html)"
+    },
+    "insertId": "6a6dc13a000e4a5d019ef744",
+    "labels": {
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f729c74ff30681eb2e45e725a89f9869bf3944a0a780539ec953a1dd209020d6647f6c604d0cd1aecdead4820741a1a58cc10da98dce35933187124a18c99b7723b8deebf09705c421dc009e",
+      "run.googleapis.com/cloud_event_id": "20851276456275481",
+      "run.googleapis.com/cloud_event_source": "//storage.googleapis.com/projects/_/buckets/knowledge-factory-prod-raw"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Frequests",
+    "receiveTimestamp": "2026-08-01T09:49:46.941047172Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-bif",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "ERROR",
+    "spanId": "02c054ae3952e6b3",
+    "timestamp": "2026-08-01T09:49:46.917444Z",
+    "trace": "projects/knowledge-factory-prod/traces/4c124ca99019730fc2a93cfc232c2d82",
+    "traceSampled": true
+  },
+  {
+    "errorGroups": [
+      {
+        "id": "CKmvmN20v5HyXA"
+      }
+    ],
+    "insertId": "6a6dc109000db86223f174ec",
+    "labels": {
+      "execution_id": "ICtdNBWM6wM0",
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f729c74ff30681eb2e45e725a89f9869bf3944a0a780539ec953a1dd209020d6647f6c604d0cd1aecdead4820741a1a58cc10da98dce35933187124a18c99b7723b8deebf09705c421dc009e",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2026-08-01T09:48:58.234427822Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-bif",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "7337704005227216049",
+    "textPayload": "Exception on / [POST]\nTraceback (most recent call last):\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py\", line 1511, in wsgi_app\n    response = self.full_dispatch_request()\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py\", line 919, in full_dispatch_request\n    rv = self.handle_user_exception(e)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py\", line 917, in full_dispatch_request\n    rv = self.dispatch_request()\n         ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/flask/app.py\", line 902, in dispatch_request\n    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/execution_id.py\", line 157, in wrapper\n    result = view_function(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py\", line 188, in view_func\n    function(event)\n  File \"/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py\", line 81, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/main.py\", line 31, in ingest_pdf\n    logging.warning(f\"type(data) = {type(data)}\")\n                                         ^^^^\nUnboundLocalError: cannot access local variable 'data' where it is not associated with a value",
+    "timestamp": "2026-08-01T09:48:57.899170Z"
+  },
+  {
+    "insertId": "6a6dc109000db45c7bbb64a3",
+    "labels": {
+      "execution_id": "ICtdNBWM6wM0",
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f729c74ff30681eb2e45e725a89f9869bf3944a0a780539ec953a1dd209020d6647f6c604d0cd1aecdead4820741a1a58cc10da98dce35933187124a18c99b7723b8deebf09705c421dc009e",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2026-08-01T09:48:58.234427822Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-bif",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "7337704005227216049",
+    "textPayload": "==============================",
+    "timestamp": "2026-08-01T09:48:57.898140Z"
+  },
+  {
+    "insertId": "6a6dc109000db39f822698c9",
+    "jsonPayload": {
+      "bucket": "knowledge-factory-prod-raw",
+      "contentType": "application/pdf",
+      "crc32c": "5oPyMQ==",
+      "etag": "CMjupPKS/5UDEAE=",
+      "generation": "1785577595287368",
+      "id": "knowledge-factory-prod-raw/test_matrices_v1.pdf/1785577595287368",
+      "kind": "storage#object",
+      "md5Hash": "OLy0DbgdYJmkHCc/XVVcxA==",
+      "mediaLink": "https://storage.googleapis.com/download/storage/v1/b/knowledge-factory-prod-raw/o/test_matrices_v1.pdf?generation=1785577595287368&alt=media",
+      "metageneration": "1",
+      "name": "test_matrices_v1.pdf",
+      "selfLink": "https://www.googleapis.com/storage/v1/b/knowledge-factory-prod-raw/o/test_matrices_v1.pdf",
+      "size": "2160266",
+      "storageClass": "STANDARD",
+      "timeCreated": "2026-08-01T09:46:35.293Z",
+      "timeStorageClassUpdated": "2026-08-01T09:46:35.293Z",
+      "updated": "2026-08-01T09:46:35.293Z"
+    },
+    "labels": {
+      "execution_id": "ICtdNBWM6wM0",
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f729c74ff30681eb2e45e725a89f9869bf3944a0a780539ec953a1dd209020d6647f6c604d0cd1aecdead4820741a1a58cc10da98dce35933187124a18c99b7723b8deebf09705c421dc009e",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2026-08-01T09:48:58.234427822Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-bif",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "7337704005227216049",
+    "timestamp": "2026-08-01T09:48:57.897951Z"
+  },
+  {
+    "insertId": "6a6dc109000db29aa4c2cfd5",
+    "labels": {
+      "execution_id": "ICtdNBWM6wM0",
+      "goog-managed-by": "cloudfunctions",
+      "goog-terraform-provisioned": "true",
+      "instanceId": "001548f729c74ff30681eb2e45e725a89f9869bf3944a0a780539ec953a1dd209020d6647f6c604d0cd1aecdead4820741a1a58cc10da98dce35933187124a18c99b7723b8deebf09705c421dc009e",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260701_3_12_13_RC00"
+    },
+    "logName": "projects/knowledge-factory-prod/logs/run.googleapis.com%2Fstderr",
+    "receiveTimestamp": "2026-08-01T09:48:58.234427822Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "knowledge-factory-ingestion",
+        "location": "asia-south1",
+        "project_id": "knowledge-factory-prod",
+        "revision_name": "knowledge-factory-ingestion-00001-bif",
+        "service_name": "knowledge-factory-ingestion"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "7337704005227216049",
+    "textPayload": "========== RAW DATA ==========",
+    "timestamp": "2026-08-01T09:48:57.897690Z"
+  }
+]
