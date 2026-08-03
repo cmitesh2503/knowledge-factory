@@ -1,16 +1,40 @@
 import json
-import logging
 import os
-import tempfile
-
+import hashlib
+import time
+from datetime import datetime, timezone
 import functions_framework
-from google.cloud import documentai
-from google.cloud import storage
+from canonical_document_builder import CanonicalDocumentBuilder
+from document_ai import DocumentAIService
+from firestore_metadata import FirestoreMetadataService
+from storage import StorageService
+from logger import configure_logger
+from event_parser import parse_storage_event
+from config import load_settings
+from utils import (
+    get_temp_file_path,
+    delete_file,
+)
+from document_processor import DocumentProcessor
 
-logging.basicConfig(level=logging.INFO)
+settings = load_settings()
 
-storage_client = storage.Client()
-documentai_client = documentai.DocumentProcessorServiceClient()
+logger = configure_logger()
+
+
+storage_service = StorageService(logger)
+canonical_builder = CanonicalDocumentBuilder()
+firestore_metadata = FirestoreMetadataService(
+    logger=logger,
+    project_id=settings.project_id,
+    database_name=settings.firestore_database,
+)
+document_ai = DocumentAIService(
+    project_id=settings.project_id,
+    location=settings.document_ai_location,
+    processor_id=settings.document_ai_processor,
+)
+document_processor = DocumentProcessor(logger)
 
 
 @functions_framework.cloud_event
@@ -21,43 +45,60 @@ def ingest_pdf(cloud_event):
     Trigger:
         Cloud Storage Object Finalized
     """
+    print("===================================")
+    print("FUNCTION STARTED")
+    print(cloud_event.data)
+    print("===================================")
 
+    start_time = time.perf_counter()
     local_file = None
+    canonical_file = None
 
     try:
         # ------------------------------------------------------------------
         # RAW EVENT
         # ------------------------------------------------------------------
 
-        logging.warning("========== RAW CLOUD EVENT ==========")
-        logging.warning(str(cloud_event))
+        logger.info("========== RAW CLOUD EVENT ==========")
 
-        data = cloud_event.data
+        logger.info(
+            json.dumps(
+                cloud_event.data,
+                indent=2,
+                default=str,
+            )
+        )
 
-        logging.warning("========== RAW DATA ==========")
-        logging.warning(json.dumps(data, indent=2, default=str))
+        event = parse_storage_event(cloud_event)
 
-        logging.warning(f"type(data) = {type(data)}")
-        logging.warning(f"keys = {list(data.keys())}")
 
-        bucket = data.get("bucket")
-        name = data.get("name")
-        generation = data.get("generation")
+        bucket = event.bucket
+        name = event.object_name
+        generation = event.generation
+
+        if not name.lower().endswith(".pdf"):
+            logger.info("Skipping non-PDF object: %s", name)
+            return
+
+        logger.info(f"Parsed object_name: {name}")
+        logger.info(f"CloudEvent ID   : {cloud_event['id']}")
+        logger.info(f"CloudEvent Type : {cloud_event['type']}")
+        logger.info(f"CloudEvent Src  : {cloud_event['source']}")
 
         # ------------------------------------------------------------------
         # STEP 4
         # ------------------------------------------------------------------
 
-        logging.warning("========== STEP 4 ==========")
+        logger.info("========== STEP 4 ==========")
 
-        logging.warning(
+        logger.info(
             json.dumps(
                 {
                     "bucket": bucket,
                     "object": name,
                     "generation": generation,
-                    "project": os.getenv("PROJECT_ID"),
-                    "region": os.getenv("REGION"),
+                    "project_id": settings.project_id,
+                    "region": settings.region,
                 },
                 indent=2,
             )
@@ -67,62 +108,34 @@ def ingest_pdf(cloud_event):
         # STEP 5
         # ------------------------------------------------------------------
 
-        logging.warning("========== STEP 5 ==========")
-        logging.warning("Basic validation")
+        logger.info("========== STEP 5 ==========")
+        logger.info("Downloading PDF from Cloud Storage")
 
-        if not bucket:
-            raise ValueError("Bucket name missing")
+        logger.info(f"Bucket from event : {bucket}")
+        logger.info(f"Object from event : {name}")
+        logger.info(f"repr(object)      : {repr(name)}")
+        logger.info(f"Generation        : {generation}")
 
-        if not name:
-            raise ValueError("Object name missing")
+        local_file = get_temp_file_path(name)
 
-        logging.warning("Validation successful")
+        logger.info(f"Downloading to {local_file}")
 
-        # ------------------------------------------------------------------
-        # STEP 6
-        # ------------------------------------------------------------------
-
-        logging.warning("========== STEP 6 ==========")
-        logging.warning("Downloading PDF from Cloud Storage")
-
-        logging.warning(f"Bucket from event : {bucket}")
-        logging.warning(f"Object from event : {name}")
-        logging.warning(f"repr(object)      : {repr(name)}")
-        logging.warning(f"Generation        : {generation}")
-
-        bucket_ref = storage_client.bucket(bucket)
-
-        logging.warning("Bucket object created.")
-
-        blob = bucket_ref.blob(name)
-
-        logging.warning(f"Blob path : gs://{bucket}/{name}")
-
-        exists = blob.exists(storage_client)
-
-        logging.warning(f"Blob exists : {exists}")
-
-        if not exists:
-            raise FileNotFoundError(
-                f"Blob gs://{bucket}/{name} does not exist."
-            )
-
-        logging.warning("Blob confirmed by Storage API.")
-
-        local_file = os.path.join(
-            tempfile.gettempdir(),
-            os.path.basename(name),
+        file_size = storage_service.download_blob(
+            bucket_name=bucket,
+            blob_name=name,
+            generation=generation,
+            destination_file=local_file,
         )
 
-        logging.warning(f"Downloading to {local_file}")
+        if file_size is None:
+            logger.warning(
+                "Skipping stale CloudEvent because the object no longer exists."
+            )
+            return
 
-        blob.download_to_filename(local_file)
+        logger.info("Download completed.")
 
-        logging.warning("Download completed.")
-
-        file_size = os.path.getsize(local_file)
-
-        logging.warning(
+        logger.info(
             json.dumps(
                 {
                     "local_file": local_file,
@@ -132,124 +145,201 @@ def ingest_pdf(cloud_event):
             )
         )
 
+
         # ------------------------------------------------------------------
-        # STEP 7
+        # STEP 6
         # ------------------------------------------------------------------
 
-        logging.warning("========== STEP 7 ==========")
-        logging.warning("Calling Document AI")
+        logger.info("========== STEP 6 ==========")
 
-        processor_name = documentai_client.processor_path(
-            os.environ["PROJECT_ID"],
-            os.environ["DOCUMENT_AI_LOCATION"],
-            os.environ["DOCUMENT_AI_PROCESSOR"],
-        )
+        logger.info("Processing PDF using Document AI")
+        logger.info("Local file: %s", local_file)
+        logger.info("Exists: %s", os.path.exists(local_file))
+        logger.info("Size: %d", os.path.getsize(local_file))
 
-        logging.warning(f"Processor: {processor_name}")
+        with open(local_file, "rb") as f:
+            logger.info("Magic bytes: %s", f.read(16).hex())
 
-        with open(local_file, "rb") as pdf_file:
-            pdf_bytes = pdf_file.read()
+        with open(local_file, "rb") as f:
+            file_sha256 = hashlib.sha256(f.read()).hexdigest()
+            logger.info("SHA256: %s", file_sha256)
 
-        logging.warning(f"Read {len(pdf_bytes)} bytes")
+        logger.info("Document AI processor name: %s", document_ai.processor_name)
+        result = document_ai.process_file(local_file)
 
-        raw_document = documentai.RawDocument(
-            content=pdf_bytes,
-            mime_type="application/pdf",
-        )
-
-        request = documentai.ProcessRequest(
-            name=processor_name,
-            raw_document=raw_document,
-        )
-
-        logging.warning("Calling process_document()")
-
-        result = documentai_client.process_document(
-            request=request
-        )
-
-        logging.warning("STEP 7 completed")
+        logger.info("STEP 6 completed")
+        logger.info("Document AI result type: %s", type(result))
 
         document = result.document
+        has_document_layout = hasattr(document, "document_layout")
 
-        # ------------------------------------------------------------------
-        # STEP 8 - Deep inspection of Document AI response
-        # ------------------------------------------------------------------
+        logger.info("========== DOCUMENT SUMMARY ==========")
+        logger.info(f"Document type: {type(document)}")
+        logger.info("Pages: %d", len(document.pages))
+        logger.info("Text length: %d", len(document.text or ""))
+        logger.info(f"Has document_layout: {has_document_layout}")
 
-        logging.warning("========== STEP 8 ==========")
+        if document.pages:
+            first_page = document.pages[0]
 
-        logging.warning("========== PROCESS RESPONSE ==========")
-        logging.warning(str(result))
-
-        logging.warning("========== DOCUMENT ==========")
-        logging.warning(str(document))
-
-        logging.warning("========== BASIC METADATA ==========")
-
-        logging.warning(
-            json.dumps(
-                {
-                    "document_type": str(type(document)),
-                    "pages": len(document.pages),
-                    "text_length": len(document.text),
-                    "entities": len(document.entities),
-                    "mime_type": document.mime_type,
-                    "text_preview": document.text[:500],
-                },
-                indent=2,
-                default=str,
+            logger.info(
+                "First page dimensions: width=%s height=%s unit=%s",
+                first_page.dimension.width,
+                first_page.dimension.height,
+                first_page.dimension.unit,
             )
+
+        if has_document_layout:
+            logger.info(
+                "Number of layout blocks: %d",
+                len(document.document_layout.blocks),
+            )
+
+            if document.document_layout.blocks:
+                first_block = document.document_layout.blocks[0]
+
+                if first_block.text_block:
+                    logger.info(
+                        "First block type: %s",
+                        first_block.text_block.type_,
+                    )
+                    logger.info(
+                        "First block text: %s",
+                        first_block.text_block.text,
+                    )
+
+        # ------------------------------------------------------------------
+        # STEP 7 - Process Document AI Response
+        # ------------------------------------------------------------------
+
+        blocks = document_processor.process(
+            document=document,
+            result=result,
         )
 
-        logging.warning("========== PAGE DETAILS ==========")
-
-        for index, page in enumerate(document.pages):
-            logging.warning(
-                json.dumps(
-                    {
-                        "page_index": index,
-                        "blocks": len(page.blocks),
-                        "paragraphs": len(page.paragraphs),
-                        "lines": len(page.lines),
-                        "tokens": len(page.tokens),
-                        "tables": len(page.tables),
-                        "form_fields": len(page.form_fields),
-                        "visual_elements": len(page.visual_elements),
-                    },
-                    indent=2,
-                )
+        if not blocks:
+            raise RuntimeError(
+                "No layout blocks extracted; canonical JSON generation stopped."
             )
 
-        logging.warning("========== DOCUMENT FIELDS ==========")
+        # ------------------------------------------------------------------
+        # STEP 8 - Canonical JSON
+        # ------------------------------------------------------------------
 
-        for field in sorted(document.DESCRIPTOR.fields_by_name.keys()):
-            try:
-                value = getattr(document, field)
+        logger.info("========== STEP 8 ==========")
+        logger.info("Building canonical document...")
 
-                if isinstance(value, str):
-                    summary = f"string(length={len(value)})"
-                elif hasattr(value, "__len__"):
-                    summary = f"{type(value).__name__}(length={len(value)})"
-                else:
-                    summary = str(type(value))
+        created_at = datetime.now(timezone.utc).isoformat().replace(
+            "+00:00",
+            "Z",
+        )
+        canonical_document = canonical_builder.build(
+            document=document,
+            blocks=blocks,
+            filename=name,
+            raw_bucket=bucket,
+            raw_object=name,
+            generation=generation,
+            mime_type="application/pdf",
+            created_at=created_at,
+        )
 
-                logging.warning(f"{field}: {summary}")
+        document_id = canonical_document["document"]["document_id"]
+        page_count = canonical_document["document"]["page_count"]
+        block_count = sum(
+            len(page["blocks"])
+            for page in canonical_document["pages"]
+        )
 
-            except Exception as ex:
-                logging.warning(f"{field}: ERROR -> {ex}")
+        logger.info("Canonical JSON created.")
+        logger.info("Pages: %d", page_count)
+        logger.info("Blocks: %d", block_count)
 
-        logging.warning("========== STEP 8 COMPLETE ==========")
-        logging.warning("Document AI processing completed successfully.")
-        
+        # ------------------------------------------------------------------
+        # STEP 9 - Upload Canonical JSON
+        # ------------------------------------------------------------------
+
+        logger.info("========== STEP 9 ==========")
+        logger.info("Uploading canonical JSON...")
+
+        processed_object = f"processed/{document_id}.json"
+        canonical_file = get_temp_file_path(f"{document_id}.json")
+
+        with open(canonical_file, "w", encoding="utf-8") as f:
+            json.dump(
+                canonical_document,
+                f,
+                indent=2,
+                ensure_ascii=False,
+            )
+            f.write("\n")
+
+        storage_service.upload_blob(
+            bucket_name=settings.processed_bucket,
+            source_file=canonical_file,
+            blob_name=processed_object,
+            content_type="application/json",
+        )
+
+        document_uri = (
+            f"gs://{settings.processed_bucket}/{processed_object}"
+        )
+
+        logger.info("Upload successful.")
+        logger.info("Output URI: %s", document_uri)
+
+        # ------------------------------------------------------------------
+        # STEP 10 - Firestore Metadata
+        # ------------------------------------------------------------------
+
+        logger.info("========== STEP 10 ==========")
+        logger.info("Writing Firestore metadata...")
+
+        processing_duration_ms = int(
+            (time.perf_counter() - start_time) * 1000
+        )
+
+        metadata = {
+            "document_id": document_id,
+            "filename": os.path.basename(name),
+            "raw_bucket": bucket,
+            "raw_object": name,
+            "processed_bucket": settings.processed_bucket,
+            "processed_object": processed_object,
+            "page_count": page_count,
+            "block_count": block_count,
+            "status": "PUBLISHED",
+            "processor": canonical_document["document"]["processor"],
+            "created_at": created_at,
+            "processing_duration_ms": processing_duration_ms,
+            "document_uri": document_uri,
+        }
+
+        firestore_document = (
+            firestore_metadata.write_processing_metadata(metadata)
+        )
+
+        logger.info("Firestore metadata written.")
+        logger.info("Firestore document: %s", firestore_document)
+
+        logger.info("========== STEP 11 ==========")
+        logger.info("PIPELINE COMPLETED SUCCESSFULLY")
 
     except Exception:
-        logging.exception("========== UNHANDLED EXCEPTION ==========")
+        logger.exception("========== UNHANDLED EXCEPTION ==========")
         raise
 
     finally:
-        if local_file and os.path.exists(local_file):
+        if canonical_file:
             try:
-                os.remove(local_file)
-                logging.warning(f"Temporary file removed: {local_file}")
+                delete_file(canonical_file)
+                logger.info(f"Temporary file removed: {canonical_file}")
             except Exception:
-                logging.exception("Failed to delete temporary file.")
+                logger.exception("Failed to delete temporary file.")
+
+        if local_file:
+            try:
+                delete_file(local_file)
+                logger.info(f"Temporary file removed: {local_file}")
+            except Exception:
+                logger.exception("Failed to delete temporary file.")

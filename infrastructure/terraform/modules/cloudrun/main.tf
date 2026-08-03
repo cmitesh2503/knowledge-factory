@@ -1,3 +1,8 @@
+data "google_storage_bucket_object" "function_source" {
+  bucket = var.source_bucket
+  name   = var.source_object
+}
+
 #############################################
 # Cloud Functions Gen2
 # PDF Ingestion Function
@@ -17,17 +22,15 @@ resource "google_cloudfunctions2_function" "pdf_ingestion" {
   ##################################################
 
   build_config {
-
-    runtime     = var.runtime
-    entry_point = var.entry_point
+    runtime     = "python313"
+    entry_point = "ingest_pdf"
 
     source {
-
       storage_source {
-        bucket = var.source_bucket
-        object = var.source_object
+        bucket     = var.source_bucket
+        object     = var.source_object
+        generation = data.google_storage_bucket_object.function_source.generation
       }
-
     }
   }
 
