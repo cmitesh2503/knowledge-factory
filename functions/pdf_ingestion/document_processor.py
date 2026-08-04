@@ -131,16 +131,26 @@ class DocumentProcessor:
 
     def _bbox(self, block) -> dict:
         layout = getattr(block, "layout", None)
-        bounding_poly = None
+        bounding_polys = []
 
         if layout:
-            bounding_poly = getattr(layout, "bounding_poly", None)
+            bounding_polys.append(getattr(layout, "bounding_poly", None))
 
-        if not bounding_poly:
-            bounding_poly = getattr(block, "bounding_poly", None)
+        bounding_polys.append(getattr(block, "bounding_poly", None))
+        bounding_polys.append(getattr(block, "bounding_box", None))
 
+        for bounding_poly in bounding_polys:
+            points = self._points_from_bounding_poly(bounding_poly)
+            if points:
+                return {
+                    "vertices": points,
+                }
+
+        return {}
+
+    def _points_from_bounding_poly(self, bounding_poly) -> list[dict]:
         if not bounding_poly:
-            return {}
+            return []
 
         vertices = (
             getattr(bounding_poly, "normalized_vertices", None)
@@ -162,12 +172,7 @@ class DocumentProcessor:
             if point:
                 points.append(point)
 
-        if not points:
-            return {}
-
-        return {
-            "vertices": points,
-        }
+        return points
 
     def _positive_int(self, value) -> int | None:
         try:
