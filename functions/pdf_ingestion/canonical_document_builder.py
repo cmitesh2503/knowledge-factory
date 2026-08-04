@@ -96,7 +96,7 @@ class CanonicalDocumentBuilder:
 
         return {
             "id": f"block-{index + 1:06d}",
-            "type": block.get("type") or "text",
+            "type": block["type"],
             "text": block.get("text") or "",
             "page": block.get("page") or 1,
             "confidence": block.get("confidence"),

@@ -6,6 +6,14 @@ class DocumentProcessor:
     JSON generation.
     """
 
+    BLOCK_TYPE_MAP = {
+        "paragraph": "paragraph",
+        "table": "table",
+        "list": "list",
+        "image": "image",
+        "text": "text",
+    }
+
     def __init__(self, logger):
         self.logger = logger
 
@@ -84,7 +92,7 @@ class DocumentProcessor:
             }
 
         return {
-            "type": self._block_type(text_block),
+            "type": self._block_type(block),
             "text": self._block_text(text_block),
             "page": page_start or 1,
             "confidence": self._confidence(block),
@@ -102,15 +110,53 @@ class DocumentProcessor:
 
         return self._positive_int(page_start), self._positive_int(page_end)
 
-    def _block_type(self, text_block) -> str:
-        if not text_block:
-            return "text"
+    def _block_type(self, block) -> str:
+        provider_type = self._provider_block_type(block)
+        return self.normalize_block_type(provider_type)
 
-        block_type = getattr(text_block, "type_", None)
+    def normalize_block_type(self, provider_type: str | None) -> str:
+        block_type = str(provider_type or "").strip().lower()
         if not block_type:
             return "text"
 
-        return str(block_type).strip().lower() or "text"
+        heading_level = block_type.removeprefix("heading-")
+        if heading_level != block_type and heading_level.isdigit():
+            return "heading"
+
+        return self.BLOCK_TYPE_MAP.get(block_type, "text")
+
+    def _provider_block_type(self, block) -> str | None:
+        block_kind = self._which_block_kind(block)
+
+        if block_kind == "table_block":
+            return "table"
+        if block_kind == "list_block":
+            return "list"
+        if block_kind == "image_block":
+            return "image"
+
+        text_block = getattr(block, "text_block", None)
+        if block_kind == "text_block" or text_block:
+            return getattr(text_block, "type_", None)
+
+        if getattr(block, "table_block", None):
+            return "table"
+        if getattr(block, "list_block", None):
+            return "list"
+        if getattr(block, "image_block", None):
+            return "image"
+
+        return None
+
+    def _which_block_kind(self, block) -> str | None:
+        protobuf = getattr(block, "_pb", None)
+        if not protobuf:
+            return None
+
+        try:
+            return protobuf.WhichOneof("block")
+        except ValueError:
+            return None
 
     def _block_text(self, text_block) -> str:
         if not text_block:
