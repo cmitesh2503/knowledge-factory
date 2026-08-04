@@ -14,11 +14,6 @@ class CanonicalDocumentBuilder:
     """Build provider-independent canonical JSON from canonical blocks."""
 
     SCHEMA_VERSION = "1.0"
-    PROCESSOR = {
-        "engine": "document-ai",
-        "version": "v1",
-        "type": "layout-parser",
-    }
 
     def build(
         self,
@@ -73,7 +68,6 @@ class CanonicalDocumentBuilder:
                 "mime_type": mime_type,
                 "page_count": page_count,
                 "created_at": created_at,
-                "processor": dict(self.PROCESSOR),
             },
             "pages": pages,
         }
