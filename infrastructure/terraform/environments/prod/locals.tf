@@ -11,11 +11,11 @@ locals {
       member = module.service_accounts.service_account_emails["cloudrun"]
     }
 
-    cloudrun_processed_creator = {
+    cloudrun_processed_object_admin = {
 
       bucket = module.storage.bucket_names["processed"]
 
-      role = "roles/storage.objectCreator"
+      role = "roles/storage.objectAdmin"
 
       member = module.service_accounts.service_account_emails["cloudrun"]
     }
