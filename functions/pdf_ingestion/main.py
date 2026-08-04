@@ -234,8 +234,8 @@ def ingest_pdf(cloud_event):
             "Z",
         )
         canonical_document = canonical_builder.build(
-            document=document,
             blocks=blocks,
+            page_count=document_processor.page_count(document),
             filename=name,
             raw_bucket=bucket,
             raw_object=name,
