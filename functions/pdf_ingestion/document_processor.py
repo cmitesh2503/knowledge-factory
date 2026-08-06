@@ -96,7 +96,7 @@ class DocumentProcessor:
             "text": self._block_text(text_block),
             "page": page_start or 1,
             "confidence": self._confidence(block),
-            "bbox": self._bbox(block),
+            "geometry": self._geometry(block),
             "metadata": metadata,
         }
 
@@ -175,22 +175,13 @@ class DocumentProcessor:
         except (TypeError, ValueError):
             return None
 
-    def _bbox(self, block) -> dict:
+    def _geometry(self, block) -> dict:
+        """
+        Build provider-independent geometry information.
+        """
+
         layout = getattr(block, "layout", None)
-        self.logger.info("===== BBOX DEBUG =====")
-        self.logger.info("block type: %s", type(block))
-        self.logger.info("has layout: %s", hasattr(block, "layout"))
-        self.logger.info("has bounding_poly: %s", hasattr(block, "bounding_poly"))
-        self.logger.info("has bounding_box: %s", hasattr(block, "bounding_box"))
 
-        if hasattr(block, "bounding_box"):
-            self.logger.info("bounding_box: %s", block.bounding_box)
-
-        if hasattr(block, "bounding_poly"):
-            self.logger.info("bounding_poly: %s", block.bounding_poly)
-
-        if hasattr(block, "layout"):
-            self.logger.info("layout: %s", block.layout)
         bounding_polys = []
 
         if layout:
@@ -199,14 +190,59 @@ class DocumentProcessor:
         bounding_polys.append(getattr(block, "bounding_poly", None))
         bounding_polys.append(getattr(block, "bounding_box", None))
 
-        for bounding_poly in bounding_polys:
-            points = self._points_from_bounding_poly(bounding_poly)
-            if points:
-                return {
-                    "vertices": points,
-                }
+        polygon = []
 
-        return {}
+        for bounding_poly in bounding_polys:
+            polygon = self._points_from_bounding_poly(bounding_poly)
+            if polygon:
+                break
+
+        if not polygon:
+            return {
+                "polygon": [],
+                "bounding_box": {},
+                "coordinate_type": None,
+                "reading_order": None,
+                "rotation": None,
+                "parent": None,
+                "children": [],
+                "overlaps": []
+            }
+
+        xs = [p["x"] for p in polygon if "x" in p]
+        ys = [p["y"] for p in polygon if "y" in p]
+
+        left = min(xs)
+        right = max(xs)
+        top = min(ys)
+        bottom = max(ys)
+
+        return {
+            "polygon": polygon,
+
+            "bounding_box": {
+                "left": left,
+                "top": top,
+                "right": right,
+                "bottom": bottom,
+                "width": right - left,
+                "height": bottom - top,
+                "center_x": (left + right) / 2,
+                "center_y": (top + bottom) / 2
+            },
+
+            "coordinate_type": "normalized",
+
+            "reading_order": None,
+
+            "rotation": None,
+
+            "parent": None,
+
+            "children": [],
+
+            "overlaps": []
+        }
 
     def _points_from_bounding_poly(self, bounding_poly) -> list[dict]:
         if not bounding_poly:

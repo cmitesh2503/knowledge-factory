@@ -94,7 +94,7 @@ class CanonicalDocumentBuilder:
             "text": block.get("text") or "",
             "page": block.get("page") or 1,
             "confidence": block.get("confidence"),
-            "bbox": block["bbox"],
+            "geometry": block.get("geometry", {}),
             "metadata": metadata,
         }
 
