@@ -177,6 +177,20 @@ class DocumentProcessor:
 
     def _bbox(self, block) -> dict:
         layout = getattr(block, "layout", None)
+        self.logger.info("===== BBOX DEBUG =====")
+        self.logger.info("block type: %s", type(block))
+        self.logger.info("has layout: %s", hasattr(block, "layout"))
+        self.logger.info("has bounding_poly: %s", hasattr(block, "bounding_poly"))
+        self.logger.info("has bounding_box: %s", hasattr(block, "bounding_box"))
+
+        if hasattr(block, "bounding_box"):
+            self.logger.info("bounding_box: %s", block.bounding_box)
+
+        if hasattr(block, "bounding_poly"):
+            self.logger.info("bounding_poly: %s", block.bounding_poly)
+
+        if hasattr(block, "layout"):
+            self.logger.info("layout: %s", block.layout)
         bounding_polys = []
 
         if layout:

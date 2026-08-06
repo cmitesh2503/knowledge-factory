@@ -16,6 +16,7 @@ from utils import (
     delete_file,
 )
 from document_processor import DocumentProcessor
+from google.protobuf.json_format import MessageToDict
 
 settings = load_settings()
 
@@ -171,6 +172,51 @@ def ingest_pdf(cloud_event):
         logger.info("Document AI result type: %s", type(result))
 
         document = result.document
+        
+        # ------------------------------------------------------------------
+        # DEBUG - Dump raw Document AI response
+        # ------------------------------------------------------------------
+        
+        
+
+        raw_doc = MessageToDict(document._pb)
+        
+        debug_file = "/tmp/document_ai_raw.json"
+        with open(debug_file, "w", encoding="utf-8") as f:
+            json.dump(raw_doc, f, indent=2, ensure_ascii=False)
+
+        storage_service.upload_blob(
+            bucket_name=settings.processed_bucket,
+            source_file=debug_file,
+            blob_name="debug/document_ai_raw.json",
+            content_type="application/json",
+        )
+
+        
+        logger.info("Raw Document AI JSON written to /tmp/document_ai_raw.json")
+        logger.info("Top-level keys: %s", list(raw_doc.keys()))
+
+        if "documentLayout" in raw_doc:
+            logger.info("documentLayout keys: %s", list(raw_doc["documentLayout"].keys()))
+
+        if document.pages:
+            logger.info("page proto type: %s", type(document.pages[0]))
+            page0 = MessageToDict(document.pages[0]._pb)
+            logger.info("Page0 JSON keys: %s", list(page0.keys()))
+
+            with open("/tmp/page0_raw.json", "w", encoding="utf-8") as f:
+                json.dump(page0, f, indent=2, ensure_ascii=False)
+
+            storage_service.upload_blob(
+                bucket_name=settings.processed_bucket,
+                source_file="/tmp/page0_raw.json",
+                blob_name="debug/page0_raw.json",
+                content_type="application/json",
+            )
+
+            logger.info("Uploaded debug/page0_raw.json")
+
+        
         has_document_layout = hasattr(document, "document_layout")
 
         logger.info("========== DOCUMENT SUMMARY ==========")
@@ -178,16 +224,6 @@ def ingest_pdf(cloud_event):
         logger.info("Pages: %d", len(document.pages))
         logger.info("Text length: %d", len(document.text or ""))
         logger.info(f"Has document_layout: {has_document_layout}")
-
-        if document.pages:
-            first_page = document.pages[0]
-
-            logger.info(
-                "First page dimensions: width=%s height=%s unit=%s",
-                first_page.dimension.width,
-                first_page.dimension.height,
-                first_page.dimension.unit,
-            )
 
         if has_document_layout:
             logger.info(
