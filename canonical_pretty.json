@@ -1,0 +1,1873 @@
+{
+    "schema_version": "1.0",
+    "document": {
+        "document_id": "doc-7860b6e1c249a8750f5b9ae8c2ae6f69",
+        "filename": "Matrices-21-25.pdf",
+        "mime_type": "application/pdf",
+        "page_count": 5,
+        "created_at": "2026-08-10T15:11:16.853760Z"
+    },
+    "pages": [
+        {
+            "page_number": 1,
+            "blocks": [
+                {
+                    "id": "block-000001",
+                    "type": "paragraph",
+                    "text": "54",
+                    "page": 1,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000002",
+                    "type": "paragraph",
+                    "text": "MATHEMATICS",
+                    "page": 1,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000003",
+                    "type": "paragraph",
+                    "text": "Note This does not mean that AB \u2260 BA for every pair of matrices A, B for which AB and BA, are defined. For instance,",
+                    "page": 1,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000004",
+                    "type": "paragraph",
+                    "text": "If A=[\\begin{matrix}1&0\\\\ 0&2\\end{matrix}] . B=[\\begin{matrix}3&0\\\\ 0&4\\end{matrix}] , then AB=BA=[\\begin{matrix}3&0\\\\ 0&8\\end{matrix}]",
+                    "page": 1,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000005",
+                    "type": "paragraph",
+                    "text": "Observe that multiplication of diagonal matrices of same order will be commutative. Zero matrix as the product of two non zero matrices",
+                    "page": 1,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000006",
+                    "type": "paragraph",
+                    "text": "We know that, for real numbers a, b if ab=0, then either a=0 or b=0 This need not be true for matrices, we will observe this through an example.",
+                    "page": 1,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000007",
+                    "type": "paragraph",
+                    "text": "Example 15 Find AB, if A=[\\begin{matrix}0&-1\\\\ 0&2\\end{matrix}] and B=[\\begin{matrix}3&5\\\\ 0&0\\end{matrix}] Solution We have AB=[\\begin{matrix}0&-1\\\\ 0&2\\end{matrix}][\\begin{matrix}3&5\\\\ 0&0\\end{matrix}]=[\\begin{matrix}0&0\\\\ 0&0\\end{matrix}]",
+                    "page": 1,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000008",
+                    "type": "paragraph",
+                    "text": "Ped",
+                    "page": 1,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000009",
+                    "type": "paragraph",
+                    "text": "Thus, if the product of two matrices is a zero matrix, it is not necessary that one of the matrices is a zero matrix.",
+                    "page": 1,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000010",
+                    "type": "paragraph",
+                    "text": "multipliciisheries ulished",
+                    "page": 1,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000011",
+                    "type": "paragraph",
+                    "text": "3.4.6 Properties of multiplication of matrices",
+                    "page": 1,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000012",
+                    "type": "paragraph",
+                    "text": "The multiplication of matrices possesses the following properties, which we state without proof.",
+                    "page": 1,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000013",
+                    "type": "paragraph",
+                    "text": "1. The associative law For any three matrices A, B and C. We have",
+                    "page": 1,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000014",
+                    "type": "paragraph",
+                    "text": "(AB) C=A(BC), whenever both sides of the equality are defined.",
+                    "page": 1,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000015",
+                    "type": "paragraph",
+                    "text": "2. The distributive law For three matrices A, B and C.",
+                    "page": 1,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000016",
+                    "type": "paragraph",
+                    "text": "(i) A(B+C)=AB+AC",
+                    "page": 1,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000017",
+                    "type": "paragraph",
+                    "text": "(ii) (A+B)C=AC+BC whenever both sides of equality are defined.",
+                    "page": 1,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000018",
+                    "type": "paragraph",
+                    "text": "3. The existence of multiplicative identity For every square matrix A, there exist an identity matrix of same order such that IA=AI=A",
+                    "page": 1,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000019",
+                    "type": "paragraph",
+                    "text": "Now, we shall verify these properties by examples.",
+                    "page": 1,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000020",
+                    "type": "paragraph",
+                    "text": "Example 16 If",
+                    "page": 1,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000021",
+                    "type": "paragraph",
+                    "text": "\\Lambda=[\\begin{matrix}1&1&-1\\\\ 2&0&3\\\\ 3&-1&2\\end{matrix}] , B=[\\begin{matrix}1&3\\\\ 0&2\\\\ -1&4\\end{matrix}] C=[\\begin{matrix}1&2&3&-4\\\\ 2&0&-2&1\\end{matrix}]",
+                    "page": 1,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000022",
+                    "type": "paragraph",
+                    "text": "A(BC), (AB)C and show that (AB)C=A(BC).",
+                    "page": 1,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000023",
+                    "type": "paragraph",
+                    "text": "find",
+                    "page": 1,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000024",
+                    "type": "paragraph",
+                    "text": "Reprint 2024-25",
+                    "page": 1,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                }
+            ]
+        },
+        {
+            "page_number": 2,
+            "blocks": [
+                {
+                    "id": "block-000025",
+                    "type": "paragraph",
+                    "text": "MATRICES",
+                    "page": 2,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000026",
+                    "type": "paragraph",
+                    "text": "55",
+                    "page": 2,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000027",
+                    "type": "paragraph",
+                    "text": "Solution We have AB=[\\begin{matrix}1&1&-1\\\\ 2&0&3\\\\ 3&-1&2\\end{matrix}][\\begin{matrix}1&3\\\\ 0&2\\\\ -1&4\\end{matrix}]=[\\begin{matrix}1+0+1&3+2-4\\\\ 2+0-3~6+0+12\\\\ 3+0-2&9-2+8\\end{matrix}]=[\\begin{matrix}2&1\\\\ -1&18\\\\ 1&15\\end{matrix}] (AB) (C)=[\\begin{matrix}2&1\\\\ -1&18\\\\ 1&15\\end{matrix}][\\begin{matrix}1&2&3-4\\\\ 2&0&-2&1\\end{matrix}]=[\\begin{matrix}2+2&4+0&6-2&-8+1\\\\ -1+36&-2+0&-3-36&4+18\\\\ 1+30&2+0&3-30&-4+15\\end{matrix}]",
+                    "page": 2,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000028",
+                    "type": "paragraph",
+                    "text": "Now",
+                    "page": 2,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000029",
+                    "type": "paragraph",
+                    "text": "Therefore",
+                    "page": 2,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000030",
+                    "type": "paragraph",
+                    "text": "=[\\begin{matrix}4&4&4&-7\\\\ 35&-2&-39&22\\\\ 31&2&-27&11\\end{matrix}]",
+                    "page": 2,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000031",
+                    "type": "paragraph",
+                    "text": "BC=[\\begin{matrix}1&3\\\\ 0&2\\\\ -1&4\\end{matrix}][\\begin{matrix}1&2&3&-4\\\\ 2&0&-2&1\\end{matrix}]=[\\begin{matrix}1+6&2+0&3-6-4+3\\\\ 0+4&0+0&0-4&0+2\\\\ -1+8&-2+0&-3-8&4+4\\end{matrix}] =[\\begin{matrix}7&2&-3&-1\\\\ 4&0&-4&2\\\\ 7&-2&-11&8\\end{matrix}]",
+                    "page": 2,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000032",
+                    "type": "paragraph",
+                    "text": "not republished",
+                    "page": 2,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000033",
+                    "type": "paragraph",
+                    "text": "A(BC)=[\\begin{matrix}1&1&-1\\\\ 2&0&3\\\\ 3&-1&2\\end{matrix}][\\begin{matrix}7&2&-3&-1\\\\ 4&0&-4&2\\\\ 7-2&-11&8\\end{matrix}]",
+                    "page": 2,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000034",
+                    "type": "paragraph",
+                    "text": "=[\\begin{matrix}7+4-7&2+0+2&-3-4+11&-1+2-8\\\\ 14+0+21&4+0-6&-6+0-33&-2+0+24\\\\ 21-4+14&6+0-4&-9+4-22&-3-2+16.\\end{matrix} =[\\begin{matrix}4&4&-7\\\\ 35&-2&-39&22\\\\ 31&2&-27&11\\end{matrix}] Clearly, (AB) C=A (BC)",
+                    "page": 2,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000035",
+                    "type": "paragraph",
+                    "text": "Reprint 2024-25",
+                    "page": 2,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                }
+            ]
+        },
+        {
+            "page_number": 3,
+            "blocks": [
+                {
+                    "id": "block-000036",
+                    "type": "paragraph",
+                    "text": "56",
+                    "page": 3,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000037",
+                    "type": "text",
+                    "text": "MATHEMATICS",
+                    "page": 3,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000038",
+                    "type": "paragraph",
+                    "text": "Example 17 If A=[\\begin{matrix}0&6&7\\\\ -6&0&8\\\\ 7&-8&0\\end{matrix}] , B=[\\begin{matrix}0&1&1\\\\ 1&0&2\\\\ 1&2&0\\end{matrix}] , C=[\\begin{matrix}2\\\\ -2\\\\ 3\\end{matrix}]",
+                    "page": 3,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000039",
+                    "type": "paragraph",
+                    "text": "Calculate AC, BC and (A+B)C. Also, verify that (A+B)C=AC+BC",
+                    "page": 3,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000040",
+                    "type": "paragraph",
+                    "text": "Solution Now, A+B=[\\begin{matrix}0&7&8\\\\ -5&0&10\\\\ 8&-6&0\\end{matrix}]",
+                    "page": 3,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000041",
+                    "type": "paragraph",
+                    "text": "shed",
+                    "page": 3,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000042",
+                    "type": "paragraph",
+                    "text": "So (A+B)C=[\\begin{matrix}0&7&8\\\\ -5&0&10\\\\ 8&-6&0\\end{matrix}][\\begin{matrix}2\\\\ -2\\\\ 3\\end{matrix}]=[\\begin{matrix}0-14+24\\\\ -10+0+30\\\\ 16+12+0\\end{matrix}]=[\\begin{matrix}10\\\\ 20\\\\ 28\\end{matrix}] AC=[\\begin{matrix}0&6&7\\\\ -6&0&8\\\\ 7&-8&0\\end{matrix}][\\begin{matrix}2\\\\ -2\\\\ 3\\end{matrix}]=[\\begin{matrix}0-12+21\\\\ -12+0+24\\\\ 14+16+0\\end{matrix}]=[\\begin{matrix}9\\\\ 12\\\\ 30\\end{matrix}] BC=[\\begin{matrix}0&1&1\\\\ 1&0&2\\\\ 1&2&0\\end{matrix}][\\begin{matrix}2\\\\ -2\\\\ 3\\end{matrix}]=[\\begin{matrix}0-2+3\\\\ 2+0+6\\\\ 2-4+0\\end{matrix}]=[\\begin{matrix}1\\\\ 8\\\\ 2\\end{matrix}]",
+                    "page": 3,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000043",
+                    "type": "paragraph",
+                    "text": "Further",
+                    "page": 3,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000044",
+                    "type": "paragraph",
+                    "text": "and",
+                    "page": 3,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000045",
+                    "type": "paragraph",
+                    "text": "So",
+                    "page": 3,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000046",
+                    "type": "paragraph",
+                    "text": "Clearly,",
+                    "page": 3,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000047",
+                    "type": "paragraph",
+                    "text": "AC+BC=[\\begin{matrix}9\\\\ 12\\\\ 30\\end{matrix}]+[\\begin{matrix}1\\\\ 8\\\\ -2\\end{matrix}]=[\\begin{matrix}10\\\\ 20\\\\ 28\\end{matrix}]",
+                    "page": 3,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000048",
+                    "type": "paragraph",
+                    "text": "(A+B)C=AC+BC Example 18 If A=[\\begin{matrix}1&2&3\\\\ 3&-2&1\\\\ 4&2&1\\end{matrix}] , then show that A^{3}-23A-40~I=O Solution We have_A\u00b2 A^{2}=A.A=[\\begin{matrix}1&2&3\\\\ 3&-2&1\\\\ 4&2&1\\end{matrix}][\\begin{matrix}1&2&3\\\\ 3&-2&1\\\\ 4&2&1\\end{matrix}]=[\\begin{matrix}19&4&8\\\\ 1&12&8\\\\ 14&6&15\\end{matrix}]",
+                    "page": 3,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000049",
+                    "type": "paragraph",
+                    "text": "Reprint 2024-25",
+                    "page": 3,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                }
+            ]
+        },
+        {
+            "page_number": 4,
+            "blocks": [
+                {
+                    "id": "block-000050",
+                    "type": "paragraph",
+                    "text": "MATRICES",
+                    "page": 4,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000051",
+                    "type": "paragraph",
+                    "text": "57",
+                    "page": 4,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000052",
+                    "type": "paragraph",
+                    "text": "So A^{3}=A~A^{2}=[\\begin{matrix}1&2&3\\\\ 3&-2&1\\\\ 4&2&1\\end{matrix}][\\begin{matrix}19&4&8\\\\ 1&12&8\\\\ 14&6&15\\end{matrix}]=[\\begin{matrix}63&46&69\\\\ 69&-6&23\\\\ 92&46&63\\end{matrix}]",
+                    "page": 4,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000053",
+                    "type": "paragraph",
+                    "text": "Now",
+                    "page": 4,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000054",
+                    "type": "paragraph",
+                    "text": "A^{3}-23A-40I=[\\begin{matrix}63&46&69\\\\ 69&-6&23\\\\ 92&46&63\\end{matrix}]-23[\\begin{matrix}1&2&3\\\\ 3&-2&1\\\\ 4&2&1\\end{matrix}]-40[\\begin{matrix}1&0&0\\\\ 0&1&0\\\\ 0&0&1\\end{matrix}]",
+                    "page": 4,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000055",
+                    "type": "paragraph",
+                    "text": "p",
+                    "page": 4,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000056",
+                    "type": "paragraph",
+                    "text": "=[\\begin{matrix}63&46&69\\\\ 69&-6&23\\\\ 92&46&63\\end{matrix}]+[\\begin{matrix}-23&-46&-69\\\\ -69&46&-23\\\\ -92&-46&-23\\end{matrix}]+[\\begin{matrix}-40&0\\\\ 0&-40&0\\\\ 0&0&-40\\end{matrix}] =[\\begin{matrix}63-23-40&46-46+0&69-69+0\\\\ 69-69+0&-6+46=40&23-23+0\\\\ 92-92+0&46-46+0&63-23-46\\end{matrix}]",
+                    "page": 4,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000057",
+                    "type": "paragraph",
+                    "text": "=[\\begin{matrix}0&0&0\\\\ 0&0&0\\\\ 0&0&0\\end{matrix}]=0",
+                    "page": 4,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000058",
+                    "type": "paragraph",
+                    "text": "repupish",
+                    "page": 4,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000059",
+                    "type": "paragraph",
+                    "text": "Example 19 In a legislative assembly election, election, a political group hired a public relations firm to promote its candidate in three ways: telephone, house calls, and letters. The cost per contact (in paise) is given",
+                    "page": 4,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000060",
+                    "type": "paragraph",
+                    "text": "given in matrix A as",
+                    "page": 4,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000061",
+                    "type": "paragraph",
+                    "text": "Cost per contact 40",
+                    "page": 4,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000062",
+                    "type": "paragraph",
+                    "text": "Telephone",
+                    "page": 4,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000063",
+                    "type": "paragraph",
+                    "text": "A =",
+                    "page": 4,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000064",
+                    "type": "paragraph",
+                    "text": "100",
+                    "page": 4,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000065",
+                    "type": "paragraph",
+                    "text": "Housecall",
+                    "page": 4,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000066",
+                    "type": "paragraph",
+                    "text": "50",
+                    "page": 4,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000067",
+                    "type": "paragraph",
+                    "text": "Letter",
+                    "page": 4,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000068",
+                    "type": "paragraph",
+                    "text": "ot to",
+                    "page": 4,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000069",
+                    "type": "paragraph",
+                    "text": "The number of contacts of each type made in two cities X and Y is given by",
+                    "page": 4,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000070",
+                    "type": "paragraph",
+                    "text": "Telephone Housecall Letter",
+                    "page": 4,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000071",
+                    "type": "paragraph",
+                    "text": "B=[\\begin{matrix}1000&500&5000\\\\ 3000&1000&10,000\\end{matrix}]\\rightarrow X",
+                    "page": 4,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000072",
+                    "type": "paragraph",
+                    "text": "cities X and Y.",
+                    "page": 4,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000073",
+                    "type": "paragraph",
+                    "text": "Find the total amount spent by the group in the two",
+                    "page": 4,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000074",
+                    "type": "paragraph",
+                    "text": "Reprint 2024-25",
+                    "page": 4,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                }
+            ]
+        },
+        {
+            "page_number": 5,
+            "blocks": [
+                {
+                    "id": "block-000075",
+                    "type": "paragraph",
+                    "text": "58",
+                    "page": 5,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000076",
+                    "type": "paragraph",
+                    "text": "MATHEMATICS",
+                    "page": 5,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000077",
+                    "type": "paragraph",
+                    "text": "Solution We have",
+                    "page": 5,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000078",
+                    "type": "paragraph",
+                    "text": "BA=[\\begin{matrix}40,000+50,000+250,000\\\\ 120,000+100,000+500,000\\end{matrix}]\\rightarrow X =[\\begin{matrix}340,000\\\\ 720,000\\end{matrix}]\\rightarrow X",
+                    "page": 5,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000079",
+                    "type": "paragraph",
+                    "text": "So the total amount spent by the group in the two cities is 340,000 paise and 720,000 paise, i.e., \u20b93400 and\u20b97200, respectively.",
+                    "page": 5,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000080",
+                    "type": "paragraph",
+                    "text": "EXERCISE 3.2",
+                    "page": 5,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000081",
+                    "type": "paragraph",
+                    "text": "1. Let A=[\\begin{matrix}2&4\\\\ 3&2\\end{matrix}] B=[\\begin{matrix}1&3\\\\ -2&5\\end{matrix}] C=[\\begin{matrix}-2&5\\\\ 3&4\\end{matrix}]",
+                    "page": 5,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000082",
+                    "type": "paragraph",
+                    "text": "Find each of the following:",
+                    "page": 5,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000083",
+                    "type": "paragraph",
+                    "text": "(i)",
+                    "page": 5,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000084",
+                    "type": "paragraph",
+                    "text": "A+B",
+                    "page": 5,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000085",
+                    "type": "paragraph",
+                    "text": "(iv) AB",
+                    "page": 5,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000086",
+                    "type": "paragraph",
+                    "text": "(ii) A \u2013 B",
+                    "page": 5,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000087",
+                    "type": "paragraph",
+                    "text": "cpublished",
+                    "page": 5,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000088",
+                    "type": "paragraph",
+                    "text": "NCERT",
+                    "page": 5,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000089",
+                    "type": "paragraph",
+                    "text": "2. Compute the following:",
+                    "page": 5,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000090",
+                    "type": "paragraph",
+                    "text": "(i) [\\begin{matrix}a&b\\\\ -b&a\\end{matrix}]+[\\begin{matrix}a&b\\\\ b&a\\end{matrix}]",
+                    "page": 5,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000091",
+                    "type": "paragraph",
+                    "text": "(iii)",
+                    "page": 5,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000092",
+                    "type": "paragraph",
+                    "text": "(v) BA",
+                    "page": 5,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000093",
+                    "type": "paragraph",
+                    "text": "[\\begin{matrix}a^{2}+b^{2}&b^{2}+c^{2}\\\\ a^{2}+c^{2}&a^{2}+b^{2}\\end{matrix}]+[\\begin{matrix}2ab&2bc\\\\ -2ac&-2ab\\end{matrix}]",
+                    "page": 5,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000094",
+                    "type": "paragraph",
+                    "text": "[\\begin{matrix}-1&4&-6\\\\ 8&5&16\\\\ 2&8&5\\end{matrix}]+[\\begin{matrix}12&7&6\\\\ 8&0&5\\\\ 3&2&4\\end{matrix}] (iv) [\\begin{matrix}cos^{2}x&sin^{2}x\\\\ sin^{2}x&cos^{2}x\\end{matrix}]+[\\begin{matrix}sin^{2}x&cos^{2}x\\\\ cos^{2}x&sin^{2}x\\end{matrix}]",
+                    "page": 5,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000095",
+                    "type": "paragraph",
+                    "text": "3. Compute the indicated products.",
+                    "page": 5,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000096",
+                    "type": "paragraph",
+                    "text": "(i) [\\begin{matrix}a&b\\\\ -b&a\\end{matrix}][\\begin{matrix}a&-b\\\\ b&a\\end{matrix}] (ii) \\begin{matrix}1\\\\ 2\\\\ 3\\end{matrix}][ 234] (iii)",
+                    "page": 5,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000097",
+                    "type": "paragraph",
+                    "text": "(iv) [\\begin{matrix}2&3&4\\\\ 3&4&5\\\\ 4&5&6\\end{matrix}][\\begin{matrix}1&-3&5\\\\ 0&2&4\\\\ 3&0&5\\end{matrix}]",
+                    "page": 5,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000098",
+                    "type": "paragraph",
+                    "text": "(vi) [\\begin{matrix}3&-1&3\\\\ -1&0&2\\end{matrix}][\\begin{matrix}2&-3\\\\ 1&0\\\\ 3&1\\end{matrix}]",
+                    "page": 5,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000099",
+                    "type": "paragraph",
+                    "text": "(v)",
+                    "page": 5,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000100",
+                    "type": "paragraph",
+                    "text": "[\\begin{matrix}1&-2\\\\ 2&3\\end{matrix}][\\begin{matrix}1&2&3\\\\ 2&3&1\\end{matrix}]",
+                    "page": 5,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000101",
+                    "type": "paragraph",
+                    "text": "[\\begin{matrix}2&1\\\\ 3&2\\\\ -11\\end{matrix}][\\begin{matrix}1&0&1\\\\ -1&2&1\\end{matrix}]",
+                    "page": 5,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000102",
+                    "type": "paragraph",
+                    "text": "Reprint 2024-25",
+                    "page": 5,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,227 @@
+{
+    "schema_version": "1.0",
+    "document": {
+        "document_id": "doc-1113ce6fb50c9681c4c03bdf5c1d2cd8",
+        "filename": "Matrices-1-10.pdf",
+        "mime_type": "application/pdf",
+        "page_count": 10,
+        "created_at": "2026-08-10T16:05:46.659912Z"
+    },
+    "pages": [
+        {
+            "page_number": 1,
+            "blocks": [
+                {
+                    "id": "block-000001",
+                    "type": "paragraph",
+                    "text": "Chapter 3",
+                    "page": 1,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000002",
+                    "type": "paragraph",
+                    "text": "12079CH03",
+                    "page": 1,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000003",
+                    "type": "paragraph",
+                    "text": "MATRICES",
+                    "page": 1,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000004",
+                    "type": "paragraph",
+                    "text": "The essence of Mathematics lies in its freedom. CANTOR",
+                    "page": 1,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000005",
+                    "type": "heading",
+                    "text": "3.1 Introduction",
+                    "page": 1,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000006",
+                    "type": "heading",
+                    "text": "3.2 Matrix",
+                    "page": 1,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {
+                        "page_span": {
+                            "start": 1,
+                            "end": 3
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "page_number": 2,
+            "blocks": []
+        },
+        {
+            "page_number": 3,
+            "blocks": [
+                {
+                    "id": "block-000007",
+                    "type": "heading",
+                    "text": "3.2.1 Order of a matrix",
+                    "page": 3,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {
+                        "page_span": {
+                            "start": 3,
+                            "end": 10
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "page_number": 4,
+            "blocks": []
+        },
+        {
+            "page_number": 5,
+            "blocks": []
+        },
+        {
+            "page_number": 6,
+            "blocks": []
+        },
+        {
+            "page_number": 7,
+            "blocks": []
+        },
+        {
+            "page_number": 8,
+            "blocks": []
+        },
+        {
+            "page_number": 9,
+            "blocks": []
+        },
+        {
+            "page_number": 10,
+            "blocks": [
+                {
+                    "id": "block-000008",
+                    "type": "heading",
+                    "text": "3.4 Operations on Matrices",
+                    "page": 10,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                },
+                {
+                    "id": "block-000009",
+                    "type": "heading",
+                    "text": "3.4.1 Addition of matrices",
+                    "page": 10,
+                    "confidence": null,
+                    "geometry": {
+                        "polygon": [],
+                        "bounding_box": {},
+                        "coordinate_type": null,
+                        "reading_order": null,
+                        "rotation": null,
+                        "parent": null,
+                        "children": [],
+                        "overlaps": []
+                    },
+                    "metadata": {}
+                }
+            ]
+        }
+    ]
+}
