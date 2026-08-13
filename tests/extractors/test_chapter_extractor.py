@@ -7,7 +7,7 @@ from tests.validators.chapter_validator import ChapterValidator
 def test_chapter_extractor():
 
     with open(
-        "tests/fixtures/matrices_canonical.json",
+        "tests/fixtures/matrices_1_10_canonical.json",
         encoding="utf-8",
     ) as f:
 
