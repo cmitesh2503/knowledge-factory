@@ -3,6 +3,8 @@ from .chapter_candidate import ChapterCandidate
 from .extractor_result import ExtractionResult
 from .section import Section
 from .section_candidate import SectionCandidate
+from .concept import Concept
+from .concept_candidate import ConceptCandidate
 
 __all__ = [
     "Chapter",
@@ -17,3 +19,14 @@ __all__ = [
     "SectionCandidate",
     "ExtractionResult",
 ]
+
+__all__ = [
+    "Chapter",
+    "ChapterCandidate",
+    "Section",
+    "SectionCandidate",
+    "Concept",
+    "ConceptCandidate",
+    "ExtractionResult",
+]
+
