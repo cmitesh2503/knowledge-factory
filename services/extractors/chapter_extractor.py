@@ -10,9 +10,11 @@ Pipeline
 Canonical Document
         │
         ▼
-Find Candidates
+Find Chapter Candidates
+        │
         ▼
 Validate Candidates
+        │
         ▼
 Build Chapters
 """
@@ -22,8 +24,6 @@ from __future__ import annotations
 import re
 
 from services.extractors.base_extractor import BaseExtractor
-from services.extractors.heading_classifier import HeadingClassifier
-
 from services.models import (
     Chapter,
     ChapterCandidate,
@@ -39,19 +39,28 @@ class ChapterExtractor(
 ):
     """
     Deterministic Chapter Extractor.
+
+    Chapter detection is based on chapter-specific structure,
+    not on Document AI heading classification.
+
+    Example:
+
+        Chapter 3
+        MATRICES
+
+    becomes:
+
+        number = 3
+        title  = MATRICES
     """
 
     CHAPTER_PATTERNS = [
-
-        re.compile(r"^chapter\s+(\d+)", re.IGNORECASE),
-
-        re.compile(r"^chapter\s+([ivxlcdm]+)", re.IGNORECASE),
-
+        re.compile(r"^chapter\s+(\d+)\s*$", re.IGNORECASE),
+        re.compile(
+            r"^chapter\s+([ivxlcdm]+)\s*$",
+            re.IGNORECASE,
+        ),
     ]
-
-    def __init__(self):
-
-        self.heading_classifier = HeadingClassifier()
 
     # -----------------------------------------------------
     # Public API
@@ -85,32 +94,38 @@ class ChapterExtractor(
 
         for page in pages:
 
-            for block in page.get("blocks", []):
+            page_number = page.get("page_number")
 
-                if not self.heading_classifier.is_heading(block):
+            blocks = page.get("blocks", [])
+
+            for index, block in enumerate(blocks):
+
+                text = str(block.get("text", "")).strip()
+
+                if not self._is_chapter_marker(text):
                     continue
 
-                score = self._score_candidate(block)
+                title = self._find_adjacent_title(
+                    blocks=blocks,
+                    index=index,
+                )
 
-                if score < 60:
-                    continue
+                score = self._score_candidate(
+                    block=block,
+                    title=title,
+                )
 
                 candidates.append(
-
                     ChapterCandidate(
-
                         block_id=block["id"],
-
-                        page_number=page["page_number"],
-
-                        text=block["text"],
-
+                        page_number=page_number,
+                        text=text,
                         score=score,
-
                         geometry=block.get("geometry", {}),
-
+                        metadata={
+                            "chapter_title": title,
+                        },
                     )
-
                 )
 
         return candidates
@@ -120,7 +135,20 @@ class ChapterExtractor(
         candidates: list[ChapterCandidate],
     ) -> list[ChapterCandidate]:
 
-        return candidates
+        validated: list[ChapterCandidate] = []
+
+        for candidate in candidates:
+
+            title = candidate.metadata.get(
+                "chapter_title"
+            )
+
+            if not title:
+                continue
+
+            validated.append(candidate)
+
+        return validated
 
     def build(
         self,
@@ -131,27 +159,92 @@ class ChapterExtractor(
 
         for index, candidate in enumerate(candidates):
 
+            title = candidate.metadata["chapter_title"]
+
             chapters.append(
-
                 Chapter(
-
-                    id=f"chapter-{index+1:03}",
-
-                    number=self._chapter_number(candidate.text),
-
-                    title=self._chapter_title(candidate.text),
-
+                    id=f"chapter-{index + 1:03}",
+                    number=self._chapter_number(
+                        candidate.text
+                    ),
+                    title=title,
                     start_page=candidate.page_number,
-
                     end_page=candidate.page_number,
-
-                    block_ids=[candidate.block_id],
-
+                    block_ids=[
+                        candidate.block_id
+                    ],
+                    metadata={
+                        "title_block_id": candidate.metadata.get(
+                            "title_block_id"
+                        ),
+                    },
                 )
-
             )
 
         return chapters
+
+    # -----------------------------------------------------
+    # Chapter Detection
+    # -----------------------------------------------------
+
+    def _is_chapter_marker(
+        self,
+        text: str,
+    ) -> bool:
+
+        for pattern in self.CHAPTER_PATTERNS:
+
+            if pattern.match(text):
+                return True
+
+        return False
+
+    # -----------------------------------------------------
+    # Title Detection
+    # -----------------------------------------------------
+
+    def _find_adjacent_title(
+        self,
+        blocks: list[dict],
+        index: int,
+    ) -> str | None:
+
+        next_index = index + 1
+
+        if next_index >= len(blocks):
+            return None
+
+        next_block = blocks[next_index]
+
+        title = str(
+            next_block.get("text", "")
+        ).strip()
+
+        if not title:
+            return None
+
+        # Reject another structural heading as a title.
+        if self._looks_like_section_heading(title):
+            return None
+
+        # Chapter titles in the reference document are
+        # uppercase, e.g. "MATRICES".
+        if title.isupper():
+            return title
+
+        return None
+
+    def _looks_like_section_heading(
+        self,
+        text: str,
+    ) -> bool:
+
+        return bool(
+            re.match(
+                r"^\d+(?:\.\d+)+\s+",
+                text,
+            )
+        )
 
     # -----------------------------------------------------
     # Candidate Scoring
@@ -160,35 +253,28 @@ class ChapterExtractor(
     def _score_candidate(
         self,
         block: dict,
+        title: str | None,
     ) -> float:
 
         score = 0.0
 
-        text = str(block.get("text", "")).strip()
+        text = str(
+            block.get("text", "")
+        ).strip()
 
+        # Chapter marker itself is strong evidence.
+        if self._is_chapter_marker(text):
+            score += 60
+
+        # Document AI classification is only supporting
+        # evidence. It must NOT be required.
         if block.get("type") == "heading":
-            score += 40
-
-        if len(text.split()) <= 8:
             score += 10
 
-        if not text.endswith("."):
-            score += 10
-
-        geometry = block.get("geometry", {})
-
-        bbox = geometry.get("bounding_box", {})
-
-        top = bbox.get("top")
-
-        if top is not None and top <= 0.20:
-            score += 20
-
-        if text.lower().startswith("chapter"):
-            score += 20
-
-        if text.isupper():
-            score += 10
+        # A valid adjacent uppercase title strongly
+        # confirms the chapter structure.
+        if title:
+            score += 30
 
         return score
 
@@ -199,7 +285,7 @@ class ChapterExtractor(
     def _chapter_number(
         self,
         text: str,
-    ):
+    ) -> int | None:
 
         for pattern in self.CHAPTER_PATTERNS:
 
@@ -213,24 +299,7 @@ class ChapterExtractor(
             if value.isdigit():
                 return int(value)
 
+            # Roman numerals are currently not converted.
             return None
 
         return None
-
-    def _chapter_title(
-        self,
-        text: str,
-    ) -> str:
-
-        text = text.strip()
-
-        for pattern in self.CHAPTER_PATTERNS:
-
-            match = pattern.match(text)
-
-            if not match:
-                continue
-
-            return text[match.end():].strip(" :-")
-
-        return text
