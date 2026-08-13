@@ -75,7 +75,7 @@ class ChapterExtractor(
 
         candidates = self.validate_candidates(candidates)
 
-        chapters = self.build(candidates)
+        chapters = self.build(candidates,page_count=len(canonical_document.get("pages", [])),)
 
         return ExtractionResult(items=chapters)
 
@@ -153,6 +153,7 @@ class ChapterExtractor(
     def build(
         self,
         candidates: list[ChapterCandidate],
+        page_count: int,
     ) -> list[Chapter]:
 
         chapters: list[Chapter] = []
@@ -160,6 +161,15 @@ class ChapterExtractor(
         for index, candidate in enumerate(candidates):
 
             title = candidate.metadata["chapter_title"]
+
+            # Determine chapter end page.
+            # If another chapter exists, this chapter ends
+            # on the page immediately before the next chapter.
+            # Otherwise, it ends at the last page of the document.
+            if index + 1 < len(candidates):
+                end_page = candidates[index + 1].page_number - 1
+            else:
+                end_page = page_count
 
             chapters.append(
                 Chapter(
@@ -169,7 +179,7 @@ class ChapterExtractor(
                     ),
                     title=title,
                     start_page=candidate.page_number,
-                    end_page=candidate.page_number,
+                    end_page=end_page,
                     block_ids=[
                         candidate.block_id
                     ],
@@ -209,28 +219,32 @@ class ChapterExtractor(
         index: int,
     ) -> str | None:
 
-        next_index = index + 1
+        for next_index in range(index + 1, len(blocks)):
 
-        if next_index >= len(blocks):
-            return None
+            next_block = blocks[next_index]
 
-        next_block = blocks[next_index]
+            title = str(
+                next_block.get("text", "")
+            ).strip()
 
-        title = str(
-            next_block.get("text", "")
-        ).strip()
+            if not title:
+                continue
 
-        if not title:
-            return None
+            # Ignore document/header codes such as:
+            # 12079CH03
+            if re.fullmatch(r"[A-Za-z0-9_-]+", title) and any(
+                char.isdigit() for char in title
+            ):
+                continue
 
-        # Reject another structural heading as a title.
-        if self._looks_like_section_heading(title):
-            return None
+            # Do not cross into numbered sections.
+            if self._looks_like_section_heading(title):
+                return None
 
-        # Chapter titles in the reference document are
-        # uppercase, e.g. "MATRICES".
-        if title.isupper():
-            return title
+            # Chapter title in our reference document:
+            # MATRICES
+            if title.isupper():
+                return title.title()
 
         return None
 
