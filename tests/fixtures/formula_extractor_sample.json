@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "document": {
+    "document_id": "formula-test",
+    "filename": "formula-test.pdf",
+    "mime_type": "application/pdf",
+    "page_count": 1
+  },
+  "pages": [
+    {
+      "page_number": 1,
+      "blocks": [
+        {
+          "id": "block-001",
+          "type": "heading",
+          "text": "3.2 Matrix",
+          "page": 1
+        },
+        {
+          "id": "block-002",
+          "type": "paragraph",
+          "text": "A = B",
+          "page": 1
+        },
+        {
+          "id": "block-003",
+          "type": "paragraph",
+          "text": "x + y = 10",
+          "page": 1
+        },
+        {
+          "id": "block-004",
+          "type": "paragraph",
+          "text": "This is ordinary explanatory text.",
+          "page": 1
+        }
+      ]
+    }
+  ]
+}
