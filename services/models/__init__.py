@@ -14,6 +14,7 @@ from .exercise_candidate import (
     ExerciseCandidate,
     ExerciseQuestionCandidate,
 )
+from .knowledge_package import KnowledgePackage
 
 __all__ = [
     "Chapter",
