@@ -23,7 +23,7 @@ def test_chapter_extractor():
     extractor = ChapterExtractor()
 
     result = extractor.extract(canonical)
-
+    
     validator = ChapterValidator()
 
     errors = validator.validate(
