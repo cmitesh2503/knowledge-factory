@@ -45,15 +45,22 @@ class ExampleExtractor(
         candidates: list[ExampleCandidate] = []
 
         current_section: str | None = None
+        current_example: ExampleCandidate | None = None
+
+        def flush_example() -> None:
+            nonlocal current_example
+
+            if current_example is not None:
+                candidates.append(current_example)
+
+            current_example = None
 
         for page in canonical_document.get(
             "pages",
             [],
         ):
 
-            page_number = page.get(
-                "page_number"
-            )
+            page_number = page.get("page_number")
 
             for block in page.get(
                 "blocks",
@@ -70,12 +77,12 @@ class ExampleExtractor(
                 if not text:
                     continue
 
-                # Track current section.
-                parsed = SectionNumberParser.parse(
-                    text
-                )
+                # Section boundary
+                parsed = SectionNumberParser.parse(text)
 
                 if parsed is not None:
+
+                    flush_example()
 
                     section_number, _ = parsed
 
@@ -85,17 +92,16 @@ class ExampleExtractor(
 
                     continue
 
-                detected = ExampleDetector.detect(
-                    text
-                )
+                # Example marker
+                detected = ExampleDetector.detect(text)
 
-                if detected is None:
-                    continue
+                if detected is not None:
 
-                number, title = detected
+                    flush_example()
 
-                candidates.append(
-                    ExampleCandidate(
+                    number, title = detected
+
+                    current_example = ExampleCandidate(
                         block_id=block["id"],
                         page_number=page_number,
                         text=text,
@@ -103,10 +109,17 @@ class ExampleExtractor(
                         title=title,
                         section_number=current_section,
                     )
-                )
+
+                    continue
+
+                # Content belonging to current example
+                if current_example is not None:
+
+                    current_example.content.append(text)
+
+        flush_example()
 
         return candidates
-
     def validate_candidates(
         self,
         candidates: list[ExampleCandidate],
@@ -139,7 +152,7 @@ class ExampleExtractor(
                     id=f"example-{index + 1:03}",
                     number=candidate.number,
                     title=candidate.title,
-                    content=candidate.text,
+                    content=candidate.content,
                     section_number=(
                         candidate.section_number
                     ),

@@ -40,6 +40,14 @@ def test_example_extractor_extracts_examples():
     assert result[0].number == "3.1"
     assert result[0].section_number == "3.2"
     assert result[0].page == 1
+    assert result[0].content == [
+            "Find the order of the following matrix.",
+            "The matrix has 2 rows and 3 columns.",
+            "Therefore its order is 2 × 3.",
+        ]
+    assert result[1].content == [
+            "Determine whether the two matrices are equal."
+        ]
 
     assert result[1].number == "3.2"
     assert result[1].section_number == "3.2"

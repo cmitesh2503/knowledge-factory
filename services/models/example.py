@@ -22,7 +22,7 @@ class Example:
 
     title: str | None
 
-    content: str
+    content: list[str]
 
     section_number: str | None
 
