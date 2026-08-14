@@ -7,6 +7,8 @@ from .concept import Concept
 from .concept_candidate import ConceptCandidate
 from .formula import Formula
 from .formula_candidate import FormulaCandidate
+from .example import Example
+from .example_candidate import ExampleCandidate
 
 __all__ = [
     "Chapter",
@@ -44,3 +46,16 @@ __all__ = [
     "ExtractionResult",
 ]
 
+__all__ = [
+    "Chapter",
+    "ChapterCandidate",
+    "Section",
+    "SectionCandidate",
+    "Concept",
+    "ConceptCandidate",
+    "Formula",
+    "FormulaCandidate",
+    "Example",
+    "ExampleCandidate",
+    "ExtractionResult",
+]

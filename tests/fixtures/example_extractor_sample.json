@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "document": {
+    "document_id": "example-test",
+    "filename": "example-test.pdf",
+    "mime_type": "application/pdf",
+    "page_count": 2
+  },
+  "pages": [
+    {
+      "page_number": 1,
+      "blocks": [
+        {
+          "id": "block-001",
+          "type": "heading",
+          "text": "3.2 Matrix",
+          "page": 1
+        },
+        {
+          "id": "block-002",
+          "type": "heading",
+          "text": "Example 3.1",
+          "page": 1
+        },
+        {
+          "id": "block-003",
+          "type": "paragraph",
+          "text": "Find the order of the following matrix.",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "page_number": 2,
+      "blocks": [
+        {
+          "id": "block-004",
+          "type": "heading",
+          "text": "Example 3.2: Equality of matrices",
+          "page": 2
+        },
+        {
+          "id": "block-005",
+          "type": "paragraph",
+          "text": "Determine whether the two matrices are equal.",
+          "page": 2
+        }
+      ]
+    }
+  ]
+}
