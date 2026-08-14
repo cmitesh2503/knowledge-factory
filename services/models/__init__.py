@@ -9,42 +9,11 @@ from .formula import Formula
 from .formula_candidate import FormulaCandidate
 from .example import Example
 from .example_candidate import ExampleCandidate
-
-__all__ = [
-    "Chapter",
-    "ChapterCandidate",
-    "ExtractionResult",
-]
-
-__all__ = [
-    "Chapter",
-    "ChapterCandidate",
-    "Section",
-    "SectionCandidate",
-    "ExtractionResult",
-]
-
-__all__ = [
-    "Chapter",
-    "ChapterCandidate",
-    "Section",
-    "SectionCandidate",
-    "Concept",
-    "ConceptCandidate",
-    "ExtractionResult",
-]
-
-__all__ = [
-    "Chapter",
-    "ChapterCandidate",
-    "Section",
-    "SectionCandidate",
-    "Concept",
-    "ConceptCandidate",
-    "Formula",
-    "FormulaCandidate",
-    "ExtractionResult",
-]
+from .exercise import Exercise, ExerciseQuestion
+from .exercise_candidate import (
+    ExerciseCandidate,
+    ExerciseQuestionCandidate,
+)
 
 __all__ = [
     "Chapter",
@@ -57,5 +26,9 @@ __all__ = [
     "FormulaCandidate",
     "Example",
     "ExampleCandidate",
+    "Exercise",
+    "ExerciseCandidate",
     "ExtractionResult",
+    "ExerciseQuestion",
+    "ExerciseQuestionCandidate",
 ]
