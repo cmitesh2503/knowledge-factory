@@ -49,3 +49,4 @@ def test_concept_extractor_extracts_content():
     )
 
     assert result[1].section_number == "3.2"
+    
