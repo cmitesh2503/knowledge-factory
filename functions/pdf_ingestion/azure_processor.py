@@ -1,4 +1,3 @@
-
 class AzureProcessor:
     """
     Converts Azure Document Intelligence JSON into
@@ -27,8 +26,12 @@ class AzureProcessor:
 
         blocks: list[dict] = []
 
-        analyze_result = document.get("analyzeResult", {})
+        analyze_result = document.get(
+            "analyzeResult",
+            {},
+        )
 
+        # Normalize paragraphs
         for index, paragraph in enumerate(
             analyze_result.get("paragraphs", [])
         ):
@@ -40,13 +43,149 @@ class AzureProcessor:
             if block["text"]:
                 blocks.append(block)
 
+        # Normalize figures
+        for index, figure in enumerate(
+            analyze_result.get("figures", [])
+        ):
+            block = self._figure_to_block(
+                figure=figure,
+                index=index,
+            )
+
+            blocks.append(block)
+            
+                # Normalize tables
+        for index, table in enumerate(
+            analyze_result.get("tables", [])
+        ):
+            block = self._table_to_block(
+                table=table,
+                index=index,
+            )
+
+            blocks.append(block)
+
         return blocks
+
+    def _figure_to_block(
+        self,
+        figure: dict,
+        index: int,
+    ) -> dict:
+        """
+        Convert an Azure figure into a
+        provider-independent canonical figure block.
+        """
+
+        page = self._page_number(
+            figure
+        )
+
+        figure_id = (
+            figure.get("id")
+            or f"figure-{index + 1}"
+        )
+
+        elements = figure.get(
+            "elements",
+            [],
+        )
+
+        return {
+            "type": "figure",
+            "text": "",
+            "page": page,
+            "confidence": None,
+            "geometry": self._geometry(
+                figure
+            ),
+            "metadata": {
+                "source": (
+                    "azure_document_intelligence"
+                ),
+                "figure_id": figure_id,
+                "elements": elements,
+            },
+        }
+        
+    def _table_to_block(
+            self,
+            table: dict,
+            index: int,
+        ) -> dict:
+            """
+            Convert an Azure table into a
+            provider-independent canonical table block.
+            """
+
+            page = self._page_number(
+                table
+            )
+
+            cells = table.get(
+                "cells",
+                [],
+            )
+
+            normalized_cells = []
+
+            for cell in cells:
+                normalized_cells.append(
+                    {
+                        "row_index": cell.get(
+                            "rowIndex"
+                        ),
+                        "column_index": cell.get(
+                            "columnIndex"
+                        ),
+                        "content": (
+                            cell.get("content")
+                            or ""
+                        ),
+                        "kind": cell.get(
+                            "kind"
+                        ),
+                        "elements": cell.get(
+                            "elements",
+                            [],
+                        ),
+                    }
+                )
+
+            return {
+                "type": "table",
+                "text": "",
+                "page": page,
+                "confidence": None,
+                "geometry": self._geometry(
+                    table
+                ),
+                "metadata": {
+                    "source": (
+                        "azure_document_intelligence"
+                    ),
+                    "table_index": index,
+                    "row_count": table.get(
+                        "rowCount",
+                        0,
+                    ),
+                    "column_count": table.get(
+                        "columnCount",
+                        0,
+                    ),
+                    "cells": normalized_cells,
+                },
+            }
 
     def _paragraph_to_block(
         self,
         paragraph: dict,
         index: int,
     ) -> dict:
+        """
+        Convert an Azure paragraph into
+        a provider-independent canonical block.
+        """
 
         text = (
             paragraph.get("content")
@@ -63,7 +202,9 @@ class AzureProcessor:
         )
 
         return {
-            "type": self._normalize_type(role),
+            "type": self._normalize_type(
+                role
+            ),
             "text": text,
             "page": page,
             "confidence": None,
@@ -71,7 +212,9 @@ class AzureProcessor:
                 paragraph
             ),
             "metadata": {
-                "source": "azure_document_intelligence",
+                "source": (
+                    "azure_document_intelligence"
+                ),
                 "role": role,
             },
         }
