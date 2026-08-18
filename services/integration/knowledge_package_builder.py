@@ -18,7 +18,9 @@ from services.extractors.example_extractor import (
 from services.extractors.exercise_extractor import (
     ExerciseExtractor,
 )
-
+from services.extractors.figure_extractor import (
+    FigureExtractor,
+)
 from services.models import KnowledgePackage
 
 
@@ -38,6 +40,7 @@ class KnowledgePackageBuilder:
         self.formula_extractor = FormulaExtractor()
         self.example_extractor = ExampleExtractor()
         self.exercise_extractor = ExerciseExtractor()
+        self.figure_extractor = FigureExtractor()
 
     def build(
         self,
@@ -48,7 +51,7 @@ class KnowledgePackageBuilder:
             "document",
             {},
         )
-
+        
         return KnowledgePackage(
             schema_version=canonical_document.get(
                 "schema_version",
@@ -76,4 +79,8 @@ class KnowledgePackageBuilder:
             exercises=self.exercise_extractor.extract(
                 canonical_document
             ),
+            figures=self.figure_extractor.extract(
+                canonical_document
+            ),
+            
         )
