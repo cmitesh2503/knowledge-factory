@@ -1,0 +1,4658 @@
+{
+  "schema_version": "1.0",
+  "document": {
+    "document_id": "doc-9cfb60e4fce2d2cedec152607558609b",
+    "filename": "Matrices.pdf",
+    "mime_type": "application/pdf",
+    "page_count": 42,
+    "created_at": "2026-08-22T10:44:30.765104Z"
+  },
+  "pages": [
+    {
+      "page_number": 1,
+      "blocks": [
+        {
+          "id": "block-000001",
+          "type": "paragraph",
+          "text": "Chapter 3",
+          "page": 1,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000002",
+          "type": "paragraph",
+          "text": "12079CH03",
+          "page": 1,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000003",
+          "type": "paragraph",
+          "text": "MATRICES",
+          "page": 1,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000004",
+          "type": "paragraph",
+          "text": "The essence of Mathematics lies in its freedom. CANTOR",
+          "page": 1,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000005",
+          "type": "heading",
+          "text": "3.1 Introduction",
+          "page": 1,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000006",
+          "type": "heading",
+          "text": "3.2 Matrix",
+          "page": 1,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {
+            "page_span": {
+              "start": 1,
+              "end": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "page_number": 2,
+      "blocks": []
+    },
+    {
+      "page_number": 3,
+      "blocks": [
+        {
+          "id": "block-000007",
+          "type": "heading",
+          "text": "3.2.1 Order of a matrix",
+          "page": 3,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {
+            "page_span": {
+              "start": 3,
+              "end": 10
+            }
+          }
+        }
+      ]
+    },
+    {
+      "page_number": 4,
+      "blocks": []
+    },
+    {
+      "page_number": 5,
+      "blocks": []
+    },
+    {
+      "page_number": 6,
+      "blocks": []
+    },
+    {
+      "page_number": 7,
+      "blocks": []
+    },
+    {
+      "page_number": 8,
+      "blocks": []
+    },
+    {
+      "page_number": 9,
+      "blocks": []
+    },
+    {
+      "page_number": 10,
+      "blocks": [
+        {
+          "id": "block-000008",
+          "type": "heading",
+          "text": "3.4 Operations on Matrices",
+          "page": 10,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000009",
+          "type": "heading",
+          "text": "3.4.1 Addition of matrices",
+          "page": 10,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {
+            "page_span": {
+              "start": 10,
+              "end": 17
+            }
+          }
+        }
+      ]
+    },
+    {
+      "page_number": 11,
+      "blocks": []
+    },
+    {
+      "page_number": 12,
+      "blocks": []
+    },
+    {
+      "page_number": 13,
+      "blocks": []
+    },
+    {
+      "page_number": 14,
+      "blocks": []
+    },
+    {
+      "page_number": 15,
+      "blocks": []
+    },
+    {
+      "page_number": 16,
+      "blocks": []
+    },
+    {
+      "page_number": 17,
+      "blocks": [
+        {
+          "id": "block-000010",
+          "type": "heading",
+          "text": "3.4.5 Multiplication of matrices",
+          "page": 17,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {
+            "page_span": {
+              "start": 17,
+              "end": 25
+            }
+          }
+        }
+      ]
+    },
+    {
+      "page_number": 18,
+      "blocks": []
+    },
+    {
+      "page_number": 19,
+      "blocks": []
+    },
+    {
+      "page_number": 20,
+      "blocks": []
+    },
+    {
+      "page_number": 21,
+      "blocks": []
+    },
+    {
+      "page_number": 22,
+      "blocks": []
+    },
+    {
+      "page_number": 23,
+      "blocks": []
+    },
+    {
+      "page_number": 24,
+      "blocks": []
+    },
+    {
+      "page_number": 25,
+      "blocks": []
+    },
+    {
+      "page_number": 26,
+      "blocks": [
+        {
+          "id": "block-000011",
+          "type": "paragraph",
+          "text": "MATRICES",
+          "page": 26,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000012",
+          "type": "paragraph",
+          "text": "59",
+          "page": 26,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000013",
+          "type": "paragraph",
+          "text": "4. If A=[\\begin{matrix}1&2&-3\\\\ 5&0&2\\\\ 1&-1&1\\end{matrix}] , B=[\\begin{matrix}3&-1&2\\\\ 4&2&5\\\\ 2&0&3\\end{matrix}] and C=[\\begin{matrix}4&1&2\\\\ 0&3&2\\\\ 1&-2&3\\end{matrix}] , then compute",
+          "page": 26,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000014",
+          "type": "paragraph",
+          "text": "(A+B) and (B-C). Also, verify that A+(B-C)=(A+B)-C",
+          "page": 26,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000015",
+          "type": "paragraph",
+          "text": "5. If \\Lambda=[\\begin{matrix}\\frac{2}{3}&1&5\\\\ 1&2&4\\\\ 3&3&4\\\\ 3&3&3\\\\ \\frac{2}{3}&2&\\frac{2}{3}\\end{matrix}]",
+          "page": 26,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000016",
+          "type": "paragraph",
+          "text": "6. Simplify",
+          "page": 26,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000017",
+          "type": "paragraph",
+          "text": "and B=[\\begin{matrix}\\frac{2}{5}&\\frac{3}{5}&1\\\\ \\frac{1}{5}&\\frac{2}{5}&\\frac{4}{5}\\\\ \\frac{1}{5}&0&\\frac{2}{5}&\\frac{2}{5}\\end{matrix}] then compute 3A-5B.",
+          "page": 26,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000018",
+          "type": "paragraph",
+          "text": "cos\\theta[\\begin{matrix}cos~\\theta&sin~\\theta\\\\ -sin~\\theta&cos~\\theta\\end{matrix}]+sin~\\theta[\\begin{matrix}sin~\\theta&-cos~\\theta\\\\ cos~\\theta&sin~\\theta\\end{matrix}]",
+          "page": 26,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000019",
+          "type": "paragraph",
+          "text": "(i) X+Y=[\\begin{matrix}7&0\\\\ 2&5\\end{matrix}] and X-Y=[\\begin{matrix}3&0\\\\ 0&3\\end{matrix}] Zublished",
+          "page": 26,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000020",
+          "type": "paragraph",
+          "text": "7. Find X and Y, if",
+          "page": 26,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000021",
+          "type": "paragraph",
+          "text": "(ii) 2X+3Y=[\\begin{matrix}2&3\\\\ 4&0\\end{matrix}] and",
+          "page": 26,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000022",
+          "type": "paragraph",
+          "text": "3X+2Y=[\\begin{matrix}2&-2\\\\ -1&5\\end{matrix}]",
+          "page": 26,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000023",
+          "type": "paragraph",
+          "text": "8. Find X. X, if Y=[\\begin{matrix}3&2\\\\ 1&4\\end{matrix}] and 2X+Y=[\\begin{matrix}1&0\\\\ -3&2\\end{matrix}]",
+          "page": 26,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000024",
+          "type": "paragraph",
+          "text": "9. Find xandy, if 2 [\\begin{matrix}1&3\\\\ 0&x\\end{matrix}]+[\\begin{matrix}y&0\\\\ 1&2\\end{matrix}]=[\\begin{matrix}5&6\\\\ 1&8\\end{matrix}]",
+          "page": 26,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000025",
+          "type": "paragraph",
+          "text": "10. Solve the equation for x, y, z and t, if 2[\\begin{matrix}x&z\\\\ y&t\\end{matrix}]+3[\\begin{matrix}1&-1\\\\ 0&2\\end{matrix}]=3[\\begin{matrix}3&5\\\\ 4&6\\end{matrix}]",
+          "page": 26,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000026",
+          "type": "paragraph",
+          "text": "11. If x[\\begin{matrix}2\\\\ 3\\end{matrix}]+y[\\begin{matrix}-1\\\\ 1\\end{matrix}]=[\\begin{matrix}10\\\\ 5\\end{matrix}] find the values of x and y",
+          "page": 26,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000027",
+          "type": "paragraph",
+          "text": "z",
+          "page": 26,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000028",
+          "type": "paragraph",
+          "text": "12. Given 3[\\begin{matrix}x&y\\\\ z&w\\end{matrix}]=[\\begin{matrix}x&6\\\\ -1&2w\\end{matrix}]+[\\begin{matrix}4&x+y\\\\ z+w&3\\end{matrix}] find the values of x, y, and w",
+          "page": 26,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000029",
+          "type": "paragraph",
+          "text": "Reprint 2024-25",
+          "page": 26,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "page_number": 27,
+      "blocks": [
+        {
+          "id": "block-000030",
+          "type": "paragraph",
+          "text": "60",
+          "page": 27,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000031",
+          "type": "paragraph",
+          "text": "MATHEMATICS",
+          "page": 27,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000032",
+          "type": "paragraph",
+          "text": "13. If F(x)=[\\begin{matrix}cos~x&-sin~x&0\\\\ sin~x&cos~x&0\\\\ 0&0&1\\end{matrix}] , show that F(x)F(y)=F(x+y)",
+          "page": 27,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000033",
+          "type": "paragraph",
+          "text": "14. Show that",
+          "page": 27,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000034",
+          "type": "paragraph",
+          "text": "(i) [\\begin{matrix}5&-1\\\\ 6&7\\end{matrix}][\\begin{matrix}2&1\\\\ 3&4\\end{matrix}]\\ne[\\begin{matrix}2&1\\\\ 3&4\\end{matrix}][\\begin{matrix}5&-1\\\\ 6&7\\end{matrix}]",
+          "page": 27,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000035",
+          "type": "paragraph",
+          "text": "(ii) [\\begin{matrix}1&2&3\\\\ 0&1&0\\\\ 1&1&0\\end{matrix}][\\begin{matrix}-1&1&0\\\\ 0&-1&1\\\\ 2&3&4\\end{matrix}]\\ne[\\begin{matrix}-1&1&0\\\\ 0&-1&1\\\\ 2&3&4\\end{matrix}][\\begin{matrix}1&2&3\\\\ 0&1&0\\\\ 1&1&0\\end{matrix}]",
+          "page": 27,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000036",
+          "type": "paragraph",
+          "text": "15. Find A^{2}-5A+6I, if A=[\\begin{matrix}2&0&1\\\\ 2&1&3\\\\ 1&-1&0\\end{matrix}]",
+          "page": 27,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000037",
+          "type": "paragraph",
+          "text": "prove that A^{3}-6A^{2}+7A+2I=0",
+          "page": 27,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000038",
+          "type": "paragraph",
+          "text": "16. If A=[\\begin{matrix}1&0&2\\\\ 0&2&1\\\\ 2&0&3\\end{matrix}] 17. If A=[\\begin{matrix}3&-2\\\\ 4&-2\\end{matrix}]and~l=[\\begin{matrix}1&0\\\\ 0&1\\end{matrix}]",
+          "page": 27,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000039",
+          "type": "paragraph",
+          "text": "18. If \\Lambda=[\\begin{matrix}0&-tan\\frac{a}{2}\\\\ tan\\frac{\\alpha}{2}&0\\end{matrix}]",
+          "page": 27,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000040",
+          "type": "paragraph",
+          "text": "19.",
+          "page": 27,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000041",
+          "type": "paragraph",
+          "text": "find k",
+          "page": 27,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000042",
+          "type": "paragraph",
+          "text": "so that A^{2}=kA-2I",
+          "page": 27,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000043",
+          "type": "paragraph",
+          "text": "and I is the identity matrix of order 2, show that",
+          "page": 27,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000044",
+          "type": "paragraph",
+          "text": "I+A=(I-A)[\\begin{matrix}cos~\\alpha&-sin~\\alpha\\\\ sin~\\alpha&cos~\\alpha\\end{matrix}]",
+          "page": 27,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000045",
+          "type": "paragraph",
+          "text": "A trust fund has ₹30,000 that must be invested in two different types of bonds. The first bond pays 5% interest per year, and the second bond pays 7% interest per year. Using matrix multiplication, determine how to divide ₹30,000 among the two types of bonds. If the trust fund must obtain an annual total interest of:",
+          "page": 27,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000046",
+          "type": "paragraph",
+          "text": "(a)",
+          "page": 27,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000047",
+          "type": "paragraph",
+          "text": "1800",
+          "page": 27,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000048",
+          "type": "paragraph",
+          "text": "(b) ₹2000",
+          "page": 27,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000049",
+          "type": "paragraph",
+          "text": "Reprint 2024-25",
+          "page": 27,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "page_number": 28,
+      "blocks": [
+        {
+          "id": "block-000050",
+          "type": "paragraph",
+          "text": "MATRICES",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000051",
+          "type": "paragraph",
+          "text": "61",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000052",
+          "type": "paragraph",
+          "text": "20. The bookshop of a particular school has 10 dozen chemistry books, 8 dozen physics books, 10 dozen economics books. Their selling prices are₹80, ₹60 and \\overline{r}40 each respectively. Find the total amount the bookshop will receive from selling all the books using matrix algebra.",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000053",
+          "type": "paragraph",
+          "text": "Assume X, Y, Z, W and P are matrices of order 2\\times n, 3\\times k, 2\\times p, n\\times3 and p\\times k, respectively. Choose the correct answer in Exercises 21 and 22.",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000054",
+          "type": "paragraph",
+          "text": "21. The restriction on n, k and p so that PY + WY will be defined are:",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000055",
+          "type": "paragraph",
+          "text": "(B) k is arbitrary, p=2",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000056",
+          "type": "paragraph",
+          "text": "(A) k=3, p=n",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000057",
+          "type": "paragraph",
+          "text": "(C) p is arbitrary, k=3",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000058",
+          "type": "paragraph",
+          "text": "22. If",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000059",
+          "type": "paragraph",
+          "text": "(A) p\\times2",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000060",
+          "type": "paragraph",
+          "text": "(B) 2\\times n",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000061",
+          "type": "paragraph",
+          "text": "n=p, then the order of the matrix 7X – 5Z is:",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000062",
+          "type": "paragraph",
+          "text": "3.5. Transpose of a Matrix",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000063",
+          "type": "paragraph",
+          "text": "(D) k=2, p=3",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000064",
+          "type": "paragraph",
+          "text": "(C) n\\times3",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000065",
+          "type": "paragraph",
+          "text": "(D) p\\times n",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000066",
+          "type": "paragraph",
+          "text": "In this section, we shall learn about transpose of a matrix and special types of matrices",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000067",
+          "type": "paragraph",
+          "text": "such as symmetric and skew symmetric matrices.",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000068",
+          "type": "paragraph",
+          "text": "Definition 3 IfA A=[a_{ij}] If be an m\\times n matrix, then the matrix obtained by interchanging the rows and columns of A is called the transpose of A. Transpose of the matrix A is",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000069",
+          "type": "paragraph",
+          "text": "denoted by A^{\\prime} or (A^{T}). In other words, if",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000070",
+          "type": "paragraph",
+          "text": "if \\Lambda=[\\begin{matrix}3&5\\\\ \\sqrt{3}&1\\\\ 0&\\frac{-1}{5}\\end{matrix}] , then",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000071",
+          "type": "paragraph",
+          "text": "-3\\times2",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000072",
+          "type": "paragraph",
+          "text": "A=[a_{ij}]_{m\\times n^{\\prime}}, then A^{\\prime}=[a_{ji}]_{n\\times m} For example,",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000073",
+          "type": "paragraph",
+          "text": "A^{\\prime}=[\\begin{matrix}3&\\sqrt{3}&0\\\\ 5&1&\\frac{-1}{5}\\end{matrix}]_{2}",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000074",
+          "type": "paragraph",
+          "text": "spose of the",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000075",
+          "type": "paragraph",
+          "text": "3.5.1 Properties of transpose of",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000076",
+          "type": "paragraph",
+          "text": "-2\\times3",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000077",
+          "type": "paragraph",
+          "text": "transpose of the matrices",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000078",
+          "type": "paragraph",
+          "text": "We now state the following properties of transpose of matrices without proof. These",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000079",
+          "type": "paragraph",
+          "text": "may be verified by taking suitable examples.",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000080",
+          "type": "paragraph",
+          "text": "For any matrices A and B of suitable orders, we have",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000081",
+          "type": "paragraph",
+          "text": "(i) (A^{\\prime})^{\\prime}=A",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000082",
+          "type": "paragraph",
+          "text": "(iii) (A+B)^{\\prime}=A^{\\prime}+B^{\\prime}",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000083",
+          "type": "paragraph",
+          "text": "Example 20 If",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000084",
+          "type": "paragraph",
+          "text": "(i) (A^{\\prime})^{\\prime}=A,",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000085",
+          "type": "paragraph",
+          "text": "A=[\\begin{matrix}3&\\sqrt{3}&2\\\\ 4&2&0\\end{matrix}]",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000086",
+          "type": "paragraph",
+          "text": "and",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000087",
+          "type": "paragraph",
+          "text": "(ii) (kA)^{\\prime}=kA^{\\prime} (where k is any constant)",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000088",
+          "type": "paragraph",
+          "text": "(iv) (A~B)^{\\prime}=B^{\\prime}A^{\\prime}",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000089",
+          "type": "paragraph",
+          "text": "B=[\\begin{matrix}2&-1&2\\\\ 1&2&4\\end{matrix}]",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000090",
+          "type": "paragraph",
+          "text": ", verify that",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000091",
+          "type": "paragraph",
+          "text": "(ii) (A+B)^{\\prime}=A^{\\prime}+B^{\\prime},",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000092",
+          "type": "paragraph",
+          "text": "(iii) (kB)^{\\prime}=kB^{\\prime}, where k is any constant.",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000093",
+          "type": "paragraph",
+          "text": "Reprint 2024-25",
+          "page": 28,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "page_number": 29,
+      "blocks": [
+        {
+          "id": "block-000094",
+          "type": "paragraph",
+          "text": "62",
+          "page": 29,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000095",
+          "type": "paragraph",
+          "text": "Solution",
+          "page": 29,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000096",
+          "type": "paragraph",
+          "text": "MATHEMATICS",
+          "page": 29,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000097",
+          "type": "paragraph",
+          "text": "(i) We have A=[\\begin{matrix}3&\\sqrt{3}&2\\\\ 4&2&0\\end{matrix}]\\Rightarrow A^{\\prime}=[\\begin{matrix}3&4\\\\ \\sqrt{3}&2\\\\ 2&0\\end{matrix}]\\Rightarrow(A^{\\prime})^{\\prime}=[\\begin{matrix}3&\\sqrt{3}&2\\\\ 4&2&0\\end{matrix}]=A",
+          "page": 29,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000098",
+          "type": "paragraph",
+          "text": "Thus (A^{\\prime})^{\\prime}=A",
+          "page": 29,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000099",
+          "type": "paragraph",
+          "text": "(ii) We have",
+          "page": 29,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000100",
+          "type": "paragraph",
+          "text": "Therefore",
+          "page": 29,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000101",
+          "type": "paragraph",
+          "text": "Now",
+          "page": 29,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000102",
+          "type": "paragraph",
+          "text": "So",
+          "page": 29,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000103",
+          "type": "paragraph",
+          "text": "Thus",
+          "page": 29,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000104",
+          "type": "paragraph",
+          "text": "(iii) We have",
+          "page": 29,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000105",
+          "type": "paragraph",
+          "text": "A=[\\begin{matrix}3&\\sqrt{3}&2\\\\ 4&2&0\\end{matrix}] B=[\\begin{matrix}2&-1&2\\\\ 1&2&4\\end{matrix}]\\Rightarrow A+B=[\\begin{matrix}5&\\sqrt{3}-1&4\\\\ 5&4&4\\end{matrix}]",
+          "page": 29,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000106",
+          "type": "paragraph",
+          "text": "(A+B)^{\\prime}=[\\begin{matrix}5&5\\\\ \\sqrt{3}-1&4\\\\ 4&4\\end{matrix}] A^{*}=[\\begin{matrix}3&4\\\\ \\sqrt{3}&2\\\\ 2&0\\end{matrix}],B^{\\prime}=[\\begin{matrix}2&1\\\\ -1&2\\\\ 2&4\\end{matrix}]",
+          "page": 29,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000107",
+          "type": "paragraph",
+          "text": "A^{\\prime}+B^{\\prime}=[\\begin{matrix}5&5\\\\ \\sqrt{3}-1&4\\\\ 4&4\\end{matrix}]",
+          "page": 29,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000108",
+          "type": "paragraph",
+          "text": "(A+B)^{\\prime}=A^{\\prime}+B^{\\prime}",
+          "page": 29,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000109",
+          "type": "paragraph",
+          "text": "not to",
+          "page": 29,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000110",
+          "type": "paragraph",
+          "text": "Thus",
+          "page": 29,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000111",
+          "type": "paragraph",
+          "text": "kB=k[\\begin{matrix}2&-1&2\\\\ 1&2&4\\end{matrix}]=[\\begin{matrix}2k&-k&2k\\\\ k&2k&4k\\end{matrix}] (kB)^{\\prime}=[\\begin{matrix}2k&k\\\\ -k&2k\\\\ 2k&4k\\end{matrix}]=k[\\begin{matrix}2&1\\\\ -1&2\\\\ 2&4\\end{matrix}]=kB^{\\prime}",
+          "page": 29,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000112",
+          "type": "paragraph",
+          "text": "(kB)^{\\prime}=kB^{\\prime}",
+          "page": 29,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000113",
+          "type": "paragraph",
+          "text": "Reprint 2024-25",
+          "page": 29,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "page_number": 30,
+      "blocks": [
+        {
+          "id": "block-000114",
+          "type": "paragraph",
+          "text": "MATRICES",
+          "page": 30,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000115",
+          "type": "paragraph",
+          "text": "63",
+          "page": 30,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000116",
+          "type": "paragraph",
+          "text": "Example 21 If A=[\\begin{matrix}-2\\\\ 4\\\\ 5\\end{matrix}] , B=[\\begin{matrix}1&3&-6\\end{matrix}], verify that (AB)^{\\prime}=B^{\\prime}A^{\\prime}",
+          "page": 30,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000117",
+          "type": "paragraph",
+          "text": "Solution We have",
+          "page": 30,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000118",
+          "type": "paragraph",
+          "text": "then",
+          "page": 30,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000119",
+          "type": "paragraph",
+          "text": "A=[\\begin{matrix}-2\\\\ 4\\\\ 5\\end{matrix}] , B=[\\begin{matrix}1&3&-6\\end{matrix}]",
+          "page": 30,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000120",
+          "type": "paragraph",
+          "text": "AB=[\\begin{matrix}-2\\\\ 4\\\\ 5\\end{matrix}][\\begin{matrix}1&3&-6\\end{matrix}]=[\\begin{matrix}-2&-6&12\\\\ 4&12&-24\\\\ 5&15&-30\\end{matrix}]",
+          "page": 30,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000121",
+          "type": "paragraph",
+          "text": "Now A^{\\prime}=[-2~4~5], B^{\\prime}=[\\begin{matrix}1\\\\ 3\\\\ -6\\end{matrix}]",
+          "page": 30,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000122",
+          "type": "paragraph",
+          "text": "Clearly",
+          "page": 30,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000123",
+          "type": "paragraph",
+          "text": "RT",
+          "page": 30,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000124",
+          "type": "paragraph",
+          "text": "be republished",
+          "page": 30,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000125",
+          "type": "paragraph",
+          "text": "B^{\\prime}\\Lambda^{\\prime}=[\\begin{matrix}1\\\\ 3\\\\ -6\\end{matrix}][-2&4&5\\end{matrix}]=[\\begin{matrix}-2&4&5\\\\ -6&12&15\\\\ 12&-24&-30\\end{matrix}]=(AB)^{\\prime}",
+          "page": 30,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000126",
+          "type": "paragraph",
+          "text": "(AB)^{\\prime}=B^{\\prime}A^{\\prime}",
+          "page": 30,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000127",
+          "type": "paragraph",
+          "text": "3.6 Symmetric and Skew Symmetric etric Matrices",
+          "page": 30,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000128",
+          "type": "paragraph",
+          "text": "Definition 4 A square matrix A=[a_{ij}] is said to be symmetric if A^{\\prime}=A, that is, [a_{ij}]=[a_{ji}] for all possible values of i and j.",
+          "page": 30,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000129",
+          "type": "paragraph",
+          "text": "A=[\\begin{matrix}\\sqrt{3}&2&3\\\\ 2&-1.5-1\\\\ 3&-1&1\\end{matrix}]",
+          "page": 30,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000130",
+          "type": "paragraph",
+          "text": "For example is a symmetric matrix as A^{\\prime}=A",
+          "page": 30,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000131",
+          "type": "paragraph",
+          "text": "QU",
+          "page": 30,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000132",
+          "type": "paragraph",
+          "text": "Definition 5 A square matrix A=[a_{ij}] is said to be skew symmetric matrix if A^{\\prime}=-A, that is for all possible values of i and j. Now, if we put i=j, we a_{ji}=-a_{ij} have a_{ii}=-a_{ii}. Therefore 2a_{ii}=0 or a_{\\overline{i}}=0 for all i's.",
+          "page": 30,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000133",
+          "type": "paragraph",
+          "text": "This means that all the diagonal elements of a skew symmetric matrix are zero.",
+          "page": 30,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000134",
+          "type": "paragraph",
+          "text": "Reprint 2024-25",
+          "page": 30,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "page_number": 31,
+      "blocks": [
+        {
+          "id": "block-000135",
+          "type": "text",
+          "text": "64",
+          "page": 31,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000136",
+          "type": "paragraph",
+          "text": "MATHEMATICS",
+          "page": 31,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000137",
+          "type": "paragraph",
+          "text": "For example, the matrix",
+          "page": 31,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000138",
+          "type": "paragraph",
+          "text": "B=[\\begin{matrix}0&e&f\\\\ -e&0&g\\\\ -f&-g&0\\end{matrix}]",
+          "page": 31,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000139",
+          "type": "paragraph",
+          "text": "a skew symmetric matrix as B^{\\prime}=-B",
+          "page": 31,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000140",
+          "type": "paragraph",
+          "text": "Now, we are going to prove some results of symmetric and skew-symmetric matrices.",
+          "page": 31,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000141",
+          "type": "paragraph",
+          "text": "Theorem 1 For any square matrix A with real number entries, A+A^{\\prime} is a symmetric matrix and A-A^{\\prime} is a skew symmetric matrix.",
+          "page": 31,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000142",
+          "type": "paragraph",
+          "text": "Proof Let B=A+A^{\\prime}, then",
+          "page": 31,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000143",
+          "type": "paragraph",
+          "text": "Therefore",
+          "page": 31,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000144",
+          "type": "paragraph",
+          "text": "Now let",
+          "page": 31,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000145",
+          "type": "paragraph",
+          "text": "Therefore",
+          "page": 31,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000146",
+          "type": "paragraph",
+          "text": "B^{\\prime}=(A+A^{\\prime})^{\\prime}",
+          "page": 31,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000147",
+          "type": "paragraph",
+          "text": "=A^{\\prime}+(A^{\\prime})^{\\prime} (as (A+B)^{\\prime}=A^{\\prime}+B^{\\prime})",
+          "page": 31,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000148",
+          "type": "paragraph",
+          "text": "=A^{\\prime}+A (as (A^{\\prime})^{\\prime}=A) =A+A^{\\prime} (as A+B=B+A)",
+          "page": 31,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000149",
+          "type": "paragraph",
+          "text": "is a symmetric mashed",
+          "page": 31,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000150",
+          "type": "paragraph",
+          "text": "=B",
+          "page": 31,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000151",
+          "type": "paragraph",
+          "text": "B=A+A^{\\prime} C=A-A^{\\prime}",
+          "page": 31,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000152",
+          "type": "paragraph",
+          "text": "C^{\\prime}=(A-A^{\\prime})^{\\prime}=A^{\\prime}-(A^{\\prime})^{\\prime} (Why?) =A^{\\prime}-A(Why?)",
+          "page": 31,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000153",
+          "type": "paragraph",
+          "text": "=-(A-A^{\\prime})=-C",
+          "page": 31,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000154",
+          "type": "paragraph",
+          "text": "C=A-A^{\\prime}i is a skew symmetric matrix.",
+          "page": 31,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000155",
+          "type": "paragraph",
+          "text": "Theorem 2 Any square matrix can be expressed as the sum of a symmetric and a",
+          "page": 31,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000156",
+          "type": "paragraph",
+          "text": "skew symmetric matrix.",
+          "page": 31,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000157",
+          "type": "paragraph",
+          "text": "Proof Let A be a square",
+          "page": 31,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000158",
+          "type": "paragraph",
+          "text": "square matrix, then we can write",
+          "page": 31,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000159",
+          "type": "paragraph",
+          "text": "A=\\frac{1}{2}(A+A^{\\prime})+\\frac{1}{2}(A-A^{\\prime})",
+          "page": 31,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000160",
+          "type": "paragraph",
+          "text": "From the Theorem 1, we know that (A+A^{\\prime}) is a symmetric matrix and (A-A^{\\prime}) is a skew symmetric matrix. Since for any matrix A, (kA)^{\\prime}=kA^{\\prime} it follows that \\frac{1}{2}(A+A^{\\prime})",
+          "page": 31,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000161",
+          "type": "paragraph",
+          "text": "Reprint 2024-25",
+          "page": 31,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "page_number": 32,
+      "blocks": [
+        {
+          "id": "block-000162",
+          "type": "paragraph",
+          "text": "Let",
+          "page": 32,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000163",
+          "type": "paragraph",
+          "text": "Now",
+          "page": 32,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000164",
+          "type": "paragraph",
+          "text": "Thus",
+          "page": 32,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000165",
+          "type": "paragraph",
+          "text": "MATRICES",
+          "page": 32,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000166",
+          "type": "paragraph",
+          "text": "65",
+          "page": 32,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000167",
+          "type": "paragraph",
+          "text": "is symmetric matrix and \\frac{1}{2}(A-A^{\\prime}) is skew symmetric matrix. Thus, any square matrix can be expressed as the sum of a symmetric and a skew symmetric matrix.",
+          "page": 32,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000168",
+          "type": "paragraph",
+          "text": "Example 22 Express the matrix",
+          "page": 32,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000169",
+          "type": "paragraph",
+          "text": "skew symmetric matrix. Solution Here",
+          "page": 32,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000170",
+          "type": "paragraph",
+          "text": "B=[\\begin{matrix}2&-2&-4\\\\ -1&3&4\\\\ 1&-2&-3\\end{matrix}] as the sum of a symmetric and a",
+          "page": 32,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000171",
+          "type": "paragraph",
+          "text": "B^{\\prime}=[\\begin{matrix}2&-1&1\\\\ -2&3&-2\\\\ -4&4&-3\\end{matrix}]",
+          "page": 32,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000172",
+          "type": "paragraph",
+          "text": "shed",
+          "page": 32,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000173",
+          "type": "paragraph",
+          "text": "9=\\frac{1}{2}(0+N)-\\frac{1}{2}[\\begin{matrix}4&3&-3\\\\ 3^{2}&6&2\\\\ -3/2&-6\\end{matrix}]=[\\begin{matrix}2&3&-3\\\\ \\frac{43}{2}&3&1\\\\ \\frac{43}{2}&1&-3\\end{matrix}] P=[\\begin{matrix}2\\frac{3-1}{2}&-3\\\\ -3&3&1\\\\ \\frac{-3}{2}&1&-1\\\\ \\frac{-3}{2}&1&-3\\end{matrix}]=1",
+          "page": 32,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000174",
+          "type": "paragraph",
+          "text": "not P=\\frac{1}{2}(B+B^{\\prime})",
+          "page": 32,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000175",
+          "type": "paragraph",
+          "text": "Also, let Q=\\frac{1}{2}(0-N)=2[\\begin{matrix}0&-1&-5\\\\ 1&0&5\\\\ 5&-6&0\\end{matrix}]=[\\begin{matrix}0&-1&2&-5\\\\ 2&0&3\\\\ \\frac{5}{2}&0&3\\\\ \\frac{5}{2}&-3&0\\end{matrix}]",
+          "page": 32,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000176",
+          "type": "paragraph",
+          "text": "Reprint 2024-25",
+          "page": 32,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "page_number": 33,
+      "blocks": [
+        {
+          "id": "block-000177",
+          "type": "paragraph",
+          "text": "66",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000178",
+          "type": "paragraph",
+          "text": "MATHEMATICS",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000179",
+          "type": "paragraph",
+          "text": "Then",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000180",
+          "type": "paragraph",
+          "text": "Q=[\\begin{matrix}0&\\frac{1}{2}&\\frac{5}{3}\\\\ \\frac{-1}{2}&0&-3\\\\ -5&3&0\\end{matrix}]=0",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000181",
+          "type": "paragraph",
+          "text": "Thus",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000182",
+          "type": "paragraph",
+          "text": "Q=\\frac{1}{2}(B-B^{\\prime}) is a skew symmetric matrix.",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000183",
+          "type": "paragraph",
+          "text": "-3 -3",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000184",
+          "type": "paragraph",
+          "text": "-1-5",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000185",
+          "type": "paragraph",
+          "text": "2",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000186",
+          "type": "paragraph",
+          "text": "0",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000187",
+          "type": "paragraph",
+          "text": "2 2",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000188",
+          "type": "paragraph",
+          "text": "2",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000189",
+          "type": "paragraph",
+          "text": "2",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000190",
+          "type": "paragraph",
+          "text": "2-2",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000191",
+          "type": "paragraph",
+          "text": "Now",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000192",
+          "type": "paragraph",
+          "text": "-3",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000193",
+          "type": "paragraph",
+          "text": "P+Q=",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000194",
+          "type": "paragraph",
+          "text": "1",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000195",
+          "type": "paragraph",
+          "text": "3 1",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000196",
+          "type": "paragraph",
+          "text": "+",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000197",
+          "type": "paragraph",
+          "text": "03",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000198",
+          "type": "paragraph",
+          "text": "=-1",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000199",
+          "type": "paragraph",
+          "text": "2",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000200",
+          "type": "paragraph",
+          "text": "3",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000201",
+          "type": "paragraph",
+          "text": "2",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000202",
+          "type": "paragraph",
+          "text": "-3",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000203",
+          "type": "paragraph",
+          "text": "5",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000204",
+          "type": "paragraph",
+          "text": "1 -2 -3",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000205",
+          "type": "paragraph",
+          "text": "1",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000206",
+          "type": "paragraph",
+          "text": "-3",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000207",
+          "type": "paragraph",
+          "text": "-3",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000208",
+          "type": "paragraph",
+          "text": "0",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000209",
+          "type": "paragraph",
+          "text": "shed",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000210",
+          "type": "paragraph",
+          "text": "2",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000211",
+          "type": "paragraph",
+          "text": "2",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000212",
+          "type": "paragraph",
+          "text": "Thus, B is represented as the sum of a symmetric and a skew symmetric matrix.",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000213",
+          "type": "paragraph",
+          "text": "skew",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000214",
+          "type": "paragraph",
+          "text": "EXERCISE 3.3",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000215",
+          "type": "paragraph",
+          "text": "1. Find the transpose of each of the following matrices:",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000216",
+          "type": "paragraph",
+          "text": "(i)",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000217",
+          "type": "paragraph",
+          "text": "\\begin{cases}5^{-}\\\\ \\frac{1}{2}\\\\ -1\\end{cases}",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000218",
+          "type": "paragraph",
+          "text": "2. If A=[\\begin{matrix}-1&2&3\\\\ 5&7&9\\\\ -2&1&1\\end{matrix}]",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000219",
+          "type": "paragraph",
+          "text": "(ii)",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000220",
+          "type": "paragraph",
+          "text": "[\\begin{matrix}1&-1\\\\ 2&3\\end{matrix}]",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000221",
+          "type": "paragraph",
+          "text": "(iii)",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000222",
+          "type": "paragraph",
+          "text": "[\\begin{matrix}-1&5&6\\\\ \\sqrt{3}&5&6\\\\ 2&3&-1\\end{matrix}]",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000223",
+          "type": "paragraph",
+          "text": "B=[\\begin{matrix}-4&1&-5\\\\ 1&2&0\\\\ 1&3&1\\end{matrix}] , then verify that",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000224",
+          "type": "paragraph",
+          "text": "(i) (A+B)^{\\prime}=A^{\\prime}+B^{\\prime}, 3. If A^{\\prime}=[\\begin{matrix}3&4\\\\ -1&2\\\\ 0&1\\end{matrix}] and B=[\\begin{matrix}-1&2&1\\\\ 1&2&3\\end{matrix}]",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000225",
+          "type": "paragraph",
+          "text": "(i) (A+B)^{\\prime}=A^{\\prime}+B^{\\prime}",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000226",
+          "type": "paragraph",
+          "text": "(ii) (A-B)^{\\prime}=A^{\\prime}-B^{\\prime}",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000227",
+          "type": "paragraph",
+          "text": ", then verify that",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000228",
+          "type": "paragraph",
+          "text": "(ii) (A-B)^{\\prime}=A^{\\prime}-B^{\\prime}",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000229",
+          "type": "paragraph",
+          "text": "Reprint 2024-25",
+          "page": 33,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "page_number": 34,
+      "blocks": [
+        {
+          "id": "block-000230",
+          "type": "paragraph",
+          "text": "MATRICES",
+          "page": 34,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000231",
+          "type": "paragraph",
+          "text": "67",
+          "page": 34,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000232",
+          "type": "paragraph",
+          "text": "4. If A^{\\prime}=[\\begin{matrix}-2&3\\\\ 1&2\\end{matrix}]",
+          "page": 34,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000233",
+          "type": "paragraph",
+          "text": "and",
+          "page": 34,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000234",
+          "type": "paragraph",
+          "text": "B=[\\begin{matrix}-1&0\\\\ 1&2\\end{matrix}], then find (A+2B)^{\\prime} (A + 2B)",
+          "page": 34,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000235",
+          "type": "paragraph",
+          "text": "5. For the matrices A and B, verify that (AB)^{\\prime}=B^{\\prime}A^{\\prime}, where",
+          "page": 34,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000236",
+          "type": "paragraph",
+          "text": "(i)",
+          "page": 34,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000237",
+          "type": "paragraph",
+          "text": "A=[\\begin{matrix}1\\\\ -4\\\\ 3\\end{matrix}]",
+          "page": 34,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000238",
+          "type": "paragraph",
+          "text": "B=[\\begin{matrix}-1&2&1\\end{matrix}] (ⅱ) A=[\\begin{matrix}0\\\\ 1\\\\ 2\\end{matrix}] , B=[\\begin{matrix}1&5&7\\\\ \\end{matrix}]",
+          "page": 34,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000239",
+          "type": "paragraph",
+          "text": "6. If (i)",
+          "page": 34,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000240",
+          "type": "paragraph",
+          "text": "A=[\\begin{matrix}cos~\\alpha&sin~\\alpha\\\\ -sin~\\alpha&cos~\\alpha\\end{matrix}]",
+          "page": 34,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000241",
+          "type": "paragraph",
+          "text": "then verify that A^{\\prime}A=I",
+          "page": 34,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000242",
+          "type": "paragraph",
+          "text": "7.",
+          "page": 34,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000243",
+          "type": "paragraph",
+          "text": "(ii) If A=[\\begin{matrix}sin~\\alpha&cos~\\alpha\\\\ -cos~\\alpha&sin~\\alpha\\end{matrix}] then verify that A^{\\prime}A=I",
+          "page": 34,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000244",
+          "type": "paragraph",
+          "text": "(i) Show that the matrix",
+          "page": 34,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000245",
+          "type": "paragraph",
+          "text": "A=[\\begin{matrix}1&-1&5\\\\ -1&2&1\\\\ 5&1&3\\end{matrix}]",
+          "page": 34,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000246",
+          "type": "paragraph",
+          "text": "is",
+          "page": 34,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000247",
+          "type": "paragraph",
+          "text": "matrix.",
+          "page": 34,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000248",
+          "type": "paragraph",
+          "text": "(ii) Show that the matrix",
+          "page": 34,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000249",
+          "type": "paragraph",
+          "text": "8. For the matrix",
+          "page": 34,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000250",
+          "type": "paragraph",
+          "text": "A=[\\begin{matrix}1&5\\\\ 6&7\\end{matrix}]",
+          "page": 34,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000251",
+          "type": "paragraph",
+          "text": "A=[\\begin{matrix}0&1&-1\\\\ -1&0&1\\\\ 1&-1&0\\end{matrix}] is a skew symmetric matrix.",
+          "page": 34,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000252",
+          "type": "paragraph",
+          "text": ", , verify that t",
+          "page": 34,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000253",
+          "type": "paragraph",
+          "text": "(i) (A+A^{\\prime}) is a symmetric matrix",
+          "page": 34,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000254",
+          "type": "paragraph",
+          "text": "(ii) (A-A^{\\prime}) is a skew symmetric matrix",
+          "page": 34,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000255",
+          "type": "paragraph",
+          "text": "9. Find",
+          "page": 34,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000256",
+          "type": "paragraph",
+          "text": "\\frac{1}{2}(A+A^{\\prime})",
+          "page": 34,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000257",
+          "type": "paragraph",
+          "text": "and \\frac{1}{2}(A-A^{\\prime}) , when",
+          "page": 34,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000258",
+          "type": "paragraph",
+          "text": "A=[\\begin{matrix}0&a&b\\\\ -a&0&c\\\\ -b&-c&0\\end{matrix}]",
+          "page": 34,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000259",
+          "type": "paragraph",
+          "text": "10. Express the following matrices as the sum of a symmetric and a skew symmetric matrix:",
+          "page": 34,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000260",
+          "type": "paragraph",
+          "text": "Reprint 2024-25",
+          "page": 34,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "page_number": 35,
+      "blocks": [
+        {
+          "id": "block-000261",
+          "type": "paragraph",
+          "text": "68",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000262",
+          "type": "paragraph",
+          "text": "MATHEMATICS",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000263",
+          "type": "paragraph",
+          "text": "(i) [\\begin{matrix}3&5\\\\ 1&-1\\end{matrix}]",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000264",
+          "type": "paragraph",
+          "text": "(ii)",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000265",
+          "type": "paragraph",
+          "text": "(iii) [\\begin{matrix}3&3&-1\\\\ -2&-2&1\\\\ -4&-5&2\\end{matrix}] (iv)",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000266",
+          "type": "paragraph",
+          "text": "[\\begin{matrix}6&-2&2\\\\ -2&3&-1\\\\ 2&-1&3\\end{matrix}]",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000267",
+          "type": "paragraph",
+          "text": "[\\begin{matrix}1&5\\\\ -1&2\\end{matrix}]",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000268",
+          "type": "paragraph",
+          "text": "Choose the correct answer in the Exercises 11 and 12.",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000269",
+          "type": "paragraph",
+          "text": "11. If A, B are symmetric matrices of same order, then AB – BA is a",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000270",
+          "type": "paragraph",
+          "text": "12. If",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000271",
+          "type": "paragraph",
+          "text": "(A) Skew symmetric matrix",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000272",
+          "type": "paragraph",
+          "text": "(C) Zero matrix",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000273",
+          "type": "paragraph",
+          "text": "A=[\\begin{matrix}cos~\\alpha&-sin~\\alpha\\\\ sin~\\alpha&cos~\\alpha\\end{matrix}]",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000274",
+          "type": "paragraph",
+          "text": "(A) \\frac{\\pi}{6}",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000275",
+          "type": "paragraph",
+          "text": "(C) π",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000276",
+          "type": "paragraph",
+          "text": "(B) Symmetric matrix",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000277",
+          "type": "paragraph",
+          "text": "(D) Identity matrix",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000278",
+          "type": "paragraph",
+          "text": "A+A^{\\prime}=I,",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000279",
+          "type": "paragraph",
+          "text": "(B)",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000280",
+          "type": "paragraph",
+          "text": "Mat ENCE then.",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000281",
+          "type": "paragraph",
+          "text": "3.7 Invertible Matrices",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000282",
+          "type": "paragraph",
+          "text": "\\alpha~is",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000283",
+          "type": "paragraph",
+          "text": "Definition 6 If A is a square matrix of order m, and if there exists another square matrix B of the same order m, such that AB=BA=I, then B is called the inverse matrix of A and it is denoted by A^{-1}",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000284",
+          "type": "paragraph",
+          "text": "For example, let",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000285",
+          "type": "paragraph",
+          "text": "Now",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000286",
+          "type": "paragraph",
+          "text": "Also",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000287",
+          "type": "paragraph",
+          "text": "a by . In that case A is said to be invertible.",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000288",
+          "type": "paragraph",
+          "text": "to",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000289",
+          "type": "paragraph",
+          "text": "not",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000290",
+          "type": "paragraph",
+          "text": "A=[\\begin{matrix}2&3\\\\ 1&2\\end{matrix}] and B=[\\begin{matrix}2&-3\\\\ -1&2\\end{matrix}] be two matrices.",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000291",
+          "type": "paragraph",
+          "text": "AB=[\\begin{matrix}2&3\\\\ 1&2\\end{matrix}][\\begin{matrix}2&-3\\\\ -1&2\\end{matrix}]",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000292",
+          "type": "paragraph",
+          "text": "=[\\begin{matrix}4-3&-6+6\\\\ 2-2&-3+4\\end{matrix}]=[\\begin{matrix}1&0\\\\ 0&1\\end{matrix}]=I",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000293",
+          "type": "paragraph",
+          "text": ".",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000294",
+          "type": "paragraph",
+          "text": "BA=[\\begin{matrix}1&0\\\\ 0&1\\end{matrix}]=I Thus B is the inverse of A, in other",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000295",
+          "type": "paragraph",
+          "text": "words B=A^{-1} and A is inverse of B, i.e., A=B^{-1}",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000296",
+          "type": "paragraph",
+          "text": "Reprint 2024-25",
+          "page": 35,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "page_number": 36,
+      "blocks": [
+        {
+          "id": "block-000297",
+          "type": "paragraph",
+          "text": "MATRICES",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000298",
+          "type": "paragraph",
+          "text": "69",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000299",
+          "type": "paragraph",
+          "text": "Note",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000300",
+          "type": "paragraph",
+          "text": "1. A rectangular matrix does not possess inverse matrix, since for products BA and AB to be defined and to be equal, it is necessary that matrices A and B should be square matrices of the same order.",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000301",
+          "type": "paragraph",
+          "text": "2. If B is the inverse of A, then A is also the inverse of B.",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000302",
+          "type": "paragraph",
+          "text": "Theorem 3 (Uniqueness of inverse) Inverse of a square matrix, if it exists, is unique. Proof Let A=[a_{ij}] be a square matrix of order m. If possible, let B and C be two inverses of A. We shall show that B=C",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000303",
+          "type": "paragraph",
+          "text": "Since B is the inverse of A",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000304",
+          "type": "paragraph",
+          "text": "AB=BA=I",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000305",
+          "type": "paragraph",
+          "text": "Since C is also the inverse of A",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000306",
+          "type": "paragraph",
+          "text": "AC=CA=I",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000307",
+          "type": "paragraph",
+          "text": "Thus",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000308",
+          "type": "paragraph",
+          "text": "B=BI=B(AC)=(BA)C=IC=C",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000309",
+          "type": "paragraph",
+          "text": "... (1)",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000310",
+          "type": "paragraph",
+          "text": "(2)",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000311",
+          "type": "paragraph",
+          "text": "republished",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000312",
+          "type": "paragraph",
+          "text": "Theorem 4 If A and B are invertible matrices of the same order, then (AB)^{-1}=B^{-1}A^{-1}.",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000313",
+          "type": "paragraph",
+          "text": "Proof From the definition of inverse of a matrix, we have",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000314",
+          "type": "paragraph",
+          "text": "(AB) (AB)^{-1}=1",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000315",
+          "type": "paragraph",
+          "text": "A^{-1} (AB) (AB)^{-1}=A^{-1}I",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000316",
+          "type": "paragraph",
+          "text": "or",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000317",
+          "type": "paragraph",
+          "text": "(A¯¹A) B",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000318",
+          "type": "paragraph",
+          "text": "or",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000319",
+          "type": "paragraph",
+          "text": "or",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000320",
+          "type": "paragraph",
+          "text": "or",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000321",
+          "type": "paragraph",
+          "text": "or",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000322",
+          "type": "paragraph",
+          "text": "or",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000323",
+          "type": "paragraph",
+          "text": "Hence",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000324",
+          "type": "paragraph",
+          "text": "(AB)^{-1}=A^{-1}",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000325",
+          "type": "paragraph",
+          "text": "C IB (AB)^{-1}=A^{-1}",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000326",
+          "type": "paragraph",
+          "text": "B (AB)^{-1}=A^{-1}",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000327",
+          "type": "paragraph",
+          "text": "B^{-1} B (AB)^{-1}=B^{-1}A^{-1}",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000328",
+          "type": "paragraph",
+          "text": "(AB)^{-1}=B^{-1}A^{-1}",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000329",
+          "type": "paragraph",
+          "text": "_________1 I(AB)^{-1}=B^{-1}A^{-1}",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000330",
+          "type": "paragraph",
+          "text": "EXERCISE 3.4",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000331",
+          "type": "paragraph",
+          "text": "(Pre multiplying both sides by A^{-} ¹)",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000332",
+          "type": "paragraph",
+          "text": "(Since A^{-1}I=A^{-1})",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000333",
+          "type": "paragraph",
+          "text": "1. Matrices A and B will be inverse of each other only if",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000334",
+          "type": "paragraph",
+          "text": "(A) AB=BA(B) AB=BA=0",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000335",
+          "type": "paragraph",
+          "text": "(C) AB=0, BA = I (D) AB=BA=I",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000336",
+          "type": "text",
+          "text": "Reprint 2024-25",
+          "page": 36,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "page_number": 37,
+      "blocks": [
+        {
+          "id": "block-000337",
+          "type": "paragraph",
+          "text": "70",
+          "page": 37,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000338",
+          "type": "paragraph",
+          "text": "MATHEMATICS",
+          "page": 37,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000339",
+          "type": "paragraph",
+          "text": "Miscellaneous Examples",
+          "page": 37,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000340",
+          "type": "paragraph",
+          "text": "then prove that A^{n}=[\\begin{matrix}cos~n\\theta&sin~n\\theta\\\\ -sin~n\\theta&cos~n\\theta\\end{matrix}] n\\in N",
+          "page": 37,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000341",
+          "type": "paragraph",
+          "text": "Example 23 If A=[\\begin{matrix}cos~\\theta&sin~\\theta\\\\ -sin~\\theta&cos~\\theta\\end{matrix}]",
+          "page": 37,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000342",
+          "type": "paragraph",
+          "text": "Solution We shall prove the result by using principle of mathematical induction.",
+          "page": 37,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000343",
+          "type": "paragraph",
+          "text": "We have",
+          "page": 37,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000344",
+          "type": "paragraph",
+          "text": "Therefore,",
+          "page": 37,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000345",
+          "type": "paragraph",
+          "text": "P(n):If~A=[\\begin{matrix}cos~\\theta&sin~\\theta\\\\ -sin~\\theta&cos~\\theta\\end{matrix}] then A^{n}=[\\begin{matrix}cos~n\\theta&sin~n\\theta\\\\ -sin~n\\theta&cos~n\\theta\\end{matrix}]",
+          "page": 37,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000346",
+          "type": "paragraph",
+          "text": "P(1):A=[\\begin{matrix}cos~\\theta&sin~\\theta\\\\ -sin~\\theta&cos~\\theta\\end{matrix}] so A^{1}=[\\begin{matrix}cos~\\theta&sin~\\theta\\\\ -sin~\\theta&cos~\\theta\\end{matrix}]",
+          "page": 37,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000347",
+          "type": "paragraph",
+          "text": "the result is true for n=1.",
+          "page": 37,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000348",
+          "type": "paragraph",
+          "text": "Let the result be true for n=k. So",
+          "page": 37,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000349",
+          "type": "paragraph",
+          "text": "n\\in N",
+          "page": 37,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000350",
+          "type": "paragraph",
+          "text": ", then ished",
+          "page": 37,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000351",
+          "type": "paragraph",
+          "text": "T",
+          "page": 37,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000352",
+          "type": "paragraph",
+          "text": "P(k):A=[\\begin{matrix}cos~\\theta&sin~\\theta\\\\ -sin~\\theta&cos~\\theta\\end{matrix}] A^{k}=[\\begin{matrix}cos~k\\theta&sin~k\\theta\\\\ -sin~k\\theta&cos~k\\theta\\end{matrix}]",
+          "page": 37,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000353",
+          "type": "paragraph",
+          "text": "Now, we prove that the result holds for n=k+1",
+          "page": 37,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000354",
+          "type": "paragraph",
+          "text": "Now",
+          "page": 37,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000355",
+          "type": "paragraph",
+          "text": "A^{k+1}=A\\cdot A^{k}=[\\begin{matrix}cos~\\theta&sin~\\theta\\\\ -sin~\\theta&cos~\\theta\\end{matrix}][\\begin{matrix}cos~k\\theta&sin~k\\theta\\\\ -sin~k\\theta&cos~k\\theta\\end{matrix}]",
+          "page": 37,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000356",
+          "type": "paragraph",
+          "text": "=[\\begin{matrix}cos~\\theta~cos~k\\theta-sin~\\theta~sin~k\\theta&cos~\\theta~sin~k\\theta+sin~\\theta~cos~k\\theta\\\\ -sin~\\theta~cos~k\\theta+cos~\\theta~sin~k\\theta&-sin~\\theta~sin~k\\theta+cos~\\theta~cos~k\\theta\\end{matrix}] =[\\begin{matrix}cos(\\theta+k\\theta)&sin(\\theta+k\\theta)\\\\ -sin(\\theta+k\\theta)&cos(\\theta+k\\theta)\\end{matrix}]=[\\begin{matrix}cos(k+1)\\theta&sin(k+1)\\theta\\\\ -sin(k+1)\\theta&cos(k+1)\\theta\\end{matrix}]",
+          "page": 37,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000357",
+          "type": "paragraph",
+          "text": "Therefore, the result is true for n=k+1. Thus by principle of mathematical induction,",
+          "page": 37,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000358",
+          "type": "paragraph",
+          "text": "we have A^{n}=[\\begin{matrix}cos~n~\\theta&sin~n~\\theta\\\\ -sin~n~\\theta&cos~n~\\theta\\end{matrix}] holds for all natural numbers.",
+          "page": 37,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000359",
+          "type": "paragraph",
+          "text": "Example 24 If A and B are symmetric matrices of the same order, then show that AB is symmetric if and only if A and B commute, that is AB=BA.",
+          "page": 37,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000360",
+          "type": "paragraph",
+          "text": "Solution Since A and B are both symmetric matrices, therefore A^{\\prime}=A and B^{\\prime}=B",
+          "page": 37,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000361",
+          "type": "paragraph",
+          "text": "Reprint 2024-25",
+          "page": 37,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "page_number": 38,
+      "blocks": [
+        {
+          "id": "block-000362",
+          "type": "paragraph",
+          "text": "MATRICES",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000363",
+          "type": "paragraph",
+          "text": "71",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000364",
+          "type": "paragraph",
+          "text": "Let",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000365",
+          "type": "paragraph",
+          "text": "AB be symmetric, then (AB)^{\\prime}=AB",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000366",
+          "type": "paragraph",
+          "text": "But",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000367",
+          "type": "paragraph",
+          "text": "Therefore",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000368",
+          "type": "paragraph",
+          "text": "(AB)^{\\prime}=B^{\\prime}A^{\\prime}=BA(Why?) BA=AB",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000369",
+          "type": "paragraph",
+          "text": "Conversely, if AB=BA, then we shall show that AB is symmetric. Now",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000370",
+          "type": "paragraph",
+          "text": "(AB)^{\\prime}=B^{\\prime}A^{\\prime}",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000371",
+          "type": "paragraph",
+          "text": "=B~A (as A and B are symmetric) =AB",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000372",
+          "type": "paragraph",
+          "text": "Hence AB is symmetric.",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000373",
+          "type": "paragraph",
+          "text": "A=[\\begin{matrix}2&-1\\\\ 3&4\\end{matrix}] B=[\\begin{matrix}5&2\\\\ 7&4\\end{matrix}] C=[\\begin{matrix}2&5\\\\ 3&8\\end{matrix}] . Find Find a a",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000374",
+          "type": "paragraph",
+          "text": "Example 25 Let",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000375",
+          "type": "paragraph",
+          "text": "CD-AB=O.",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000376",
+          "type": "paragraph",
+          "text": "Solution Since A, B, C are all square matrices of order 2, and CD – AB is well defined, D must be a square matrix of order 2.",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000377",
+          "type": "paragraph",
+          "text": "Let",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000378",
+          "type": "paragraph",
+          "text": "or",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000379",
+          "type": "paragraph",
+          "text": "or",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000380",
+          "type": "paragraph",
+          "text": "D=[\\begin{matrix}a&b\\\\ c&d\\end{matrix}]",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000381",
+          "type": "paragraph",
+          "text": ". Then CD-AB=0~gives",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000382",
+          "type": "paragraph",
+          "text": "[\\begin{matrix}2&5\\\\ 3&8\\end{matrix}][\\begin{matrix}a&b\\\\ c&d\\end{matrix}]-[\\begin{matrix}2&-1\\\\ 3&4\\end{matrix}][\\begin{matrix}5&2\\\\ 7&4\\end{matrix}]=0",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000383",
+          "type": "paragraph",
+          "text": "[\\begin{matrix}2a+5c&2b+5d\\\\ 3a+8c&3b+8d\\end{matrix}]-[\\begin{matrix}3&0\\\\ 43&22\\end{matrix}]=[\\begin{matrix}0&0\\\\ 0&0\\end{matrix}] [\\begin{matrix}2a+5c-3&2b+5d\\\\ 3a+8c-43&3b+8d-22\\end{matrix}]=[\\begin{matrix}0&0\\\\ 0&0\\end{matrix}]",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000384",
+          "type": "paragraph",
+          "text": "By equality of matrices, we get",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000385",
+          "type": "paragraph",
+          "text": "and",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000386",
+          "type": "paragraph",
+          "text": "not",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000387",
+          "type": "paragraph",
+          "text": "۱",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000388",
+          "type": "paragraph",
+          "text": "2a+5c-3=0",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000389",
+          "type": "paragraph",
+          "text": "3a+8c-43=0",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000390",
+          "type": "paragraph",
+          "text": "2b+5d=0",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000391",
+          "type": "paragraph",
+          "text": "3b+8d-22=0",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000392",
+          "type": "paragraph",
+          "text": "(1)",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000393",
+          "type": "paragraph",
+          "text": "(2)",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000394",
+          "type": "paragraph",
+          "text": "(3)",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000395",
+          "type": "paragraph",
+          "text": "(4)",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000396",
+          "type": "paragraph",
+          "text": "Solving (1) and (2), we get a=-191, c=77 Solving (3) and (4), we get b=-110,",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000397",
+          "type": "paragraph",
+          "text": "d=44.",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000398",
+          "type": "paragraph",
+          "text": "Reprint 2024-25",
+          "page": 38,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "page_number": 39,
+      "blocks": [
+        {
+          "id": "block-000399",
+          "type": "paragraph",
+          "text": "72",
+          "page": 39,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000400",
+          "type": "paragraph",
+          "text": "MATHEMATICS",
+          "page": 39,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000401",
+          "type": "paragraph",
+          "text": "Therefore",
+          "page": 39,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000402",
+          "type": "paragraph",
+          "text": "1.",
+          "page": 39,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000403",
+          "type": "paragraph",
+          "text": "D=[\\begin{matrix}a&b\\\\ c&d\\end{matrix}]=[\\begin{matrix}-191&-110\\\\ 77&44\\end{matrix}]",
+          "page": 39,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000404",
+          "type": "paragraph",
+          "text": "Miscellaneous Exercise on Chapter 3",
+          "page": 39,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000405",
+          "type": "paragraph",
+          "text": "If A and B are symmetric matrices, prove that AB – BA is a skew symmetric matrix.",
+          "page": 39,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000406",
+          "type": "paragraph",
+          "text": "2. Show that the matrix B'AB is symmetric or skew symmetric according as A is symmetric or skew symmetric.",
+          "page": 39,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000407",
+          "type": "paragraph",
+          "text": "3. Find the values of x, y, z if the matrix A=[\\begin{matrix}0&2y&z\\\\ x&y&-z\\\\ x&-y&z\\end{matrix}]",
+          "page": 39,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000408",
+          "type": "paragraph",
+          "text": "A^{\\prime}A=I.",
+          "page": 39,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000409",
+          "type": "paragraph",
+          "text": "4. For what values of x:[\\begin{matrix}1&2&1\\end{matrix}][\\begin{matrix}1&2&0\\\\ 2&0&1\\\\ 1&0&2\\end{matrix}][\\begin{matrix}0\\\\ 2\\\\ x\\end{matrix}]=0;",
+          "page": 39,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000410",
+          "type": "paragraph",
+          "text": "show that 410ublished",
+          "page": 39,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000411",
+          "type": "paragraph",
+          "text": "5. If A=[\\begin{matrix}3&1\\\\ -1&2\\end{matrix}]",
+          "page": 39,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000412",
+          "type": "paragraph",
+          "text": "if",
+          "page": 39,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000413",
+          "type": "paragraph",
+          "text": "6. Find x, if",
+          "page": 39,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000414",
+          "type": "paragraph",
+          "text": "A^{2}-5A+7I=0",
+          "page": 39,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000415",
+          "type": "paragraph",
+          "text": "[\\begin{matrix}x&-5&-1\\end{matrix}][\\begin{matrix}1&0&2\\\\ 0&2&1\\\\ 2&0&3\\end{matrix}][\\begin{matrix}x\\\\ 4\\\\ 1\\end{matrix}]=0",
+          "page": 39,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000416",
+          "type": "paragraph",
+          "text": "A manufacturer",
+          "page": 39,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000417",
+          "type": "paragraph",
+          "text": "7. A manufacturer produces three products x, y, z which he sells in two markets.",
+          "page": 39,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000418",
+          "type": "paragraph",
+          "text": "Annual sales are indicated below:",
+          "page": 39,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000419",
+          "type": "table",
+          "text": "",
+          "page": 39,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000420",
+          "type": "paragraph",
+          "text": "Reprint 2024-25",
+          "page": 39,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "page_number": 40,
+      "blocks": [
+        {
+          "id": "block-000421",
+          "type": "paragraph",
+          "text": "MATRICES",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000422",
+          "type": "paragraph",
+          "text": "73",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000423",
+          "type": "paragraph",
+          "text": "(a)",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000424",
+          "type": "paragraph",
+          "text": "(b)",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000425",
+          "type": "paragraph",
+          "text": "If unit sale prices of x, y and z are ₹2.50, ₹1.50 and ₹1.00, respectively, find the total revenue in each market with the help of matrix algebra.",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000426",
+          "type": "paragraph",
+          "text": "If the unit costs of the above three commodities are ₹2.00, ₹1.00 and 50 paise respectively. Find the gross profit.",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000427",
+          "type": "paragraph",
+          "text": "8. Find the matrix X so that X[\\begin{matrix}1&2&3\\\\ 4&5&6\\end{matrix}]=[\\begin{matrix}-7&-8&-9\\\\ 2&4&6\\end{matrix}]",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000428",
+          "type": "paragraph",
+          "text": "Choose the correct answer in the following questions:",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000429",
+          "type": "paragraph",
+          "text": "9. If",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000430",
+          "type": "paragraph",
+          "text": "A=[\\begin{matrix}\\alpha&\\beta\\\\ \\gamma&-\\alpha\\end{matrix}] is such that A² A^{2}=I = 1, then",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000431",
+          "type": "paragraph",
+          "text": "(A) 1+\\alpha^{2}+\\beta\\gamma=0",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000432",
+          "type": "paragraph",
+          "text": "(C) 1-\\alpha^{2}-\\beta\\gamma=0",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000433",
+          "type": "paragraph",
+          "text": "(Β) 1-\\alpha^{2}+\\beta\\gamma=0",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000434",
+          "type": "paragraph",
+          "text": "(D) 1+\\alpha^{2}-\\beta\\gamma=0",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000435",
+          "type": "paragraph",
+          "text": "10. If the matrix A is both symmetric and skew symmetric, then",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000436",
+          "type": "paragraph",
+          "text": "(A) A is a diagonal matrix",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000437",
+          "type": "paragraph",
+          "text": "(C) A is a square matrix",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000438",
+          "type": "paragraph",
+          "text": "(B) A is a zero matrix",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000439",
+          "type": "paragraph",
+          "text": "(D) None of these one of (I+A)^{3}-7A",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000440",
+          "type": "paragraph",
+          "text": "11. If A is square matrix such that A^{2}=A, then is equal to",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000441",
+          "type": "paragraph",
+          "text": "(A) A",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000442",
+          "type": "paragraph",
+          "text": "(B) I-A",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000443",
+          "type": "paragraph",
+          "text": "(C) I",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000444",
+          "type": "paragraph",
+          "text": "Summary",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000445",
+          "type": "paragraph",
+          "text": "(D) 3A",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000446",
+          "type": "paragraph",
+          "text": "A matrix is an ordered rectangular array of numbers or functions.",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000447",
+          "type": "paragraph",
+          "text": "A matrix having m rows and n columns is called a matrix of order m\\times n.",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000448",
+          "type": "paragraph",
+          "text": "[a_{ij}]_{m\\times1} is a column matrix.",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000449",
+          "type": "paragraph",
+          "text": "[a_{ij}]_{1\\times n} is a row matrix.",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000450",
+          "type": "paragraph",
+          "text": "An m\\times n matrix is a square matrix if m=n.",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000451",
+          "type": "paragraph",
+          "text": "A=[a_{ij}]_{m\\times m} is a diagonal matrix if a_{ij}=0 , when i\\ne j.",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000452",
+          "type": "paragraph",
+          "text": "a_{ij}=0",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000453",
+          "type": "paragraph",
+          "text": "A=[a_{ij}]_{n\\times n} is a scalar matrix if , when i\\ne j, , (k is some",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000454",
+          "type": "paragraph",
+          "text": "is an identity matrix, if , when i=j, a_{ij}=1",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000455",
+          "type": "paragraph",
+          "text": "constant), when i=j.",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000456",
+          "type": "paragraph",
+          "text": "A=[a_{ij}]_{n\\times n}",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000457",
+          "type": "paragraph",
+          "text": "A zero matrix has all its elements as zero.",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000458",
+          "type": "paragraph",
+          "text": "possible values of i and j.",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000459",
+          "type": "paragraph",
+          "text": "a_{ij}=k",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000460",
+          "type": "paragraph",
+          "text": "a_{ij}=0",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000461",
+          "type": "paragraph",
+          "text": "when i\\ne j.",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000462",
+          "type": "paragraph",
+          "text": "a_{ij}=b_{ij}",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000463",
+          "type": "paragraph",
+          "text": "A=[a_{ij}]=[b_{ij}]=B if (i) A and B are of same order, (ii) for all",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000464",
+          "type": "paragraph",
+          "text": "Reprint 2024-25",
+          "page": 40,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "page_number": 41,
+      "blocks": [
+        {
+          "id": "block-000465",
+          "type": "text",
+          "text": "74",
+          "page": 41,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000466",
+          "type": "paragraph",
+          "text": "MATHEMATICS",
+          "page": 41,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000467",
+          "type": "paragraph",
+          "text": "kA=k[a_{ij}]_{m\\times n}=[k(a_{ij})]_{m\\times n}",
+          "page": 41,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000468",
+          "type": "paragraph",
+          "text": "-A=(-1)A",
+          "page": 41,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000469",
+          "type": "paragraph",
+          "text": "A-B=A+(-1)B",
+          "page": 41,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000470",
+          "type": "paragraph",
+          "text": "A+B=B+A",
+          "page": 41,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000471",
+          "type": "paragraph",
+          "text": "(A+B)+C=A+(B+C), where A, B and C are of same order.",
+          "page": 41,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000472",
+          "type": "paragraph",
+          "text": "k(A+B)=kA+kB, where A and B are of same order, k is constant.",
+          "page": 41,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000473",
+          "type": "paragraph",
+          "text": "(k+l)A=kA+lA, where k and I are constant.",
+          "page": 41,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000474",
+          "type": "paragraph",
+          "text": "If A=[a_{ij}]_{m\\times n} and B=[b_{jk}]_{n\\times p} , then AB=C=[c_{ik}]_{m\\times p^{\\prime}} where",
+          "page": 41,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000475",
+          "type": "paragraph",
+          "text": "c_{ik=}\\sum_{j=1}^{n}a_{ij}b_{jk}",
+          "page": 41,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000476",
+          "type": "paragraph",
+          "text": "(i) A(BC)=(AB)C (ii) A(B+C)=AB+AC, (iii) (A+B)C=AC+BC",
+          "page": 41,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000477",
+          "type": "paragraph",
+          "text": "If",
+          "page": 41,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000478",
+          "type": "paragraph",
+          "text": "A=[a_{ij}]_{m\\times n^{\\prime}} then A^{\\prime} or A^{T}=[a_{ji}]_{n\\times m}",
+          "page": 41,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000479",
+          "type": "paragraph",
+          "text": "(i) (A^{\\prime})^{\\prime}=A, (ii) (kA)^{\\prime}=kA^{\\prime}, (iii) (A+B)^{\\prime}=A^{\\prime}+B^{\\prime}, (iv)",
+          "page": 41,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000480",
+          "type": "paragraph",
+          "text": "A is a symmetric matrix if A^{\\prime}=A",
+          "page": 41,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000481",
+          "type": "paragraph",
+          "text": "(AB)^{\\prime}=B^{\\prime}A^{\\prime}",
+          "page": 41,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000482",
+          "type": "paragraph",
+          "text": "resented",
+          "page": 41,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000483",
+          "type": "paragraph",
+          "text": "A is a skew symmetric matrix if A^{\\prime}=-A.",
+          "page": 41,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000484",
+          "type": "paragraph",
+          "text": "Any square matrix can be represented as the sum of a symmetric and a",
+          "page": 41,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000485",
+          "type": "paragraph",
+          "text": "skew symmetric matrix.",
+          "page": 41,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000486",
+          "type": "paragraph",
+          "text": "If A and B are two square matrices such that AB=BA=I. then B is the inverse matrix of A and is denoted by A^{-1} and A is the inverse of B.",
+          "page": 41,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000487",
+          "type": "paragraph",
+          "text": "Inverse of a square matrix, if it exists, is unique.",
+          "page": 41,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000488",
+          "type": "paragraph",
+          "text": "not to be",
+          "page": 41,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000489",
+          "type": "paragraph",
+          "text": "Reprint 2024-25",
+          "page": 41,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "page_number": 42,
+      "blocks": [
+        {
+          "id": "block-000490",
+          "type": "paragraph",
+          "text": "NOTES",
+          "page": 42,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000491",
+          "type": "paragraph",
+          "text": "© NCERT",
+          "page": 42,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000492",
+          "type": "paragraph",
+          "text": "not to be republished",
+          "page": 42,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        },
+        {
+          "id": "block-000493",
+          "type": "paragraph",
+          "text": "Reprint 2024-25",
+          "page": 42,
+          "confidence": null,
+          "geometry": {},
+          "metadata": {}
+        }
+      ]
+    }
+  ]
+}
