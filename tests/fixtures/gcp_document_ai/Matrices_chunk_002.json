@@ -1,0 +1,5538 @@
+{
+  "document": {
+    "document_layout": {
+      "blocks": [
+        {
+          "block_id": "1",
+          "text_block": {
+            "text": "MATRICES",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 1,
+            "page_end": 1
+          }
+        },
+        {
+          "block_id": "2",
+          "text_block": {
+            "text": "59",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 1,
+            "page_end": 1
+          }
+        },
+        {
+          "block_id": "3",
+          "text_block": {
+            "text": "4. If A=[\\begin{matrix}1&2&-3\\\\ 5&0&2\\\\ 1&-1&1\\end{matrix}] , B=[\\begin{matrix}3&-1&2\\\\ 4&2&5\\\\ 2&0&3\\end{matrix}] and C=[\\begin{matrix}4&1&2\\\\ 0&3&2\\\\ 1&-2&3\\end{matrix}] , then compute",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 1,
+            "page_end": 1
+          }
+        },
+        {
+          "block_id": "4",
+          "text_block": {
+            "text": "(A+B) and (B-C). Also, verify that A+(B-C)=(A+B)-C",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 1,
+            "page_end": 1
+          }
+        },
+        {
+          "block_id": "5",
+          "text_block": {
+            "text": "5. If \\Lambda=[\\begin{matrix}\\frac{2}{3}&1&5\\\\ 1&2&4\\\\ 3&3&4\\\\ 3&3&3\\\\ \\frac{2}{3}&2&\\frac{2}{3}\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 1,
+            "page_end": 1
+          }
+        },
+        {
+          "block_id": "6",
+          "text_block": {
+            "text": "6. Simplify",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 1,
+            "page_end": 1
+          }
+        },
+        {
+          "block_id": "7",
+          "text_block": {
+            "text": "and B=[\\begin{matrix}\\frac{2}{5}&\\frac{3}{5}&1\\\\ \\frac{1}{5}&\\frac{2}{5}&\\frac{4}{5}\\\\ \\frac{1}{5}&0&\\frac{2}{5}&\\frac{2}{5}\\end{matrix}] then compute 3A-5B.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 1,
+            "page_end": 1
+          }
+        },
+        {
+          "block_id": "8",
+          "text_block": {
+            "text": "cos\\theta[\\begin{matrix}cos~\\theta&sin~\\theta\\\\ -sin~\\theta&cos~\\theta\\end{matrix}]+sin~\\theta[\\begin{matrix}sin~\\theta&-cos~\\theta\\\\ cos~\\theta&sin~\\theta\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 1,
+            "page_end": 1
+          }
+        },
+        {
+          "block_id": "9",
+          "text_block": {
+            "text": "(i) X+Y=[\\begin{matrix}7&0\\\\ 2&5\\end{matrix}] and X-Y=[\\begin{matrix}3&0\\\\ 0&3\\end{matrix}] Zublished",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 1,
+            "page_end": 1
+          }
+        },
+        {
+          "block_id": "10",
+          "text_block": {
+            "text": "7. Find X and Y, if",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 1,
+            "page_end": 1
+          }
+        },
+        {
+          "block_id": "11",
+          "text_block": {
+            "text": "(ii) 2X+3Y=[\\begin{matrix}2&3\\\\ 4&0\\end{matrix}] and",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 1,
+            "page_end": 1
+          }
+        },
+        {
+          "block_id": "12",
+          "text_block": {
+            "text": "3X+2Y=[\\begin{matrix}2&-2\\\\ -1&5\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 1,
+            "page_end": 1
+          }
+        },
+        {
+          "block_id": "13",
+          "text_block": {
+            "text": "8. Find X. X, if Y=[\\begin{matrix}3&2\\\\ 1&4\\end{matrix}] and 2X+Y=[\\begin{matrix}1&0\\\\ -3&2\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 1,
+            "page_end": 1
+          }
+        },
+        {
+          "block_id": "14",
+          "text_block": {
+            "text": "9. Find xandy, if 2 [\\begin{matrix}1&3\\\\ 0&x\\end{matrix}]+[\\begin{matrix}y&0\\\\ 1&2\\end{matrix}]=[\\begin{matrix}5&6\\\\ 1&8\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 1,
+            "page_end": 1
+          }
+        },
+        {
+          "block_id": "15",
+          "text_block": {
+            "text": "10. Solve the equation for x, y, z and t, if 2[\\begin{matrix}x&z\\\\ y&t\\end{matrix}]+3[\\begin{matrix}1&-1\\\\ 0&2\\end{matrix}]=3[\\begin{matrix}3&5\\\\ 4&6\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 1,
+            "page_end": 1
+          }
+        },
+        {
+          "block_id": "16",
+          "text_block": {
+            "text": "11. If x[\\begin{matrix}2\\\\ 3\\end{matrix}]+y[\\begin{matrix}-1\\\\ 1\\end{matrix}]=[\\begin{matrix}10\\\\ 5\\end{matrix}] find the values of x and y",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 1,
+            "page_end": 1
+          }
+        },
+        {
+          "block_id": "17",
+          "text_block": {
+            "text": "z",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 1,
+            "page_end": 1
+          }
+        },
+        {
+          "block_id": "18",
+          "text_block": {
+            "text": "12. Given 3[\\begin{matrix}x&y\\\\ z&w\\end{matrix}]=[\\begin{matrix}x&6\\\\ -1&2w\\end{matrix}]+[\\begin{matrix}4&x+y\\\\ z+w&3\\end{matrix}] find the values of x, y, and w",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 1,
+            "page_end": 1
+          }
+        },
+        {
+          "block_id": "19",
+          "text_block": {
+            "text": "Reprint 2024-25",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 1,
+            "page_end": 1
+          }
+        },
+        {
+          "block_id": "20",
+          "text_block": {
+            "text": "60",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 2,
+            "page_end": 2
+          }
+        },
+        {
+          "block_id": "21",
+          "text_block": {
+            "text": "MATHEMATICS",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 2,
+            "page_end": 2
+          }
+        },
+        {
+          "block_id": "22",
+          "text_block": {
+            "text": "13. If F(x)=[\\begin{matrix}cos~x&-sin~x&0\\\\ sin~x&cos~x&0\\\\ 0&0&1\\end{matrix}] , show that F(x)F(y)=F(x+y)",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 2,
+            "page_end": 2
+          }
+        },
+        {
+          "block_id": "23",
+          "text_block": {
+            "text": "14. Show that",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 2,
+            "page_end": 2
+          }
+        },
+        {
+          "block_id": "24",
+          "text_block": {
+            "text": "(i) [\\begin{matrix}5&-1\\\\ 6&7\\end{matrix}][\\begin{matrix}2&1\\\\ 3&4\\end{matrix}]\\ne[\\begin{matrix}2&1\\\\ 3&4\\end{matrix}][\\begin{matrix}5&-1\\\\ 6&7\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 2,
+            "page_end": 2
+          }
+        },
+        {
+          "block_id": "25",
+          "text_block": {
+            "text": "(ii) [\\begin{matrix}1&2&3\\\\ 0&1&0\\\\ 1&1&0\\end{matrix}][\\begin{matrix}-1&1&0\\\\ 0&-1&1\\\\ 2&3&4\\end{matrix}]\\ne[\\begin{matrix}-1&1&0\\\\ 0&-1&1\\\\ 2&3&4\\end{matrix}][\\begin{matrix}1&2&3\\\\ 0&1&0\\\\ 1&1&0\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 2,
+            "page_end": 2
+          }
+        },
+        {
+          "block_id": "26",
+          "text_block": {
+            "text": "15. Find A^{2}-5A+6I, if A=[\\begin{matrix}2&0&1\\\\ 2&1&3\\\\ 1&-1&0\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 2,
+            "page_end": 2
+          }
+        },
+        {
+          "block_id": "27",
+          "text_block": {
+            "text": "prove that A^{3}-6A^{2}+7A+2I=0",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 2,
+            "page_end": 2
+          }
+        },
+        {
+          "block_id": "28",
+          "text_block": {
+            "text": "16. If A=[\\begin{matrix}1&0&2\\\\ 0&2&1\\\\ 2&0&3\\end{matrix}] 17. If A=[\\begin{matrix}3&-2\\\\ 4&-2\\end{matrix}]and~l=[\\begin{matrix}1&0\\\\ 0&1\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 2,
+            "page_end": 2
+          }
+        },
+        {
+          "block_id": "29",
+          "text_block": {
+            "text": "18. If \\Lambda=[\\begin{matrix}0&-tan\\frac{a}{2}\\\\ tan\\frac{\\alpha}{2}&0\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 2,
+            "page_end": 2
+          }
+        },
+        {
+          "block_id": "30",
+          "text_block": {
+            "text": "19.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 2,
+            "page_end": 2
+          }
+        },
+        {
+          "block_id": "31",
+          "text_block": {
+            "text": "find k",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 2,
+            "page_end": 2
+          }
+        },
+        {
+          "block_id": "32",
+          "text_block": {
+            "text": "so that A^{2}=kA-2I",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 2,
+            "page_end": 2
+          }
+        },
+        {
+          "block_id": "33",
+          "text_block": {
+            "text": "and I is the identity matrix of order 2, show that",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 2,
+            "page_end": 2
+          }
+        },
+        {
+          "block_id": "34",
+          "text_block": {
+            "text": "I+A=(I-A)[\\begin{matrix}cos~\\alpha&-sin~\\alpha\\\\ sin~\\alpha&cos~\\alpha\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 2,
+            "page_end": 2
+          }
+        },
+        {
+          "block_id": "35",
+          "text_block": {
+            "text": "A trust fund has ₹30,000 that must be invested in two different types of bonds. The first bond pays 5% interest per year, and the second bond pays 7% interest per year. Using matrix multiplication, determine how to divide ₹30,000 among the two types of bonds. If the trust fund must obtain an annual total interest of:",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 2,
+            "page_end": 2
+          }
+        },
+        {
+          "block_id": "36",
+          "text_block": {
+            "text": "(a)",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 2,
+            "page_end": 2
+          }
+        },
+        {
+          "block_id": "37",
+          "text_block": {
+            "text": "1800",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 2,
+            "page_end": 2
+          }
+        },
+        {
+          "block_id": "38",
+          "text_block": {
+            "text": "(b) ₹2000",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 2,
+            "page_end": 2
+          }
+        },
+        {
+          "block_id": "39",
+          "text_block": {
+            "text": "Reprint 2024-25",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 2,
+            "page_end": 2
+          }
+        },
+        {
+          "block_id": "40",
+          "text_block": {
+            "text": "MATRICES",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "41",
+          "text_block": {
+            "text": "61",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "42",
+          "text_block": {
+            "text": "20. The bookshop of a particular school has 10 dozen chemistry books, 8 dozen physics books, 10 dozen economics books. Their selling prices are₹80, ₹60 and \\overline{r}40 each respectively. Find the total amount the bookshop will receive from selling all the books using matrix algebra.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "43",
+          "text_block": {
+            "text": "Assume X, Y, Z, W and P are matrices of order 2\\times n, 3\\times k, 2\\times p, n\\times3 and p\\times k, respectively. Choose the correct answer in Exercises 21 and 22.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "44",
+          "text_block": {
+            "text": "21. The restriction on n, k and p so that PY + WY will be defined are:",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "45",
+          "text_block": {
+            "text": "(B) k is arbitrary, p=2",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "46",
+          "text_block": {
+            "text": "(A) k=3, p=n",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "47",
+          "text_block": {
+            "text": "(C) p is arbitrary, k=3",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "48",
+          "text_block": {
+            "text": "22. If",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "49",
+          "text_block": {
+            "text": "(A) p\\times2",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "50",
+          "text_block": {
+            "text": "(B) 2\\times n",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "51",
+          "text_block": {
+            "text": "n=p, then the order of the matrix 7X – 5Z is:",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "52",
+          "text_block": {
+            "text": "3.5. Transpose of a Matrix",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "53",
+          "text_block": {
+            "text": "(D) k=2, p=3",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "54",
+          "text_block": {
+            "text": "(C) n\\times3",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "55",
+          "text_block": {
+            "text": "(D) p\\times n",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "56",
+          "text_block": {
+            "text": "In this section, we shall learn about transpose of a matrix and special types of matrices",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "57",
+          "text_block": {
+            "text": "such as symmetric and skew symmetric matrices.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "58",
+          "text_block": {
+            "text": "Definition 3 IfA A=[a_{ij}] If be an m\\times n matrix, then the matrix obtained by interchanging the rows and columns of A is called the transpose of A. Transpose of the matrix A is",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "59",
+          "text_block": {
+            "text": "denoted by A^{\\prime} or (A^{T}). In other words, if",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "60",
+          "text_block": {
+            "text": "if \\Lambda=[\\begin{matrix}3&5\\\\ \\sqrt{3}&1\\\\ 0&\\frac{-1}{5}\\end{matrix}] , then",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "61",
+          "text_block": {
+            "text": "-3\\times2",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "62",
+          "text_block": {
+            "text": "A=[a_{ij}]_{m\\times n^{\\prime}}, then A^{\\prime}=[a_{ji}]_{n\\times m} For example,",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "63",
+          "text_block": {
+            "text": "A^{\\prime}=[\\begin{matrix}3&\\sqrt{3}&0\\\\ 5&1&\\frac{-1}{5}\\end{matrix}]_{2}",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "64",
+          "text_block": {
+            "text": "spose of the",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "65",
+          "text_block": {
+            "text": "3.5.1 Properties of transpose of",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "66",
+          "text_block": {
+            "text": "-2\\times3",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "67",
+          "text_block": {
+            "text": "transpose of the matrices",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "68",
+          "text_block": {
+            "text": "We now state the following properties of transpose of matrices without proof. These",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "69",
+          "text_block": {
+            "text": "may be verified by taking suitable examples.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "70",
+          "text_block": {
+            "text": "For any matrices A and B of suitable orders, we have",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "71",
+          "text_block": {
+            "text": "(i) (A^{\\prime})^{\\prime}=A",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "72",
+          "text_block": {
+            "text": "(iii) (A+B)^{\\prime}=A^{\\prime}+B^{\\prime}",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "73",
+          "text_block": {
+            "text": "Example 20 If",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "74",
+          "text_block": {
+            "text": "(i) (A^{\\prime})^{\\prime}=A,",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "75",
+          "text_block": {
+            "text": "A=[\\begin{matrix}3&\\sqrt{3}&2\\\\ 4&2&0\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "76",
+          "text_block": {
+            "text": "and",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "77",
+          "text_block": {
+            "text": "(ii) (kA)^{\\prime}=kA^{\\prime} (where k is any constant)",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "78",
+          "text_block": {
+            "text": "(iv) (A~B)^{\\prime}=B^{\\prime}A^{\\prime}",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "79",
+          "text_block": {
+            "text": "B=[\\begin{matrix}2&-1&2\\\\ 1&2&4\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "80",
+          "text_block": {
+            "text": ", verify that",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "81",
+          "text_block": {
+            "text": "(ii) (A+B)^{\\prime}=A^{\\prime}+B^{\\prime},",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "82",
+          "text_block": {
+            "text": "(iii) (kB)^{\\prime}=kB^{\\prime}, where k is any constant.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "83",
+          "text_block": {
+            "text": "Reprint 2024-25",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 3,
+            "page_end": 3
+          }
+        },
+        {
+          "block_id": "84",
+          "text_block": {
+            "text": "62",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 4,
+            "page_end": 4
+          }
+        },
+        {
+          "block_id": "85",
+          "text_block": {
+            "text": "Solution",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 4,
+            "page_end": 4
+          }
+        },
+        {
+          "block_id": "86",
+          "text_block": {
+            "text": "MATHEMATICS",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 4,
+            "page_end": 4
+          }
+        },
+        {
+          "block_id": "87",
+          "text_block": {
+            "text": "(i) We have A=[\\begin{matrix}3&\\sqrt{3}&2\\\\ 4&2&0\\end{matrix}]\\Rightarrow A^{\\prime}=[\\begin{matrix}3&4\\\\ \\sqrt{3}&2\\\\ 2&0\\end{matrix}]\\Rightarrow(A^{\\prime})^{\\prime}=[\\begin{matrix}3&\\sqrt{3}&2\\\\ 4&2&0\\end{matrix}]=A",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 4,
+            "page_end": 4
+          }
+        },
+        {
+          "block_id": "88",
+          "text_block": {
+            "text": "Thus (A^{\\prime})^{\\prime}=A",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 4,
+            "page_end": 4
+          }
+        },
+        {
+          "block_id": "89",
+          "text_block": {
+            "text": "(ii) We have",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 4,
+            "page_end": 4
+          }
+        },
+        {
+          "block_id": "90",
+          "text_block": {
+            "text": "Therefore",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 4,
+            "page_end": 4
+          }
+        },
+        {
+          "block_id": "91",
+          "text_block": {
+            "text": "Now",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 4,
+            "page_end": 4
+          }
+        },
+        {
+          "block_id": "92",
+          "text_block": {
+            "text": "So",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 4,
+            "page_end": 4
+          }
+        },
+        {
+          "block_id": "93",
+          "text_block": {
+            "text": "Thus",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 4,
+            "page_end": 4
+          }
+        },
+        {
+          "block_id": "94",
+          "text_block": {
+            "text": "(iii) We have",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 4,
+            "page_end": 4
+          }
+        },
+        {
+          "block_id": "95",
+          "text_block": {
+            "text": "A=[\\begin{matrix}3&\\sqrt{3}&2\\\\ 4&2&0\\end{matrix}] B=[\\begin{matrix}2&-1&2\\\\ 1&2&4\\end{matrix}]\\Rightarrow A+B=[\\begin{matrix}5&\\sqrt{3}-1&4\\\\ 5&4&4\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 4,
+            "page_end": 4
+          }
+        },
+        {
+          "block_id": "96",
+          "text_block": {
+            "text": "(A+B)^{\\prime}=[\\begin{matrix}5&5\\\\ \\sqrt{3}-1&4\\\\ 4&4\\end{matrix}] A^{*}=[\\begin{matrix}3&4\\\\ \\sqrt{3}&2\\\\ 2&0\\end{matrix}],B^{\\prime}=[\\begin{matrix}2&1\\\\ -1&2\\\\ 2&4\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 4,
+            "page_end": 4
+          }
+        },
+        {
+          "block_id": "97",
+          "text_block": {
+            "text": "A^{\\prime}+B^{\\prime}=[\\begin{matrix}5&5\\\\ \\sqrt{3}-1&4\\\\ 4&4\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 4,
+            "page_end": 4
+          }
+        },
+        {
+          "block_id": "98",
+          "text_block": {
+            "text": "(A+B)^{\\prime}=A^{\\prime}+B^{\\prime}",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 4,
+            "page_end": 4
+          }
+        },
+        {
+          "block_id": "99",
+          "text_block": {
+            "text": "not to",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 4,
+            "page_end": 4
+          }
+        },
+        {
+          "block_id": "100",
+          "text_block": {
+            "text": "Thus",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 4,
+            "page_end": 4
+          }
+        },
+        {
+          "block_id": "101",
+          "text_block": {
+            "text": "kB=k[\\begin{matrix}2&-1&2\\\\ 1&2&4\\end{matrix}]=[\\begin{matrix}2k&-k&2k\\\\ k&2k&4k\\end{matrix}] (kB)^{\\prime}=[\\begin{matrix}2k&k\\\\ -k&2k\\\\ 2k&4k\\end{matrix}]=k[\\begin{matrix}2&1\\\\ -1&2\\\\ 2&4\\end{matrix}]=kB^{\\prime}",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 4,
+            "page_end": 4
+          }
+        },
+        {
+          "block_id": "102",
+          "text_block": {
+            "text": "(kB)^{\\prime}=kB^{\\prime}",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 4,
+            "page_end": 4
+          }
+        },
+        {
+          "block_id": "103",
+          "text_block": {
+            "text": "Reprint 2024-25",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 4,
+            "page_end": 4
+          }
+        },
+        {
+          "block_id": "104",
+          "text_block": {
+            "text": "MATRICES",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 5,
+            "page_end": 5
+          }
+        },
+        {
+          "block_id": "105",
+          "text_block": {
+            "text": "63",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 5,
+            "page_end": 5
+          }
+        },
+        {
+          "block_id": "106",
+          "text_block": {
+            "text": "Example 21 If A=[\\begin{matrix}-2\\\\ 4\\\\ 5\\end{matrix}] , B=[\\begin{matrix}1&3&-6\\end{matrix}], verify that (AB)^{\\prime}=B^{\\prime}A^{\\prime}",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 5,
+            "page_end": 5
+          }
+        },
+        {
+          "block_id": "107",
+          "text_block": {
+            "text": "Solution We have",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 5,
+            "page_end": 5
+          }
+        },
+        {
+          "block_id": "108",
+          "text_block": {
+            "text": "then",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 5,
+            "page_end": 5
+          }
+        },
+        {
+          "block_id": "109",
+          "text_block": {
+            "text": "A=[\\begin{matrix}-2\\\\ 4\\\\ 5\\end{matrix}] , B=[\\begin{matrix}1&3&-6\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 5,
+            "page_end": 5
+          }
+        },
+        {
+          "block_id": "110",
+          "text_block": {
+            "text": "AB=[\\begin{matrix}-2\\\\ 4\\\\ 5\\end{matrix}][\\begin{matrix}1&3&-6\\end{matrix}]=[\\begin{matrix}-2&-6&12\\\\ 4&12&-24\\\\ 5&15&-30\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 5,
+            "page_end": 5
+          }
+        },
+        {
+          "block_id": "111",
+          "text_block": {
+            "text": "Now A^{\\prime}=[-2~4~5], B^{\\prime}=[\\begin{matrix}1\\\\ 3\\\\ -6\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 5,
+            "page_end": 5
+          }
+        },
+        {
+          "block_id": "112",
+          "text_block": {
+            "text": "Clearly",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 5,
+            "page_end": 5
+          }
+        },
+        {
+          "block_id": "113",
+          "text_block": {
+            "text": "RT",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 5,
+            "page_end": 5
+          }
+        },
+        {
+          "block_id": "114",
+          "text_block": {
+            "text": "be republished",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 5,
+            "page_end": 5
+          }
+        },
+        {
+          "block_id": "115",
+          "text_block": {
+            "text": "B^{\\prime}\\Lambda^{\\prime}=[\\begin{matrix}1\\\\ 3\\\\ -6\\end{matrix}][-2&4&5\\end{matrix}]=[\\begin{matrix}-2&4&5\\\\ -6&12&15\\\\ 12&-24&-30\\end{matrix}]=(AB)^{\\prime}",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 5,
+            "page_end": 5
+          }
+        },
+        {
+          "block_id": "116",
+          "text_block": {
+            "text": "(AB)^{\\prime}=B^{\\prime}A^{\\prime}",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 5,
+            "page_end": 5
+          }
+        },
+        {
+          "block_id": "117",
+          "text_block": {
+            "text": "3.6 Symmetric and Skew Symmetric etric Matrices",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 5,
+            "page_end": 5
+          }
+        },
+        {
+          "block_id": "118",
+          "text_block": {
+            "text": "Definition 4 A square matrix A=[a_{ij}] is said to be symmetric if A^{\\prime}=A, that is, [a_{ij}]=[a_{ji}] for all possible values of i and j.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 5,
+            "page_end": 5
+          }
+        },
+        {
+          "block_id": "119",
+          "text_block": {
+            "text": "A=[\\begin{matrix}\\sqrt{3}&2&3\\\\ 2&-1.5-1\\\\ 3&-1&1\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 5,
+            "page_end": 5
+          }
+        },
+        {
+          "block_id": "120",
+          "text_block": {
+            "text": "For example is a symmetric matrix as A^{\\prime}=A",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 5,
+            "page_end": 5
+          }
+        },
+        {
+          "block_id": "121",
+          "text_block": {
+            "text": "QU",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 5,
+            "page_end": 5
+          }
+        },
+        {
+          "block_id": "122",
+          "text_block": {
+            "text": "Definition 5 A square matrix A=[a_{ij}] is said to be skew symmetric matrix if A^{\\prime}=-A, that is for all possible values of i and j. Now, if we put i=j, we a_{ji}=-a_{ij} have a_{ii}=-a_{ii}. Therefore 2a_{ii}=0 or a_{\\overline{i}}=0 for all i's.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 5,
+            "page_end": 5
+          }
+        },
+        {
+          "block_id": "123",
+          "text_block": {
+            "text": "This means that all the diagonal elements of a skew symmetric matrix are zero.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 5,
+            "page_end": 5
+          }
+        },
+        {
+          "block_id": "124",
+          "text_block": {
+            "text": "Reprint 2024-25",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 5,
+            "page_end": 5
+          }
+        },
+        {
+          "block_id": "125",
+          "text_block": {
+            "text": "64",
+            "type_": "header"
+          },
+          "page_span": {
+            "page_start": 6,
+            "page_end": 6
+          }
+        },
+        {
+          "block_id": "126",
+          "text_block": {
+            "text": "MATHEMATICS",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 6,
+            "page_end": 6
+          }
+        },
+        {
+          "block_id": "127",
+          "text_block": {
+            "text": "For example, the matrix",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 6,
+            "page_end": 6
+          }
+        },
+        {
+          "block_id": "128",
+          "text_block": {
+            "text": "B=[\\begin{matrix}0&e&f\\\\ -e&0&g\\\\ -f&-g&0\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 6,
+            "page_end": 6
+          }
+        },
+        {
+          "block_id": "129",
+          "text_block": {
+            "text": "a skew symmetric matrix as B^{\\prime}=-B",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 6,
+            "page_end": 6
+          }
+        },
+        {
+          "block_id": "130",
+          "text_block": {
+            "text": "Now, we are going to prove some results of symmetric and skew-symmetric matrices.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 6,
+            "page_end": 6
+          }
+        },
+        {
+          "block_id": "131",
+          "text_block": {
+            "text": "Theorem 1 For any square matrix A with real number entries, A+A^{\\prime} is a symmetric matrix and A-A^{\\prime} is a skew symmetric matrix.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 6,
+            "page_end": 6
+          }
+        },
+        {
+          "block_id": "132",
+          "text_block": {
+            "text": "Proof Let B=A+A^{\\prime}, then",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 6,
+            "page_end": 6
+          }
+        },
+        {
+          "block_id": "133",
+          "text_block": {
+            "text": "Therefore",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 6,
+            "page_end": 6
+          }
+        },
+        {
+          "block_id": "134",
+          "text_block": {
+            "text": "Now let",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 6,
+            "page_end": 6
+          }
+        },
+        {
+          "block_id": "135",
+          "text_block": {
+            "text": "Therefore",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 6,
+            "page_end": 6
+          }
+        },
+        {
+          "block_id": "136",
+          "text_block": {
+            "text": "B^{\\prime}=(A+A^{\\prime})^{\\prime}",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 6,
+            "page_end": 6
+          }
+        },
+        {
+          "block_id": "137",
+          "text_block": {
+            "text": "=A^{\\prime}+(A^{\\prime})^{\\prime} (as (A+B)^{\\prime}=A^{\\prime}+B^{\\prime})",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 6,
+            "page_end": 6
+          }
+        },
+        {
+          "block_id": "138",
+          "text_block": {
+            "text": "=A^{\\prime}+A (as (A^{\\prime})^{\\prime}=A) =A+A^{\\prime} (as A+B=B+A)",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 6,
+            "page_end": 6
+          }
+        },
+        {
+          "block_id": "139",
+          "text_block": {
+            "text": "is a symmetric mashed",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 6,
+            "page_end": 6
+          }
+        },
+        {
+          "block_id": "140",
+          "text_block": {
+            "text": "=B",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 6,
+            "page_end": 6
+          }
+        },
+        {
+          "block_id": "141",
+          "text_block": {
+            "text": "B=A+A^{\\prime} C=A-A^{\\prime}",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 6,
+            "page_end": 6
+          }
+        },
+        {
+          "block_id": "142",
+          "text_block": {
+            "text": "C^{\\prime}=(A-A^{\\prime})^{\\prime}=A^{\\prime}-(A^{\\prime})^{\\prime} (Why?) =A^{\\prime}-A(Why?)",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 6,
+            "page_end": 6
+          }
+        },
+        {
+          "block_id": "143",
+          "text_block": {
+            "text": "=-(A-A^{\\prime})=-C",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 6,
+            "page_end": 6
+          }
+        },
+        {
+          "block_id": "144",
+          "text_block": {
+            "text": "C=A-A^{\\prime}i is a skew symmetric matrix.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 6,
+            "page_end": 6
+          }
+        },
+        {
+          "block_id": "145",
+          "text_block": {
+            "text": "Theorem 2 Any square matrix can be expressed as the sum of a symmetric and a",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 6,
+            "page_end": 6
+          }
+        },
+        {
+          "block_id": "146",
+          "text_block": {
+            "text": "skew symmetric matrix.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 6,
+            "page_end": 6
+          }
+        },
+        {
+          "block_id": "147",
+          "text_block": {
+            "text": "Proof Let A be a square",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 6,
+            "page_end": 6
+          }
+        },
+        {
+          "block_id": "148",
+          "text_block": {
+            "text": "square matrix, then we can write",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 6,
+            "page_end": 6
+          }
+        },
+        {
+          "block_id": "149",
+          "text_block": {
+            "text": "A=\\frac{1}{2}(A+A^{\\prime})+\\frac{1}{2}(A-A^{\\prime})",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 6,
+            "page_end": 6
+          }
+        },
+        {
+          "block_id": "150",
+          "text_block": {
+            "text": "From the Theorem 1, we know that (A+A^{\\prime}) is a symmetric matrix and (A-A^{\\prime}) is a skew symmetric matrix. Since for any matrix A, (kA)^{\\prime}=kA^{\\prime} it follows that \\frac{1}{2}(A+A^{\\prime})",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 6,
+            "page_end": 6
+          }
+        },
+        {
+          "block_id": "151",
+          "text_block": {
+            "text": "Reprint 2024-25",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 6,
+            "page_end": 6
+          }
+        },
+        {
+          "block_id": "152",
+          "text_block": {
+            "text": "Let",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 7,
+            "page_end": 7
+          }
+        },
+        {
+          "block_id": "153",
+          "text_block": {
+            "text": "Now",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 7,
+            "page_end": 7
+          }
+        },
+        {
+          "block_id": "154",
+          "text_block": {
+            "text": "Thus",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 7,
+            "page_end": 7
+          }
+        },
+        {
+          "block_id": "155",
+          "text_block": {
+            "text": "MATRICES",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 7,
+            "page_end": 7
+          }
+        },
+        {
+          "block_id": "156",
+          "text_block": {
+            "text": "65",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 7,
+            "page_end": 7
+          }
+        },
+        {
+          "block_id": "157",
+          "text_block": {
+            "text": "is symmetric matrix and \\frac{1}{2}(A-A^{\\prime}) is skew symmetric matrix. Thus, any square matrix can be expressed as the sum of a symmetric and a skew symmetric matrix.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 7,
+            "page_end": 7
+          }
+        },
+        {
+          "block_id": "158",
+          "text_block": {
+            "text": "Example 22 Express the matrix",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 7,
+            "page_end": 7
+          }
+        },
+        {
+          "block_id": "159",
+          "text_block": {
+            "text": "skew symmetric matrix. Solution Here",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 7,
+            "page_end": 7
+          }
+        },
+        {
+          "block_id": "160",
+          "text_block": {
+            "text": "B=[\\begin{matrix}2&-2&-4\\\\ -1&3&4\\\\ 1&-2&-3\\end{matrix}] as the sum of a symmetric and a",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 7,
+            "page_end": 7
+          }
+        },
+        {
+          "block_id": "161",
+          "text_block": {
+            "text": "B^{\\prime}=[\\begin{matrix}2&-1&1\\\\ -2&3&-2\\\\ -4&4&-3\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 7,
+            "page_end": 7
+          }
+        },
+        {
+          "block_id": "162",
+          "text_block": {
+            "text": "shed",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 7,
+            "page_end": 7
+          }
+        },
+        {
+          "block_id": "163",
+          "text_block": {
+            "text": "9=\\frac{1}{2}(0+N)-\\frac{1}{2}[\\begin{matrix}4&3&-3\\\\ 3^{2}&6&2\\\\ -3/2&-6\\end{matrix}]=[\\begin{matrix}2&3&-3\\\\ \\frac{43}{2}&3&1\\\\ \\frac{43}{2}&1&-3\\end{matrix}] P=[\\begin{matrix}2\\frac{3-1}{2}&-3\\\\ -3&3&1\\\\ \\frac{-3}{2}&1&-1\\\\ \\frac{-3}{2}&1&-3\\end{matrix}]=1",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 7,
+            "page_end": 7
+          }
+        },
+        {
+          "block_id": "164",
+          "text_block": {
+            "text": "not P=\\frac{1}{2}(B+B^{\\prime})",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 7,
+            "page_end": 7
+          }
+        },
+        {
+          "block_id": "165",
+          "text_block": {
+            "text": "Also, let Q=\\frac{1}{2}(0-N)=2[\\begin{matrix}0&-1&-5\\\\ 1&0&5\\\\ 5&-6&0\\end{matrix}]=[\\begin{matrix}0&-1&2&-5\\\\ 2&0&3\\\\ \\frac{5}{2}&0&3\\\\ \\frac{5}{2}&-3&0\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 7,
+            "page_end": 7
+          }
+        },
+        {
+          "block_id": "166",
+          "text_block": {
+            "text": "Reprint 2024-25",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 7,
+            "page_end": 7
+          }
+        },
+        {
+          "block_id": "167",
+          "text_block": {
+            "text": "66",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "168",
+          "text_block": {
+            "text": "MATHEMATICS",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "169",
+          "text_block": {
+            "text": "Then",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "170",
+          "text_block": {
+            "text": "Q=[\\begin{matrix}0&\\frac{1}{2}&\\frac{5}{3}\\\\ \\frac{-1}{2}&0&-3\\\\ -5&3&0\\end{matrix}]=0",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "171",
+          "text_block": {
+            "text": "Thus",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "172",
+          "text_block": {
+            "text": "Q=\\frac{1}{2}(B-B^{\\prime}) is a skew symmetric matrix.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "173",
+          "text_block": {
+            "text": "-3 -3",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "174",
+          "text_block": {
+            "text": "-1-5",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "175",
+          "text_block": {
+            "text": "2",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "176",
+          "text_block": {
+            "text": "0",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "177",
+          "text_block": {
+            "text": "2 2",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "178",
+          "text_block": {
+            "text": "2",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "179",
+          "text_block": {
+            "text": "2",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "180",
+          "text_block": {
+            "text": "2-2",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "181",
+          "text_block": {
+            "text": "Now",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "182",
+          "text_block": {
+            "text": "-3",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "183",
+          "text_block": {
+            "text": "P+Q=",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "184",
+          "text_block": {
+            "text": "1",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "185",
+          "text_block": {
+            "text": "3 1",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "186",
+          "text_block": {
+            "text": "+",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "187",
+          "text_block": {
+            "text": "03",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "188",
+          "text_block": {
+            "text": "=-1",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "189",
+          "text_block": {
+            "text": "2",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "190",
+          "text_block": {
+            "text": "3",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "191",
+          "text_block": {
+            "text": "2",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "192",
+          "text_block": {
+            "text": "-3",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "193",
+          "text_block": {
+            "text": "5",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "194",
+          "text_block": {
+            "text": "1 -2 -3",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "195",
+          "text_block": {
+            "text": "1",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "196",
+          "text_block": {
+            "text": "-3",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "197",
+          "text_block": {
+            "text": "-3",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "198",
+          "text_block": {
+            "text": "0",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "199",
+          "text_block": {
+            "text": "shed",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "200",
+          "text_block": {
+            "text": "2",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "201",
+          "text_block": {
+            "text": "2",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "202",
+          "text_block": {
+            "text": "Thus, B is represented as the sum of a symmetric and a skew symmetric matrix.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "203",
+          "text_block": {
+            "text": "skew",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "204",
+          "text_block": {
+            "text": "EXERCISE 3.3",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "205",
+          "text_block": {
+            "text": "1. Find the transpose of each of the following matrices:",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "206",
+          "text_block": {
+            "text": "(i)",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "207",
+          "text_block": {
+            "text": "\\begin{cases}5^{-}\\\\ \\frac{1}{2}\\\\ -1\\end{cases}",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "208",
+          "text_block": {
+            "text": "2. If A=[\\begin{matrix}-1&2&3\\\\ 5&7&9\\\\ -2&1&1\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "209",
+          "text_block": {
+            "text": "(ii)",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "210",
+          "text_block": {
+            "text": "[\\begin{matrix}1&-1\\\\ 2&3\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "211",
+          "text_block": {
+            "text": "(iii)",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "212",
+          "text_block": {
+            "text": "[\\begin{matrix}-1&5&6\\\\ \\sqrt{3}&5&6\\\\ 2&3&-1\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "213",
+          "text_block": {
+            "text": "B=[\\begin{matrix}-4&1&-5\\\\ 1&2&0\\\\ 1&3&1\\end{matrix}] , then verify that",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "214",
+          "text_block": {
+            "text": "(i) (A+B)^{\\prime}=A^{\\prime}+B^{\\prime}, 3. If A^{\\prime}=[\\begin{matrix}3&4\\\\ -1&2\\\\ 0&1\\end{matrix}] and B=[\\begin{matrix}-1&2&1\\\\ 1&2&3\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "215",
+          "text_block": {
+            "text": "(i) (A+B)^{\\prime}=A^{\\prime}+B^{\\prime}",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "216",
+          "text_block": {
+            "text": "(ii) (A-B)^{\\prime}=A^{\\prime}-B^{\\prime}",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "217",
+          "text_block": {
+            "text": ", then verify that",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "218",
+          "text_block": {
+            "text": "(ii) (A-B)^{\\prime}=A^{\\prime}-B^{\\prime}",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "219",
+          "text_block": {
+            "text": "Reprint 2024-25",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 8,
+            "page_end": 8
+          }
+        },
+        {
+          "block_id": "220",
+          "text_block": {
+            "text": "MATRICES",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 9,
+            "page_end": 9
+          }
+        },
+        {
+          "block_id": "221",
+          "text_block": {
+            "text": "67",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 9,
+            "page_end": 9
+          }
+        },
+        {
+          "block_id": "222",
+          "text_block": {
+            "text": "4. If A^{\\prime}=[\\begin{matrix}-2&3\\\\ 1&2\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 9,
+            "page_end": 9
+          }
+        },
+        {
+          "block_id": "223",
+          "text_block": {
+            "text": "and",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 9,
+            "page_end": 9
+          }
+        },
+        {
+          "block_id": "224",
+          "text_block": {
+            "text": "B=[\\begin{matrix}-1&0\\\\ 1&2\\end{matrix}], then find (A+2B)^{\\prime} (A + 2B)",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 9,
+            "page_end": 9
+          }
+        },
+        {
+          "block_id": "225",
+          "text_block": {
+            "text": "5. For the matrices A and B, verify that (AB)^{\\prime}=B^{\\prime}A^{\\prime}, where",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 9,
+            "page_end": 9
+          }
+        },
+        {
+          "block_id": "226",
+          "text_block": {
+            "text": "(i)",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 9,
+            "page_end": 9
+          }
+        },
+        {
+          "block_id": "227",
+          "text_block": {
+            "text": "A=[\\begin{matrix}1\\\\ -4\\\\ 3\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 9,
+            "page_end": 9
+          }
+        },
+        {
+          "block_id": "228",
+          "text_block": {
+            "text": "B=[\\begin{matrix}-1&2&1\\end{matrix}] (ⅱ) A=[\\begin{matrix}0\\\\ 1\\\\ 2\\end{matrix}] , B=[\\begin{matrix}1&5&7\\\\ \\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 9,
+            "page_end": 9
+          }
+        },
+        {
+          "block_id": "229",
+          "text_block": {
+            "text": "6. If (i)",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 9,
+            "page_end": 9
+          }
+        },
+        {
+          "block_id": "230",
+          "text_block": {
+            "text": "A=[\\begin{matrix}cos~\\alpha&sin~\\alpha\\\\ -sin~\\alpha&cos~\\alpha\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 9,
+            "page_end": 9
+          }
+        },
+        {
+          "block_id": "231",
+          "text_block": {
+            "text": "then verify that A^{\\prime}A=I",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 9,
+            "page_end": 9
+          }
+        },
+        {
+          "block_id": "232",
+          "text_block": {
+            "text": "7.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 9,
+            "page_end": 9
+          }
+        },
+        {
+          "block_id": "233",
+          "text_block": {
+            "text": "(ii) If A=[\\begin{matrix}sin~\\alpha&cos~\\alpha\\\\ -cos~\\alpha&sin~\\alpha\\end{matrix}] then verify that A^{\\prime}A=I",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 9,
+            "page_end": 9
+          }
+        },
+        {
+          "block_id": "234",
+          "text_block": {
+            "text": "(i) Show that the matrix",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 9,
+            "page_end": 9
+          }
+        },
+        {
+          "block_id": "235",
+          "text_block": {
+            "text": "A=[\\begin{matrix}1&-1&5\\\\ -1&2&1\\\\ 5&1&3\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 9,
+            "page_end": 9
+          }
+        },
+        {
+          "block_id": "236",
+          "text_block": {
+            "text": "is",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 9,
+            "page_end": 9
+          }
+        },
+        {
+          "block_id": "237",
+          "text_block": {
+            "text": "matrix.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 9,
+            "page_end": 9
+          }
+        },
+        {
+          "block_id": "238",
+          "text_block": {
+            "text": "(ii) Show that the matrix",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 9,
+            "page_end": 9
+          }
+        },
+        {
+          "block_id": "239",
+          "text_block": {
+            "text": "8. For the matrix",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 9,
+            "page_end": 9
+          }
+        },
+        {
+          "block_id": "240",
+          "text_block": {
+            "text": "A=[\\begin{matrix}1&5\\\\ 6&7\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 9,
+            "page_end": 9
+          }
+        },
+        {
+          "block_id": "241",
+          "text_block": {
+            "text": "A=[\\begin{matrix}0&1&-1\\\\ -1&0&1\\\\ 1&-1&0\\end{matrix}] is a skew symmetric matrix.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 9,
+            "page_end": 9
+          }
+        },
+        {
+          "block_id": "242",
+          "text_block": {
+            "text": ", , verify that t",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 9,
+            "page_end": 9
+          }
+        },
+        {
+          "block_id": "243",
+          "text_block": {
+            "text": "(i) (A+A^{\\prime}) is a symmetric matrix",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 9,
+            "page_end": 9
+          }
+        },
+        {
+          "block_id": "244",
+          "text_block": {
+            "text": "(ii) (A-A^{\\prime}) is a skew symmetric matrix",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 9,
+            "page_end": 9
+          }
+        },
+        {
+          "block_id": "245",
+          "text_block": {
+            "text": "9. Find",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 9,
+            "page_end": 9
+          }
+        },
+        {
+          "block_id": "246",
+          "text_block": {
+            "text": "\\frac{1}{2}(A+A^{\\prime})",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 9,
+            "page_end": 9
+          }
+        },
+        {
+          "block_id": "247",
+          "text_block": {
+            "text": "and \\frac{1}{2}(A-A^{\\prime}) , when",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 9,
+            "page_end": 9
+          }
+        },
+        {
+          "block_id": "248",
+          "text_block": {
+            "text": "A=[\\begin{matrix}0&a&b\\\\ -a&0&c\\\\ -b&-c&0\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 9,
+            "page_end": 9
+          }
+        },
+        {
+          "block_id": "249",
+          "text_block": {
+            "text": "10. Express the following matrices as the sum of a symmetric and a skew symmetric matrix:",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 9,
+            "page_end": 9
+          }
+        },
+        {
+          "block_id": "250",
+          "text_block": {
+            "text": "Reprint 2024-25",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 9,
+            "page_end": 9
+          }
+        },
+        {
+          "block_id": "251",
+          "text_block": {
+            "text": "68",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "252",
+          "text_block": {
+            "text": "MATHEMATICS",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "253",
+          "text_block": {
+            "text": "(i) [\\begin{matrix}3&5\\\\ 1&-1\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "254",
+          "text_block": {
+            "text": "(ii)",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "255",
+          "text_block": {
+            "text": "(iii) [\\begin{matrix}3&3&-1\\\\ -2&-2&1\\\\ -4&-5&2\\end{matrix}] (iv)",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "256",
+          "text_block": {
+            "text": "[\\begin{matrix}6&-2&2\\\\ -2&3&-1\\\\ 2&-1&3\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "257",
+          "text_block": {
+            "text": "[\\begin{matrix}1&5\\\\ -1&2\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "258",
+          "text_block": {
+            "text": "Choose the correct answer in the Exercises 11 and 12.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "259",
+          "text_block": {
+            "text": "11. If A, B are symmetric matrices of same order, then AB – BA is a",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "260",
+          "text_block": {
+            "text": "12. If",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "261",
+          "text_block": {
+            "text": "(A) Skew symmetric matrix",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "262",
+          "text_block": {
+            "text": "(C) Zero matrix",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "263",
+          "text_block": {
+            "text": "A=[\\begin{matrix}cos~\\alpha&-sin~\\alpha\\\\ sin~\\alpha&cos~\\alpha\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "264",
+          "text_block": {
+            "text": "(A) \\frac{\\pi}{6}",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "265",
+          "text_block": {
+            "text": "(C) π",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "266",
+          "text_block": {
+            "text": "(B) Symmetric matrix",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "267",
+          "text_block": {
+            "text": "(D) Identity matrix",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "268",
+          "text_block": {
+            "text": "A+A^{\\prime}=I,",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "269",
+          "text_block": {
+            "text": "(B)",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "270",
+          "text_block": {
+            "text": "Mat ENCE then.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "271",
+          "text_block": {
+            "text": "3.7 Invertible Matrices",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "272",
+          "text_block": {
+            "text": "\\alpha~is",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "273",
+          "text_block": {
+            "text": "Definition 6 If A is a square matrix of order m, and if there exists another square matrix B of the same order m, such that AB=BA=I, then B is called the inverse matrix of A and it is denoted by A^{-1}",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "274",
+          "text_block": {
+            "text": "For example, let",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "275",
+          "text_block": {
+            "text": "Now",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "276",
+          "text_block": {
+            "text": "Also",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "277",
+          "text_block": {
+            "text": "a by . In that case A is said to be invertible.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "278",
+          "text_block": {
+            "text": "to",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "279",
+          "text_block": {
+            "text": "not",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "280",
+          "text_block": {
+            "text": "A=[\\begin{matrix}2&3\\\\ 1&2\\end{matrix}] and B=[\\begin{matrix}2&-3\\\\ -1&2\\end{matrix}] be two matrices.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "281",
+          "text_block": {
+            "text": "AB=[\\begin{matrix}2&3\\\\ 1&2\\end{matrix}][\\begin{matrix}2&-3\\\\ -1&2\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "282",
+          "text_block": {
+            "text": "=[\\begin{matrix}4-3&-6+6\\\\ 2-2&-3+4\\end{matrix}]=[\\begin{matrix}1&0\\\\ 0&1\\end{matrix}]=I",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "283",
+          "text_block": {
+            "text": ".",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "284",
+          "text_block": {
+            "text": "BA=[\\begin{matrix}1&0\\\\ 0&1\\end{matrix}]=I Thus B is the inverse of A, in other",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "285",
+          "text_block": {
+            "text": "words B=A^{-1} and A is inverse of B, i.e., A=B^{-1}",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "286",
+          "text_block": {
+            "text": "Reprint 2024-25",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 10,
+            "page_end": 10
+          }
+        },
+        {
+          "block_id": "287",
+          "text_block": {
+            "text": "MATRICES",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "288",
+          "text_block": {
+            "text": "69",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "289",
+          "text_block": {
+            "text": "Note",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "290",
+          "text_block": {
+            "text": "1. A rectangular matrix does not possess inverse matrix, since for products BA and AB to be defined and to be equal, it is necessary that matrices A and B should be square matrices of the same order.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "291",
+          "text_block": {
+            "text": "2. If B is the inverse of A, then A is also the inverse of B.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "292",
+          "text_block": {
+            "text": "Theorem 3 (Uniqueness of inverse) Inverse of a square matrix, if it exists, is unique. Proof Let A=[a_{ij}] be a square matrix of order m. If possible, let B and C be two inverses of A. We shall show that B=C",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "293",
+          "text_block": {
+            "text": "Since B is the inverse of A",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "294",
+          "text_block": {
+            "text": "AB=BA=I",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "295",
+          "text_block": {
+            "text": "Since C is also the inverse of A",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "296",
+          "text_block": {
+            "text": "AC=CA=I",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "297",
+          "text_block": {
+            "text": "Thus",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "298",
+          "text_block": {
+            "text": "B=BI=B(AC)=(BA)C=IC=C",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "299",
+          "text_block": {
+            "text": "... (1)",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "300",
+          "text_block": {
+            "text": "(2)",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "301",
+          "text_block": {
+            "text": "republished",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "302",
+          "text_block": {
+            "text": "Theorem 4 If A and B are invertible matrices of the same order, then (AB)^{-1}=B^{-1}A^{-1}.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "303",
+          "text_block": {
+            "text": "Proof From the definition of inverse of a matrix, we have",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "304",
+          "text_block": {
+            "text": "(AB) (AB)^{-1}=1",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "305",
+          "text_block": {
+            "text": "A^{-1} (AB) (AB)^{-1}=A^{-1}I",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "306",
+          "text_block": {
+            "text": "or",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "307",
+          "text_block": {
+            "text": "(A¯¹A) B",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "308",
+          "text_block": {
+            "text": "or",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "309",
+          "text_block": {
+            "text": "or",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "310",
+          "text_block": {
+            "text": "or",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "311",
+          "text_block": {
+            "text": "or",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "312",
+          "text_block": {
+            "text": "or",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "313",
+          "text_block": {
+            "text": "Hence",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "314",
+          "text_block": {
+            "text": "(AB)^{-1}=A^{-1}",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "315",
+          "text_block": {
+            "text": "C IB (AB)^{-1}=A^{-1}",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "316",
+          "text_block": {
+            "text": "B (AB)^{-1}=A^{-1}",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "317",
+          "text_block": {
+            "text": "B^{-1} B (AB)^{-1}=B^{-1}A^{-1}",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "318",
+          "text_block": {
+            "text": "(AB)^{-1}=B^{-1}A^{-1}",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "319",
+          "text_block": {
+            "text": "_________1 I(AB)^{-1}=B^{-1}A^{-1}",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "320",
+          "text_block": {
+            "text": "EXERCISE 3.4",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "321",
+          "text_block": {
+            "text": "(Pre multiplying both sides by A^{-} ¹)",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "322",
+          "text_block": {
+            "text": "(Since A^{-1}I=A^{-1})",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "323",
+          "text_block": {
+            "text": "1. Matrices A and B will be inverse of each other only if",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "324",
+          "text_block": {
+            "text": "(A) AB=BA(B) AB=BA=0",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "325",
+          "text_block": {
+            "text": "(C) AB=0, BA = I (D) AB=BA=I",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "326",
+          "text_block": {
+            "text": "Reprint 2024-25",
+            "type_": "footer"
+          },
+          "page_span": {
+            "page_start": 11,
+            "page_end": 11
+          }
+        },
+        {
+          "block_id": "327",
+          "text_block": {
+            "text": "70",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 12,
+            "page_end": 12
+          }
+        },
+        {
+          "block_id": "328",
+          "text_block": {
+            "text": "MATHEMATICS",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 12,
+            "page_end": 12
+          }
+        },
+        {
+          "block_id": "329",
+          "text_block": {
+            "text": "Miscellaneous Examples",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 12,
+            "page_end": 12
+          }
+        },
+        {
+          "block_id": "330",
+          "text_block": {
+            "text": "then prove that A^{n}=[\\begin{matrix}cos~n\\theta&sin~n\\theta\\\\ -sin~n\\theta&cos~n\\theta\\end{matrix}] n\\in N",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 12,
+            "page_end": 12
+          }
+        },
+        {
+          "block_id": "331",
+          "text_block": {
+            "text": "Example 23 If A=[\\begin{matrix}cos~\\theta&sin~\\theta\\\\ -sin~\\theta&cos~\\theta\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 12,
+            "page_end": 12
+          }
+        },
+        {
+          "block_id": "332",
+          "text_block": {
+            "text": "Solution We shall prove the result by using principle of mathematical induction.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 12,
+            "page_end": 12
+          }
+        },
+        {
+          "block_id": "333",
+          "text_block": {
+            "text": "We have",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 12,
+            "page_end": 12
+          }
+        },
+        {
+          "block_id": "334",
+          "text_block": {
+            "text": "Therefore,",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 12,
+            "page_end": 12
+          }
+        },
+        {
+          "block_id": "335",
+          "text_block": {
+            "text": "P(n):If~A=[\\begin{matrix}cos~\\theta&sin~\\theta\\\\ -sin~\\theta&cos~\\theta\\end{matrix}] then A^{n}=[\\begin{matrix}cos~n\\theta&sin~n\\theta\\\\ -sin~n\\theta&cos~n\\theta\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 12,
+            "page_end": 12
+          }
+        },
+        {
+          "block_id": "336",
+          "text_block": {
+            "text": "P(1):A=[\\begin{matrix}cos~\\theta&sin~\\theta\\\\ -sin~\\theta&cos~\\theta\\end{matrix}] so A^{1}=[\\begin{matrix}cos~\\theta&sin~\\theta\\\\ -sin~\\theta&cos~\\theta\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 12,
+            "page_end": 12
+          }
+        },
+        {
+          "block_id": "337",
+          "text_block": {
+            "text": "the result is true for n=1.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 12,
+            "page_end": 12
+          }
+        },
+        {
+          "block_id": "338",
+          "text_block": {
+            "text": "Let the result be true for n=k. So",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 12,
+            "page_end": 12
+          }
+        },
+        {
+          "block_id": "339",
+          "text_block": {
+            "text": "n\\in N",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 12,
+            "page_end": 12
+          }
+        },
+        {
+          "block_id": "340",
+          "text_block": {
+            "text": ", then ished",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 12,
+            "page_end": 12
+          }
+        },
+        {
+          "block_id": "341",
+          "text_block": {
+            "text": "T",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 12,
+            "page_end": 12
+          }
+        },
+        {
+          "block_id": "342",
+          "text_block": {
+            "text": "P(k):A=[\\begin{matrix}cos~\\theta&sin~\\theta\\\\ -sin~\\theta&cos~\\theta\\end{matrix}] A^{k}=[\\begin{matrix}cos~k\\theta&sin~k\\theta\\\\ -sin~k\\theta&cos~k\\theta\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 12,
+            "page_end": 12
+          }
+        },
+        {
+          "block_id": "343",
+          "text_block": {
+            "text": "Now, we prove that the result holds for n=k+1",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 12,
+            "page_end": 12
+          }
+        },
+        {
+          "block_id": "344",
+          "text_block": {
+            "text": "Now",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 12,
+            "page_end": 12
+          }
+        },
+        {
+          "block_id": "345",
+          "text_block": {
+            "text": "A^{k+1}=A\\cdot A^{k}=[\\begin{matrix}cos~\\theta&sin~\\theta\\\\ -sin~\\theta&cos~\\theta\\end{matrix}][\\begin{matrix}cos~k\\theta&sin~k\\theta\\\\ -sin~k\\theta&cos~k\\theta\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 12,
+            "page_end": 12
+          }
+        },
+        {
+          "block_id": "346",
+          "text_block": {
+            "text": "=[\\begin{matrix}cos~\\theta~cos~k\\theta-sin~\\theta~sin~k\\theta&cos~\\theta~sin~k\\theta+sin~\\theta~cos~k\\theta\\\\ -sin~\\theta~cos~k\\theta+cos~\\theta~sin~k\\theta&-sin~\\theta~sin~k\\theta+cos~\\theta~cos~k\\theta\\end{matrix}] =[\\begin{matrix}cos(\\theta+k\\theta)&sin(\\theta+k\\theta)\\\\ -sin(\\theta+k\\theta)&cos(\\theta+k\\theta)\\end{matrix}]=[\\begin{matrix}cos(k+1)\\theta&sin(k+1)\\theta\\\\ -sin(k+1)\\theta&cos(k+1)\\theta\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 12,
+            "page_end": 12
+          }
+        },
+        {
+          "block_id": "347",
+          "text_block": {
+            "text": "Therefore, the result is true for n=k+1. Thus by principle of mathematical induction,",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 12,
+            "page_end": 12
+          }
+        },
+        {
+          "block_id": "348",
+          "text_block": {
+            "text": "we have A^{n}=[\\begin{matrix}cos~n~\\theta&sin~n~\\theta\\\\ -sin~n~\\theta&cos~n~\\theta\\end{matrix}] holds for all natural numbers.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 12,
+            "page_end": 12
+          }
+        },
+        {
+          "block_id": "349",
+          "text_block": {
+            "text": "Example 24 If A and B are symmetric matrices of the same order, then show that AB is symmetric if and only if A and B commute, that is AB=BA.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 12,
+            "page_end": 12
+          }
+        },
+        {
+          "block_id": "350",
+          "text_block": {
+            "text": "Solution Since A and B are both symmetric matrices, therefore A^{\\prime}=A and B^{\\prime}=B",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 12,
+            "page_end": 12
+          }
+        },
+        {
+          "block_id": "351",
+          "text_block": {
+            "text": "Reprint 2024-25",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 12,
+            "page_end": 12
+          }
+        },
+        {
+          "block_id": "352",
+          "text_block": {
+            "text": "MATRICES",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "353",
+          "text_block": {
+            "text": "71",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "354",
+          "text_block": {
+            "text": "Let",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "355",
+          "text_block": {
+            "text": "AB be symmetric, then (AB)^{\\prime}=AB",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "356",
+          "text_block": {
+            "text": "But",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "357",
+          "text_block": {
+            "text": "Therefore",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "358",
+          "text_block": {
+            "text": "(AB)^{\\prime}=B^{\\prime}A^{\\prime}=BA(Why?) BA=AB",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "359",
+          "text_block": {
+            "text": "Conversely, if AB=BA, then we shall show that AB is symmetric. Now",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "360",
+          "text_block": {
+            "text": "(AB)^{\\prime}=B^{\\prime}A^{\\prime}",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "361",
+          "text_block": {
+            "text": "=B~A (as A and B are symmetric) =AB",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "362",
+          "text_block": {
+            "text": "Hence AB is symmetric.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "363",
+          "text_block": {
+            "text": "A=[\\begin{matrix}2&-1\\\\ 3&4\\end{matrix}] B=[\\begin{matrix}5&2\\\\ 7&4\\end{matrix}] C=[\\begin{matrix}2&5\\\\ 3&8\\end{matrix}] . Find Find a a",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "364",
+          "text_block": {
+            "text": "Example 25 Let",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "365",
+          "text_block": {
+            "text": "CD-AB=O.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "366",
+          "text_block": {
+            "text": "Solution Since A, B, C are all square matrices of order 2, and CD – AB is well defined, D must be a square matrix of order 2.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "367",
+          "text_block": {
+            "text": "Let",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "368",
+          "text_block": {
+            "text": "or",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "369",
+          "text_block": {
+            "text": "or",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "370",
+          "text_block": {
+            "text": "D=[\\begin{matrix}a&b\\\\ c&d\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "371",
+          "text_block": {
+            "text": ". Then CD-AB=0~gives",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "372",
+          "text_block": {
+            "text": "[\\begin{matrix}2&5\\\\ 3&8\\end{matrix}][\\begin{matrix}a&b\\\\ c&d\\end{matrix}]-[\\begin{matrix}2&-1\\\\ 3&4\\end{matrix}][\\begin{matrix}5&2\\\\ 7&4\\end{matrix}]=0",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "373",
+          "text_block": {
+            "text": "[\\begin{matrix}2a+5c&2b+5d\\\\ 3a+8c&3b+8d\\end{matrix}]-[\\begin{matrix}3&0\\\\ 43&22\\end{matrix}]=[\\begin{matrix}0&0\\\\ 0&0\\end{matrix}] [\\begin{matrix}2a+5c-3&2b+5d\\\\ 3a+8c-43&3b+8d-22\\end{matrix}]=[\\begin{matrix}0&0\\\\ 0&0\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "374",
+          "text_block": {
+            "text": "By equality of matrices, we get",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "375",
+          "text_block": {
+            "text": "and",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "376",
+          "text_block": {
+            "text": "not",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "377",
+          "text_block": {
+            "text": "۱",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "378",
+          "text_block": {
+            "text": "2a+5c-3=0",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "379",
+          "text_block": {
+            "text": "3a+8c-43=0",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "380",
+          "text_block": {
+            "text": "2b+5d=0",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "381",
+          "text_block": {
+            "text": "3b+8d-22=0",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "382",
+          "text_block": {
+            "text": "(1)",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "383",
+          "text_block": {
+            "text": "(2)",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "384",
+          "text_block": {
+            "text": "(3)",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "385",
+          "text_block": {
+            "text": "(4)",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "386",
+          "text_block": {
+            "text": "Solving (1) and (2), we get a=-191, c=77 Solving (3) and (4), we get b=-110,",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "387",
+          "text_block": {
+            "text": "d=44.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "388",
+          "text_block": {
+            "text": "Reprint 2024-25",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 13,
+            "page_end": 13
+          }
+        },
+        {
+          "block_id": "389",
+          "text_block": {
+            "text": "72",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 14,
+            "page_end": 14
+          }
+        },
+        {
+          "block_id": "390",
+          "text_block": {
+            "text": "MATHEMATICS",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 14,
+            "page_end": 14
+          }
+        },
+        {
+          "block_id": "391",
+          "text_block": {
+            "text": "Therefore",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 14,
+            "page_end": 14
+          }
+        },
+        {
+          "block_id": "392",
+          "text_block": {
+            "text": "1.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 14,
+            "page_end": 14
+          }
+        },
+        {
+          "block_id": "393",
+          "text_block": {
+            "text": "D=[\\begin{matrix}a&b\\\\ c&d\\end{matrix}]=[\\begin{matrix}-191&-110\\\\ 77&44\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 14,
+            "page_end": 14
+          }
+        },
+        {
+          "block_id": "394",
+          "text_block": {
+            "text": "Miscellaneous Exercise on Chapter 3",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 14,
+            "page_end": 14
+          }
+        },
+        {
+          "block_id": "395",
+          "text_block": {
+            "text": "If A and B are symmetric matrices, prove that AB – BA is a skew symmetric matrix.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 14,
+            "page_end": 14
+          }
+        },
+        {
+          "block_id": "396",
+          "text_block": {
+            "text": "2. Show that the matrix B'AB is symmetric or skew symmetric according as A is symmetric or skew symmetric.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 14,
+            "page_end": 14
+          }
+        },
+        {
+          "block_id": "397",
+          "text_block": {
+            "text": "3. Find the values of x, y, z if the matrix A=[\\begin{matrix}0&2y&z\\\\ x&y&-z\\\\ x&-y&z\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 14,
+            "page_end": 14
+          }
+        },
+        {
+          "block_id": "398",
+          "text_block": {
+            "text": "A^{\\prime}A=I.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 14,
+            "page_end": 14
+          }
+        },
+        {
+          "block_id": "399",
+          "text_block": {
+            "text": "4. For what values of x:[\\begin{matrix}1&2&1\\end{matrix}][\\begin{matrix}1&2&0\\\\ 2&0&1\\\\ 1&0&2\\end{matrix}][\\begin{matrix}0\\\\ 2\\\\ x\\end{matrix}]=0;",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 14,
+            "page_end": 14
+          }
+        },
+        {
+          "block_id": "400",
+          "text_block": {
+            "text": "show that 410ublished",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 14,
+            "page_end": 14
+          }
+        },
+        {
+          "block_id": "401",
+          "text_block": {
+            "text": "5. If A=[\\begin{matrix}3&1\\\\ -1&2\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 14,
+            "page_end": 14
+          }
+        },
+        {
+          "block_id": "402",
+          "text_block": {
+            "text": "if",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 14,
+            "page_end": 14
+          }
+        },
+        {
+          "block_id": "403",
+          "text_block": {
+            "text": "6. Find x, if",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 14,
+            "page_end": 14
+          }
+        },
+        {
+          "block_id": "404",
+          "text_block": {
+            "text": "A^{2}-5A+7I=0",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 14,
+            "page_end": 14
+          }
+        },
+        {
+          "block_id": "405",
+          "text_block": {
+            "text": "[\\begin{matrix}x&-5&-1\\end{matrix}][\\begin{matrix}1&0&2\\\\ 0&2&1\\\\ 2&0&3\\end{matrix}][\\begin{matrix}x\\\\ 4\\\\ 1\\end{matrix}]=0",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 14,
+            "page_end": 14
+          }
+        },
+        {
+          "block_id": "406",
+          "text_block": {
+            "text": "A manufacturer",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 14,
+            "page_end": 14
+          }
+        },
+        {
+          "block_id": "407",
+          "text_block": {
+            "text": "7. A manufacturer produces three products x, y, z which he sells in two markets.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 14,
+            "page_end": 14
+          }
+        },
+        {
+          "block_id": "408",
+          "text_block": {
+            "text": "Annual sales are indicated below:",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 14,
+            "page_end": 14
+          }
+        },
+        {
+          "block_id": "409",
+          "table_block": {
+            "body_rows": [
+              {
+                "cells": [
+                  {
+                    "blocks": [
+                      {
+                        "block_id": "410",
+                        "text_block": {
+                          "text": "Market",
+                          "type_": "paragraph"
+                        },
+                        "page_span": {
+                          "page_start": 14,
+                          "page_end": 14
+                        }
+                      }
+                    ],
+                    "row_span": 1,
+                    "col_span": 1
+                  },
+                  {
+                    "blocks": [
+                      {
+                        "block_id": "411",
+                        "text_block": {
+                          "type_": "paragraph"
+                        },
+                        "page_span": {
+                          "page_start": 14,
+                          "page_end": 14
+                        }
+                      }
+                    ],
+                    "row_span": 1,
+                    "col_span": 1
+                  },
+                  {
+                    "blocks": [
+                      {
+                        "block_id": "412",
+                        "text_block": {
+                          "text": "Products",
+                          "type_": "paragraph"
+                        },
+                        "page_span": {
+                          "page_start": 14,
+                          "page_end": 14
+                        }
+                      }
+                    ],
+                    "row_span": 1,
+                    "col_span": 1
+                  },
+                  {
+                    "blocks": [
+                      {
+                        "block_id": "413",
+                        "text_block": {
+                          "type_": "paragraph"
+                        },
+                        "page_span": {
+                          "page_start": 14,
+                          "page_end": 14
+                        }
+                      }
+                    ],
+                    "row_span": 1,
+                    "col_span": 1
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "blocks": [
+                      {
+                        "block_id": "414",
+                        "text_block": {
+                          "text": "I",
+                          "type_": "paragraph"
+                        },
+                        "page_span": {
+                          "page_start": 14,
+                          "page_end": 14
+                        }
+                      }
+                    ],
+                    "row_span": 1,
+                    "col_span": 1
+                  },
+                  {
+                    "blocks": [
+                      {
+                        "block_id": "415",
+                        "text_block": {
+                          "text": "10,000",
+                          "type_": "paragraph"
+                        },
+                        "page_span": {
+                          "page_start": 14,
+                          "page_end": 14
+                        }
+                      }
+                    ],
+                    "row_span": 1,
+                    "col_span": 1
+                  },
+                  {
+                    "blocks": [
+                      {
+                        "block_id": "416",
+                        "text_block": {
+                          "text": "2,000",
+                          "type_": "paragraph"
+                        },
+                        "page_span": {
+                          "page_start": 14,
+                          "page_end": 14
+                        }
+                      }
+                    ],
+                    "row_span": 1,
+                    "col_span": 1
+                  },
+                  {
+                    "blocks": [
+                      {
+                        "block_id": "417",
+                        "text_block": {
+                          "text": "18,000",
+                          "type_": "paragraph"
+                        },
+                        "page_span": {
+                          "page_start": 14,
+                          "page_end": 14
+                        }
+                      }
+                    ],
+                    "row_span": 1,
+                    "col_span": 1
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "blocks": [
+                      {
+                        "block_id": "418",
+                        "text_block": {
+                          "text": "II",
+                          "type_": "paragraph"
+                        },
+                        "page_span": {
+                          "page_start": 14,
+                          "page_end": 14
+                        }
+                      }
+                    ],
+                    "row_span": 1,
+                    "col_span": 1
+                  },
+                  {
+                    "blocks": [
+                      {
+                        "block_id": "419",
+                        "text_block": {
+                          "text": "6,000",
+                          "type_": "paragraph"
+                        },
+                        "page_span": {
+                          "page_start": 14,
+                          "page_end": 14
+                        }
+                      }
+                    ],
+                    "row_span": 1,
+                    "col_span": 1
+                  },
+                  {
+                    "blocks": [
+                      {
+                        "block_id": "420",
+                        "text_block": {
+                          "text": "20,000",
+                          "type_": "paragraph"
+                        },
+                        "page_span": {
+                          "page_start": 14,
+                          "page_end": 14
+                        }
+                      }
+                    ],
+                    "row_span": 1,
+                    "col_span": 1
+                  },
+                  {
+                    "blocks": [
+                      {
+                        "block_id": "421",
+                        "text_block": {
+                          "text": "8,000",
+                          "type_": "paragraph"
+                        },
+                        "page_span": {
+                          "page_start": 14,
+                          "page_end": 14
+                        }
+                      }
+                    ],
+                    "row_span": 1,
+                    "col_span": 1
+                  }
+                ]
+              }
+            ]
+          },
+          "page_span": {
+            "page_start": 14,
+            "page_end": 14
+          }
+        },
+        {
+          "block_id": "422",
+          "text_block": {
+            "text": "Reprint 2024-25",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 14,
+            "page_end": 14
+          }
+        },
+        {
+          "block_id": "423",
+          "text_block": {
+            "text": "MATRICES",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "424",
+          "text_block": {
+            "text": "73",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "425",
+          "text_block": {
+            "text": "(a)",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "426",
+          "text_block": {
+            "text": "(b)",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "427",
+          "text_block": {
+            "text": "If unit sale prices of x, y and z are ₹2.50, ₹1.50 and ₹1.00, respectively, find the total revenue in each market with the help of matrix algebra.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "428",
+          "text_block": {
+            "text": "If the unit costs of the above three commodities are ₹2.00, ₹1.00 and 50 paise respectively. Find the gross profit.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "429",
+          "text_block": {
+            "text": "8. Find the matrix X so that X[\\begin{matrix}1&2&3\\\\ 4&5&6\\end{matrix}]=[\\begin{matrix}-7&-8&-9\\\\ 2&4&6\\end{matrix}]",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "430",
+          "text_block": {
+            "text": "Choose the correct answer in the following questions:",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "431",
+          "text_block": {
+            "text": "9. If",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "432",
+          "text_block": {
+            "text": "A=[\\begin{matrix}\\alpha&\\beta\\\\ \\gamma&-\\alpha\\end{matrix}] is such that A² A^{2}=I = 1, then",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "433",
+          "text_block": {
+            "text": "(A) 1+\\alpha^{2}+\\beta\\gamma=0",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "434",
+          "text_block": {
+            "text": "(C) 1-\\alpha^{2}-\\beta\\gamma=0",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "435",
+          "text_block": {
+            "text": "(Β) 1-\\alpha^{2}+\\beta\\gamma=0",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "436",
+          "text_block": {
+            "text": "(D) 1+\\alpha^{2}-\\beta\\gamma=0",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "437",
+          "text_block": {
+            "text": "10. If the matrix A is both symmetric and skew symmetric, then",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "438",
+          "text_block": {
+            "text": "(A) A is a diagonal matrix",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "439",
+          "text_block": {
+            "text": "(C) A is a square matrix",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "440",
+          "text_block": {
+            "text": "(B) A is a zero matrix",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "441",
+          "text_block": {
+            "text": "(D) None of these one of (I+A)^{3}-7A",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "442",
+          "text_block": {
+            "text": "11. If A is square matrix such that A^{2}=A, then is equal to",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "443",
+          "text_block": {
+            "text": "(A) A",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "444",
+          "text_block": {
+            "text": "(B) I-A",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "445",
+          "text_block": {
+            "text": "(C) I",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "446",
+          "text_block": {
+            "text": "Summary",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "447",
+          "text_block": {
+            "text": "(D) 3A",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "448",
+          "text_block": {
+            "text": "A matrix is an ordered rectangular array of numbers or functions.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "449",
+          "text_block": {
+            "text": "A matrix having m rows and n columns is called a matrix of order m\\times n.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "450",
+          "text_block": {
+            "text": "[a_{ij}]_{m\\times1} is a column matrix.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "451",
+          "text_block": {
+            "text": "[a_{ij}]_{1\\times n} is a row matrix.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "452",
+          "text_block": {
+            "text": "An m\\times n matrix is a square matrix if m=n.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "453",
+          "text_block": {
+            "text": "A=[a_{ij}]_{m\\times m} is a diagonal matrix if a_{ij}=0 , when i\\ne j.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "454",
+          "text_block": {
+            "text": "a_{ij}=0",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "455",
+          "text_block": {
+            "text": "A=[a_{ij}]_{n\\times n} is a scalar matrix if , when i\\ne j, , (k is some",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "456",
+          "text_block": {
+            "text": "is an identity matrix, if , when i=j, a_{ij}=1",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "457",
+          "text_block": {
+            "text": "constant), when i=j.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "458",
+          "text_block": {
+            "text": "A=[a_{ij}]_{n\\times n}",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "459",
+          "text_block": {
+            "text": "A zero matrix has all its elements as zero.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "460",
+          "text_block": {
+            "text": "possible values of i and j.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "461",
+          "text_block": {
+            "text": "a_{ij}=k",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "462",
+          "text_block": {
+            "text": "a_{ij}=0",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "463",
+          "text_block": {
+            "text": "when i\\ne j.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "464",
+          "text_block": {
+            "text": "a_{ij}=b_{ij}",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "465",
+          "text_block": {
+            "text": "A=[a_{ij}]=[b_{ij}]=B if (i) A and B are of same order, (ii) for all",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "466",
+          "text_block": {
+            "text": "Reprint 2024-25",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 15,
+            "page_end": 15
+          }
+        },
+        {
+          "block_id": "467",
+          "text_block": {
+            "text": "74",
+            "type_": "header"
+          },
+          "page_span": {
+            "page_start": 16,
+            "page_end": 16
+          }
+        },
+        {
+          "block_id": "468",
+          "text_block": {
+            "text": "MATHEMATICS",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 16,
+            "page_end": 16
+          }
+        },
+        {
+          "block_id": "469",
+          "text_block": {
+            "text": "kA=k[a_{ij}]_{m\\times n}=[k(a_{ij})]_{m\\times n}",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 16,
+            "page_end": 16
+          }
+        },
+        {
+          "block_id": "470",
+          "text_block": {
+            "text": "-A=(-1)A",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 16,
+            "page_end": 16
+          }
+        },
+        {
+          "block_id": "471",
+          "text_block": {
+            "text": "A-B=A+(-1)B",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 16,
+            "page_end": 16
+          }
+        },
+        {
+          "block_id": "472",
+          "text_block": {
+            "text": "A+B=B+A",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 16,
+            "page_end": 16
+          }
+        },
+        {
+          "block_id": "473",
+          "text_block": {
+            "text": "(A+B)+C=A+(B+C), where A, B and C are of same order.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 16,
+            "page_end": 16
+          }
+        },
+        {
+          "block_id": "474",
+          "text_block": {
+            "text": "k(A+B)=kA+kB, where A and B are of same order, k is constant.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 16,
+            "page_end": 16
+          }
+        },
+        {
+          "block_id": "475",
+          "text_block": {
+            "text": "(k+l)A=kA+lA, where k and I are constant.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 16,
+            "page_end": 16
+          }
+        },
+        {
+          "block_id": "476",
+          "text_block": {
+            "text": "If A=[a_{ij}]_{m\\times n} and B=[b_{jk}]_{n\\times p} , then AB=C=[c_{ik}]_{m\\times p^{\\prime}} where",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 16,
+            "page_end": 16
+          }
+        },
+        {
+          "block_id": "477",
+          "text_block": {
+            "text": "c_{ik=}\\sum_{j=1}^{n}a_{ij}b_{jk}",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 16,
+            "page_end": 16
+          }
+        },
+        {
+          "block_id": "478",
+          "text_block": {
+            "text": "(i) A(BC)=(AB)C (ii) A(B+C)=AB+AC, (iii) (A+B)C=AC+BC",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 16,
+            "page_end": 16
+          }
+        },
+        {
+          "block_id": "479",
+          "text_block": {
+            "text": "If",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 16,
+            "page_end": 16
+          }
+        },
+        {
+          "block_id": "480",
+          "text_block": {
+            "text": "A=[a_{ij}]_{m\\times n^{\\prime}} then A^{\\prime} or A^{T}=[a_{ji}]_{n\\times m}",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 16,
+            "page_end": 16
+          }
+        },
+        {
+          "block_id": "481",
+          "text_block": {
+            "text": "(i) (A^{\\prime})^{\\prime}=A, (ii) (kA)^{\\prime}=kA^{\\prime}, (iii) (A+B)^{\\prime}=A^{\\prime}+B^{\\prime}, (iv)",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 16,
+            "page_end": 16
+          }
+        },
+        {
+          "block_id": "482",
+          "text_block": {
+            "text": "A is a symmetric matrix if A^{\\prime}=A",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 16,
+            "page_end": 16
+          }
+        },
+        {
+          "block_id": "483",
+          "text_block": {
+            "text": "(AB)^{\\prime}=B^{\\prime}A^{\\prime}",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 16,
+            "page_end": 16
+          }
+        },
+        {
+          "block_id": "484",
+          "text_block": {
+            "text": "resented",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 16,
+            "page_end": 16
+          }
+        },
+        {
+          "block_id": "485",
+          "text_block": {
+            "text": "A is a skew symmetric matrix if A^{\\prime}=-A.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 16,
+            "page_end": 16
+          }
+        },
+        {
+          "block_id": "486",
+          "text_block": {
+            "text": "Any square matrix can be represented as the sum of a symmetric and a",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 16,
+            "page_end": 16
+          }
+        },
+        {
+          "block_id": "487",
+          "text_block": {
+            "text": "skew symmetric matrix.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 16,
+            "page_end": 16
+          }
+        },
+        {
+          "block_id": "488",
+          "text_block": {
+            "text": "If A and B are two square matrices such that AB=BA=I. then B is the inverse matrix of A and is denoted by A^{-1} and A is the inverse of B.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 16,
+            "page_end": 16
+          }
+        },
+        {
+          "block_id": "489",
+          "text_block": {
+            "text": "Inverse of a square matrix, if it exists, is unique.",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 16,
+            "page_end": 16
+          }
+        },
+        {
+          "block_id": "490",
+          "text_block": {
+            "text": "not to be",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 16,
+            "page_end": 16
+          }
+        },
+        {
+          "block_id": "491",
+          "text_block": {
+            "text": "Reprint 2024-25",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 16,
+            "page_end": 16
+          }
+        },
+        {
+          "block_id": "492",
+          "text_block": {
+            "text": "NOTES",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 17,
+            "page_end": 17
+          }
+        },
+        {
+          "block_id": "493",
+          "text_block": {
+            "text": "© NCERT",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 17,
+            "page_end": 17
+          }
+        },
+        {
+          "block_id": "494",
+          "text_block": {
+            "text": "not to be republished",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 17,
+            "page_end": 17
+          }
+        },
+        {
+          "block_id": "495",
+          "text_block": {
+            "text": "Reprint 2024-25",
+            "type_": "paragraph"
+          },
+          "page_span": {
+            "page_start": 17,
+            "page_end": 17
+          }
+        }
+      ]
+    }
+  },
+  "human_review_status": {
+    "state": "SKIPPED"
+  }
+}
