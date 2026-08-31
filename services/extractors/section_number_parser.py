@@ -21,16 +21,22 @@ class SectionNumberParser:
     """
     Parses hierarchical numeric section numbers.
 
-    Examples:
+    Supported forms:
 
-        3.1
-        3.2
-        3.2.1
-        3.2.1.1
+        3.1 Introduction
+        3.2 Matrix
+        3.2.1 Order of a matrix
+
+    Also supports punctuation after the section number:
+
+        3.5. Transpose of a Matrix
+        3.5.1. Properties of transpose
+
+    The punctuation is not part of the section number.
     """
 
     PATTERN = re.compile(
-        r"^(\d+(?:\.\d+)+)\s+(.+?)\s*$"
+        r"^(\d+(?:\.\d+)+)\.?\s+(.+?)\s*$"
     )
 
     @classmethod
@@ -41,9 +47,12 @@ class SectionNumberParser:
 
         text = text.strip()
 
+        if not text:
+            return None
+
         match = cls.PATTERN.match(text)
 
-        if not match:
+        if match is None:
             return None
 
         number = match.group(1)
