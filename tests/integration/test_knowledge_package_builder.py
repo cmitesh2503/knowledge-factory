@@ -37,3 +37,68 @@ def test_knowledge_package_builder():
     assert package.formulas == []
     assert package.examples == []
     assert package.exercises == []
+    assert isinstance(
+        package.tables,
+        list,
+    )
+
+def test_knowledge_package_builder_preserves_tables():
+
+    canonical = {
+        "schema_version": "1.0",
+        "document": {
+            "document_id": "table-test-document",
+        },
+        "pages": [
+            {
+                "page_number": 1,
+                "blocks": [
+                    {
+                        "id": "table-001",
+                        "type": "table",
+                        "metadata": {
+                            "row_count": 2,
+                            "column_count": 2,
+                            "cells": [
+                                {
+                                    "row_index": 0,
+                                    "column_index": 0,
+                                    "text": "A",
+                                },
+                                {
+                                    "row_index": 0,
+                                    "column_index": 1,
+                                    "text": "B",
+                                },
+                                {
+                                    "row_index": 1,
+                                    "column_index": 0,
+                                    "text": "1",
+                                },
+                                {
+                                    "row_index": 1,
+                                    "column_index": 1,
+                                    "text": "2",
+                                },
+                            ],
+                        },
+                    },
+                ],
+            },
+        ],
+    }
+
+    package = KnowledgePackageBuilder().build(
+        canonical
+    )
+
+    assert len(package.tables) == 1
+
+    table = package.tables[0]
+
+    assert table.id == "table-001"
+    assert table.rows == 2
+    assert table.columns == 2
+    assert len(table.cells) == 4
+
+    assert table.metadata["page"] == 1

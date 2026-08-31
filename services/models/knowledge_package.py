@@ -13,6 +13,7 @@ from services.models.exercise import (
     ExerciseQuestion,
 )
 from services.models.figure import Figure
+from services.models.table import Table
 
 
 @dataclass(slots=True)
@@ -52,6 +53,9 @@ class KnowledgePackage:
     figures: list[Figure] = field(
         default_factory=list
     )
+    tables: list[Table] = field(
+        default_factory=list
+    )
 
     metadata: dict[str, Any] = field(
         default_factory=dict
@@ -88,6 +92,10 @@ class KnowledgePackage:
             "figures": [
                 item.to_dict()
                 for item in self.figures
+            ],
+            "tables": [
+                item.to_dict()
+                for item in self.tables
             ],
             "metadata": self.metadata,
         }
@@ -352,6 +360,36 @@ class KnowledgePackage:
                 )
                 for item in data.get(
                     "figures",
+                    [],
+                )
+            ],
+            tables=[
+                Table(
+                    id=item.get(
+                        "id",
+                        "",
+                    ),
+                    rows=item.get(
+                        "rows",
+                        0,
+                    ),
+                    columns=item.get(
+                        "columns",
+                        0,
+                    ),
+                    cells=list(
+                        item.get(
+                            "cells",
+                            [],
+                        )
+                    ),
+                    metadata=item.get(
+                        "metadata",
+                        {},
+                    ),
+                )
+                for item in data.get(
+                    "tables",
                     [],
                 )
             ],

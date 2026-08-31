@@ -22,6 +22,9 @@ from services.extractors.figure_extractor import (
     FigureExtractor,
 )
 from services.models import KnowledgePackage
+from services.extractors.table_extractor import (
+    TableExtractor,
+)
 
 
 class KnowledgePackageBuilder:
@@ -40,7 +43,8 @@ class KnowledgePackageBuilder:
         self.formula_extractor = FormulaExtractor()
         self.example_extractor = ExampleExtractor()
         self.exercise_extractor = ExerciseExtractor()
-        self.figure_extractor = FigureExtractor()
+        self.figure_extractor  = FigureExtractor()
+        self.table_extractor  = TableExtractor()
 
     def build(
         self,
@@ -80,6 +84,9 @@ class KnowledgePackageBuilder:
                 canonical_document
             ),
             figures=self.figure_extractor.extract(
+                canonical_document
+            ),
+            tables=self.table_extractor.extract(
                 canonical_document
             ),
             

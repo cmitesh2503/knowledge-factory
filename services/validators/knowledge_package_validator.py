@@ -164,5 +164,27 @@ class KnowledgePackageValidator:
                     f"Exercise {exercise.id} "
                     f"contains no questions."
                 )
+        # -------------------------------------------------
+        # Table validation
+        # -------------------------------------------------
+
+        for table in package.tables:
+
+            if not table.id:
+                errors.append(
+                    "Table missing id."
+                )
+
+            if table.rows <= 0:
+                errors.append(
+                    f"Table {table.id} "
+                    f"has invalid row count."
+                )
+
+            if table.columns <= 0:
+                errors.append(
+                    f"Table {table.id} "
+                    f"has invalid column count."
+                )
 
         return errors

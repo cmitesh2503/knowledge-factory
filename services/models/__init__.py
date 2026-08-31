@@ -15,6 +15,8 @@ from .exercise_candidate import (
     ExerciseQuestionCandidate,
 )
 from .figure import Figure
+from .table import Table
+from .table_candidate import TableCandidate
 from .knowledge_package import KnowledgePackage
 
 
@@ -35,5 +37,7 @@ __all__ = [
     "ExerciseQuestion",
     "ExerciseQuestionCandidate",
     "Figure",
+    "Table",
+    "TableCandidate",
     "KnowledgePackage",
 ]
