@@ -12,6 +12,17 @@ import re
 class ExerciseDetector:
     """
     Conservative detector for exercise containers and questions.
+
+    Supports textbook structures such as:
+
+        EXERCISE 3.3
+        1. Find the transpose...
+        2. If A=...
+
+    and explicit structures such as:
+
+        Exercise 3.3
+        Question 1: ...
     """
 
     EXERCISE_PATTERNS = (
@@ -26,8 +37,18 @@ class ExerciseDetector:
     )
 
     QUESTION_PATTERNS = (
+        # Explicit Question marker
         re.compile(
             r"^\s*question\s+(\d+(?:\.\d+)*)\s*[:\-]\s*(.*)$",
+            re.IGNORECASE,
+        ),
+
+        # Textbook numbered question:
+        # 1. Find ...
+        # 2. If ...
+        # 10. Express ...
+        re.compile(
+            r"^\s*(\d+)\.\s+(.+)$",
             re.IGNORECASE,
         ),
     )
@@ -43,8 +64,7 @@ class ExerciseDetector:
             ("exercise", number, title)
             ("question", number, question)
 
-        Returns None when no exercise/question marker
-        is detected.
+        Returns None when no marker is detected.
         """
 
         text = text.strip()
@@ -52,7 +72,10 @@ class ExerciseDetector:
         if not text:
             return None
 
+        # --------------------------------------------------
         # Exercise container
+        # --------------------------------------------------
+
         for pattern in cls.EXERCISE_PATTERNS:
 
             match = pattern.match(text)
@@ -71,7 +94,10 @@ class ExerciseDetector:
 
             return "exercise", number, title
 
-        # Question inside exercise
+        # --------------------------------------------------
+        # Question
+        # --------------------------------------------------
+
         for pattern in cls.QUESTION_PATTERNS:
 
             match = pattern.match(text)

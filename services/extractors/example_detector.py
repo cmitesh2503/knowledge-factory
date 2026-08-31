@@ -11,27 +11,28 @@ import re
 
 class ExampleDetector:
     """
-    Detects explicit worked-example markers.
+    Detect explicit worked-example markers.
 
-    This detector intentionally uses conservative rules.
-    It does not infer examples from arbitrary prose.
+    Supports canonical OCR text such as:
+
+        Example 20
+        Example 20 If
+        Example 21 If A=...
+        Solved Example 1
+        Illustration 2
     """
 
     PATTERNS = (
         re.compile(
-            r"^\s*example\s+(\d+(?:\.\d+)*)\s*$",
+            r"^\s*example\s+(\d+(?:\.\d+)*)\b(.*)$",
             re.IGNORECASE,
         ),
         re.compile(
-            r"^\s*example\s+(\d+(?:\.\d+)*)\s*[:\-]\s*(.+)$",
+            r"^\s*solved\s+example\s+(\d+(?:\.\d+)*)\b(.*)$",
             re.IGNORECASE,
         ),
         re.compile(
-            r"^\s*solved\s+example\s+(\d+(?:\.\d+)*)\s*$",
-            re.IGNORECASE,
-        ),
-        re.compile(
-            r"^\s*illustration\s+(\d+(?:\.\d+)*)\s*$",
+            r"^\s*illustration\s+(\d+(?:\.\d+)*)\b(.*)$",
             re.IGNORECASE,
         ),
     )
@@ -40,9 +41,26 @@ class ExampleDetector:
     def detect(
         cls,
         text: str,
-    ) -> tuple[str | None, str | None] | None:
+    ) -> tuple[str | None, str] | None:
+        """
+        Detect an explicit example marker.
 
-        text = text.strip()
+        Returns:
+
+            (number, title)
+
+        Examples:
+
+            Example 20
+                -> ("20", "")
+
+            Example 21 If A=...
+                -> ("21", "If A=...")
+
+        Returns None when no marker is detected.
+        """
+
+        text = str(text or "").strip()
 
         if not text:
             return None
@@ -54,15 +72,12 @@ class ExampleDetector:
             if not match:
                 continue
 
-            groups = match.groups()
+            number = match.group(1)
 
-            number = groups[0]
+            remainder = (
+                match.group(2) or ""
+            ).strip()
 
-            title = text
-
-            if len(groups) > 1 and groups[1]:
-                title = groups[1].strip()
-
-            return number, title
+            return number, remainder
 
         return None

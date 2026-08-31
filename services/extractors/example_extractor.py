@@ -28,15 +28,25 @@ class ExampleExtractor(
     """
     Generic deterministic worked-example extractor.
 
-    BaseExtractor owns:
+    Extraction lifecycle:
 
         find_candidates()
               ↓
         validate_candidates()
               ↓
         build()
+
+    An example begins at an explicit Example marker and
+    continues until the next structural boundary.
     """
 
+    STOP_MARKERS = (
+        "exercise ",
+        "miscellaneous exercise",
+        "summary",
+    )
+
+   
     def find_candidates(
         self,
         canonical_document: dict,
@@ -51,7 +61,9 @@ class ExampleExtractor(
             nonlocal current_example
 
             if current_example is not None:
-                candidates.append(current_example)
+                candidates.append(
+                    current_example
+                )
 
             current_example = None
 
@@ -60,7 +72,9 @@ class ExampleExtractor(
             [],
         ):
 
-            page_number = page.get("page_number")
+            page_number = page.get(
+                "page_number"
+            )
 
             for block in page.get(
                 "blocks",
@@ -77,8 +91,13 @@ class ExampleExtractor(
                 if not text:
                     continue
 
+                # --------------------------------------------------
                 # Section boundary
-                parsed = SectionNumberParser.parse(text)
+                # --------------------------------------------------
+
+                parsed = SectionNumberParser.parse(
+                    text
+                )
 
                 if parsed is not None:
 
@@ -92,8 +111,13 @@ class ExampleExtractor(
 
                     continue
 
-                # Example marker
-                detected = ExampleDetector.detect(text)
+                # --------------------------------------------------
+                # New example
+                # --------------------------------------------------
+
+                detected = ExampleDetector.detect(
+                    text
+                )
 
                 if detected is not None:
 
@@ -112,14 +136,43 @@ class ExampleExtractor(
 
                     continue
 
+                # --------------------------------------------------
+                # Structural boundaries
+                # --------------------------------------------------
+
+                normalized = text.lower().strip()
+
+                if any(
+                    normalized.startswith(marker)
+                    for marker in self.STOP_MARKERS
+                ):
+
+                    flush_example()
+
+                    continue
+
+                # --------------------------------------------------
+                # Ignore obvious textbook page noise
+                # --------------------------------------------------
+
+                
+                if normalized.isdigit():
+                    continue
+
+                # --------------------------------------------------
                 # Content belonging to current example
+                # --------------------------------------------------
+
                 if current_example is not None:
 
-                    current_example.content.append(text)
+                    current_example.content.append(
+                        text
+                    )
 
         flush_example()
 
         return candidates
+
     def validate_candidates(
         self,
         candidates: list[ExampleCandidate],
@@ -131,6 +184,13 @@ class ExampleExtractor(
 
             if not candidate.text.strip():
                 continue
+
+            # Remove accidental empty content blocks.
+            candidate.content = [
+                text
+                for text in candidate.content
+                if str(text).strip()
+            ]
 
             validated.append(candidate)
 
