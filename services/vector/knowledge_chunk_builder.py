@@ -12,30 +12,52 @@ class KnowledgeChunkBuilder:
 
     The KnowledgePackage remains the canonical source.
     These chunks are derived data for vector indexing.
+
+    Concept chunks may be merged when adjacent and
+    semantically related. Table chunks remain atomic.
     """
 
     MIN_TEXT_LENGTH = 40
     MIN_WORDS = 6
+    MAX_CHUNK_LENGTH = 1500
 
     def build(
         self,
         package: KnowledgePackage,
     ) -> list[dict[str, Any]]:
         """
-        Build meaningful chunks from concepts.
-
-        Adjacent concepts belonging to the same section
-        are merged when they form a coherent passage.
+        Build semantic-search chunks from a KnowledgePackage.
         """
 
-        candidates = self._build_candidates(package)
+        candidates = self._build_candidates(
+            package
+        )
 
         if not candidates:
             return []
 
-        return self._merge_adjacent_chunks(
-            candidates
-        )
+        concept_candidates = [
+            candidate
+            for candidate in candidates
+            if candidate["knowledge_type"] == "concept"
+        ]
+
+        table_chunks = [
+            candidate
+            for candidate in candidates
+            if candidate["knowledge_type"] == "table"
+        ]
+
+        concept_chunks: list[dict[str, Any]] = []
+
+        if concept_candidates:
+            concept_chunks = (
+                self._merge_adjacent_chunks(
+                    concept_candidates
+                )
+            )
+
+        return concept_chunks + table_chunks
 
     def _build_candidates(
         self,
@@ -43,6 +65,10 @@ class KnowledgeChunkBuilder:
     ) -> list[dict[str, Any]]:
 
         candidates: list[dict[str, Any]] = []
+
+        # ---------------------------------------------
+        # Concept candidates
+        # ---------------------------------------------
 
         for concept in package.concepts:
 
@@ -59,13 +85,52 @@ class KnowledgeChunkBuilder:
                     "knowledge_type": "concept",
                     "text": text,
                     "metadata": {
-                        "document_id": package.document_id,
+                        "document_id": (
+                            package.document_id
+                        ),
                         "concept_id": concept.id,
                         "section_number": (
                             concept.section_number
                         ),
                         "page": concept.page,
                         "block_id": concept.block_id,
+                    },
+                }
+            )
+
+        # ---------------------------------------------
+        # Table candidates
+        # ---------------------------------------------
+
+        for table in package.tables:
+
+            text = self._table_text(
+                table
+            )
+
+            if not text.strip():
+                continue
+
+            candidates.append(
+                {
+                    "id": table.id,
+                    "knowledge_type": "table",
+                    "text": text,
+                    "metadata": {
+                        "document_id": (
+                            package.document_id
+                        ),
+                        "table_id": table.id,
+                        "page": table.metadata.get(
+                            "page"
+                        ),
+                        "table_index": (
+                            table.metadata.get(
+                                "table_index"
+                            )
+                        ),
+                        "rows": table.rows,
+                        "columns": table.columns,
                     },
                 }
             )
@@ -105,31 +170,48 @@ class KnowledgeChunkBuilder:
         candidate: dict[str, Any],
     ) -> bool:
 
-        current_metadata = current["metadata"]
-        candidate_metadata = candidate["metadata"]
+        current_metadata = current[
+            "metadata"
+        ]
 
-        # Only merge content from the same section.
+        candidate_metadata = candidate[
+            "metadata"
+        ]
+
+        # Only merge concepts from the same section.
+
         if (
             current_metadata["section_number"]
             != candidate_metadata["section_number"]
         ):
             return False
 
-        # Only merge adjacent pages/blocks.
-        current_page = current_metadata["page"]
-        candidate_page = candidate_metadata["page"]
+        # Do not merge backwards across pages.
 
-        if candidate_page < current_page:
+        current_page = current_metadata[
+            "page"
+        ]
+
+        candidate_page = candidate_metadata[
+            "page"
+        ]
+
+        if (
+            current_page is not None
+            and candidate_page is not None
+            and candidate_page < current_page
+        ):
             return False
 
-        # Avoid creating excessively large chunks.
+        # Avoid excessively large chunks.
+
         combined_length = (
             len(current["text"])
             + len(candidate["text"])
             + 1
         )
 
-        if combined_length > 1500:
+        if combined_length > self.MAX_CHUNK_LENGTH:
             return False
 
         return True
@@ -151,7 +233,11 @@ class KnowledgeChunkBuilder:
         ] = (
             current["metadata"].get(
                 "source_ids",
-                [current["metadata"]["concept_id"]],
+                [
+                    current["metadata"][
+                        "concept_id"
+                    ]
+                ],
             )
             + [
                 candidate["metadata"][
@@ -162,11 +248,15 @@ class KnowledgeChunkBuilder:
 
         current["metadata"][
             "end_page"
-        ] = candidate["metadata"]["page"]
+        ] = candidate["metadata"][
+            "page"
+        ]
 
         current["metadata"][
             "end_block_id"
-        ] = candidate["metadata"]["block_id"]
+        ] = candidate["metadata"][
+            "block_id"
+        ]
 
         return current
 
@@ -184,12 +274,14 @@ class KnowledgeChunkBuilder:
         )
 
         if name:
-            parts.append(str(name))
+            parts.append(
+                str(name)
+            )
 
         metadata = getattr(
             concept,
             "metadata",
-            {}
+            {},
         ) or {}
 
         for key in (
@@ -198,35 +290,122 @@ class KnowledgeChunkBuilder:
             "content",
             "body",
         ):
-            value = metadata.get(key)
+
+            value = metadata.get(
+                key
+            )
 
             if value:
-                parts.append(str(value))
+                parts.append(
+                    str(value)
+                )
 
         return " ".join(parts)
+
+    def _table_text(
+        self,
+        table: Any,
+    ) -> str:
+        """
+        Convert a structured table into searchable text
+        while preserving row and column structure.
+
+        Sparse cells remain represented as empty positions.
+        """
+
+        cells_by_row: dict[
+            int,
+            dict[int, str],
+        ] = {}
+
+        for cell in table.cells:
+
+            row_index = cell.get(
+                "row_index"
+            )
+
+            column_index = cell.get(
+                "column_index"
+            )
+
+            if (
+                row_index is None
+                or column_index is None
+            ):
+                continue
+
+            cells_by_row.setdefault(
+                row_index,
+                {},
+            )[column_index] = str(
+                cell.get(
+                    "content",
+                    "",
+                )
+            )
+
+        rows: list[str] = []
+
+        # Preserve the declared table dimensions,
+        # including completely empty rows.
+
+        for row_index in range(
+            table.rows
+        ):
+
+            row = cells_by_row.get(
+                row_index,
+                {},
+            )
+
+            values = [
+                row.get(
+                    column_index,
+                    "",
+                )
+                for column_index in range(
+                    table.columns
+                )
+            ]
+
+            rows.append(
+                " | ".join(values)
+            )
+
+        return "\n".join(rows)
 
     def _clean_text(
         self,
         text: str,
     ) -> str:
+        """
+        Normalize ordinary semantic text.
 
-        text = re.sub(
+        This is intentionally not used for tables because
+        whitespace inside tables carries structural meaning.
+        """
+
+        return re.sub(
             r"\s+",
             " ",
             text,
         ).strip()
-
-        return text
 
     def _is_meaningful(
         self,
         text: str,
     ) -> bool:
 
-        if len(text) < self.MIN_TEXT_LENGTH:
+        if (
+            len(text)
+            < self.MIN_TEXT_LENGTH
+        ):
             return False
 
-        if len(text.split()) < self.MIN_WORDS:
+        if (
+            len(text.split())
+            < self.MIN_WORDS
+        ):
             return False
 
         return True
