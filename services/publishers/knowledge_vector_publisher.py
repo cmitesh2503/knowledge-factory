@@ -1,48 +1,41 @@
 from __future__ import annotations
 
-from google import genai
-from google.cloud import firestore
-
-from services.models.knowledge_package import KnowledgePackage
-from services.repositories.firestore_knowledge_vector_index import (
-    FirestoreKnowledgeVectorIndex,
+from services.models.knowledge_package import (
+    KnowledgePackage,
+)
+from services.vector.vector_indexing_service import (
+    VectorIndexingService,
 )
 
 
 class KnowledgeVectorPublisher:
     """
-    Publishes any KnowledgePackage into the
-    Firestore vector-search index.
+    Application-level entry point for publishing a
+    KnowledgePackage into the semantic vector index.
 
-    KnowledgePackage remains the canonical source.
-    Vector documents are derived data.
+    The publisher does not know about Firestore, Gemini,
+    embeddings, or vector database implementation details.
+    Those responsibilities belong to VectorIndexingService
+    and the dependencies wired by the composition root.
     """
 
     def __init__(
         self,
-        *,
-        firestore_client: firestore.Client,
-        genai_client: genai.Client,
-        embedding_model: str = "gemini-embedding-001",
-        embedding_dimensions: int = 768,
+        vector_indexing_service: VectorIndexingService,
     ) -> None:
 
-        self.vector_index = (
-            FirestoreKnowledgeVectorIndex(
-                client=firestore_client,
-                genai_client=genai_client,
-                embedding_model=embedding_model,
-                embedding_dimensions=embedding_dimensions,
-            )
+        self.vector_indexing_service = (
+            vector_indexing_service
         )
 
     def publish(
         self,
         package: KnowledgePackage,
-    ) -> None:
+    ) -> int:
         """
-        Publish one KnowledgePackage into the
-        vector-search index.
+        Publish one KnowledgePackage into the vector index.
+
+        Returns the number of indexed chunks.
         """
 
         if not package.document_id:
@@ -51,4 +44,8 @@ class KnowledgeVectorPublisher:
                 "cannot be empty"
             )
 
-        self.vector_index.index(package)
+        return (
+            self.vector_indexing_service.index(
+                package
+            )
+        )

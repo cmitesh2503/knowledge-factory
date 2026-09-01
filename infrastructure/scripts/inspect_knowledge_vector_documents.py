@@ -20,8 +20,8 @@ from functions.pdf_ingestion.canonical_document_builder import (
 from services.integration.knowledge_package_builder import (
     KnowledgePackageBuilder,
 )
-from services.repositories.firestore_knowledge_vector_index import (
-    FirestoreKnowledgeVectorIndex,
+from services.vector.firestore_vector_index import (
+    FirestoreVectorIndex,
 )
 from services.vector.knowledge_chunk_builder import (
     KnowledgeChunkBuilder,

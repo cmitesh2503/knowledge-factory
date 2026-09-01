@@ -1,15 +1,11 @@
 from __future__ import annotations
 
-import json
 import sys
 from pathlib import Path
 
+from google import genai
+from google.cloud import firestore
 
-# ------------------------------------------------------------------
-# Make repository root importable when script is executed as:
-#
-# python infrastructure/scripts/publish_matrices_knowledge_package.py
-# ------------------------------------------------------------------
 
 ROOT_DIR = Path(__file__).resolve().parents[2]
 
@@ -17,282 +13,237 @@ if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
 
 
-from functions.pdf_ingestion.azure_processor import (
-    AzureProcessor,
+from infrastructure.scripts.smoke_test_real_knowledge_vector_search import (
+    build_real_package,
 )
-from functions.pdf_ingestion.canonical_document_builder import (
-    CanonicalDocumentBuilder,
+from services.publishers.knowledge_vector_publisher import (
+    KnowledgeVectorPublisher,
 )
-from services.integration.knowledge_package_builder import (
-    KnowledgePackageBuilder,
+from services.vector.firestore_vector_index import (
+    FirestoreVectorIndex,
 )
-from services.repositories.firestore_knowledge_package_repository import (
-    FirestoreKnowledgePackageRepository,
+from services.vector.gemini_embedding_provider import (
+    GeminiEmbeddingProvider,
 )
-
-
-# ------------------------------------------------------------------
-# Real source fixture
-# ------------------------------------------------------------------
-
-FIXTURE_PATH = (
-    ROOT_DIR
-    / "tests"
-    / "fixtures"
-    / "Matrices-1-10.pdf.json"
+from services.vector.knowledge_chunk_builder import (
+    KnowledgeChunkBuilder,
+)
+from services.vector.vector_indexing_service import (
+    VectorIndexingService,
 )
 
 
-def main() -> None:
+PROJECT_ID = "knowledge-factory-prod"
 
-    # ==============================================================
-    # 1. Load real Matrices fixture
-    # ==============================================================
+EMBEDDING_MODEL = "gemini-embedding-001"
 
-    print("1. Loading real Matrices fixture...")
+EMBEDDING_DIMENSIONS = 768
 
-    if not FIXTURE_PATH.exists():
-        raise FileNotFoundError(
-            f"Fixture not found: {FIXTURE_PATH}"
-        )
+COLLECTION_NAME = "knowledge_vectors"
 
-    with FIXTURE_PATH.open(
-        "r",
-        encoding="utf-8",
-    ) as file:
-        azure_document = json.load(file)
 
-    print("   PASS: fixture loaded")
-
-    # ==============================================================
-    # 2. Build canonical blocks
-    # ==============================================================
-
-    print("2. Building canonical blocks...")
-
-    processor = AzureProcessor()
-
-    blocks = processor.process(
-        azure_document
-    )
-
-    if not blocks:
-        raise RuntimeError(
-            "No canonical blocks were produced."
-        )
+def main():
 
     print(
-        f"   PASS: {len(blocks)} canonical blocks"
+        "1. Building real Matrices KnowledgePackage..."
     )
 
-    # ==============================================================
-    # 3. Build Canonical Document
-    # ==============================================================
-
-    print("3. Building Canonical Document...")
-
-    canonical_builder = (
-        CanonicalDocumentBuilder()
-    )
-
-    analyze_result = azure_document.get(
-        "analyzeResult",
-        {},
-    )
-
-    pages = analyze_result.get(
-        "pages",
-        [],
-    )
-
-    canonical_document = (
-        canonical_builder.build(
-            blocks=blocks,
-            page_count=len(pages),
-            filename="Matrices-1-10.pdf",
-            raw_bucket="knowledge-factory",
-            raw_object="Matrices-1-10.pdf",
-            generation="1",
-        )
-    )
-
-    document_id = (
-        canonical_document[
-            "document"
-        ]["document_id"]
-    )
-
-    if not document_id:
-        raise RuntimeError(
-            "Canonical Document has no document_id."
-        )
+    package = build_real_package()
 
     print(
-        f"   PASS: document_id={document_id}"
+        f"   PASS: package built "
+        f"document_id={package.document_id}"
     )
-
-    # ==============================================================
-    # 4. Build KnowledgePackage
-    # ==============================================================
-
-    print(
-        "4. Building KnowledgePackage..."
-    )
-
-    package_builder = (
-        KnowledgePackageBuilder()
-    )
-
-    package = package_builder.build(
-        canonical_document
-    )
-
-    if package.document_id != document_id:
-        raise RuntimeError(
-            "KnowledgePackage document_id does not "
-            "match Canonical Document document_id."
-        )
-
-    print("   PASS: package built")
-
-    # ==============================================================
-    # 5. Show knowledge summary
-    # ==============================================================
-
-    print(
-        "5. KnowledgePackage summary..."
-    )
-
-    print(
-        f"   document_id: {package.document_id}"
-    )
-    print(
-        f"   chapters   : {len(package.chapters)}"
-    )
-    print(
-        f"   sections   : {len(package.sections)}"
-    )
-    print(
-        f"   concepts   : {len(package.concepts)}"
-    )
-    print(
-        f"   formulas   : {len(package.formulas)}"
-    )
-    print(
-        f"   examples   : {len(package.examples)}"
-    )
-    print(
-        f"   exercises  : {len(package.exercises)}"
-    )
-    print(
-        f"   figures    : {len(package.figures)}"
-    )
-
-    # ==============================================================
-    # 6. Publish permanently to Firestore
-    # ==============================================================
 
     print()
     print(
-        "6. Publishing KnowledgePackage to Firestore..."
+        "2. Creating Vertex AI GenAI client..."
     )
 
-    repository = (
-        FirestoreKnowledgePackageRepository()
+    genai_client = genai.Client(
+        vertexai=True,
+        project=PROJECT_ID,
+        location="global",
     )
-
-    repository.save(package)
 
     print(
-        "   PASS: KnowledgePackage published"
+        "   PASS: GenAI client created"
     )
-
-    # ==============================================================
-    # 7. Read back and verify
-    # ==============================================================
-
-    print(
-        "7. Verifying published KnowledgePackage..."
-    )
-
-    published_package = repository.get(
-        package.document_id
-    )
-
-    if published_package is None:
-        raise RuntimeError(
-            "Published KnowledgePackage could not "
-            "be read back from Firestore."
-        )
-
-    if (
-        published_package.document_id
-        != package.document_id
-    ):
-        raise RuntimeError(
-            "Firestore document_id mismatch."
-        )
-
-    if (
-        len(published_package.chapters)
-        != len(package.chapters)
-    ):
-        raise RuntimeError(
-            "Chapter count mismatch."
-        )
-
-    if (
-        len(published_package.sections)
-        != len(package.sections)
-    ):
-        raise RuntimeError(
-            "Section count mismatch."
-        )
-
-    if (
-        len(published_package.concepts)
-        != len(package.concepts)
-    ):
-        raise RuntimeError(
-            "Concept count mismatch."
-        )
-
-    print(
-        "   PASS: Firestore verification"
-    )
-
-    # ==============================================================
-    # IMPORTANT:
-    #
-    # There is intentionally NO DELETE here.
-    #
-    # This package is being permanently published for
-    # MathVerse consumption.
-    # ==============================================================
 
     print()
     print(
-        "=================================================="
+        "3. Creating Firestore client..."
     )
+
+    firestore_client = firestore.Client(
+        project=PROJECT_ID
+    )
+
     print(
-        "Knowledge Factory publish: PASS"
+        "   PASS: Firestore client created"
     )
-    print(
-        "=================================================="
-    )
+
     print()
     print(
-        "Published document:"
+        "4. Creating vector infrastructure..."
     )
+
+    embedding_provider = (
+        GeminiEmbeddingProvider(
+            client=genai_client,
+            embedding_model=EMBEDDING_MODEL,
+            embedding_dimensions=(
+                EMBEDDING_DIMENSIONS
+            ),
+        )
+    )
+
+    vector_index = (
+        FirestoreVectorIndex(
+            client=firestore_client,
+            collection_name=COLLECTION_NAME,
+        )
+    )
+
+    chunk_builder = (
+        KnowledgeChunkBuilder()
+    )
+
+    vector_indexing_service = (
+        VectorIndexingService(
+            embedding_provider=(
+                embedding_provider
+            ),
+            vector_index=vector_index,
+            chunk_builder=chunk_builder,
+        )
+    )
+
+    publisher = (
+        KnowledgeVectorPublisher(
+            vector_indexing_service=(
+                vector_indexing_service
+            )
+        )
+    )
+
     print(
-        f"  {package.document_id}"
+        "   PASS: publisher created"
     )
+
     print()
     print(
-        "The Firestore document was intentionally NOT deleted."
+        "5. Publishing Matrices vectors..."
     )
+
+    indexed_count = publisher.publish(
+        package
+    )
+
     print(
-        "It is now available for MathVerse consumption."
+        f"   PASS: "
+        f"{indexed_count} vectors published "
+        f"to Firestore"
+    )
+
+    print()
+    print(
+        "6. Verifying persistent vector documents..."
+    )
+
+    collection = firestore_client.collection(
+        COLLECTION_NAME
+    )
+
+    snapshots = list(
+        collection.stream()
+    )
+
+    matching_documents = []
+
+    for snapshot in snapshots:
+
+        data = snapshot.to_dict() or {}
+
+        metadata = data.get(
+            "metadata",
+            {},
+        )
+
+        if (
+            metadata.get("document_id")
+            == package.document_id
+        ):
+            matching_documents.append(
+                data
+            )
+
+    print(
+        f"   PASS: "
+        f"{len(matching_documents)} "
+        f"vector documents found"
+    )
+
+    if not matching_documents:
+        raise AssertionError(
+            "No persistent vector documents "
+            "were found."
+        )
+
+    for number, data in enumerate(
+        matching_documents,
+        start=1,
+    ):
+
+        metadata = data.get(
+            "metadata",
+            {},
+        )
+
+        print(
+            f"--- Vector {number} ---"
+        )
+
+        print(
+            f"id        : "
+            f"{data.get('id')}"
+        )
+
+        print(
+            f"type      : "
+            f"{data.get('knowledge_type')}"
+        )
+
+        print(
+            f"text      : "
+            f"{data.get('text', '')[:120]}..."
+        )
+
+        print(
+            f"document  : "
+            f"{metadata.get('document_id')}"
+        )
+
+        embedding = data.get(
+            "embedding"
+        )
+
+        if embedding is None:
+            raise AssertionError(
+                "Vector document is missing "
+                "embedding."
+            )
+
+    print()
+    print(
+        "Persistent Matrices vector "
+        "publication: PASS"
+    )
+
+    print()
+    print(
+        "IMPORTANT: vector documents "
+        "were NOT deleted."
     )
 
 

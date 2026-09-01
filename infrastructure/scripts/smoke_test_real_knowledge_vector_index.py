@@ -23,19 +23,28 @@ from functions.pdf_ingestion.canonical_document_builder import (
 from services.integration.knowledge_package_builder import (
     KnowledgePackageBuilder,
 )
-from services.repositories.firestore_knowledge_vector_index import (
-    FirestoreKnowledgeVectorIndex,
+from services.vector.firestore_vector_index import (
+    FirestoreVectorIndex,
+)
+from services.vector.gemini_embedding_provider import (
+    GeminiEmbeddingProvider,
 )
 from services.vector.knowledge_chunk_builder import (
     KnowledgeChunkBuilder,
 )
+from services.vector.vector_indexing_service import (
+    VectorIndexingService,
+)
 
 
 PROJECT_ID = "knowledge-factory-prod"
+
 COLLECTION_NAME = "knowledge_vectors"
 
 EMBEDDING_MODEL = "gemini-embedding-001"
+
 EMBEDDING_DIMENSIONS = 768
+
 
 FIXTURE_PATH = (
     ROOT_DIR
@@ -46,17 +55,25 @@ FIXTURE_PATH = (
 
 
 def build_real_package():
+
     print("1. Loading real Matrices fixture...")
 
     with FIXTURE_PATH.open(
         "r",
         encoding="utf-8",
     ) as file:
-        azure_document = json.load(file)
 
-    print("   PASS: fixture loaded")
+        azure_document = json.load(
+            file
+        )
 
-    print("2. Building canonical blocks...")
+    print(
+        "   PASS: fixture loaded"
+    )
+
+    print(
+        "2. Building canonical blocks..."
+    )
 
     processor = AzureProcessor()
 
@@ -65,42 +82,63 @@ def build_real_package():
     )
 
     print(
-        f"   PASS: {len(blocks)} canonical blocks"
+        f"   PASS: {len(blocks)} "
+        "canonical blocks"
     )
 
-    print("3. Building Canonical Document...")
-
-    analyze_result = azure_document.get(
-        "analyzeResult",
-        {},
+    print(
+        "3. Building Canonical Document..."
     )
 
-    pages = analyze_result.get(
-        "pages",
-        [],
+    analyze_result = (
+        azure_document.get(
+            "analyzeResult",
+            {},
+        )
+    )
+
+    pages = (
+        analyze_result.get(
+            "pages",
+            [],
+        )
     )
 
     canonical_document = (
         CanonicalDocumentBuilder().build(
             blocks=blocks,
             page_count=len(pages),
-            filename="Matrices-1-10.pdf",
-            raw_bucket="knowledge-factory",
-            raw_object="Matrices-1-10.pdf",
+            filename=(
+                "Matrices-1-10.pdf"
+            ),
+            raw_bucket=(
+                "knowledge-factory"
+            ),
+            raw_object=(
+                "Matrices-1-10.pdf"
+            ),
             generation="1",
         )
     )
 
-    print("   PASS: canonical document built")
-
-    print("4. Building KnowledgePackage...")
-
-    package = KnowledgePackageBuilder().build(
-        canonical_document
+    print(
+        "   PASS: canonical document built"
     )
 
     print(
-        f"   PASS: {len(package.concepts)} concepts"
+        "4. Building KnowledgePackage..."
+    )
+
+    package = (
+        KnowledgePackageBuilder().build(
+            canonical_document
+        )
+    )
+
+    print(
+        f"   PASS: "
+        f"{len(package.concepts)} "
+        "concepts"
     )
 
     return package
@@ -111,35 +149,10 @@ def main() -> None:
     package = build_real_package()
 
     print()
-    print(
-        "5. Building semantic search chunks..."
-    )
-
-    chunk_builder = KnowledgeChunkBuilder()
-
-    chunks = chunk_builder.build(
-        package
-    )
 
     print(
-        f"   PASS: {len(chunks)} chunks"
-    )
-
-    assert chunks
-
-    for number, chunk in enumerate(
-        chunks,
-        start=1,
-    ):
-        print(
-            f"   chunk {number}: "
-            f"{chunk['knowledge_type']} "
-            f"({len(chunk['text'])} chars)"
-        )
-
-    print()
-    print(
-        "6. Creating Vertex AI GenAI client..."
+        "5. Creating Vertex AI "
+        "GenAI client..."
     )
 
     genai_client = genai.Client(
@@ -148,46 +161,159 @@ def main() -> None:
         location="global",
     )
 
-    print("   PASS: GenAI client created")
+    print(
+        "   PASS: GenAI client created"
+    )
 
     print()
+
     print(
-        "7. Creating Firestore client..."
+        "6. Creating Firestore client..."
     )
 
     firestore_client = firestore.Client(
         project=PROJECT_ID
     )
 
-    print("   PASS: Firestore client created")
-
-    print()
     print(
-        "8. Indexing real knowledge..."
-    )
-
-    vector_index = FirestoreKnowledgeVectorIndex(
-        client=firestore_client,
-        genai_client=genai_client,
-        embedding_model=EMBEDDING_MODEL,
-        embedding_dimensions=EMBEDDING_DIMENSIONS,
-    )
-
-    vector_index.index(
-        package
-    )
-
-    print(
-        "   PASS: real vector indexing completed"
+        "   PASS: Firestore client created"
     )
 
     print()
+
     print(
-        "9. Verifying Firestore vector documents..."
+        "7. Creating embedding provider..."
     )
 
-    collection = firestore_client.collection(
-        COLLECTION_NAME
+    embedding_provider = (
+        GeminiEmbeddingProvider(
+            client=genai_client,
+            embedding_model=(
+                EMBEDDING_MODEL
+            ),
+            embedding_dimensions=(
+                EMBEDDING_DIMENSIONS
+            ),
+        )
+    )
+
+    print(
+        "   PASS: embedding provider created"
+    )
+
+    print()
+
+    print(
+        "8. Creating Firestore "
+        "vector index..."
+    )
+
+    vector_index = (
+        FirestoreVectorIndex(
+            client=firestore_client,
+            collection_name=(
+                COLLECTION_NAME
+            ),
+        )
+    )
+
+    print(
+        "   PASS: vector index created"
+    )
+
+    print()
+
+    print(
+        "9. Creating vector "
+        "indexing service..."
+    )
+
+    chunk_builder = (
+        KnowledgeChunkBuilder()
+    )
+
+    indexing_service = (
+        VectorIndexingService(
+            embedding_provider=(
+                embedding_provider
+            ),
+            vector_index=(
+                vector_index
+            ),
+            chunk_builder=(
+                chunk_builder
+            ),
+        )
+    )
+
+    print(
+        "   PASS: indexing service created"
+    )
+
+    print()
+
+    print(
+        "10. Building semantic "
+        "search chunks..."
+    )
+
+    chunks = (
+        chunk_builder.build(
+            package
+        )
+    )
+
+    print(
+        f"   PASS: "
+        f"{len(chunks)} chunks built"
+    )
+
+    assert chunks
+
+    for number, chunk in enumerate(
+        chunks,
+        start=1,
+    ):
+
+        print(
+            f"   chunk {number}: "
+            f"{chunk['knowledge_type']} "
+            f"({len(chunk['text'])} chars)"
+        )
+
+    print()
+
+    print(
+        "11. Indexing real knowledge..."
+    )
+
+    indexed_count = (
+        indexing_service.index(
+            package
+        )
+    )
+
+    print(
+        f"   PASS: "
+        f"{indexed_count} chunks indexed"
+    )
+
+    assert (
+        indexed_count
+        == len(chunks)
+    )
+
+    print()
+
+    print(
+        "12. Verifying Firestore "
+        "vector documents..."
+    )
+
+    collection = (
+        firestore_client.collection(
+            COLLECTION_NAME
+        )
     )
 
     indexed_documents = []
@@ -195,29 +321,33 @@ def main() -> None:
     for chunk in chunks:
 
         vector_document_id = (
-            vector_index._vector_document_id(
-                package.document_id,
-                chunk["id"],
+            vector_index._document_id(
+                document_id=(
+                    package.document_id
+                ),
+                source_id=(
+                    chunk["id"]
+                ),
             )
         )
 
         snapshot = (
             collection
-            .document(vector_document_id)
+            .document(
+                vector_document_id
+            )
             .get()
         )
 
         assert snapshot.exists
 
-        data = snapshot.to_dict() or {}
-
-        assert (
-            data["document_id"]
-            == package.document_id
+        data = (
+            snapshot.to_dict()
+            or {}
         )
 
         assert (
-            data["source_id"]
+            data["id"]
             == chunk["id"]
         )
 
@@ -228,7 +358,17 @@ def main() -> None:
 
         assert data["text"]
 
-        assert "embedding" in data
+        assert (
+            data["metadata"][
+                "document_id"
+            ]
+            == package.document_id
+        )
+
+        assert (
+            "embedding"
+            in data
+        )
 
         indexed_documents.append(
             vector_document_id
@@ -236,15 +376,19 @@ def main() -> None:
 
     print(
         f"   PASS: "
-        f"{len(indexed_documents)} vector documents verified"
+        f"{len(indexed_documents)} "
+        "vector documents verified"
     )
 
     print()
+
     print(
-        "10. Cleaning up vector documents..."
+        "13. Cleaning up vector "
+        "documents..."
     )
 
     for document_id in indexed_documents:
+
         collection.document(
             document_id
         ).delete()
@@ -254,29 +398,37 @@ def main() -> None:
     )
 
     print()
+
     print(
-        "11. Verifying cleanup..."
+        "14. Verifying cleanup..."
     )
 
     for document_id in indexed_documents:
 
         snapshot = (
             collection
-            .document(document_id)
+            .document(
+                document_id
+            )
             .get()
         )
 
-        assert not snapshot.exists
+        assert (
+            not snapshot.exists
+        )
 
     print(
         "   PASS: cleanup verified"
     )
 
     print()
+
     print(
-        "Real Knowledge Vector Index smoke test: PASS"
+        "Real Knowledge Vector "
+        "Index smoke test: PASS"
     )
 
 
 if __name__ == "__main__":
+
     main()
