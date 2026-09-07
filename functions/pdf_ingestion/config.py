@@ -28,10 +28,12 @@ class Settings:
     document_ai_location: str
     document_ai_processor: str
 
+    max_chunk_pages: int
+
 
 def _require_env(name: str) -> str:
     """
-    Return an environment variable.
+    Return a required environment variable.
 
     Raises:
         RuntimeError:
@@ -46,6 +48,42 @@ def _require_env(name: str) -> str:
         )
 
     return value.strip()
+
+
+def _optional_positive_int(
+    name: str,
+    default: int,
+) -> int:
+    """
+    Read an optional positive integer environment variable.
+
+    Uses the supplied default when the variable is not set.
+
+    Raises:
+        RuntimeError:
+            If the value is not a valid positive integer.
+    """
+
+    value = os.getenv(name)
+
+    if value is None or value.strip() == "":
+        return default
+
+    try:
+        parsed = int(value.strip())
+    except ValueError as exc:
+        raise RuntimeError(
+            f"Environment variable '{name}' "
+            "must be a positive integer."
+        ) from exc
+
+    if parsed < 1:
+        raise RuntimeError(
+            f"Environment variable '{name}' "
+            "must be greater than zero."
+        )
+
+    return parsed
 
 
 def load_settings() -> Settings:
@@ -64,8 +102,19 @@ def load_settings() -> Settings:
 
         raw_bucket=_require_env("RAW_BUCKET"),
         processed_bucket=_require_env("PROCESSED_BUCKET"),
-        firestore_database=_require_env("FIRESTORE_DATABASE"),
+        firestore_database=_require_env(
+            "FIRESTORE_DATABASE"
+        ),
 
-        document_ai_location=_require_env("DOCUMENT_AI_LOCATION"),
-        document_ai_processor=_require_env("DOCUMENT_AI_PROCESSOR"),
+        document_ai_location=_require_env(
+            "DOCUMENT_AI_LOCATION"
+        ),
+        document_ai_processor=_require_env(
+            "DOCUMENT_AI_PROCESSOR"
+        ),
+
+        max_chunk_pages=_optional_positive_int(
+            "MAX_CHUNK_PAGES",
+            25,
+        ),
     )

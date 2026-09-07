@@ -10,13 +10,8 @@ It only determines which PDF files should be processed.
 
 from pathlib import Path
 
-from functions.pdf_ingestion.pdf_inspector import (
-    inspect_pdf,
-)
-from functions.pdf_ingestion.pdf_splitter import (
-    split_pdf,
-)
-
+from pdf_inspector import inspect_pdf
+from pdf_splitter import split_pdf
 
 class IngestionCoordinator:
     """

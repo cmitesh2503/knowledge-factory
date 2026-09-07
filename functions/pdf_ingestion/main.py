@@ -1,37 +1,113 @@
+"""
+Knowledge Factory PDF ingestion entry point.
+
+Production flow
+---------------
+
+Cloud Storage PDF
+        |
+        v
+Download to /tmp
+        |
+        v
+Inspect PDF page count
+        |
+        +------------------------------+
+        |                              |
+        v                              v
+Single PDF                     Split into chunks
+        |                              |
+        +--------------+---------------+
+                       |
+                       v
+             Document AI per chunk
+                       |
+                       v
+        Temporary Document AI JSON artifacts
+                       |
+                       v
+             Merge Document AI chunks
+                       |
+                       v
+       Provider-independent canonical blocks
+                       |
+                       v
+              Canonical Document JSON
+                       |
+                       +----------------------+
+                       |                      |
+                       v                      v
+              Processed GCS bucket     KnowledgePackage
+                                              |
+                                              v
+                                      Firestore
+                                      knowledge_packages
+
+Temporary provider-specific artifacts are used only
+inside the function execution and are not persisted
+to the processed bucket.
+"""
+
+from __future__ import annotations
+
+import hashlib
 import json
 import os
-import hashlib
+import shutil
 import time
 from datetime import datetime, timezone
+from pathlib import Path
 
 import functions_framework
 
 from canonical_document_builder import CanonicalDocumentBuilder
-from document_ai import DocumentAIService
-from firestore_metadata import FirestoreMetadataService
-from storage import StorageService
-from logger import configure_logger
-from event_parser import parse_storage_event
+from chunk_processor import DocumentAIChunkProcessor
 from config import load_settings
+from extraction_quality import ExtractionQualityEvaluator
+from pdf_text_extractor import PDFTextExtractor
+from document_ai import DocumentAIService
+from document_ai_artifact import save_document_ai_response
+from document_ai_canonical_adapter import DocumentAICanonicalAdapter
+from document_ai_merger import DocumentAIChunkMerger
+from event_parser import parse_storage_event
+from firestore_metadata import FirestoreMetadataService
+from ingestion_coordinator import IngestionCoordinator
+from logger import configure_logger
+from storage import StorageService
 from utils import (
-    get_temp_file_path,
     delete_file,
+    get_temp_file_path,
 )
-from document_processor import DocumentProcessor
-from ingestion_coordinator import (
-    IngestionCoordinator,
-)
-from google.protobuf.json_format import MessageToDict
 
+from services.integration.knowledge_package_builder import (
+    KnowledgePackageBuilder,
+)
+from services.repositories.firestore_knowledge_package_repository import (
+    FirestoreKnowledgePackageRepository,
+)
+
+
+# ==============================================================
+# APPLICATION CONFIGURATION
+# ==============================================================
 
 settings = load_settings()
 
 logger = configure_logger()
 
 
+# ==============================================================
+# APPLICATION SERVICES
+# ==============================================================
+
 storage_service = StorageService(logger)
 
 canonical_builder = CanonicalDocumentBuilder()
+extraction_quality_evaluator = (
+    ExtractionQualityEvaluator()
+)
+
+pdf_text_extractor = PDFTextExtractor()
 
 firestore_metadata = FirestoreMetadataService(
     logger=logger,
@@ -45,40 +121,200 @@ document_ai = DocumentAIService(
     processor_id=settings.document_ai_processor,
 )
 
-document_processor = DocumentProcessor(logger)
-
 ingestion_coordinator = IngestionCoordinator(
     max_pages=settings.max_chunk_pages,
 )
 
+chunk_processor = DocumentAIChunkProcessor(
+    document_ai=document_ai,
+    max_pages=settings.max_chunk_pages,
+)
+
+document_ai_merger = DocumentAIChunkMerger()
+
+canonical_adapter = DocumentAICanonicalAdapter()
+
+knowledge_package_builder = KnowledgePackageBuilder()
+
+knowledge_package_repository = (
+    FirestoreKnowledgePackageRepository()
+)
+
+
+# ==============================================================
+# HELPER FUNCTIONS
+# ==============================================================
+
+def _utc_now() -> str:
+    """
+    Return current UTC time in ISO-8601 format.
+    """
+
+    return (
+        datetime.now(timezone.utc)
+        .isoformat()
+        .replace("+00:00", "Z")
+    )
+
+
+def _is_pdf(name: str) -> bool:
+    """
+    Determine whether an object name is a PDF.
+    """
+
+    return name.lower().endswith(".pdf")
+
+
+def _should_skip_object(
+    bucket: str,
+    object_name: str,
+) -> bool:
+    """
+    Ignore objects that must never enter ingestion.
+
+    The Cloud Function is normally triggered only by
+    the raw bucket, but this protection prevents future
+    configuration mistakes or manually generated artifacts
+    from being processed accidentally.
+    """
+
+    normalized_name = object_name.lstrip("/")
+
+    ignored_prefixes = (
+        "processed/",
+        "debug/",
+        "artifacts/",
+        "chunks/",
+        "tmp/",
+        "temporary/",
+    )
+
+    if normalized_name.startswith(
+        ignored_prefixes
+    ):
+        logger.info(
+            "Skipping generated artifact: %s",
+            object_name,
+        )
+        return True
+
+    if not _is_pdf(object_name):
+        logger.info(
+            "Skipping non-PDF object: %s",
+            object_name,
+        )
+        return True
+
+    if bucket != settings.raw_bucket:
+        logger.warning(
+            "Skipping object from unexpected bucket. "
+            "Expected=%s Actual=%s Object=%s",
+            settings.raw_bucket,
+            bucket,
+            object_name,
+        )
+        return True
+
+    return False
+
+
+def _safe_delete(
+    file_path: str | Path | None,
+) -> None:
+    """
+    Delete a temporary file without masking the
+    original processing error.
+    """
+
+    if not file_path:
+        return
+
+    path = Path(file_path)
+
+    try:
+        if path.exists() and path.is_file():
+            delete_file(str(path))
+
+            logger.info(
+                "Temporary file removed: %s",
+                path,
+            )
+
+    except Exception:
+
+        logger.exception(
+            "Failed to remove temporary file: %s",
+            path,
+        )
+
+
+def _safe_remove_directory(
+    directory: str | Path | None,
+) -> None:
+    """
+    Remove a temporary directory recursively.
+    """
+
+    if not directory:
+        return
+
+    path = Path(directory)
+
+    try:
+        if path.exists() and path.is_dir():
+
+            shutil.rmtree(
+                path,
+                ignore_errors=True,
+            )
+
+            logger.info(
+                "Temporary directory removed: %s",
+                path,
+            )
+
+    except Exception:
+
+        logger.exception(
+            "Failed to remove temporary directory: %s",
+            path,
+        )
+
+
+# ==============================================================
+# CLOUD FUNCTION ENTRY POINT
+# ==============================================================
 
 @functions_framework.cloud_event
 def ingest_pdf(cloud_event):
     """
-    Entry point for Cloud Functions Gen2.
+    Production Knowledge Factory PDF ingestion pipeline.
 
     Trigger:
-        Cloud Storage Object Finalized
+        Google Cloud Storage Object Finalized
     """
-
-    print("===================================")
-    print("FUNCTION STARTED")
-    print(cloud_event.data)
-    print("===================================")
 
     start_time = time.perf_counter()
 
-    local_file = None
-    canonical_file = None
+    local_file: str | None = None
+
+    chunk_directory: Path | None = None
+
+    artifact_directory: Path | None = None
+
+    merged_file: Path | None = None
+
+    canonical_file: str | None = None
 
     try:
 
-        # ------------------------------------------------------------------
-        # RAW EVENT
-        # ------------------------------------------------------------------
+        # ======================================================
+        # STEP 1
+        # RECEIVE EVENT
+        # ======================================================
 
         logger.info(
-            "========== RAW CLOUD EVENT =========="
+            "========== KNOWLEDGE FACTORY INGESTION START =========="
         )
 
         logger.info(
@@ -94,44 +330,13 @@ def ingest_pdf(cloud_event):
         )
 
         bucket = event.bucket
+
         name = event.object_name
+
         generation = event.generation
 
-        if not name.lower().endswith(".pdf"):
-
-            logger.info(
-                "Skipping non-PDF object: %s",
-                name,
-            )
-
-            return
-
         logger.info(
-            "Parsed object_name: %s",
-            name,
-        )
-
-        logger.info(
-            "CloudEvent ID   : %s",
-            cloud_event["id"],
-        )
-
-        logger.info(
-            "CloudEvent Type : %s",
-            cloud_event["type"],
-        )
-
-        logger.info(
-            "CloudEvent Src  : %s",
-            cloud_event["source"],
-        )
-
-        # ------------------------------------------------------------------
-        # STEP 4
-        # ------------------------------------------------------------------
-
-        logger.info(
-            "========== STEP 4 =========="
+            "Event received."
         )
 
         logger.info(
@@ -144,41 +349,32 @@ def ingest_pdf(cloud_event):
                         settings.project_id
                     ),
                     "region": settings.region,
+                    "max_chunk_pages": (
+                        settings.max_chunk_pages
+                    ),
                 },
                 indent=2,
             )
         )
 
-        # ------------------------------------------------------------------
-        # STEP 5
-        # ------------------------------------------------------------------
+        # ======================================================
+        # STEP 2
+        # FILTER EVENT
+        # ======================================================
+
+        if _should_skip_object(
+            bucket=bucket,
+            object_name=name,
+        ):
+            return
+
+        # ======================================================
+        # STEP 3
+        # DOWNLOAD RAW PDF
+        # ======================================================
 
         logger.info(
-            "========== STEP 5 =========="
-        )
-
-        logger.info(
-            "Downloading PDF from Cloud Storage"
-        )
-
-        logger.info(
-            "Bucket from event : %s",
-            bucket,
-        )
-
-        logger.info(
-            "Object from event : %s",
-            name,
-        )
-
-        logger.info(
-            "repr(object)      : %r",
-            name,
-        )
-
-        logger.info(
-            "Generation        : %s",
-            generation,
+            "========== STEP 3: DOWNLOAD PDF =========="
         )
 
         local_file = get_temp_file_path(
@@ -186,15 +382,20 @@ def ingest_pdf(cloud_event):
         )
 
         logger.info(
-            "Downloading to %s",
+            "Downloading gs://%s/%s "
+            "to %s",
+            bucket,
+            name,
             local_file,
         )
 
-        file_size = storage_service.download_blob(
-            bucket_name=bucket,
-            blob_name=name,
-            generation=generation,
-            destination_file=local_file,
+        file_size = (
+            storage_service.download_blob(
+                bucket_name=bucket,
+                blob_name=name,
+                generation=generation,
+                destination_file=local_file,
+            )
         )
 
         if file_size is None:
@@ -207,389 +408,372 @@ def ingest_pdf(cloud_event):
             return
 
         logger.info(
-            "Download completed."
+            "Download completed. "
+            "Size=%d bytes",
+            file_size,
         )
 
-        logger.info(
-            json.dumps(
-                {
-                    "local_file": local_file,
-                    "file_size_bytes": file_size,
-                },
-                indent=2,
+        if not os.path.exists(
+            local_file
+        ):
+            raise RuntimeError(
+                "Downloaded PDF does not exist: "
+                f"{local_file}"
             )
-        )
 
-        # ------------------------------------------------------------------
-        # STEP 6
-        # Prepare PDF for Document AI
-        # ------------------------------------------------------------------
-
-        logger.info(
-            "========== STEP 6 =========="
-        )
-
-        logger.info(
-            "Preparing PDF for Document AI"
-        )
-
-        logger.info(
-            "Local file: %s",
-            local_file,
-        )
-
-        logger.info(
-            "Exists: %s",
-            os.path.exists(
-                local_file
-            ),
-        )
-
-        logger.info(
-            "Size: %d",
-            os.path.getsize(
-                local_file
-            ),
-        )
+        # ======================================================
+        # STEP 4
+        # SOURCE DOCUMENT HASH
+        # ======================================================
 
         with open(
             local_file,
             "rb",
-        ) as file:
-
-            logger.info(
-                "Magic bytes: %s",
-                file.read(16).hex(),
-            )
-
-        with open(
-            local_file,
-            "rb",
-        ) as file:
+        ) as source_file:
 
             file_sha256 = (
                 hashlib.sha256(
-                    file.read()
+                    source_file.read()
                 ).hexdigest()
             )
 
         logger.info(
-            "SHA256: %s",
+            "Source SHA256: %s",
             file_sha256,
         )
 
-        # --------------------------------------------------------------
-        # Phase 5.1.1
-        # Inspect and split oversized PDFs.
-        #
-        # The coordinator returns:
-        # - the original PDF when within max page limit
-        # - multiple chunk PDFs when splitting is required
-        # --------------------------------------------------------------
-
-        prepared_files = (
-            ingestion_coordinator.prepare(
-                local_file
-            )
-        )
+        # ======================================================
+        # STEP 5
+        # INSPECT AND SPLIT PDF
+        # ======================================================
 
         logger.info(
-            "PDF prepared into %d file(s)",
-            len(prepared_files),
+            "========== STEP 5: PDF PREPARATION =========="
         )
 
-        for prepared_file in prepared_files:
+        local_path = Path(
+            local_file
+        )
 
-            logger.info(
-                "Prepared file: %s",
-                prepared_file,
+        chunk_directory = (
+            local_path.parent
+            / (
+                f"{local_path.stem}"
+                "_document_ai_chunks"
             )
+        )
 
-        # --------------------------------------------------------------
-        # Phase 5.1.1 intentionally stops here for
-        # multi-chunk PDFs.
-        #
-        # Phase 5.1.2 will wire:
-        #
-        # DocumentAIChunkProcessor
-        #          +
-        # DocumentAIChunkMerger
-        #
-        # so that all chunks become one original
-        # document before canonical processing.
-        # --------------------------------------------------------------
+        chunk_paths = (
+            ingestion_coordinator.prepare(
+                file_path=local_path,
+                output_dir=chunk_directory,
+            )
+        )
 
-        if len(prepared_files) != 1:
+        if not chunk_paths:
 
             raise RuntimeError(
-                "PDF was split into multiple chunks. "
-                "Multi-chunk Document AI processing "
-                "has not yet been wired into the "
-                "production pipeline."
+                "PDF preparation returned no chunks."
             )
 
-        prepared_file = prepared_files[0]
-
         logger.info(
-            "Processing prepared PDF using "
-            "Document AI"
+            "PDF prepared for Document AI."
         )
 
         logger.info(
-            "Document AI processor name: %s",
+            "Chunk count=%d "
+            "Max pages per chunk=%d",
+            len(chunk_paths),
+            settings.max_chunk_pages,
+        )
+
+        for index, chunk_path in enumerate(
+            chunk_paths,
+            start=1,
+        ):
+
+            logger.info(
+                "Chunk %d: %s",
+                index,
+                chunk_path,
+            )
+
+        # ======================================================
+        # STEP 6
+        # DOCUMENT AI PROCESSING
+        # ======================================================
+
+        logger.info(
+            "========== STEP 6: DOCUMENT AI =========="
+        )
+
+        logger.info(
+            "Document AI processor: %s",
             document_ai.processor_name,
         )
 
-        result = document_ai.process_file(
-            prepared_file
-        )
-
-        logger.info(
-            "STEP 6 completed"
-        )
-
-        logger.info(
-            "Document AI result type: %s",
-            type(result),
-        )
-
-        document = result.document
-
-        # ------------------------------------------------------------------
-        # DEBUG - Dump raw Document AI response
-        # ------------------------------------------------------------------
-
-        raw_doc = MessageToDict(
-            document._pb
-        )
-
-        debug_file = (
-            "/tmp/document_ai_raw.json"
-        )
-
-        with open(
-            debug_file,
-            "w",
-            encoding="utf-8",
-        ) as file:
-
-            json.dump(
-                raw_doc,
-                file,
-                indent=2,
-                ensure_ascii=False,
+        chunk_results = (
+            chunk_processor.process(
+                chunk_paths
             )
-
-        storage_service.upload_blob(
-            bucket_name=(
-                settings.processed_bucket
-            ),
-            source_file=debug_file,
-            blob_name=(
-                "debug/document_ai_raw.json"
-            ),
-            content_type=(
-                "application/json"
-            ),
         )
 
-        logger.info(
-            "Raw Document AI JSON written "
-            "to /tmp/document_ai_raw.json"
-        )
-
-        logger.info(
-            "Top-level keys: %s",
-            list(
-                raw_doc.keys()
-            ),
-        )
-
-        if "documentLayout" in raw_doc:
-
-            logger.info(
-                "documentLayout keys: %s",
-                list(
-                    raw_doc[
-                        "documentLayout"
-                    ].keys()
-                ),
-            )
-
-        if document.pages:
-
-            logger.info(
-                "page proto type: %s",
-                type(
-                    document.pages[0]
-                ),
-            )
-
-            page0 = MessageToDict(
-                document.pages[0]._pb
-            )
-
-            logger.info(
-                "Page0 JSON keys: %s",
-                list(
-                    page0.keys()
-                ),
-            )
-
-            with open(
-                "/tmp/page0_raw.json",
-                "w",
-                encoding="utf-8",
-            ) as file:
-
-                json.dump(
-                    page0,
-                    file,
-                    indent=2,
-                    ensure_ascii=False,
-                )
-
-            storage_service.upload_blob(
-                bucket_name=(
-                    settings.processed_bucket
-                ),
-                source_file=(
-                    "/tmp/page0_raw.json"
-                ),
-                blob_name=(
-                    "debug/page0_raw.json"
-                ),
-                content_type=(
-                    "application/json"
-                ),
-            )
-
-            logger.info(
-                "Uploaded "
-                "debug/page0_raw.json"
-            )
-
-        has_document_layout = hasattr(
-            document,
-            "document_layout",
-        )
-
-        logger.info(
-            "========== DOCUMENT SUMMARY =========="
-        )
-
-        logger.info(
-            "Document type: %s",
-            type(document),
-        )
-
-        logger.info(
-            "Pages: %d",
-            len(document.pages),
-        )
-
-        logger.info(
-            "Text length: %d",
-            len(
-                document.text
-                or ""
-            ),
-        )
-
-        logger.info(
-            "Has document_layout: %s",
-            has_document_layout,
-        )
-
-        if has_document_layout:
-
-            logger.info(
-                "Number of layout blocks: %d",
-                len(
-                    document
-                    .document_layout
-                    .blocks
-                ),
-            )
-
-            if (
-                document
-                .document_layout
-                .blocks
-            ):
-
-                first_block = (
-                    document
-                    .document_layout
-                    .blocks[0]
-                )
-
-                if (
-                    first_block.text_block
-                ):
-
-                    logger.info(
-                        "First block type: %s",
-                        first_block
-                        .text_block
-                        .type_,
-                    )
-
-                    logger.info(
-                        "First block text: %s",
-                        first_block
-                        .text_block
-                        .text,
-                    )
-
-        # ------------------------------------------------------------------
-        # STEP 7 - Process Document AI Response
-        # ------------------------------------------------------------------
-
-        blocks = document_processor.process(
-            document=document,
-            result=result,
-        )
-
-        if not blocks:
+        if not chunk_results:
 
             raise RuntimeError(
-                "No layout blocks extracted; "
-                "canonical JSON generation stopped."
+                "Document AI returned no chunk results."
             )
-
-        # ------------------------------------------------------------------
-        # STEP 8 - Canonical JSON
-        # ------------------------------------------------------------------
 
         logger.info(
-            "========== STEP 8 =========="
+            "Document AI completed for %d chunk(s).",
+            len(chunk_results),
+        )
+
+        # ======================================================
+        # STEP 7
+        # TEMPORARY DOCUMENT AI ARTIFACTS
+        # ======================================================
+
+        logger.info(
+            "========== STEP 7: SAVE TEMPORARY CHUNK ARTIFACTS =========="
+        )
+
+        artifact_directory = (
+            local_path.parent
+            / (
+                f"{local_path.stem}"
+                "_document_ai_artifacts"
+            )
+        )
+
+        artifact_directory.mkdir(
+            parents=True,
+            exist_ok=True,
+        )
+
+        chunk_artifact_files: list[
+            Path
+        ] = []
+
+        for chunk_result in chunk_results:
+
+            artifact_file = (
+                artifact_directory
+                / (
+                    "chunk_"
+                    f"{chunk_result.chunk_index:03d}"
+                    ".json"
+                )
+            )
+
+            save_document_ai_response(
+                response=(
+                    chunk_result
+                    .document_ai_result
+                ),
+                output_file=artifact_file,
+            )
+
+            chunk_artifact_files.append(
+                artifact_file
+            )
+
+            logger.info(
+                "Saved temporary Document AI artifact. "
+                "Chunk=%d Pages=%d-%d File=%s",
+                chunk_result.chunk_index,
+                chunk_result.start_page,
+                chunk_result.end_page,
+                artifact_file,
+            )
+
+        # ======================================================
+        # STEP 8
+        # MERGE DOCUMENT AI CHUNKS
+        # ======================================================
+
+        logger.info(
+            "========== STEP 8: MERGE DOCUMENT AI CHUNKS =========="
+        )
+
+        merged_file = (
+            artifact_directory
+            / "merged_document_ai.json"
+        )
+
+        document_ai_merger.merge(
+            chunk_files=chunk_artifact_files,
+            output_file=merged_file,
         )
 
         logger.info(
-            "Building canonical document..."
+            "Document AI chunks merged: %s",
+            merged_file,
         )
 
-        created_at = (
-            datetime.now(
-                timezone.utc
-            )
-            .isoformat()
-            .replace(
-                "+00:00",
-                "Z",
+
+        # ======================================================
+        # STEP 9
+        # DOCUMENT AI -> CANONICAL BLOCKS
+        # ======================================================
+
+        logger.info(
+            "========== STEP 9: CANONICAL BLOCK ADAPTER =========="
+        )
+
+        merged_document_ai_json = (
+            canonical_adapter.load(
+                merged_file
             )
         )
+
+        blocks = (
+            canonical_adapter.extract_blocks(
+                merged_document_ai_json
+            )
+        )
+
+        page_count = (
+            canonical_adapter.page_count(
+                merged_document_ai_json
+            )
+        )
+
+        # ======================================================
+        # STEP 9A
+        # EVALUATE DOCUMENT AI EXTRACTION QUALITY
+        # ======================================================
+
+        logger.info(
+            "========== STEP 9A: EXTRACTION QUALITY CHECK =========="
+        )
+
+        document_ai_quality = (
+            extraction_quality_evaluator.evaluate(
+                blocks=blocks,
+                page_count=page_count,
+            )
+        )
+
+        logger.info(
+            "Document AI extraction quality. "
+            "Acceptable=%s "
+            "Pages=%d "
+            "Blocks=%d "
+            "PagesWithContent=%d "
+            "CoverageRatio=%.3f "
+            "Characters=%d "
+            "AverageCharactersPerPage=%.1f "
+            "Reason=%s",
+            document_ai_quality.is_acceptable,
+            document_ai_quality.page_count,
+            document_ai_quality.block_count,
+            document_ai_quality.pages_with_content,
+            document_ai_quality.coverage_ratio,
+            document_ai_quality.total_characters,
+            document_ai_quality.average_characters_per_page,
+            document_ai_quality.reason,
+        )
+
+        # ======================================================
+        # STEP 9B
+        # FALL BACK TO NATIVE PDF TEXT EXTRACTION
+        # ======================================================
+
+        if not document_ai_quality.is_acceptable:
+
+            logger.warning(
+                "Document AI extraction quality is insufficient. "
+                "Falling back to native PDF text extraction."
+            )
+
+            fallback_blocks = (
+                pdf_text_extractor.extract_blocks(
+                    local_path
+                )
+            )
+
+            fallback_page_count = (
+                pdf_text_extractor.page_count(
+                    local_path
+                )
+            )
+
+            fallback_quality = (
+                extraction_quality_evaluator.evaluate(
+                    blocks=fallback_blocks,
+                    page_count=fallback_page_count,
+                )
+            )
+
+            logger.info(
+                "Native PDF extraction quality. "
+                "Acceptable=%s "
+                "Pages=%d "
+                "Blocks=%d "
+                "PagesWithContent=%d "
+                "CoverageRatio=%.3f "
+                "Characters=%d "
+                "AverageCharactersPerPage=%.1f "
+                "Reason=%s",
+                fallback_quality.is_acceptable,
+                fallback_quality.page_count,
+                fallback_quality.block_count,
+                fallback_quality.pages_with_content,
+                fallback_quality.coverage_ratio,
+                fallback_quality.total_characters,
+                fallback_quality.average_characters_per_page,
+                fallback_quality.reason,
+            )
+
+            if not fallback_quality.is_acceptable:
+
+                raise RuntimeError(
+                    "Document extraction failed quality validation. "
+                    "Document AI reason="
+                    f"{document_ai_quality.reason}; "
+                    "Native PDF reason="
+                    f"{fallback_quality.reason}"
+                )
+
+            blocks = fallback_blocks
+            page_count = fallback_page_count
+
+            logger.warning(
+                "Using native PDF text extraction as the "
+                "canonical block source."
+            )
+
+        else:
+
+            logger.info(
+                "Using Document AI extraction as the "
+                "canonical block source."
+            )
+
+
+        logger.info(
+            "Final canonical block source selected. "
+            "Pages=%d Blocks=%d",
+            page_count,
+            len(blocks),
+        )
+
+        # ======================================================
+        # STEP 10
+        # BUILD CANONICAL DOCUMENT
+        # ======================================================
+
+        logger.info(
+            "========== STEP 10: BUILD CANONICAL DOCUMENT =========="
+        )
+
+        created_at = _utc_now()
 
         canonical_document = (
             canonical_builder.build(
                 blocks=blocks,
-                page_count=(
-                    document_processor
-                    .page_count(
-                        document
-                    )
-                ),
+                page_count=page_count,
                 filename=name,
                 raw_bucket=bucket,
                 raw_object=name,
@@ -601,57 +785,61 @@ def ingest_pdf(cloud_event):
             )
         )
 
-        document_id = (
-            canonical_document[
-                "document"
-            ][
-                "document_id"
-            ]
+        document_metadata = (
+            canonical_document.get(
+                "document",
+                {},
+            )
         )
 
-        page_count = (
-            canonical_document[
-                "document"
-            ][
-                "page_count"
-            ]
+        document_id = (
+            document_metadata.get(
+                "document_id"
+            )
+        )
+
+        if not document_id:
+
+            raise RuntimeError(
+                "Canonical document does not "
+                "contain document_id."
+            )
+
+        canonical_page_count = int(
+            document_metadata.get(
+                "page_count",
+                0,
+            )
         )
 
         block_count = sum(
             len(
-                page["blocks"]
+                page.get(
+                    "blocks",
+                    [],
+                )
             )
-            for page in (
-                canonical_document[
-                    "pages"
-                ]
+            for page in canonical_document.get(
+                "pages",
+                [],
             )
         )
 
         logger.info(
-            "Canonical JSON created."
-        )
-
-        logger.info(
-            "Pages: %d",
-            page_count,
-        )
-
-        logger.info(
-            "Blocks: %d",
+            "Canonical document built. "
+            "Document ID=%s Pages=%d Blocks=%d",
+            document_id,
+            canonical_page_count,
             block_count,
         )
 
-        # ------------------------------------------------------------------
-        # STEP 9 - Upload Canonical JSON
-        # ------------------------------------------------------------------
+        # ======================================================
+        # STEP 11
+        # UPLOAD ONLY CANONICAL JSON
+        # ======================================================
 
         logger.info(
-            "========== STEP 9 =========="
-        )
-
-        logger.info(
-            "Uploading canonical JSON..."
+            "========== STEP 11: UPLOAD CANONICAL JSON =========="
         )
 
         processed_object = (
@@ -668,16 +856,18 @@ def ingest_pdf(cloud_event):
             canonical_file,
             "w",
             encoding="utf-8",
-        ) as file:
+        ) as output_file:
 
             json.dump(
                 canonical_document,
-                file,
+                output_file,
                 indent=2,
                 ensure_ascii=False,
             )
 
-            file.write("\n")
+            output_file.write(
+                "\n"
+            )
 
         storage_service.upload_blob(
             bucket_name=(
@@ -691,30 +881,81 @@ def ingest_pdf(cloud_event):
         )
 
         document_uri = (
-            f"gs://"
-            f"{settings.processed_bucket}/"
-            f"{processed_object}"
+            "gs://"
+            f"{settings.processed_bucket}"
+            f"/{processed_object}"
         )
 
         logger.info(
-            "Upload successful."
-        )
-
-        logger.info(
-            "Output URI: %s",
+            "Canonical JSON uploaded: %s",
             document_uri,
         )
 
-        # ------------------------------------------------------------------
-        # STEP 10 - Firestore Metadata
-        # ------------------------------------------------------------------
+        # ======================================================
+        # STEP 12
+        # BUILD KNOWLEDGE PACKAGE
+        # ======================================================
 
         logger.info(
-            "========== STEP 10 =========="
+            "========== STEP 12: BUILD KNOWLEDGE PACKAGE =========="
+        )
+
+        knowledge_package = (
+            knowledge_package_builder.build(
+                canonical_document
+            )
+        )
+
+        if not knowledge_package.document_id:
+
+            raise RuntimeError(
+                "KnowledgePackage does not "
+                "contain document_id."
+            )
+
+        if (
+            knowledge_package.document_id
+            != document_id
+        ):
+
+            raise RuntimeError(
+                "KnowledgePackage document_id does "
+                "not match canonical document_id."
+            )
+
+        logger.info(
+            "KnowledgePackage built. "
+            "Document ID=%s",
+            knowledge_package.document_id,
+        )
+
+        # ======================================================
+        # STEP 13
+        # SAVE KNOWLEDGE PACKAGE TO FIRESTORE
+        # ======================================================
+
+        logger.info(
+            "========== STEP 13: SAVE KNOWLEDGE PACKAGE =========="
+        )
+
+        knowledge_package_repository.save(
+            knowledge_package
         )
 
         logger.info(
-            "Writing Firestore metadata..."
+            "KnowledgePackage saved to Firestore "
+            "collection knowledge_packages. "
+            "Document ID=%s",
+            knowledge_package.document_id,
+        )
+
+        # ======================================================
+        # STEP 14
+        # WRITE PROCESSING METADATA
+        # ======================================================
+
+        logger.info(
+            "========== STEP 14: FIRESTORE METADATA =========="
         )
 
         processing_duration_ms = int(
@@ -732,27 +973,38 @@ def ingest_pdf(cloud_event):
             ),
             "raw_bucket": bucket,
             "raw_object": name,
+            "generation": generation,
+            "source_sha256": file_sha256,
             "processed_bucket": (
                 settings.processed_bucket
             ),
             "processed_object": (
                 processed_object
             ),
-            "page_count": page_count,
+            "page_count": (
+                canonical_page_count
+            ),
             "block_count": block_count,
+            "chunk_count": len(
+                chunk_results
+            ),
+            "max_chunk_pages": (
+                settings.max_chunk_pages
+            ),
             "status": "PUBLISHED",
             "processor": (
-                canonical_document[
-                    "document"
-                ][
+                document_metadata.get(
                     "processor"
-                ]
+                )
             ),
             "created_at": created_at,
             "processing_duration_ms": (
                 processing_duration_ms
             ),
             "document_uri": document_uri,
+            "knowledge_package_document_id": (
+                knowledge_package.document_id
+            ),
         }
 
         firestore_document = (
@@ -763,68 +1015,100 @@ def ingest_pdf(cloud_event):
         )
 
         logger.info(
-            "Firestore metadata written."
-        )
-
-        logger.info(
-            "Firestore document: %s",
+            "Processing metadata written. "
+            "Firestore document=%s",
             firestore_document,
         )
 
-        logger.info(
-            "========== STEP 11 =========="
+        # ======================================================
+        # SUCCESS
+        # ======================================================
+
+        total_duration_ms = int(
+            (
+                time.perf_counter()
+                - start_time
+            )
+            * 1000
         )
 
         logger.info(
-            "PIPELINE COMPLETED SUCCESSFULLY"
+            "========== KNOWLEDGE FACTORY INGESTION COMPLETE =========="
+        )
+
+        logger.info(
+            json.dumps(
+                {
+                    "status": "PUBLISHED",
+                    "document_id": (
+                        document_id
+                    ),
+                    "source_object": name,
+                    "page_count": (
+                        canonical_page_count
+                    ),
+                    "block_count": (
+                        block_count
+                    ),
+                    "chunk_count": len(
+                        chunk_results
+                    ),
+                    "processed_object": (
+                        processed_object
+                    ),
+                    "knowledge_package": (
+                        knowledge_package
+                        .document_id
+                    ),
+                    "duration_ms": (
+                        total_duration_ms
+                    ),
+                },
+                indent=2,
+            )
         )
 
     except Exception:
 
         logger.exception(
-            "========== UNHANDLED EXCEPTION =========="
+            "Knowledge Factory PDF ingestion failed."
         )
 
         raise
 
     finally:
 
-        if canonical_file:
+        # ======================================================
+        # CLEANUP
+        # ======================================================
 
-            try:
+        logger.info(
+            "========== TEMPORARY FILE CLEANUP =========="
+        )
 
-                delete_file(
-                    canonical_file
-                )
+        _safe_delete(
+            canonical_file
+        )
 
-                logger.info(
-                    "Temporary file removed: %s",
-                    canonical_file,
-                )
+        _safe_delete(
+            local_file
+        )
 
-            except Exception:
+        _safe_remove_directory(
+            artifact_directory
+        )
 
-                logger.exception(
-                    "Failed to delete "
-                    "temporary file."
-                )
+        # Only remove chunk directory when it
+        # contains generated chunks.
+        #
+        # For a PDF below the page limit,
+        # IngestionCoordinator returns the original
+        # PDF and the directory may never be created.
 
-        if local_file:
+        _safe_remove_directory(
+            chunk_directory
+        )
 
-            try:
-
-                delete_file(
-                    local_file
-                )
-
-                logger.info(
-                    "Temporary file removed: %s",
-                    local_file,
-                )
-
-            except Exception:
-
-                logger.exception(
-                    "Failed to delete "
-                    "temporary file."
-                )
+        logger.info(
+            "Temporary cleanup completed."
+        )
