@@ -88,7 +88,7 @@ class CanonicalDocumentBuilder:
     def _build_block(self, *, block: dict, index: int) -> dict:
         metadata = dict(block.get("metadata") or {})
 
-        return {
+        canonical_block = {
             "id": f"block-{index + 1:06d}",
             "type": block["type"],
             "text": block.get("text") or "",
@@ -96,6 +96,51 @@ class CanonicalDocumentBuilder:
             "confidence": block.get("confidence"),
             "geometry": block.get("geometry", {}),
             "metadata": metadata,
+        }
+
+        if block["type"] == "figure":
+            canonical_block["figure"] = self._build_figure(block)
+
+        return canonical_block
+
+    def _build_figure(self, block: dict) -> dict:
+        """
+        Normalize a provider-independent canonical Figure.
+
+        This method preserves only the canonical Figure contract.
+        It does not perform provider-specific interpretation and
+        does not invent semantic geometry that is not already present
+        in the source block.
+        """
+
+        figure = dict(block.get("figure") or {})
+
+        related_concepts = figure.get("related_concepts", [])
+        labels = figure.get("labels", [])
+        geometry = figure.get("geometry", {})
+        rendering = figure.get("rendering", {})
+        educational = figure.get("educational", {})
+        interaction = figure.get("interaction", {})
+        provenance = figure.get("provenance", {})
+        metadata = figure.get("metadata", {})
+
+        return {
+            "id": figure.get("id", block.get("id")),
+            "caption": figure.get("caption"),
+            "description": figure.get("description"),
+            "figure_type": figure.get("figure_type"),
+            "related_concepts": list(related_concepts),
+            "labels": list(labels),
+            "geometry": dict(geometry),
+            "rendering": dict(rendering),
+            "educational": dict(educational),
+            "interaction": dict(interaction),
+            "provenance": dict(provenance),
+            "confidence": figure.get("confidence"),
+            "is_educationally_relevant": figure.get(
+                "is_educationally_relevant"
+            ),
+            "metadata": dict(metadata),
         }
 
     def _page_count(self, source_page_count: int, blocks: list[dict]) -> int:

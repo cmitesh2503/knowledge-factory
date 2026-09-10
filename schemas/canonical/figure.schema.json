@@ -1,0 +1,366 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://knowledge-factory.dev/schemas/canonical/figure.schema.json",
+  "title": "Knowledge Factory Canonical Figure",
+  "description": "Provider-independent canonical representation of an educational figure for MathVerse rendering, explanation, animation, and modification.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "id"
+  ],
+
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Stable canonical identifier for the figure."
+    },
+
+    "caption": {
+      "type": ["string", "null"],
+      "description": "Caption associated with the figure in the source document."
+    },
+
+    "description": {
+      "type": ["string", "null"],
+      "description": "Provider-independent textual description of the figure."
+    },
+
+    "figure_type": {
+      "type": ["string", "null"],
+      "description": "High-level classification of the figure. Recommended values include geometry_diagram, coordinate_plot, function_graph, chart, number_line, venn_diagram, set_diagram, transformation_diagram, physics_diagram, circuit_diagram, chemical_structure, and other."
+    },
+
+    "related_concepts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true,
+      "description": "Concept identifiers or concept names related to this figure."
+    },
+
+    "labels": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true,
+      "description": "Known labels appearing in or associated with the figure."
+    },
+
+    "geometry": {
+      "type": "object",
+      "description": "Provider-independent geometric representation used to render or reconstruct the figure.",
+      "additionalProperties": true,
+
+      "properties": {
+        "coordinate_system": {
+          "type": "object",
+          "description": "Optional coordinate system used by the figure.",
+          "additionalProperties": true,
+
+          "properties": {
+            "type": {
+              "type": "string",
+              "description": "Coordinate system type, for example cartesian, polar, or custom."
+            },
+
+            "units": {
+              "type": "string"
+            },
+
+            "x_range": {
+              "$ref": "#/$defs/numeric_range"
+            },
+
+            "y_range": {
+              "$ref": "#/$defs/numeric_range"
+            }
+          }
+        },
+
+        "elements": {
+          "type": "array",
+          "description": "Drawable elements that compose the figure.",
+          "items": {
+            "$ref": "#/$defs/geometry_element"
+          }
+        }
+      }
+    },
+
+    "rendering": {
+      "type": "object",
+      "description": "Rendering preferences or rendering hints for MathVerse.",
+      "additionalProperties": true,
+
+      "properties": {
+        "renderer": {
+          "type": "string",
+          "description": "Suggested renderer, for example svg, canvas, mathverse_native, or custom."
+        },
+
+        "viewport": {
+          "type": "object",
+          "additionalProperties": true,
+
+          "properties": {
+            "width": {
+              "type": "number"
+            },
+
+            "height": {
+              "type": "number"
+            },
+
+            "unit": {
+              "type": "string"
+            }
+          }
+        },
+
+        "style": {
+          "type": "object",
+          "description": "Optional global rendering style.",
+          "additionalProperties": true
+        }
+      }
+    },
+
+    "educational": {
+      "type": "object",
+      "description": "Educational meaning and instructional usage of the figure.",
+      "additionalProperties": true,
+
+      "properties": {
+        "purpose": {
+          "type": "string",
+          "description": "Examples include concept_explanation, worked_example, problem_solving, visualisation, comparison, proof, or assessment_support."
+        },
+
+        "learning_objectives": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+
+        "explanation_strategy": {
+          "type": "string"
+        },
+
+        "importance": {
+          "type": "string",
+          "description": "Suggested importance such as primary, supporting, optional, or contextual."
+        }
+      }
+    },
+
+    "interaction": {
+      "type": "object",
+      "description": "Capabilities supported when MathVerse tutors or students interact with the figure.",
+      "additionalProperties": true,
+
+      "properties": {
+        "modifiable": {
+          "type": "boolean"
+        },
+
+        "can_add_elements": {
+          "type": "boolean"
+        },
+
+        "can_remove_elements": {
+          "type": "boolean"
+        },
+
+        "can_update_labels": {
+          "type": "boolean"
+        },
+
+        "can_animate": {
+          "type": "boolean"
+        },
+
+        "can_highlight": {
+          "type": "boolean"
+        },
+
+        "can_transform": {
+          "type": "boolean"
+        },
+
+        "allowed_operations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+
+    "provenance": {
+      "type": "object",
+      "description": "Provider-independent information describing where the figure came from.",
+      "additionalProperties": true,
+
+      "properties": {
+        "source": {
+          "type": "string",
+          "description": "Source origin, for example document, generated, reconstructed, or derived."
+        },
+
+        "source_block_id": {
+          "type": ["string", "null"]
+        },
+
+        "page": {
+          "type": ["integer", "null"],
+          "minimum": 1
+        },
+
+        "provider": {
+          "type": ["string", "null"],
+          "description": "Optional extraction provider. This field is provenance only and must not affect canonical semantics."
+        }
+      }
+    },
+
+    "confidence": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 1
+    },
+
+    "is_educationally_relevant": {
+      "type": ["boolean", "null"]
+    },
+
+    "metadata": {
+      "type": "object",
+      "description": "Non-semantic provider-independent metadata.",
+      "additionalProperties": true
+    }
+  },
+
+  "$defs": {
+    "numeric_range": {
+      "type": "object",
+      "additionalProperties": false,
+
+      "properties": {
+        "min": {
+          "type": "number"
+        },
+
+        "max": {
+          "type": "number"
+        }
+      }
+    },
+
+    "point": {
+      "type": "object",
+      "additionalProperties": true,
+
+      "properties": {
+        "x": {
+          "type": "number"
+        },
+
+        "y": {
+          "type": "number"
+        },
+
+        "z": {
+          "type": "number"
+        }
+      }
+    },
+
+    "geometry_element": {
+      "type": "object",
+      "additionalProperties": true,
+
+      "required": [
+        "type"
+      ],
+
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+
+        "type": {
+          "type": "string",
+          "description": "Drawable primitive. Recommended values include point, line, ray, line_segment, vector, triangle, rectangle, square, circle, ellipse, polygon, quadrilateral, parallelogram, trapezium, trapezoid, rhombus, arc, sector, chord, tangent, axes, curve, function_graph, coordinate_plot, bar_chart, line_chart, pie_chart, number_line, venn_diagram, set_diagram, transformation_diagram, physics_diagram, circuit_diagram, chemical_structure, or a future extension."
+        },
+
+        "shape": {
+          "type": ["string", "null"],
+          "description": "Optional subtype or semantic shape classification."
+        },
+
+        "label": {
+          "type": ["string", "null"]
+        },
+
+        "labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+
+        "points": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/point"
+          }
+        },
+
+        "coordinates": {
+          "type": "object",
+          "description": "Alternative provider-independent coordinate representation.",
+          "additionalProperties": true
+        },
+
+        "properties": {
+          "type": "object",
+          "description": "Shape-specific properties such as radius, width, height, angle, slope, equation, or units.",
+          "additionalProperties": true
+        },
+
+        "style": {
+          "type": "object",
+          "description": "Element-specific rendering hints.",
+          "additionalProperties": true
+        },
+
+        "relationships": {
+          "type": "array",
+          "description": "Relationships to other elements.",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+
+            "properties": {
+              "target_id": {
+                "type": "string"
+              },
+
+              "type": {
+                "type": "string",
+                "description": "Examples include intersects, tangent_to, parallel_to, perpendicular_to, contains, connected_to, or derived_from."
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

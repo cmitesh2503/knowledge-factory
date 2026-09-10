@@ -14,10 +14,15 @@ from pypdf import PdfReader
 
 class PDFTextExtractor:
     """
-    Extract page-level text from PDFs.
+    Extract text directly from a PDF.
 
     Used as a fallback when the primary extraction provider
     does not produce sufficient document coverage.
+
+    The extractor creates line-level canonical blocks instead
+    of one large block per page so downstream structural
+    extractors can identify chapters, sections, formulas,
+    examples, and exercises.
     """
 
     def extract_blocks(
@@ -25,10 +30,10 @@ class PDFTextExtractor:
         file_path: str | Path,
     ) -> list[dict]:
         """
-        Extract canonical text blocks from a PDF.
+        Extract line-level canonical text blocks from a PDF.
 
-        One canonical paragraph block is produced for each
-        page containing extractable text.
+        Each non-empty extracted line becomes a canonical
+        text block.
         """
 
         path = Path(file_path)
@@ -47,30 +52,36 @@ class PDFTextExtractor:
             start=1,
         ):
 
-            text = (
+            page_text = (
                 page.extract_text()
                 or ""
-            ).strip()
-
-            if not text:
-                continue
-
-            blocks.append(
-                {
-                    "type": "paragraph",
-                    "text": text,
-                    "page": page_number,
-                    "confidence": None,
-                    "geometry": {},
-                    "metadata": {
-                        "extraction_source": (
-                            "pdf_native_text"
-                        ),
-                    },
-                }
             )
 
+            lines = [
+                line.strip()
+                for line in page_text.splitlines()
+                if line.strip()
+            ]
+
+            for line in lines:
+
+                blocks.append(
+                    {
+                        "type": "text",
+                        "text": line,
+                        "page": page_number,
+                        "confidence": None,
+                        "geometry": {},
+                        "metadata": {
+                            "extraction_source": (
+                                "pdf_native_text"
+                            ),
+                        },
+                    }
+                )
+
         return blocks
+
     def page_count(
         self,
         file_path: str | Path,

@@ -349,9 +349,42 @@ class KnowledgePackage:
                     description=item.get(
                         "description"
                     ),
+                    figure_type=item.get(
+                        "figure_type"
+                    ),
                     related_concepts=item.get(
                         "related_concepts",
                         [],
+                    ),
+                    labels=item.get(
+                        "labels",
+                        [],
+                    ),
+                    geometry=item.get(
+                        "geometry",
+                        {},
+                    ),
+                    rendering=item.get(
+                        "rendering",
+                        {},
+                    ),
+                    educational=item.get(
+                        "educational",
+                        {},
+                    ),
+                    interaction=item.get(
+                        "interaction",
+                        {},
+                    ),
+                    provenance=item.get(
+                        "provenance",
+                        {},
+                    ),
+                    confidence=item.get(
+                        "confidence"
+                    ),
+                    is_educationally_relevant=item.get(
+                        "is_educationally_relevant"
                     ),
                     metadata=item.get(
                         "metadata",
