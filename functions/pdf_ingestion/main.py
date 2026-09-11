@@ -32,7 +32,10 @@ Single PDF                     Split into chunks
        Provider-independent canonical blocks
                        |
                        v
-              Canonical Document JSON
+              Visual figure enrichment
+                       |
+                       v
+        Final Canonical Document JSON
                        |
                        +----------------------+
                        |                      |
@@ -81,6 +84,9 @@ from utils import (
 
 from services.integration.knowledge_package_builder import (
     KnowledgePackageBuilder,
+)
+from services.integration.visual_figure_pipeline import (
+    VisualFigurePipeline,
 )
 from services.repositories.firestore_knowledge_package_repository import (
     FirestoreKnowledgePackageRepository,
@@ -135,6 +141,10 @@ document_ai_merger = DocumentAIChunkMerger()
 canonical_adapter = DocumentAICanonicalAdapter()
 
 knowledge_package_builder = KnowledgePackageBuilder()
+
+visual_figure_pipeline = VisualFigurePipeline(
+    logger=logger,
+)
 
 knowledge_package_repository = (
     FirestoreKnowledgePackageRepository()
@@ -281,6 +291,25 @@ def _safe_remove_directory(
         )
 
 
+def _canonical_block_count(
+    canonical_document: dict,
+) -> int:
+    """Return the number of canonical page blocks."""
+
+    return sum(
+        len(
+            page.get(
+                "blocks",
+                [],
+            )
+        )
+        for page in canonical_document.get(
+            "pages",
+            [],
+        )
+    )
+
+
 # ==============================================================
 # CLOUD FUNCTION ENTRY POINT
 # ==============================================================
@@ -305,6 +334,10 @@ def ingest_pdf(cloud_event):
     merged_file: Path | None = None
 
     canonical_file: str | None = None
+
+    visual_figure_metadata = {
+        "status": "not_run",
+    }
 
     try:
 
@@ -812,17 +845,8 @@ def ingest_pdf(cloud_event):
             )
         )
 
-        block_count = sum(
-            len(
-                page.get(
-                    "blocks",
-                    [],
-                )
-            )
-            for page in canonical_document.get(
-                "pages",
-                [],
-            )
+        block_count = _canonical_block_count(
+            canonical_document
         )
 
         logger.info(
@@ -835,11 +859,61 @@ def ingest_pdf(cloud_event):
 
         # ======================================================
         # STEP 11
-        # UPLOAD ONLY CANONICAL JSON
+        # VISUAL FIGURE PIPELINE
         # ======================================================
 
         logger.info(
-            "========== STEP 11: UPLOAD CANONICAL JSON =========="
+            "========== STEP 11: VISUAL FIGURE PIPELINE =========="
+        )
+
+        try:
+            visual_figure_result = (
+                visual_figure_pipeline.run(
+                    pdf_path=local_path,
+                    canonical_document=(
+                        canonical_document
+                    ),
+                )
+            )
+
+            visual_figure_metadata = {
+                "status": "completed",
+                **visual_figure_result.to_metadata(),
+            }
+
+            block_count = _canonical_block_count(
+                canonical_document
+            )
+
+            logger.info(
+                "Canonical document enriched with visual figures. "
+                "Blocks=%d Metadata=%s",
+                block_count,
+                json.dumps(
+                    visual_figure_metadata,
+                    sort_keys=True,
+                ),
+            )
+
+        except Exception as exc:
+
+            visual_figure_metadata = {
+                "status": "failed",
+                "error": str(exc),
+            }
+
+            logger.exception(
+                "Visual figure pipeline failed. "
+                "Continuing without visual figure enrichment."
+            )
+
+        # ======================================================
+        # STEP 12
+        # UPLOAD FINAL CANONICAL JSON
+        # ======================================================
+
+        logger.info(
+            "========== STEP 12: UPLOAD FINAL CANONICAL JSON =========="
         )
 
         processed_object = (
@@ -887,17 +961,17 @@ def ingest_pdf(cloud_event):
         )
 
         logger.info(
-            "Canonical JSON uploaded: %s",
+            "Final canonical JSON uploaded: %s",
             document_uri,
         )
 
         # ======================================================
-        # STEP 12
+        # STEP 13
         # BUILD KNOWLEDGE PACKAGE
         # ======================================================
 
         logger.info(
-            "========== STEP 12: BUILD KNOWLEDGE PACKAGE =========="
+            "========== STEP 13: BUILD KNOWLEDGE PACKAGE =========="
         )
 
         knowledge_package = (
@@ -930,12 +1004,12 @@ def ingest_pdf(cloud_event):
         )
 
         # ======================================================
-        # STEP 13
+        # STEP 14
         # SAVE KNOWLEDGE PACKAGE TO FIRESTORE
         # ======================================================
 
         logger.info(
-            "========== STEP 13: SAVE KNOWLEDGE PACKAGE =========="
+            "========== STEP 14: SAVE KNOWLEDGE PACKAGE =========="
         )
 
         knowledge_package_repository.save(
@@ -950,12 +1024,12 @@ def ingest_pdf(cloud_event):
         )
 
         # ======================================================
-        # STEP 14
+        # STEP 15
         # WRITE PROCESSING METADATA
         # ======================================================
 
         logger.info(
-            "========== STEP 14: FIRESTORE METADATA =========="
+            "========== STEP 15: FIRESTORE METADATA =========="
         )
 
         processing_duration_ms = int(
@@ -1004,6 +1078,9 @@ def ingest_pdf(cloud_event):
             "document_uri": document_uri,
             "knowledge_package_document_id": (
                 knowledge_package.document_id
+            ),
+            "visual_figure_pipeline": (
+                visual_figure_metadata
             ),
         }
 
@@ -1055,6 +1132,9 @@ def ingest_pdf(cloud_event):
                     ),
                     "processed_object": (
                         processed_object
+                    ),
+                    "visual_figure_pipeline": (
+                        visual_figure_metadata
                     ),
                     "knowledge_package": (
                         knowledge_package
